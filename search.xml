@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Java基础复习</title>
+    <url>/2022/05/12/Java%E5%9F%BA%E7%A1%80%E5%A4%8D%E4%B9%A0/</url>
+    <content><![CDATA[<hr>
+<p>[TOC]</p>
+<h1 id="基础复习"><a href="#基础复习" class="headerlink" title="基础复习"></a>基础复习</h1><h2 id="JDK-JRE-JVM"><a href="#JDK-JRE-JVM" class="headerlink" title="JDK JRE JVM"></a>JDK JRE JVM</h2><p><strong>JDK</strong>  Java 的开发工具</p>
+<p><strong>JRE</strong> JAVA 的运行环境</p>
+<p><strong>JVM</strong> Java虚拟机</p>
+<h2 id="自动类型转换"><a href="#自动类型转换" class="headerlink" title="自动类型转换"></a>自动类型转换</h2><p>自动类型转换精度小的类型可以自动转换成精度大的数据</p>
+<p><em>Boolean型</em> 不参与运算</p>
+<p><img src="/images/%E6%95%B0%E6%8D%AE%E7%B2%BE%E5%BA%A6%E5%A4%A7%E5%B0%8F.png" alt="自动类型转换"></p>
+<p><strong>注意</strong> ：<em>1、</em>如果Java中出现一个小数它默认是 double类型的 将一个小数结果赋值给float 类型时就会报错将一个精度大的赋值给精度小的</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line"><span class="type">float</span> <span class="variable">d</span> <span class="operator">=</span> n + <span class="number">1.1</span>;   <span class="comment">//报错</span></span><br><span class="line"><span class="type">float</span> <span class="variable">d1</span> <span class="operator">=</span> n + <span class="number">1.1</span>;  </span><br></pre></td></tr></table></figure>
+
+<p><em>2、</em> byte类型直接给整数数据的时候，先判段是否在-128-127这个范围内。符合即可</p>
+<p>要是变量赋值就需要判断它的类型</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">byte</span> <span class="variable">b</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line"><span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line"><span class="type">byte</span> <span class="variable">b1</span>  <span class="operator">=</span> n;   <span class="comment">// 报错</span></span><br></pre></td></tr></table></figure>
+
+<p><em>3、</em> byte char short 三个数据不能相互自动类型转换  他们三个在互相参与运算的时候会将精度提升到<strong>int</strong> </p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">char</span> <span class="variable">a1</span> <span class="operator">=</span> <span class="string">&#x27;a&#x27;</span>;</span><br><span class="line"><span class="type">byte</span> <span class="variable">a2</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line"><span class="type">int</span> <span class="variable">a3</span> <span class="operator">=</span> a1 + a2;</span><br><span class="line"><span class="type">short</span> <span class="variable">a4</span> <span class="operator">=</span> <span class="number">9</span>;</span><br><span class="line"><span class="type">int</span> <span class="variable">a5</span> <span class="operator">=</span> a1 + a2 + a4;</span><br></pre></td></tr></table></figure>
+
+<p><em>4、</em> 自动提升原则，多个精度参与运算的时候会将精度提升到最大的那个</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">double</span> <span class="variable">a1</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line"><span class="type">int</span> <span class="variable">a2</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line"><span class="type">short</span> <span class="variable">a3</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line"><span class="type">float</span> <span class="variable">a4</span> <span class="operator">=</span> a1 + a2 + a3;   <span class="comment">//报错  用低精度的float接高精度的double 报错了</span></span><br><span class="line"><span class="type">double</span> <span class="variable">a5</span> <span class="operator">=</span> a1 + a2 + a3;</span><br></pre></td></tr></table></figure>
+
+<h2 id="强制类型转化"><a href="#强制类型转化" class="headerlink" title="强制类型转化"></a>强制类型转化</h2><p><em>1、</em> 自动类型转换的逆过程，将容量大的数据类型转换为容量小的数据类型使用时候加上强制类型转化符号（），但是可能造成精度降低或溢出 。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> = (<span class="type">int</span>)<span class="number">1.1</span>;  <span class="comment">//精度丢失</span></span><br><span class="line"><span class="type">byte</span> <span class="variable">b</span> <span class="operator">=</span> (<span class="type">byte</span> <span class="number">1000</span>);  <span class="comment">//-24</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>补充</strong> ： 计算机的反码、补码、源码。 正数的反码和源码一样，负数的反码和源码有区别。</p>
+<p>byte 在Java中。由八位二进制表示最高0表示正数 1代表负数。 计算机中都是储存反码，负数反码规则是最高位不变前七位取反然后加1；10000000 原本是-0 byte里面表示-128 ;10000001是127的反码也就是-127。-127和-128相差1也很合理这样既不浪费-0 这个数 正负大概区分是（-128- -1）（0-127）</p>
+<p><em>2、</em> 强制类型转换只对于最近的操作数有效，往往使用括号提升优先级</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">x</span> <span class="operator">=</span> (<span class="type">int</span>)<span class="number">10</span>*<span class="number">0.1</span>+<span class="number">10.1</span>;   <span class="comment">//编译出错 不能将double给int</span></span><br></pre></td></tr></table></figure>
+
+<p><em>3、</em> char 类型</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">char</span> <span class="variable">a</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line"><span class="type">int</span> <span class="variable">b</span> <span class="operator">=</span><span class="number">10</span>;</span><br><span class="line">a= (<span class="type">char</span>)b; <span class="comment">//输出ASCII 码中的10</span></span><br></pre></td></tr></table></figure>
+
+<p><em>4、</em> byte short char 类型在进行运算时，当作int类型处理。</p>
+<p><em>5、</em> 练习题:</p>
+<p><img src="/images/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E7%BB%83%E4%B9%A0%E9%A2%98.png" alt="类型转换题目"></p>
+<h2 id="String和其他类型转换"><a href="#String和其他类型转换" class="headerlink" title="String和其他类型转换"></a>String和其他类型转换</h2><h3 id="其他类型转换成String"><a href="#其他类型转换成String" class="headerlink" title="其他类型转换成String"></a>其他类型转换成String</h3><p>一般在其他类型后面凭借一个””。完成类型转换</p>
+<h3 id="String-转换成其他类型"><a href="#String-转换成其他类型" class="headerlink" title="String 转换成其他类型"></a>String 转换成其他类型</h3><p>调用相应的包装类来实现。</p>
+<p>例如：<code>int s =Integer.parseInt(&quot;33&quot;);</code> 其他数据类型相应调用包装类</p>
+<p>char数据类型不能使用。因为String就是由一个一个char组成的。使用String.charAt(位置)；</p>
+<p><strong>异常</strong> ：如果String类型里面是文字 要转换成int类型等则会异常。</p>
+<h2 id="原码-反码-补码"><a href="#原码-反码-补码" class="headerlink" title="原码 反码 补码"></a>原码 反码 补码</h2><p><em>1、</em> 二进制最高位是符号位：0表示正数，1表示负数；</p>
+<p><em>2、</em> 正数的原码、反码、补码都一样（三码合一）；</p>
+<p><em>3、</em> 负数的反码&#x3D;它的原码符号位不变。其他位取反（0&gt;1,1&gt;0)；</p>
+<p><em>4、</em> 负数的补码&#x3D;它的反码+1，负数的反码&#x3D;负数的补码-1</p>
+<p><em>5</em>、0 的反码，补码都是0；</p>
+<p><em>6、</em> Java没有无符号数，也就是Java中的数都是有符号的；</p>
+<p><em>7、</em> 在计算机运算的时候，都是以补码的方式来运算的。（补码可以用来计算负数）</p>
+<p><em>8、</em> 当我们看运算结果的时候，要看他的原码;</p>
+<h2 id="求余"><a href="#求余" class="headerlink" title="求余%"></a>求余%</h2><p>a%b 当a是小数时，公式&#x3D;a-(int)a&#x2F;b*b; </p>
+<h2 id="二维数组"><a href="#二维数组" class="headerlink" title="二维数组"></a>二维数组</h2><p><img src="/images/%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E7%9A%84%E5%86%85%E5%AD%98%E5%8E%9F%E7%90%86.png" alt="二维数组内存"></p>
+<h3 id="动态创建静态创建"><a href="#动态创建静态创建" class="headerlink" title="动态创建静态创建"></a>动态创建静态创建</h3><h4 id="动态创建"><a href="#动态创建" class="headerlink" title="动态创建"></a>动态创建</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> [][] arr = <span class="keyword">new</span> <span class="title class_">int</span> [<span class="number">3</span>][<span class="number">3</span>];   <span class="comment">//创建一个含有3个一维数组的二维数组并且每个一维数组都是3的长度</span></span><br><span class="line"><span class="type">int</span> [][] arr1 =<span class="keyword">new</span> <span class="title class_">int</span> [<span class="number">3</span>][];     <span class="comment">//创建一个含有3个一维数组的二维数组但是不能确定长度。</span></span><br><span class="line"><span class="type">int</span> [] arr1 = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">2</span>];      <span class="comment">//动态初始化一维数组</span></span><br><span class="line">arr[<span class="number">0</span>]= arr1;                <span class="comment">//将一维数组arr1 赋予给二维数组arr的第0个数</span></span><br><span class="line"><span class="type">int</span> [] arr3 = <span class="keyword">new</span> <span class="title class_">int</span>[]&#123;<span class="number">2</span>,<span class="number">3</span>,<span class="number">45</span>&#125;;  <span class="comment">// 静态初始化一维数组</span></span><br><span class="line">arr[<span class="number">1</span>] = arr3;               <span class="comment">// 将一维数组arr1 赋予给二维数组arr的第1个数</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="静态创建"><a href="#静态创建" class="headerlink" title="静态创建"></a>静态创建</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> [][] arr = <span class="keyword">new</span> <span class="title class_">int</span> [][] &#123;&#123;<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;,&#123;<span class="number">6</span>,<span class="number">4</span>&#125;&#125;;    <span class="comment">//静态创建 两个元素的二维数组 第一个元素是&#123;3，4，5&#125;   可以不是“长方形” 就是4X4之类的  ，也可以是不统一的</span></span><br><span class="line"><span class="type">int</span> [] arr2 = <span class="keyword">new</span> <span class="title class_">int</span>[] &#123;<span class="number">12</span>,<span class="number">3</span>&#125;;</span><br><span class="line"><span class="type">int</span> [] arr3 = <span class="keyword">new</span> <span class="title class_">int</span>[] &#123;<span class="number">3</span>,<span class="number">9</span>&#125;;</span><br><span class="line"><span class="type">int</span> [][] arr1 =<span class="keyword">new</span> <span class="title class_">int</span> [][]&#123;arr2,arr3&#125;;    <span class="comment">//静态创建当然里面也可以直接放创建好的数组（动态静态都可以）</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="数组算法：双指针"><a href="#数组算法：双指针" class="headerlink" title="数组算法：双指针"></a>数组算法：双指针</h2><p>双指针，就是<strong>定义两个指针在指定的数组&#x2F;链表上游走，在做一些自定义的操作</strong>。 如果要细分的话，双指针有 左右指针 ， 快慢指针 ， 滑动窗口 三种类型，一般时间复杂度为O (n)，空间复杂度为O (1),这就是双指针的精妙之处。</p>
+<p>不用再去创建一个数组。</p>
+<p>案例1：在数组中移除对应对应的数(val)——快慢指针判断有条件判断指针2是否前进</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">removeElementcorrection</span><span class="params">(<span class="type">int</span> [] nums , <span class="type">int</span> val)</span> &#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">      双指针思想</span></span><br><span class="line"><span class="comment">      个人理解： 两个指针都会遍历数组 一个用来比较是否是要移除的元素 第二个指针相当于新建一个数组：大小和原来一样</span></span><br><span class="line"><span class="comment">      并且如果是符合这个数组（即不等于要被移除的数）那么第二个指针就会自增1 那么有多少个数符合那么第二个指针就会有多长</span></span><br><span class="line"><span class="comment">      最坏的情况就是这个数组没有要移除的数那么两个指针都会遍历数组一遍</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">len</span> <span class="operator">=</span> nums.length;</span><br><span class="line">    <span class="type">int</span> <span class="variable">left</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">left1</span> <span class="operator">=</span> <span class="number">0</span> ; left1 &lt; len ; left1++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (nums[left1] != val) &#123;</span><br><span class="line">            nums[left] = nums[left1];</span><br><span class="line">            left++;    <span class="comment">//即完成移除元素 也记录了符合的数的个数</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> left;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/%E5%8F%8C%E6%8C%87%E9%92%88.png" alt="双指针经典案例"></p>
+<p>案例2：类似双指针——两个数组双指针(快慢指针)</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> *一个升序数组要求加入一个元素后还是升序</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"> <span class="keyword">private</span> <span class="keyword">static</span> <span class="type">int</span>[] paixu(<span class="type">int</span>[] arr, Scanner sc) &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">sum</span> <span class="operator">=</span> sc.nextInt();</span><br><span class="line">        <span class="type">int</span> <span class="variable">len</span> <span class="operator">=</span> arr.length;</span><br><span class="line">        <span class="type">int</span> <span class="variable">index</span> <span class="operator">=</span> -<span class="number">1</span>;</span><br><span class="line">        <span class="comment">//  1、第一步找位置</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (sum &lt;= arr[i]) &#123;</span><br><span class="line">                index = i;</span><br><span class="line">                <span class="keyword">break</span>;    <span class="comment">//关键不然一直要么是最后一个要么是倒数第二个</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (index==-<span class="number">1</span>) &#123;</span><br><span class="line">            index = len;   <span class="comment">//没有找到位置那就是最后一个啦</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//  2、数组扩容</span></span><br><span class="line">        <span class="type">int</span> [] Newarr = <span class="keyword">new</span> <span class="title class_">int</span>[len+<span class="number">1</span>];</span><br><span class="line">        <span class="comment">// 3、 类似双指针  最外层指针在扩容数组上 里面一层在旧数组上</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>,j = <span class="number">0</span>; i&lt; Newarr.length; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (index != i) &#123;</span><br><span class="line">                Newarr [i] = arr [j];</span><br><span class="line">                j++;  <span class="comment">//非常的关键一步很牛叉的思想</span></span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;   <span class="comment">// else 就说明是要插入的位置</span></span><br><span class="line">                 Newarr [i] = sum;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> Newarr;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>这是两个指针在不同数组上的应用，最明显的作用是减少代码量。<code>j++</code>这个很关键。</p>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Javascript笔记随笔</title>
+    <url>/2022/04/20/Javascript%E7%AC%94%E8%AE%B01/</url>
+    <content><![CDATA[<hr>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>Javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MyFirst-ChromeExtention</title>
+    <url>/2022/05/01/MyFirst-ChromeExtention/</url>
+    <content><![CDATA[<hr>
+<h1 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h1><p>该chrome主要有两方面功能和两种展现方式: <font color="#f89996"><strong>popup</strong> </font>和<font color="#f89996"><strong>option</strong></font>。<br>成功安装时，会跳转到B站<strong>A-SOUL_Official</strong>个人空间  </p>
+<h2 id="popop"><a href="#popop" class="headerlink" title="popop"></a>popop</h2><p>将插件置顶后<font color="#f89996"><strong>左键</strong></font>单击调用出popup窗口，可以看见有一个按钮和输入框: 点击按钮后会根据当前按钮<br>的颜色来改变当前浏览器的<font color="#f89996"><strong>背景颜色</strong></font>。 输入框是记录键盘输入的文字，并在上面<font color="#f89996"><strong>红色小条</strong></font>中显示。<br>注意: 关闭popup页面后输入的文字不会被保存。</p>
+<h2 id="option"><a href="#option" class="headerlink" title="option"></a>option</h2><p>右键置顶的插件，并选中<font color="#f89996"><strong>选项</strong></font>跳转到选项页面，其中有五个按钮供选择，来更改popup页面中的按钮颜色。  </p>
+<h2 id="图片更改"><a href="#图片更改" class="headerlink" title="图片更改"></a>图片更改</h2><p>在根目录中找到<code>popup.html</code>文件，找到<code>img</code>更改<font color="#f89996"><strong>popup</strong></font>窗口对应的图片<br>相应的找到<code>option.html</code>文件，更改<font color="#f89996"><strong>option</strong></font>窗口对应的图片</p>
+<hr>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>Chrome Extention</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2022/04/20/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span>     //创建新的文章</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server          //本地服务器</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate          //搭建</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy            //部署生成 发布到GitHub</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h3 id="hexo-文章可配置属性"><a href="#hexo-文章可配置属性" class="headerlink" title="hexo 文章可配置属性"></a>hexo 文章可配置属性</h3><p><img src="/images/hexo%E6%96%87%E7%AB%A0%E5%8F%AF%E9%85%8D%E7%BD%AE%E5%B1%9E%E6%80%A7.png" alt="hexo文章可配置属性"></p>
+]]></content>
+      <tags>
+        <tag>教程</tag>
+      </tags>
+  </entry>
+</search>
