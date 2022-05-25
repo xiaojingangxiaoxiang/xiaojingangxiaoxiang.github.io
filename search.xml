@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Javascript笔记随笔</title>
+    <url>/2022/04/20/Javascript%E7%AC%94%E8%AE%B01/</url>
+    <content><![CDATA[<hr>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>Javascript</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Java基础复习</title>
     <url>/2022/05/12/Java%E5%9F%BA%E7%A1%80%E5%A4%8D%E4%B9%A0/</url>
     <content><![CDATA[<hr>
@@ -73,18 +85,6 @@
       </categories>
       <tags>
         <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Javascript笔记随笔</title>
-    <url>/2022/04/20/Javascript%E7%AC%94%E8%AE%B01/</url>
-    <content><![CDATA[<hr>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-      <tags>
-        <tag>Javascript</tag>
       </tags>
   </entry>
   <entry>
