@@ -13,28 +13,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2022/04/20/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span>     //创建新的文章</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server          //本地服务器</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate          //搭建</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy            //部署生成 发布到GitHub</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-<h3 id="hexo-文章可配置属性"><a href="#hexo-文章可配置属性" class="headerlink" title="hexo 文章可配置属性"></a>hexo 文章可配置属性</h3><p><img src="/images/hexo%E6%96%87%E7%AB%A0%E5%8F%AF%E9%85%8D%E7%BD%AE%E5%B1%9E%E6%80%A7.png" alt="hexo文章可配置属性"></p>
-]]></content>
-      <tags>
-        <tag>教程</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Java基础复习</title>
     <url>/2022/05/12/Java%E5%9F%BA%E7%A1%80%E5%A4%8D%E4%B9%A0/</url>
     <content><![CDATA[<hr>
@@ -101,12 +79,42 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> *一个升序数组要求加入一个元素后还是升序</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"> <span class="keyword">private</span> <span class="keyword">static</span> <span class="type">int</span>[] paixu(<span class="type">int</span>[] arr, Scanner sc) &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">sum</span> <span class="operator">=</span> sc.nextInt();</span><br><span class="line">        <span class="type">int</span> <span class="variable">len</span> <span class="operator">=</span> arr.length;</span><br><span class="line">        <span class="type">int</span> <span class="variable">index</span> <span class="operator">=</span> -<span class="number">1</span>;</span><br><span class="line">        <span class="comment">//  1、第一步找位置</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (sum &lt;= arr[i]) &#123;</span><br><span class="line">                index = i;</span><br><span class="line">                <span class="keyword">break</span>;    <span class="comment">//关键不然一直要么是最后一个要么是倒数第二个</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (index==-<span class="number">1</span>) &#123;</span><br><span class="line">            index = len;   <span class="comment">//没有找到位置那就是最后一个啦</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//  2、数组扩容</span></span><br><span class="line">        <span class="type">int</span> [] Newarr = <span class="keyword">new</span> <span class="title class_">int</span>[len+<span class="number">1</span>];</span><br><span class="line">        <span class="comment">// 3、 类似双指针  最外层指针在扩容数组上 里面一层在旧数组上</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>,j = <span class="number">0</span>; i&lt; Newarr.length; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (index != i) &#123;</span><br><span class="line">                Newarr [i] = arr [j];</span><br><span class="line">                j++;  <span class="comment">//非常的关键一步很牛叉的思想</span></span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;   <span class="comment">// else 就说明是要插入的位置</span></span><br><span class="line">                 Newarr [i] = sum;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> Newarr;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
 <p>这是两个指针在不同数组上的应用，最明显的作用是减少代码量。<code>j++</code>这个很关键。</p>
+<h2 id="一些数组排序"><a href="#一些数组排序" class="headerlink" title="一些数组排序"></a>一些数组排序</h2><h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><p>思想：总体像是水中小泡一个个有顺序（按一定的<strong>规则</strong>）冒出</p>
+<p>​			第一次排序，找出数组中最大或者最小的数。</p>
+<p>​		    第二次排序，将第一次排序找出的最大值或者最大值排除，在剩下的数组中找出最大或者最小的</p>
+<p>​            ~~</p>
+<p>排序次数&#x3D; n-1， n是数组中元素总个数。</p>
+<p>代码实现：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> [] arr =<span class="keyword">new</span> <span class="title class_">int</span>[]&#123;<span class="number">2</span>，<span class="number">34</span>，<span class="number">67</span>，<span class="number">7845</span>，<span class="number">341</span>，<span class="number">213</span>&#125;;</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; arr.length; i++) &#123;     <span class="comment">//两层嵌套循环实现每次i++ 。`j &lt; arr.length-i-1`  j的上限减一遍历范围减一 那么就相当于排好一个数</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; arr.length-i-<span class="number">1</span>; j++) &#123;  </span><br><span class="line">                <span class="keyword">if</span> (arr[j] &lt; arr[j+<span class="number">1</span>]) &#123;</span><br><span class="line">                    <span class="type">int</span> <span class="variable">temp</span> <span class="operator">=</span> arr[j+<span class="number">1</span>];         <span class="comment">//规则：这里是倒叙 当然也可以是升序~~等</span></span><br><span class="line">                    arr[j+<span class="number">1</span>] = arr[j]; </span><br><span class="line">                    arr[j] = temp;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <categories>
         <category>学习笔记</category>
       </categories>
       <tags>
         <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2022/04/20/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span>     //创建新的文章</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server          //本地服务器</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate          //搭建</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy            //部署生成 发布到GitHub</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h3 id="hexo-文章可配置属性"><a href="#hexo-文章可配置属性" class="headerlink" title="hexo 文章可配置属性"></a>hexo 文章可配置属性</h3><p><img src="/images/hexo%E6%96%87%E7%AB%A0%E5%8F%AF%E9%85%8D%E7%BD%AE%E5%B1%9E%E6%80%A7.png" alt="hexo文章可配置属性"></p>
+]]></content>
+      <tags>
+        <tag>教程</tag>
       </tags>
   </entry>
   <entry>
