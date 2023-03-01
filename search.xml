@@ -46,30 +46,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Java重载和重写的一些小细节</title>
-    <url>/2023/02/24/Java%E9%87%8D%E8%BD%BD%E5%92%8C%E9%87%8D%E5%86%99%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8F%E7%BB%86%E8%8A%82/</url>
-    <content><![CDATA[<h2 id="重写"><a href="#重写" class="headerlink" title="重写"></a>重写</h2><p>Java作为纯面向对象的语言，继承是再熟悉不过了。不过还是有一些细节在平时不回去注意，用到的场景也比较少。也是随着框架技术的成熟，解耦越来越强。许多底层代码都很少再去注意。</p>
-<h3 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h3><p>Java修饰符如下图所示:</p>
-<p><img src="/images/xiushifu.png" alt="在这里插入图片描述"></p>
-<p>Java子类重写父类的方法，修饰符范围扩大范围，即降低限制。可以这样理解，子类是对父类的拓展和增强。所以修饰扩大能更好使得父类的方法变强。</p>
-<h3 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h3><p>子类的重写只能抛出范围更小的异常，还是子类方法是对父类的增强， 应该异常要不父类小。</p>
-<h3 id="返回类型"><a href="#返回类型" class="headerlink" title="返回类型"></a>返回类型</h3><p>返回类型应该更强精确和范围小(返回的类型是原来的子类或者更小类型等)。</p>
-<h3 id="发生阶段"><a href="#发生阶段" class="headerlink" title="发生阶段"></a>发生阶段</h3><p>运行期，为什么是运行期。如果没有@Override注释。你即使在子类写了不符合规则的继承方法，也不会报错。而@Override这个注释就是帮你检查和提高可读性。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">protected</span> Object <span class="title function_">f1</span><span class="params">()</span> <span class="keyword">throws</span> Exception&#123;</span><br><span class="line">    </span><br><span class="line">        System.out.println(<span class="string">&quot;父类方法&quot;</span>);</span><br><span class="line">    </span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">public</span> String <span class="title function_">f1</span><span class="params">()</span> <span class="keyword">throws</span> IOException&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>可以通过举例来记忆。比如:Object的Clone方法，访问修饰符是Protected，需要子类重写，并将访问修饰符改成public，才能正常使用。</p>
-<h2 id="重载"><a href="#重载" class="headerlink" title="重载"></a>重载</h2><h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>重载必须是在同一个类中，方法名必须相同，参数列表必须更改，可以是可变数组类型。相较于重写，异常、访问修饰符、返回类型都没有做严格要求可修改和不修改都可。<font color="red">发生阶段</font>:编译期。</p>
-<h2 id="对比"><a href="#对比" class="headerlink" title="对比"></a>对比</h2><p><img src="/images/image-20230301002202227.png" alt="image-20230301002202227"></p>
-]]></content>
-      <categories>
-        <category>复习</category>
-      </categories>
-      <tags>
-        <tag>Java复习</tag>
-        <tag>细节</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Java变量何时需要初始化</title>
     <url>/2022/11/15/Java%E5%8F%98%E9%87%8F%E4%BD%95%E6%97%B6%E9%9C%80%E8%A6%81%E5%88%9D%E5%A7%8B%E5%8C%96/</url>
     <content><![CDATA[<h1 id="不用显式初始化的变量"><a href="#不用显式初始化的变量" class="headerlink" title="不用显式初始化的变量"></a>不用显式初始化的变量</h1><h2 id="JVM自动分配默认值"><a href="#JVM自动分配默认值" class="headerlink" title="JVM自动分配默认值"></a>JVM自动分配默认值</h2><p>对于类的成员变量，不管有没有对他进行显式初始化，JVM会给他默认值</p>
@@ -91,6 +67,30 @@
         <tag>Java</tag>
         <tag>变量</tag>
         <tag>初始化</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java重载和重写的一些小细节</title>
+    <url>/2023/02/24/Java%E9%87%8D%E8%BD%BD%E5%92%8C%E9%87%8D%E5%86%99%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8F%E7%BB%86%E8%8A%82/</url>
+    <content><![CDATA[<h2 id="重写"><a href="#重写" class="headerlink" title="重写"></a>重写</h2><p>Java作为纯面向对象的语言，继承是再熟悉不过了。不过还是有一些细节在平时不回去注意，用到的场景也比较少。也是随着框架技术的成熟，解耦越来越强。许多底层代码都很少再去注意。</p>
+<h3 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h3><p>Java修饰符如下图所示:</p>
+<p><img src="/images/xiushifu.png" alt="在这里插入图片描述"></p>
+<p>Java子类重写父类的方法，修饰符范围扩大范围，即降低限制。可以这样理解，子类是对父类的拓展和增强。所以修饰扩大能更好使得父类的方法变强。</p>
+<h3 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h3><p>子类的重写只能抛出范围更小的异常，还是子类方法是对父类的增强， 应该异常要不父类小。</p>
+<h3 id="返回类型"><a href="#返回类型" class="headerlink" title="返回类型"></a>返回类型</h3><p>返回类型应该更强精确和范围小(返回的类型是原来的子类或者更小类型等)。</p>
+<h3 id="发生阶段"><a href="#发生阶段" class="headerlink" title="发生阶段"></a>发生阶段</h3><p>运行期，为什么是运行期。如果没有@Override注释。你即使在子类写了不符合规则的继承方法，也不会报错。而@Override这个注释就是帮你检查和提高可读性。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">protected</span> Object <span class="title function_">f1</span><span class="params">()</span> <span class="keyword">throws</span> Exception&#123;</span><br><span class="line">    </span><br><span class="line">        System.out.println(<span class="string">&quot;父类方法&quot;</span>);</span><br><span class="line">    </span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">public</span> String <span class="title function_">f1</span><span class="params">()</span> <span class="keyword">throws</span> IOException&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>可以通过举例来记忆。比如:Object的Clone方法，访问修饰符是Protected，需要子类重写，并将访问修饰符改成public，才能正常使用。</p>
+<h2 id="重载"><a href="#重载" class="headerlink" title="重载"></a>重载</h2><h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>重载必须是在同一个类中，方法名必须相同，参数列表必须更改，可以是可变数组类型。相较于重写，异常、访问修饰符、返回类型都没有做严格要求可修改和不修改都可。<font color="red">发生阶段</font>:编译期。</p>
+<h2 id="对比"><a href="#对比" class="headerlink" title="对比"></a>对比</h2><p><img src="/images/image-20230301002202227.png" alt="image-20230301002202227"></p>
+]]></content>
+      <categories>
+        <category>复习</category>
+      </categories>
+      <tags>
+        <tag>Java复习</tag>
+        <tag>细节</tag>
       </tags>
   </entry>
   <entry>
@@ -237,6 +237,20 @@
       </tags>
   </entry>
   <entry>
+    <title>SpringMVC视图源码</title>
+    <url>/2022/11/14/SpringMVC%E8%A7%86%E5%9B%BE%E6%BA%90%E7%A0%81/</url>
+    <content><![CDATA[<p><img src="/images/SpringMVC%E8%A7%86%E5%9B%BE%E6%BA%90%E7%A0%81.png" alt="SpringMVC视图源码"></p>
+<h2 id="补充，当视图名称没有前缀的时候，会被配置文件中配置的视图解析器解析。这里配置的是Thymeleaf。所以就被ThymeleafView解析。"><a href="#补充，当视图名称没有前缀的时候，会被配置文件中配置的视图解析器解析。这里配置的是Thymeleaf。所以就被ThymeleafView解析。" class="headerlink" title="补充，当视图名称没有前缀的时候，会被配置文件中配置的视图解析器解析。这里配置的是Thymeleaf。所以就被ThymeleafView解析。"></a>补充，当视图名称没有前缀的时候，会被配置文件中配置的视图解析器解析。这里配置的是Thymeleaf。所以就被ThymeleafView解析。</h2>]]></content>
+      <categories>
+        <category>整理</category>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>SpringMVC</tag>
+        <tag>源码</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>SpringMVC向域对象共享数据的5种方法</title>
     <url>/2022/12/10/SpringMVC%E5%90%91%E5%9F%9F%E5%AF%B9%E8%B1%A1%E5%85%B1%E4%BA%AB%E6%95%B0%E6%8D%AE%E7%9A%845%E7%A7%8D%E6%96%B9%E6%B3%95/</url>
     <content><![CDATA[<p>参考文章：<a href="https://blog.csdn.net/m0_49499183/article/details/119776961">https://blog.csdn.net/m0_49499183/article/details/119776961</a></p>
@@ -302,57 +316,6 @@
       <tags>
         <tag>Spring</tag>
         <tag>事务</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>SpringMVC视图源码</title>
-    <url>/2022/11/14/SpringMVC%E8%A7%86%E5%9B%BE%E6%BA%90%E7%A0%81/</url>
-    <content><![CDATA[<p><img src="/images/SpringMVC%E8%A7%86%E5%9B%BE%E6%BA%90%E7%A0%81.png" alt="SpringMVC视图源码"></p>
-<h2 id="补充，当视图名称没有前缀的时候，会被配置文件中配置的视图解析器解析。这里配置的是Thymeleaf。所以就被ThymeleafView解析。"><a href="#补充，当视图名称没有前缀的时候，会被配置文件中配置的视图解析器解析。这里配置的是Thymeleaf。所以就被ThymeleafView解析。" class="headerlink" title="补充，当视图名称没有前缀的时候，会被配置文件中配置的视图解析器解析。这里配置的是Thymeleaf。所以就被ThymeleafView解析。"></a>补充，当视图名称没有前缀的时候，会被配置文件中配置的视图解析器解析。这里配置的是Thymeleaf。所以就被ThymeleafView解析。</h2>]]></content>
-      <categories>
-        <category>整理</category>
-        <category>笔记</category>
-      </categories>
-      <tags>
-        <tag>SpringMVC</tag>
-        <tag>源码</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>String框架--AOP原理</title>
-    <url>/2022/10/30/String%E6%A1%86%E6%9E%B6-AOP%E5%8E%9F%E7%90%86/</url>
-    <content><![CDATA[<h1 id="AOP-简介"><a href="#AOP-简介" class="headerlink" title="AOP 简介"></a>AOP 简介</h1><p>AOP(Aspect Oriented Programming)意为面向切面变成，是OOP(Object Oriented Programming)面向对象编程的”进化版”。面向对象编程在拓展功能时，需要改变源码会影响到原有的功能。而AOP则是横向的在不改变原有功能(源码)的基础上增加新功能。能够对业务逻辑的各个部分进行隔离，从而使得业务逻辑各部分之间的耦合度降低，提高程序的可重用性，同时提高了开发的效率。</p>
-<h1 id="底层原理"><a href="#底层原理" class="headerlink" title="底层原理"></a>底层原理</h1><p>AOP底层使用的是动态代理机制。分两种情况1、是由接口。2、没有接口</p>
-<p>1、有接口，使用JDK动态代理</p>
-<p><img src="/images/image-20221030203439949.png" alt="image-20221030203439949"></p>
-<p>2、没有接口，使用CGLB动态代理</p>
-<p><img src="/images/image-20221030203901539.png" alt="image-20221030203901539"></p>
-<p>具体JDK动态代理实现看笔记，动态代理在reflect包下。当然也使用了反射机制。</p>
-<h2 id="那么使用动态代理的好处是什么？"><a href="#那么使用动态代理的好处是什么？" class="headerlink" title="那么使用动态代理的好处是什么？"></a>那么使用动态代理的好处是什么？</h2><p>代理故名思意，让代理对象完成对业务逻辑完成。我们在要增强业务逻辑的时候只需要改变增强代理对象的业务逻辑。实现了开闭原则(OCP) Open Close Principle，对扩展是开放的，对修改是关闭的。降低耦合度。</p>
-<h2 id="动态代理和静态代理"><a href="#动态代理和静态代理" class="headerlink" title="动态代理和静态代理"></a>动态代理和静态代理</h2><p>所谓静态也就是在程序运行前就已经存在代理类的字节码文件，代理类和委托类的关系在运行前就确定了。 字节码不就是.class文件。在Java里面一提到动态，就是反射机制了。动态代理类的源码是在程序运行期间由JVM根据反射等机制动态的生成，所以不存在代理类的字节码文件。代理类和委托类的关系是在程序运行时确定。 好处也显然易见，相较静态代理动态代理降低代码之间耦合度的能力更强。</p>
-<h1 id="AOP术语"><a href="#AOP术语" class="headerlink" title="AOP术语"></a>AOP术语</h1><p>1、连接点</p>
-<p>类里面哪些方法可以被增强，这些方法被称为连接点。</p>
-<p>2、切入点</p>
-<p>实际被真正增强的方法，称为切入点。有切入点表达式指定</p>
-<p>3、通知</p>
-<p>1）实际增强的逻辑部分称为通知(增强);</p>
-<p>2）通知的多种类型</p>
-<p>​	前置通知</p>
-<p>​	后置通知</p>
-<p>​	环绕通知</p>
-<p>​	异常通知</p>
-<p>​	最终通知</p>
-<p>4、切面</p>
-<p>把通知应用到切入点过程</p>
-<p>其余XML配置文件，注解开发具体看笔记。</p>
-]]></content>
-      <categories>
-        <category>课程小结</category>
-        <category>面向切面编程</category>
-      </categories>
-      <tags>
-        <tag>Spring</tag>
-        <tag>AOP</tag>
       </tags>
   </entry>
   <entry>
@@ -2780,6 +2743,43 @@
       </tags>
   </entry>
   <entry>
+    <title>String框架--AOP原理</title>
+    <url>/2022/10/30/String%E6%A1%86%E6%9E%B6-AOP%E5%8E%9F%E7%90%86/</url>
+    <content><![CDATA[<h1 id="AOP-简介"><a href="#AOP-简介" class="headerlink" title="AOP 简介"></a>AOP 简介</h1><p>AOP(Aspect Oriented Programming)意为面向切面变成，是OOP(Object Oriented Programming)面向对象编程的”进化版”。面向对象编程在拓展功能时，需要改变源码会影响到原有的功能。而AOP则是横向的在不改变原有功能(源码)的基础上增加新功能。能够对业务逻辑的各个部分进行隔离，从而使得业务逻辑各部分之间的耦合度降低，提高程序的可重用性，同时提高了开发的效率。</p>
+<h1 id="底层原理"><a href="#底层原理" class="headerlink" title="底层原理"></a>底层原理</h1><p>AOP底层使用的是动态代理机制。分两种情况1、是由接口。2、没有接口</p>
+<p>1、有接口，使用JDK动态代理</p>
+<p><img src="/images/image-20221030203439949.png" alt="image-20221030203439949"></p>
+<p>2、没有接口，使用CGLB动态代理</p>
+<p><img src="/images/image-20221030203901539.png" alt="image-20221030203901539"></p>
+<p>具体JDK动态代理实现看笔记，动态代理在reflect包下。当然也使用了反射机制。</p>
+<h2 id="那么使用动态代理的好处是什么？"><a href="#那么使用动态代理的好处是什么？" class="headerlink" title="那么使用动态代理的好处是什么？"></a>那么使用动态代理的好处是什么？</h2><p>代理故名思意，让代理对象完成对业务逻辑完成。我们在要增强业务逻辑的时候只需要改变增强代理对象的业务逻辑。实现了开闭原则(OCP) Open Close Principle，对扩展是开放的，对修改是关闭的。降低耦合度。</p>
+<h2 id="动态代理和静态代理"><a href="#动态代理和静态代理" class="headerlink" title="动态代理和静态代理"></a>动态代理和静态代理</h2><p>所谓静态也就是在程序运行前就已经存在代理类的字节码文件，代理类和委托类的关系在运行前就确定了。 字节码不就是.class文件。在Java里面一提到动态，就是反射机制了。动态代理类的源码是在程序运行期间由JVM根据反射等机制动态的生成，所以不存在代理类的字节码文件。代理类和委托类的关系是在程序运行时确定。 好处也显然易见，相较静态代理动态代理降低代码之间耦合度的能力更强。</p>
+<h1 id="AOP术语"><a href="#AOP术语" class="headerlink" title="AOP术语"></a>AOP术语</h1><p>1、连接点</p>
+<p>类里面哪些方法可以被增强，这些方法被称为连接点。</p>
+<p>2、切入点</p>
+<p>实际被真正增强的方法，称为切入点。有切入点表达式指定</p>
+<p>3、通知</p>
+<p>1）实际增强的逻辑部分称为通知(增强);</p>
+<p>2）通知的多种类型</p>
+<p>​	前置通知</p>
+<p>​	后置通知</p>
+<p>​	环绕通知</p>
+<p>​	异常通知</p>
+<p>​	最终通知</p>
+<p>4、切面</p>
+<p>把通知应用到切入点过程</p>
+<p>其余XML配置文件，注解开发具体看笔记。</p>
+]]></content>
+      <categories>
+        <category>课程小结</category>
+        <category>面向切面编程</category>
+      </categories>
+      <tags>
+        <tag>Spring</tag>
+        <tag>AOP</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>final关键字与引用类型</title>
     <url>/2022/10/19/final%E5%85%B3%E9%94%AE%E5%AD%97%E4%B8%8E%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B/</url>
     <content><![CDATA[<h1 id="问题引出"><a href="#问题引出" class="headerlink" title="问题引出"></a>问题引出</h1><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">StringBuilder</span> <span class="variable">stringBuilder</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuilder</span>(<span class="string">&quot;test&quot;</span>);</span><br><span class="line">        <span class="keyword">final</span> <span class="type">StringBuilder</span> <span class="variable">final_</span> <span class="operator">=</span> stringBuilder;</span><br><span class="line">        stringBuilder.append(<span class="string">&quot;haha&quot;</span>);</span><br><span class="line">        System.out.println(final_); <span class="comment">//输出testhaha</span></span><br><span class="line">        <span class="comment">//final修饰数组，但是数组是引用的，数据存在堆中，栈有一个引用指向他</span></span><br><span class="line">        <span class="keyword">final</span> <span class="type">int</span> [] ints = <span class="keyword">new</span> <span class="title class_">int</span>[] &#123;<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>&#125;;</span><br><span class="line">        <span class="comment">//final修饰引用类型。只是引用不可变</span></span><br><span class="line">        <span class="type">int</span> [] ints1 = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">3</span>];</span><br><span class="line">        <span class="comment">//ints = ints1; //报错</span></span><br><span class="line">        <span class="comment">//但是可以更改被引用的数据</span></span><br><span class="line">        ints[<span class="number">2</span>] = <span class="number">10</span>;</span><br><span class="line">        System.out.println(Arrays.toString(ints)); <span class="comment">//输出1，2，10</span></span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
@@ -2864,27 +2864,6 @@
       </tags>
   </entry>
   <entry>
-    <title>json、xml、Ajax简单理解</title>
-    <url>/2022/11/30/json%E3%80%81xml%E3%80%81Ajax%E7%AE%80%E5%8D%95%E7%90%86%E8%A7%A3/</url>
-    <content><![CDATA[<h1 id="JSON和XML"><a href="#JSON和XML" class="headerlink" title="JSON和XML"></a>JSON和XML</h1><p>JSON是Javascript的一种数据格式，全称JSON（ JavaScript Object Notation, JS对象简谱）是一种轻量级的数据交换格式。XML也是一种数据交互格式。XML (<strong>Extensible Markup Language</strong>) 是一种类似于 HTML 的标记语言，但是 XML 没有使用预定义的标记。XML较多用于配置文件，JSON较多用户数据交互格式。</p>
-<p>因为JSON数据量少，简单。</p>
-<p><img src="/images/image-20221130105628681.png" alt="image-20221130105628681"></p>
-<h1 id="两者解析能力"><a href="#两者解析能力" class="headerlink" title="两者解析能力"></a>两者解析能力</h1><p>XML解析使用dom4j、xpath。dom就是一个文档，和html很像，使用文档解析。解析的时候将整个XML文件当作document，先读根标签。根标签就是类似于HTML中的HTML标签，是最外层的标签。然后获取子标签，一层一层的解析。</p>
-<p>JSON两种格式：1、一种对象。2、一种数组。获取方式：对象： 使用对象.键获取值。数组for循环获取。</p>
-<p>对象是放在{}中以键值对的形式存储，而数组是[]存储的是一个一个数据。</p>
-<p>Java实体类和map转换成json对象就是JSON对象，list之类的就是JSON数组</p>
-<h1 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h1><p>Ajax 的全称是asynchronous javascript and xml</p>
-<p>Ajax是一种用于创建快速动态网页的技术，使用JavaScript操作异步对象XMLHttpRequest，和服务器交换使用json数据格式。通过在后台与服务器进行少量数据交换，前后端数据交互。</p>
-<p>简单来说：可以在页面不刷新就实现和服务器数据交互。</p>
-]]></content>
-      <categories>
-        <category>数据交互格式</category>
-      </categories>
-      <tags>
-        <tag>JavaWeb</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>代码执行顺序--静态代码块、构造方法等及子父类相关问题</title>
     <url>/2022/07/30/%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F-%E9%9D%99%E6%80%81%E4%BB%A3%E7%A0%81%E5%9D%97%E3%80%81%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95%E7%AD%89%E5%8F%8A%E5%AD%90%E7%88%B6%E7%B1%BB%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<h1 id="问题引出"><a href="#问题引出" class="headerlink" title="问题引出"></a><font color="2474B5">问题引出</font></h1><p>在做题时遇到静态代码块和其他数据加载先后顺序问题，平时写程序没有遇到。所以在这总结一下。</p>
@@ -2927,45 +2906,24 @@
       </tags>
   </entry>
   <entry>
-    <title>关于子父类初始化问题</title>
-    <url>/2022/08/11/%E5%85%B3%E4%BA%8E%E5%AD%90%E5%A4%AB%E7%B1%BB%E5%88%9D%E5%A7%8B%E5%8C%96%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<p>虚拟机规范严格规定了有且只有五种情况必须立即对类进行“初始化”</p>
-<ol>
-<li>使用new关键字<font color="ED5A65">实例化对象</font>的时候、读取或设置一个类的<font color="ED5A65">静态字段</font>的时候，已经调用一个类的<font color="ED5A65">静态方法</font>的时候。（静态加载）</li>
-<li>使用java.lang.reflect包的方法对类进行<font color="ED5A65">反射调用</font>的时候，如果类没有初始化，则需要先触发其初始化。<font color="ED5A65">（动态加载）</font></li>
-<li>当初始化一个类的时候，如果发现其<font color="ED5A65">父类没有被初始化</font>就会<font color="ED5A65">先初始化</font>它的父类。(静态加载)</li>
-<li>当虚拟机启动的时候，用户需要指定一个要执行的主类<font color="ED5A65">（就是包含main()方法的那个类）</font>，虚拟机会先初始化这个类；</li>
-<li>使用<font color="ED5A65">Jdk1.7动态语言</font>支持的时候的一些情况。</li>
-</ol>
-<p><font color="ED5A65">反射动态加载具体情况在Java文章中有提及。</font></p>
-<p>除了这五种之外，其他的所有引用类的方式都不会触发初始化，称为被动引用。下面是被动引用的三个例子：</p>
-<p>\1.   通过子类引用父类的的静态字段，不会导致子类初始化。</p>
-<p>\2.   通过数组定义来引用类，不会触发此类的初始化。</p>
-<p>public class NotInitialization { </p>
-<p>  public static void main(String[] args) { </p>
-<p>​    SuperClass[] sca &#x3D; new SuperClass[10]; </p>
-<p>  }  </p>
-<p>}</p>
-<p>\3.   常量在编译阶段会存入调用类的常量池中，本质上没有直接引用到定义常量的类，因此不会触发定义常量的类的初始化。</p>
-<p>public class ConstClass { </p>
-<p>  static { </p>
-<p>​    System.out.println(“ConstClass init!”); </p>
-<p>  } </p>
-<p>  public static final int value &#x3D; 123; </p>
-<p>} </p>
-<p>public class NotInitialization{ </p>
-<p>  public static void main(String[] args) { </p>
-<p>​    int x &#x3D; ConstClass.value; </p>
-<p>  } </p>
-<p>} </p>
-<p>上述代码运行之后，也没有输出“ConstClass init！”，这是因为虽然在Java源码中引用了ConstClass类中的常量HELLOWORLD，但其实在编译阶段通过常量传播优化，已经将此常量的值“hello world”存储到了NotInitialization类的常量池中，以后NotInitialization对常量ConstClass.HELLOWORLD的引用实际都被转化为NotInitialization类对自身常量池的引用了。也就是说，实际上NotInitialization的Class文件之中并没有ConstClass类的符号引用入口，这两个类在编译成Class之后就不存在任何联系了。参考资料：<a href="https://blog.csdn.net/qq_22771739/article/details/86348962">https://blog.csdn.net/qq_22771739/article/details/86348962</a></p>
-<p><img src="/images/image-20220811195944140.png" alt="image-20220811195944140"></p>
+    <title>json、xml、Ajax简单理解</title>
+    <url>/2022/11/30/json%E3%80%81xml%E3%80%81Ajax%E7%AE%80%E5%8D%95%E7%90%86%E8%A7%A3/</url>
+    <content><![CDATA[<h1 id="JSON和XML"><a href="#JSON和XML" class="headerlink" title="JSON和XML"></a>JSON和XML</h1><p>JSON是Javascript的一种数据格式，全称JSON（ JavaScript Object Notation, JS对象简谱）是一种轻量级的数据交换格式。XML也是一种数据交互格式。XML (<strong>Extensible Markup Language</strong>) 是一种类似于 HTML 的标记语言，但是 XML 没有使用预定义的标记。XML较多用于配置文件，JSON较多用户数据交互格式。</p>
+<p>因为JSON数据量少，简单。</p>
+<p><img src="/images/image-20221130105628681.png" alt="image-20221130105628681"></p>
+<h1 id="两者解析能力"><a href="#两者解析能力" class="headerlink" title="两者解析能力"></a>两者解析能力</h1><p>XML解析使用dom4j、xpath。dom就是一个文档，和html很像，使用文档解析。解析的时候将整个XML文件当作document，先读根标签。根标签就是类似于HTML中的HTML标签，是最外层的标签。然后获取子标签，一层一层的解析。</p>
+<p>JSON两种格式：1、一种对象。2、一种数组。获取方式：对象： 使用对象.键获取值。数组for循环获取。</p>
+<p>对象是放在{}中以键值对的形式存储，而数组是[]存储的是一个一个数据。</p>
+<p>Java实体类和map转换成json对象就是JSON对象，list之类的就是JSON数组</p>
+<h1 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h1><p>Ajax 的全称是asynchronous javascript and xml</p>
+<p>Ajax是一种用于创建快速动态网页的技术，使用JavaScript操作异步对象XMLHttpRequest，和服务器交换使用json数据格式。通过在后台与服务器进行少量数据交换，前后端数据交互。</p>
+<p>简单来说：可以在页面不刷新就实现和服务器数据交互。</p>
 ]]></content>
       <categories>
-        <category>刷题笔记</category>
+        <category>数据交互格式</category>
       </categories>
       <tags>
-        <tag>Java</tag>
+        <tag>JavaWeb</tag>
       </tags>
   </entry>
   <entry>
@@ -3290,6 +3248,68 @@
       </tags>
   </entry>
   <entry>
+    <title>关于子父类初始化问题</title>
+    <url>/2022/08/11/%E5%85%B3%E4%BA%8E%E5%AD%90%E5%A4%AB%E7%B1%BB%E5%88%9D%E5%A7%8B%E5%8C%96%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<p>虚拟机规范严格规定了有且只有五种情况必须立即对类进行“初始化”</p>
+<ol>
+<li>使用new关键字<font color="ED5A65">实例化对象</font>的时候、读取或设置一个类的<font color="ED5A65">静态字段</font>的时候，已经调用一个类的<font color="ED5A65">静态方法</font>的时候。（静态加载）</li>
+<li>使用java.lang.reflect包的方法对类进行<font color="ED5A65">反射调用</font>的时候，如果类没有初始化，则需要先触发其初始化。<font color="ED5A65">（动态加载）</font></li>
+<li>当初始化一个类的时候，如果发现其<font color="ED5A65">父类没有被初始化</font>就会<font color="ED5A65">先初始化</font>它的父类。(静态加载)</li>
+<li>当虚拟机启动的时候，用户需要指定一个要执行的主类<font color="ED5A65">（就是包含main()方法的那个类）</font>，虚拟机会先初始化这个类；</li>
+<li>使用<font color="ED5A65">Jdk1.7动态语言</font>支持的时候的一些情况。</li>
+</ol>
+<p><font color="ED5A65">反射动态加载具体情况在Java文章中有提及。</font></p>
+<p>除了这五种之外，其他的所有引用类的方式都不会触发初始化，称为被动引用。下面是被动引用的三个例子：</p>
+<p>\1.   通过子类引用父类的的静态字段，不会导致子类初始化。</p>
+<p>\2.   通过数组定义来引用类，不会触发此类的初始化。</p>
+<p>public class NotInitialization { </p>
+<p>  public static void main(String[] args) { </p>
+<p>​    SuperClass[] sca &#x3D; new SuperClass[10]; </p>
+<p>  }  </p>
+<p>}</p>
+<p>\3.   常量在编译阶段会存入调用类的常量池中，本质上没有直接引用到定义常量的类，因此不会触发定义常量的类的初始化。</p>
+<p>public class ConstClass { </p>
+<p>  static { </p>
+<p>​    System.out.println(“ConstClass init!”); </p>
+<p>  } </p>
+<p>  public static final int value &#x3D; 123; </p>
+<p>} </p>
+<p>public class NotInitialization{ </p>
+<p>  public static void main(String[] args) { </p>
+<p>​    int x &#x3D; ConstClass.value; </p>
+<p>  } </p>
+<p>} </p>
+<p>上述代码运行之后，也没有输出“ConstClass init！”，这是因为虽然在Java源码中引用了ConstClass类中的常量HELLOWORLD，但其实在编译阶段通过常量传播优化，已经将此常量的值“hello world”存储到了NotInitialization类的常量池中，以后NotInitialization对常量ConstClass.HELLOWORLD的引用实际都被转化为NotInitialization类对自身常量池的引用了。也就是说，实际上NotInitialization的Class文件之中并没有ConstClass类的符号引用入口，这两个类在编译成Class之后就不存在任何联系了。参考资料：<a href="https://blog.csdn.net/qq_22771739/article/details/86348962">https://blog.csdn.net/qq_22771739/article/details/86348962</a></p>
+<p><img src="/images/image-20220811195944140.png" alt="image-20220811195944140"></p>
+]]></content>
+      <categories>
+        <category>刷题笔记</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>增强for出现ConcurrentModificationException</title>
+    <url>/2022/08/04/%E5%A2%9E%E5%BC%BAfor%E5%87%BA%E7%8E%B0ConcurrentModificationException/</url>
+    <content><![CDATA[<ul>
+<li>问题复现</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        Vector&lt;String&gt; vector = <span class="keyword">new</span> <span class="title class_">Vector</span>&lt;&gt;();</span><br><span class="line">        vector.add(<span class="string">&quot;ss&quot;</span>);</span><br><span class="line">        vector.add(<span class="string">&quot;ss1&quot;</span>);</span><br><span class="line">        vector.add(<span class="string">&quot;22222&quot;</span>);</span><br><span class="line">        <span class="comment">//增强for遍历</span></span><br><span class="line">        <span class="keyword">for</span> (String s : vector) &#123;</span><br><span class="line">            System.out.println(s);</span><br><span class="line">            vector.remove(<span class="string">&quot;ss&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/image-20220804172251868.png" alt="image-20220804172251868"></p>
+<p>这是由于增强for循环底层调用的是迭代器的next和hasnext方法来遍历的，移除元素后，无法预知到元素的位置。这也是增强for的缺点，不能获取下标，不能动态删除集合中的内容。</p>
+<p>解决办法：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">List&lt;String&gt; list = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;String&gt;();</span><br><span class="line">     list.add(<span class="string">&quot;h&quot;</span>);</span><br><span class="line">     list.add(<span class="string">&quot;y&quot;</span>);</span><br><span class="line">     list.add(<span class="string">&quot;q&quot;</span>);</span><br><span class="line">List&lt;String&gt; list_remove = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;String&gt;();</span><br><span class="line"> <span class="keyword">for</span>(String s : list)&#123;</span><br><span class="line">     <span class="keyword">if</span>(<span class="string">&quot;q&quot;</span>.equals(s))&#123;</span><br><span class="line">     list_remove.add(s); <span class="comment">//把要移除的统一放在一个集合</span></span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="comment">//统一移除</span></span><br><span class="line"> list.removeAll(list_remove);</span><br><span class="line"> System.out.println(list);<span class="comment">//[h, y]</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>多用户通信系统</title>
     <url>/2022/08/10/%E5%A4%9A%E7%94%A8%E6%88%B7%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><ul>
@@ -3365,31 +3385,6 @@
       </tags>
   </entry>
   <entry>
-    <title>增强for出现ConcurrentModificationException</title>
-    <url>/2022/08/04/%E5%A2%9E%E5%BC%BAfor%E5%87%BA%E7%8E%B0ConcurrentModificationException/</url>
-    <content><![CDATA[<ul>
-<li>问题复现</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        Vector&lt;String&gt; vector = <span class="keyword">new</span> <span class="title class_">Vector</span>&lt;&gt;();</span><br><span class="line">        vector.add(<span class="string">&quot;ss&quot;</span>);</span><br><span class="line">        vector.add(<span class="string">&quot;ss1&quot;</span>);</span><br><span class="line">        vector.add(<span class="string">&quot;22222&quot;</span>);</span><br><span class="line">        <span class="comment">//增强for遍历</span></span><br><span class="line">        <span class="keyword">for</span> (String s : vector) &#123;</span><br><span class="line">            System.out.println(s);</span><br><span class="line">            vector.remove(<span class="string">&quot;ss&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src="/images/image-20220804172251868.png" alt="image-20220804172251868"></p>
-<p>这是由于增强for循环底层调用的是迭代器的next和hasnext方法来遍历的，移除元素后，无法预知到元素的位置。这也是增强for的缺点，不能获取下标，不能动态删除集合中的内容。</p>
-<p>解决办法：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">List&lt;String&gt; list = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;String&gt;();</span><br><span class="line">     list.add(<span class="string">&quot;h&quot;</span>);</span><br><span class="line">     list.add(<span class="string">&quot;y&quot;</span>);</span><br><span class="line">     list.add(<span class="string">&quot;q&quot;</span>);</span><br><span class="line">List&lt;String&gt; list_remove = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;String&gt;();</span><br><span class="line"> <span class="keyword">for</span>(String s : list)&#123;</span><br><span class="line">     <span class="keyword">if</span>(<span class="string">&quot;q&quot;</span>.equals(s))&#123;</span><br><span class="line">     list_remove.add(s); <span class="comment">//把要移除的统一放在一个集合</span></span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="comment">//统一移除</span></span><br><span class="line"> list.removeAll(list_remove);</span><br><span class="line"> System.out.println(list);<span class="comment">//[h, y]</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>常用类String</title>
-    <url>/2023/02/24/%E5%B8%B8%E7%94%A8%E7%B1%BBString/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>子类父类构造器问题</title>
     <url>/2022/07/30/%E5%AD%90%E7%B1%BB%E7%88%B6%E7%B1%BB%E6%9E%84%E9%80%A0%E5%99%A8%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<h1 id="问题引出"><a href="#问题引出" class="headerlink" title="问题引出"></a><font color="428675">问题引出</font></h1><p>牛客网题库中遇到这个问题：<font color="ED5A65">子类不但可以继承父类的无参构造函数也可以继承父类的有参构造函数?</font></p>
@@ -3426,6 +3421,11 @@
       <tags>
         <tag>Java</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>常用类String</title>
+    <url>/2023/02/24/%E5%B8%B8%E7%94%A8%E7%B1%BBString/</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>数据结构与算法</title>
@@ -3502,6 +3502,11 @@
       </tags>
   </entry>
   <entry>
+    <title>浅拷贝与深拷贝</title>
+    <url>/2023/02/24/%E6%B5%85%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B7%B1%E6%8B%B7%E8%B4%9D/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>日记--随想录</title>
     <url>/2022/05/27/%E6%97%A5%E8%AE%B0/</url>
     <content><![CDATA[<blockquote>
@@ -3560,9 +3565,41 @@
       </tags>
   </entry>
   <entry>
-    <title>浅拷贝与深拷贝</title>
-    <url>/2023/02/24/%E6%B5%85%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B7%B1%E6%8B%B7%E8%B4%9D/</url>
-    <content><![CDATA[]]></content>
+    <title>算法题</title>
+    <url>/2022/07/04/%E7%AE%97%E6%B3%95%E9%A2%98/</url>
+    <content><![CDATA[<h1 id="双指针"><a href="#双指针" class="headerlink" title="双指针"></a><font color="#6dc1f7">双指针</font></h1><blockquote>
+<p>双指针，就是<strong>定义两个指针在指定的数组&#x2F;链表上游走，在做一些自定义的操作</strong>。 如果要细分的话，双指针有 左右指针 ， 快慢指针 ， 滑动窗口 三种类型，一般时间复杂度为O (n)，空间复杂度为O (1),这就是双指针的精妙之处。</p>
+<p>不用再去创建一个数组。</p>
+</blockquote>
+<mark class="hl-label orange">案例1</mark> ：在数组中移除对应对应的数(val)——快慢指针判断有条件判断指针2是否前进
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">removeElementcorrection</span><span class="params">(<span class="type">int</span> [] nums , <span class="type">int</span> val)</span> &#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">      双指针思想</span></span><br><span class="line"><span class="comment">      个人理解： 两个指针都会遍历数组 一个用来比较是否是要移除的元素 第二个指针相当于新建一个数组：大小和原来一样</span></span><br><span class="line"><span class="comment">      并且如果是符合这个数组（即不等于要被移除的数）那么第二个指针就会自增1 那么有多少个数符合那么第二个指针就会有多长</span></span><br><span class="line"><span class="comment">      最坏的情况就是这个数组没有要移除的数那么两个指针都会遍历数组一遍</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">len</span> <span class="operator">=</span> nums.length;</span><br><span class="line">    <span class="type">int</span> <span class="variable">left</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">left1</span> <span class="operator">=</span> <span class="number">0</span> ; left1 &lt; len ; left1++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (nums[left1] != val) &#123;</span><br><span class="line">            nums[left] = nums[left1];</span><br><span class="line">            left++;    <span class="comment">//即完成移除元素 也记录了符合的数的个数</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> left;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/%E5%8F%8C%E6%8C%87%E9%92%88.png" alt="双指针经典案例"></p>
+<mark class="hl-label orange">案例2</mark> ：类似双指针——两个数组双指针(快慢指针)
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> *一个升序数组要求加入一个元素后还是升序</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"> <span class="keyword">private</span> <span class="keyword">static</span> <span class="type">int</span>[] paixu(<span class="type">int</span>[] arr, Scanner sc) &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">sum</span> <span class="operator">=</span> sc.nextInt();</span><br><span class="line">        <span class="type">int</span> <span class="variable">len</span> <span class="operator">=</span> arr.length;</span><br><span class="line">        <span class="type">int</span> <span class="variable">index</span> <span class="operator">=</span> -<span class="number">1</span>;</span><br><span class="line">        <span class="comment">//  1、第一步找位置</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (sum &lt;= arr[i]) &#123;</span><br><span class="line">                index = i;</span><br><span class="line">                <span class="keyword">break</span>;    <span class="comment">//关键不然一直要么是最后一个要么是倒数第二个</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (index==-<span class="number">1</span>) &#123;</span><br><span class="line">            index = len;   <span class="comment">//没有找到位置那就是最后一个啦</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//  2、数组扩容</span></span><br><span class="line">        <span class="type">int</span> [] Newarr = <span class="keyword">new</span> <span class="title class_">int</span>[len+<span class="number">1</span>];</span><br><span class="line">        <span class="comment">// 3、 类似双指针  最外层指针在扩容数组上 里面一层在旧数组上</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>,j = <span class="number">0</span>; i&lt; Newarr.length; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (index != i) &#123;</span><br><span class="line">                Newarr [i] = arr [j];</span><br><span class="line">                j++;  <span class="comment">//非常的关键一步很牛叉的思想</span></span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;   <span class="comment">// else 就说明是要插入的位置</span></span><br><span class="line">                 Newarr [i] = sum;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> Newarr;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<mark class="hl-label purple">总结</mark> 
+
+<blockquote>
+<p>这是两个指针在不同数组上的应用，最明显的作用是减少代码量。<code>j++</code>这个很关键。</p>
+</blockquote>
+<mark class="hl-label orange">案例3</mark> ：对给定的<font color="F07C82">有序数组</font> \textit{nums}nums 删除重复元素，在删除重复元素之后，每个元素只出现一次，并返回新的长度，上述操作必须通过<font color="F07C82">原地修改</font>数组的方法，使用 O(1)O(1) 的空间复杂度完成。
+
+<mark class="hl-label red">关键词</mark> ：原地修改、有序数组、<font color="F07C82">快慢指针</font>。
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">removeDuplicates</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> nums.length;</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> <span class="variable">fast</span> <span class="operator">=</span> <span class="number">1</span>; <span class="type">int</span> <span class="variable">slow</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (fast &lt; n) &#123;</span><br><span class="line">        <span class="keyword">if</span> (nums[fast] != nums[fast-<span class="number">1</span>]) &#123;</span><br><span class="line">            nums[slow] = nums[fast];</span><br><span class="line">            ++slow;</span><br><span class="line">        &#125;</span><br><span class="line">        ++fast;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> slow;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<mark class="hl-label red">小结</mark> ：双指针，一个指针用于指定新数组的位置(替换符合的数据)，另一个指针用于遍历原来数组(判断是否符合条件)。巧妙的无需创建新的数组，用两个快慢指针遍历一个数组完成。
+
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+      </tags>
   </entry>
   <entry>
     <title>简单JVM内存</title>
@@ -3629,43 +3666,6 @@
       </categories>
       <tags>
         <tag>Java核心技术卷1</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>算法题</title>
-    <url>/2022/07/04/%E7%AE%97%E6%B3%95%E9%A2%98/</url>
-    <content><![CDATA[<h1 id="双指针"><a href="#双指针" class="headerlink" title="双指针"></a><font color="#6dc1f7">双指针</font></h1><blockquote>
-<p>双指针，就是<strong>定义两个指针在指定的数组&#x2F;链表上游走，在做一些自定义的操作</strong>。 如果要细分的话，双指针有 左右指针 ， 快慢指针 ， 滑动窗口 三种类型，一般时间复杂度为O (n)，空间复杂度为O (1),这就是双指针的精妙之处。</p>
-<p>不用再去创建一个数组。</p>
-</blockquote>
-<mark class="hl-label orange">案例1</mark> ：在数组中移除对应对应的数(val)——快慢指针判断有条件判断指针2是否前进
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">removeElementcorrection</span><span class="params">(<span class="type">int</span> [] nums , <span class="type">int</span> val)</span> &#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">      双指针思想</span></span><br><span class="line"><span class="comment">      个人理解： 两个指针都会遍历数组 一个用来比较是否是要移除的元素 第二个指针相当于新建一个数组：大小和原来一样</span></span><br><span class="line"><span class="comment">      并且如果是符合这个数组（即不等于要被移除的数）那么第二个指针就会自增1 那么有多少个数符合那么第二个指针就会有多长</span></span><br><span class="line"><span class="comment">      最坏的情况就是这个数组没有要移除的数那么两个指针都会遍历数组一遍</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">len</span> <span class="operator">=</span> nums.length;</span><br><span class="line">    <span class="type">int</span> <span class="variable">left</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">left1</span> <span class="operator">=</span> <span class="number">0</span> ; left1 &lt; len ; left1++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (nums[left1] != val) &#123;</span><br><span class="line">            nums[left] = nums[left1];</span><br><span class="line">            left++;    <span class="comment">//即完成移除元素 也记录了符合的数的个数</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> left;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src="/images/%E5%8F%8C%E6%8C%87%E9%92%88.png" alt="双指针经典案例"></p>
-<mark class="hl-label orange">案例2</mark> ：类似双指针——两个数组双指针(快慢指针)
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> *一个升序数组要求加入一个元素后还是升序</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"> <span class="keyword">private</span> <span class="keyword">static</span> <span class="type">int</span>[] paixu(<span class="type">int</span>[] arr, Scanner sc) &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">sum</span> <span class="operator">=</span> sc.nextInt();</span><br><span class="line">        <span class="type">int</span> <span class="variable">len</span> <span class="operator">=</span> arr.length;</span><br><span class="line">        <span class="type">int</span> <span class="variable">index</span> <span class="operator">=</span> -<span class="number">1</span>;</span><br><span class="line">        <span class="comment">//  1、第一步找位置</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (sum &lt;= arr[i]) &#123;</span><br><span class="line">                index = i;</span><br><span class="line">                <span class="keyword">break</span>;    <span class="comment">//关键不然一直要么是最后一个要么是倒数第二个</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (index==-<span class="number">1</span>) &#123;</span><br><span class="line">            index = len;   <span class="comment">//没有找到位置那就是最后一个啦</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//  2、数组扩容</span></span><br><span class="line">        <span class="type">int</span> [] Newarr = <span class="keyword">new</span> <span class="title class_">int</span>[len+<span class="number">1</span>];</span><br><span class="line">        <span class="comment">// 3、 类似双指针  最外层指针在扩容数组上 里面一层在旧数组上</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>,j = <span class="number">0</span>; i&lt; Newarr.length; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (index != i) &#123;</span><br><span class="line">                Newarr [i] = arr [j];</span><br><span class="line">                j++;  <span class="comment">//非常的关键一步很牛叉的思想</span></span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;   <span class="comment">// else 就说明是要插入的位置</span></span><br><span class="line">                 Newarr [i] = sum;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> Newarr;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<mark class="hl-label purple">总结</mark> 
-
-<blockquote>
-<p>这是两个指针在不同数组上的应用，最明显的作用是减少代码量。<code>j++</code>这个很关键。</p>
-</blockquote>
-<mark class="hl-label orange">案例3</mark> ：对给定的<font color="F07C82">有序数组</font> \textit{nums}nums 删除重复元素，在删除重复元素之后，每个元素只出现一次，并返回新的长度，上述操作必须通过<font color="F07C82">原地修改</font>数组的方法，使用 O(1)O(1) 的空间复杂度完成。
-
-<mark class="hl-label red">关键词</mark> ：原地修改、有序数组、<font color="F07C82">快慢指针</font>。
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">removeDuplicates</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> nums.length;</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> <span class="variable">fast</span> <span class="operator">=</span> <span class="number">1</span>; <span class="type">int</span> <span class="variable">slow</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (fast &lt; n) &#123;</span><br><span class="line">        <span class="keyword">if</span> (nums[fast] != nums[fast-<span class="number">1</span>]) &#123;</span><br><span class="line">            nums[slow] = nums[fast];</span><br><span class="line">            ++slow;</span><br><span class="line">        &#125;</span><br><span class="line">        ++fast;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> slow;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<mark class="hl-label red">小结</mark> ：双指针，一个指针用于指定新数组的位置(替换符合的数据)，另一个指针用于遍历原来数组(判断是否符合条件)。巧妙的无需创建新的数组，用两个快慢指针遍历一个数组完成。
-
-]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
       </tags>
   </entry>
 </search>
