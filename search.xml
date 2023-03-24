@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Javascript笔记随笔</title>
+    <url>/2022/04/20/Javascript%E7%AC%94%E8%AE%B01/</url>
+    <content><![CDATA[<hr>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>Javascript</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JavaWeb</title>
     <url>/2022/09/01/JavaWeb/</url>
     <content><![CDATA[<h2 id="CS和BS的异同点"><a href="#CS和BS的异同点" class="headerlink" title="CS和BS的异同点"></a>CS和BS的异同点</h2><p><img src="/images/image-20220901200621183.png" alt="image-20220901200621183"></p>
@@ -12,6 +24,26 @@
 <p>不同版本idea配置不同，具体可百度。</p>
 <p>教程：<a href="https://www.bilibili.com/video/BV1AS4y177xJ?p=20&amp;vd_source=965a4445e7b07ab5faef9dc78ccf37a7">https://www.bilibili.com/video/BV1AS4y177xJ?p=20&amp;vd_source=965a4445e7b07ab5faef9dc78ccf37a7</a></p>
 <h2 id="Servlet"><a href="#Servlet" class="headerlink" title="Servlet"></a>Servlet</h2>]]></content>
+  </entry>
+  <entry>
+    <title>Java为数不多的重载运算符</title>
+    <url>/2023/02/24/Java%E4%B8%BA%E6%95%B0%E4%B8%8D%E5%A4%9A%E7%9A%84%E9%87%8D%E8%BD%BD%E8%BF%90%E7%AE%97%E7%AC%A6/</url>
+    <content><![CDATA[<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>重载运算符就是改变原来运算符的意义。</p>
+<h3 id="Java为数不多的重载运算符"><a href="#Java为数不多的重载运算符" class="headerlink" title="Java为数不多的重载运算符"></a>Java为数不多的重载运算符</h3><p>“+”和”+&#x3D;”是Java专门为String类重载的运算符。可能是由于String字符串用的多，并且直接用字符串拼接的十分影响性能。Java就专门为这个String重载运算符。</p>
+<p>字符串通过+和+&#x3D;字符串拼接，其实内部是创建了一个StringBuilder类（线程不安全的），调用内部的<code>append()</code>方法。最后用<code>toString()</code></p>
+<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><p>想要多次拼接的时候，Java并不会智能的只创建一个StringBuilder类，而是每一次使用+号拼接。都会在内部创建一个StringBuiler对象。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String[] arr = &#123;<span class="string">&quot;he&quot;</span>, <span class="string">&quot;llo&quot;</span>, <span class="string">&quot;world&quot;</span>&#125;;</span><br><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">    s += arr[i];</span><br><span class="line">&#125;</span><br><span class="line">System.out.println(s);</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/image-20230301233809525.png" alt="image-20230301233809525"></p>
+<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>在多次使用字符串拼接的时候需要手动创建StringBuilder类。只需一次拼接的，不用手动创建StringBuilder类。在高并发下使用StringBuffer类。</p>
+]]></content>
+      <categories>
+        <category>复习</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>基础</tag>
+      </tags>
   </entry>
   <entry>
     <title>Java变量何时需要初始化</title>
@@ -35,38 +67,6 @@
         <tag>Java</tag>
         <tag>变量</tag>
         <tag>初始化</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Javascript笔记随笔</title>
-    <url>/2022/04/20/Javascript%E7%AC%94%E8%AE%B01/</url>
-    <content><![CDATA[<hr>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-      <tags>
-        <tag>Javascript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Java为数不多的重载运算符</title>
-    <url>/2023/02/24/Java%E4%B8%BA%E6%95%B0%E4%B8%8D%E5%A4%9A%E7%9A%84%E9%87%8D%E8%BD%BD%E8%BF%90%E7%AE%97%E7%AC%A6/</url>
-    <content><![CDATA[<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>重载运算符就是改变原来运算符的意义。</p>
-<h3 id="Java为数不多的重载运算符"><a href="#Java为数不多的重载运算符" class="headerlink" title="Java为数不多的重载运算符"></a>Java为数不多的重载运算符</h3><p>“+”和”+&#x3D;”是Java专门为String类重载的运算符。可能是由于String字符串用的多，并且直接用字符串拼接的十分影响性能。Java就专门为这个String重载运算符。</p>
-<p>字符串通过+和+&#x3D;字符串拼接，其实内部是创建了一个StringBuilder类（线程不安全的），调用内部的<code>append()</code>方法。最后用<code>toString()</code></p>
-<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><p>想要多次拼接的时候，Java并不会智能的只创建一个StringBuilder类，而是每一次使用+号拼接。都会在内部创建一个StringBuiler对象。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String[] arr = &#123;<span class="string">&quot;he&quot;</span>, <span class="string">&quot;llo&quot;</span>, <span class="string">&quot;world&quot;</span>&#125;;</span><br><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">    s += arr[i];</span><br><span class="line">&#125;</span><br><span class="line">System.out.println(s);</span><br></pre></td></tr></table></figure>
-
-<p><img src="/images/image-20230301233809525.png" alt="image-20230301233809525"></p>
-<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>在多次使用字符串拼接的时候需要手动创建StringBuilder类。只需一次拼接的，不用手动创建StringBuilder类。在高并发下使用StringBuffer类。</p>
-]]></content>
-      <categories>
-        <category>复习</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>基础</tag>
       </tags>
   </entry>
   <entry>
@@ -94,6 +94,58 @@
       </tags>
   </entry>
   <entry>
+    <title>Mysql数据库</title>
+    <url>/2022/09/04/Mysql%E6%95%B0%E6%8D%AE%E5%BA%93/</url>
+    <content><![CDATA[<h1 id="数据库的作用"><a href="#数据库的作用" class="headerlink" title="数据库的作用"></a>数据库的作用</h1><ul>
+<li>问题</li>
+</ul>
+<p><img src="/images/image-20220904202508844.png" alt="image-20220904202508844"></p>
+<ul>
+<li>解决之道</li>
+</ul>
+<p>为了解决上述问题，使用更加利于管理数据的东西-数据库，它能更有效的管理数据。</p>
+<p>例子：</p>
+<p>如果说图书馆是保存书籍的，那么数据库就是保存数据的。</p>
+<p><img src="/images/image-20220904203216903.png" alt="image-20220904203216903"></p>
+<h1 id="命令行连接到Mysql"><a href="#命令行连接到Mysql" class="headerlink" title="命令行连接到Mysql"></a>命令行连接到Mysql</h1><p><img src="/images/image-20220906210857655.png" alt="image-20220906210857655"></p>
+<p>可以看出mysql是一个服务，服务就需要用一个端口。在配置文件中my.ini有具体端口配置。</p>
+<p><img src="/images/image-20220906211334693.png" alt="image-20220906211334693"></p>
+<p><img src="/images/image-20220906212119479.png" alt="image-20220906212119479"></p>
+<p>演示：</p>
+<p><img src="/images/image-20220906213002187.png" alt="image-20220906213002187"></p>
+<p>这个localhost：在有网络的情况，会自动解析localhost为127.0.0.1，而断网的情况下，localhost只是一个字符串，不代表一个ip地址。mysql配置文件的存储在hosts文件中，其位置在：</p>
+<p>Windows：c:\windows\system32\drives\etc\hosts<br>linux：&#x2F;etc&#x2F;hosts</p>
+<p>配置文件内容如下：可看到localhost的主机ip设置为127.0.0.1。</p>
+<p><img src="/images/image-20220906213208407.png" alt="image-20220906213208407"></p>
+<h1 id="MySQL三层结构"><a href="#MySQL三层结构" class="headerlink" title="MySQL三层结构"></a>MySQL三层结构</h1><p><img src="/images/image-20220906221631259.png" alt="image-20220906221631259"></p>
+<p>图解：</p>
+<p><img src="/images/image-20220906221558766.png" alt="image-20220906221558766"></p>
+<p><img src="/images/image-20220906221819644.png" alt="image-20220906221819644"></p>
+<p><img src="/images/image-20220906221945130.png" alt="image-20220906221945130"></p>
+<h1 id="Java操作Mysql"><a href="#Java操作Mysql" class="headerlink" title="Java操作Mysql"></a>Java操作Mysql</h1><h2 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h2><p><img src="/images/image-20220907145716337.png" alt="image-20220907145716337"></p>
+<p><img src="/images/image-20220907153717597.png" alt="image-20220907153717597"></p>
+<p>解释：默认的校对规则是不区分大小写的，在上面选择jth02数据库的时候，会检测出两个对象，utf8_bin是区分大小写的。</p>
+<h2 id="查看、删除数据库"><a href="#查看、删除数据库" class="headerlink" title="查看、删除数据库"></a>查看、删除数据库</h2><p><img src="/images/image-20220907153903823.png" alt="image-20220907153903823"></p>
+<p><img src="/images/image-20220907210545187.png" alt="image-20220907210545187"></p>
+<h2 id="备份恢复数据库"><a href="#备份恢复数据库" class="headerlink" title="备份恢复数据库"></a>备份恢复数据库</h2><p><img src="/images/image-20220907200804340.png" alt="image-20220907200804340"></p>
+<p><img src="/images/image-20220907210611029.png" alt="image-20220907210611029"></p>
+<h2 id="课堂练习"><a href="#课堂练习" class="headerlink" title="课堂练习"></a>课堂练习</h2><p><img src="/images/image-20220907202845387.png" alt="image-20220907202845387"></p>
+<h1 id="表"><a href="#表" class="headerlink" title="表"></a>表</h1><p><img src="/images/image-20220907205205515.png" alt="image-20220907205205515"></p>
+<h1 id="列类型有哪些（常用数据类型）"><a href="#列类型有哪些（常用数据类型）" class="headerlink" title="列类型有哪些（常用数据类型）"></a>列类型有哪些（常用数据类型）</h1><p>结合老韩笔记</p>
+<p>常用数据类型：</p>
+<p><img src="/images/image-20220908114059966.png" alt="image-20220908114059966"></p>
+<p><img src="/images/image-20220908114144745.png" alt="image-20220908114144745"></p>
+]]></content>
+      <categories>
+        <category>Mysql</category>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>Mysql</tag>
+        <tag>数据库</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MyFirst-ChromeExtention</title>
     <url>/2022/05/01/MyFirst-ChromeExtention/</url>
     <content><![CDATA[<hr>
@@ -108,6 +160,67 @@
       </categories>
       <tags>
         <tag>Chrome Extention</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Reids项目学习小结</title>
+    <url>/2023/02/24/Reids%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0%E5%B0%8F%E7%BB%93/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>SpringMVC向域对象共享数据的5种方法</title>
+    <url>/2022/12/10/SpringMVC%E5%90%91%E5%9F%9F%E5%AF%B9%E8%B1%A1%E5%85%B1%E4%BA%AB%E6%95%B0%E6%8D%AE%E7%9A%845%E7%A7%8D%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<p>参考文章：<a href="https://blog.csdn.net/m0_49499183/article/details/119776961">https://blog.csdn.net/m0_49499183/article/details/119776961</a></p>
+<h1 id="使用原生的Servlet向Request域对象共享数据"><a href="#使用原生的Servlet向Request域对象共享数据" class="headerlink" title="使用原生的Servlet向Request域对象共享数据"></a>使用原生的Servlet向Request域对象共享数据</h1><p>在SpringMVC的控制器方法写如下代码：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ScopeController</span> &#123;</span><br><span class="line">    <span class="comment">//使用servletAPI向Request域对象共享数据</span></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/testRequestByServletAPI&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">testRequestByServletAPI</span><span class="params">(HttpServletRequest request)</span> &#123;</span><br><span class="line">        request.setAttribute(<span class="string">&quot;testRequestScope&quot;</span>, <span class="string">&quot;hello,servletAPI&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;success&quot;</span>; <span class="comment">//这里返回的就是视图名称</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>@Controller 方法就是将这个类标识为控制器，里面的方法就是控制器的方法。 @RequestMapping就是映射，将value属性的值作为将要被映射的地址，如果浏览器访问了该地址就会执行该被注释的方法，如果那个地址没有具体业务代码，只需要页面跳转可以使用SpringMVC的一个配置来解决。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mvc:view-controller</span> <span class="attr">path</span>=<span class="string">&quot;/&quot;</span> <span class="attr">view-name</span>=<span class="string">&quot;index&quot;</span>/&gt;</span> <span class="comment">&lt;!-- SpringMVC映射注解。--&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 一般会配合注解驱动一起使用--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--    开启注解驱动--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mvc:annotation-driven</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>如果没有开启注解驱动，则会导致@RequestMapping就是方法上面的注解失效。</p>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>从上面代码可得，在SpringMVC中使用原生的HttpServletRequest需要在形参列表上输入对应类型，这个是SpringMVC<font color="red">默认参数类型</font>，共有这些类型:</p>
+<p>1、HttpServletRequest 对象</p>
+<p>2、HttpServletResponse 对象</p>
+<p>3、HttpSession 对象</p>
+<p>4、Model&#x2F;ModelMap 对象</p>
+<p>在形参中申明好后，就可以在Web中一样的方式使用HttpServletRequest.</p>
+<h1 id="使用ModelAndView向Request域中共享数据"><a href="#使用ModelAndView向Request域中共享数据" class="headerlink" title="使用ModelAndView向Request域中共享数据"></a>使用ModelAndView向Request域中共享数据</h1><p>这个只需new一个ModelAndView对象即可向Request域中共享数据。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@RequestMapping(&quot;/testModelAndView&quot;)</span></span><br><span class="line"><span class="keyword">public</span> ModelAndView <span class="title function_">testModelAndView</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="comment">//ModeAndView两个功能，Model往请求域中共享数据，View是视图功能</span></span><br><span class="line">    <span class="type">ModelAndView</span> <span class="variable">modelAndView</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ModelAndView</span>();</span><br><span class="line">    <span class="comment">//处理模型数据，即向请求域Request共享数据</span></span><br><span class="line">    modelAndView.addObject(<span class="string">&quot;testRequestScope&quot;</span>, <span class="string">&quot;hello,ModelAndView&quot;</span>);</span><br><span class="line">    <span class="comment">//设置视图名称</span></span><br><span class="line">    modelAndView.setViewName(<span class="string">&quot;success&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> modelAndView;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="使用Model对象"><a href="#使用Model对象" class="headerlink" title="使用Model对象"></a>使用Model对象</h1><p>这个是SpringMVC的默认参数类型。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@RequestMapping(&quot;/testModel&quot;)</span></span><br><span class="line"><span class="keyword">public</span> String <span class="title function_">testModel</span><span class="params">(Model model)</span> &#123;</span><br><span class="line">    <span class="comment">//这个居然只要传入形参就可以了？</span></span><br><span class="line">    model.addAttribute(<span class="string">&quot;testRequestScope&quot;</span>, <span class="string">&quot;hello, model&quot;</span>);</span><br><span class="line">    System.out.println(model.getClass().getName());</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;success&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="使用Map向request域对象共享数据"><a href="#使用Map向request域对象共享数据" class="headerlink" title="使用Map向request域对象共享数据"></a>使用Map向request域对象共享数据</h1><p>没错这个就是JavaSE里面的Map</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//通过map集合向Request域对象输入</span></span><br><span class="line"><span class="meta">@RequestMapping(&quot;/testMap&quot;)</span></span><br><span class="line"><span class="keyword">public</span> String <span class="title function_">testMap</span><span class="params">(Map&lt;String, Object&gt; map)</span> &#123;</span><br><span class="line">    <span class="comment">//这个也是只需要形参就可以了</span></span><br><span class="line">    map.put(<span class="string">&quot;testRequestScope&quot;</span>, <span class="string">&quot;hello, map&quot;</span>);</span><br><span class="line">    System.out.println(map.getClass().getName());</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;success&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="使用ModelMap向request域对象共享数据"><a href="#使用ModelMap向request域对象共享数据" class="headerlink" title="使用ModelMap向request域对象共享数据"></a>使用ModelMap向request域对象共享数据</h1><p>为什么这里使用addAttribute就可以向request域对象，为什么不会共享到Response对象，因为默认是Request域对象。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//使用modelMap向request域对象共享数据</span></span><br><span class="line"><span class="meta">@RequestMapping(&quot;/testModelMap&quot;)</span></span><br><span class="line"><span class="keyword">public</span> String <span class="title function_">testModelMap</span><span class="params">(ModelMap modelMap)</span> &#123;</span><br><span class="line">    modelMap.addAttribute(<span class="string">&quot;testRequestScope&quot;</span>, <span class="string">&quot;hello, ModelMap&quot;</span>);</span><br><span class="line">    System.out.println(modelMap.getClass().getName());</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;success&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="使用Session向Request域对象中共享数据"><a href="#使用Session向Request域对象中共享数据" class="headerlink" title="使用Session向Request域对象中共享数据"></a>使用Session向Request域对象中共享数据</h1><p>这里默认也是向Request域共享数据</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//往session中共享数据</span></span><br><span class="line"><span class="meta">@RequestMapping(&quot;/testSession&quot;)</span></span><br><span class="line"><span class="keyword">public</span> String <span class="title function_">testSession</span><span class="params">(HttpSession session)</span> &#123;</span><br><span class="line">    session.setAttribute(<span class="string">&quot;testSessionScope&quot;</span>, <span class="string">&quot;hello, session&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;success&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="使用Session向ServletContext域中共享数据"><a href="#使用Session向ServletContext域中共享数据" class="headerlink" title="使用Session向ServletContext域中共享数据"></a>使用Session向ServletContext域中共享数据</h1><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//往ServletContext(Application)域中输入数据</span></span><br><span class="line"><span class="meta">@RequestMapping(&quot;/testApplication&quot;)</span></span><br><span class="line"><span class="keyword">public</span> String <span class="title function_">testApplication</span><span class="params">(HttpSession session)</span> &#123;</span><br><span class="line">    <span class="type">ServletContext</span> <span class="variable">servletContext</span> <span class="operator">=</span> session.getServletContext();</span><br><span class="line">    servletContext.setAttribute(<span class="string">&quot;testApplicationScope&quot;</span>,<span class="string">&quot;hello, Application&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;success&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>课程小结</category>
+      </categories>
+      <tags>
+        <tag>SpringMVC</tag>
+        <tag>复习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>SpringMVC视图源码</title>
+    <url>/2022/11/14/SpringMVC%E8%A7%86%E5%9B%BE%E6%BA%90%E7%A0%81/</url>
+    <content><![CDATA[<p><img src="/images/SpringMVC%E8%A7%86%E5%9B%BE%E6%BA%90%E7%A0%81.png" alt="SpringMVC视图源码"></p>
+<h2 id="补充，当视图名称没有前缀的时候，会被配置文件中配置的视图解析器解析。这里配置的是Thymeleaf。所以就被ThymeleafView解析。"><a href="#补充，当视图名称没有前缀的时候，会被配置文件中配置的视图解析器解析。这里配置的是Thymeleaf。所以就被ThymeleafView解析。" class="headerlink" title="补充，当视图名称没有前缀的时候，会被配置文件中配置的视图解析器解析。这里配置的是Thymeleaf。所以就被ThymeleafView解析。"></a>补充，当视图名称没有前缀的时候，会被配置文件中配置的视图解析器解析。这里配置的是Thymeleaf。所以就被ThymeleafView解析。</h2>]]></content>
+      <categories>
+        <category>整理</category>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>SpringMVC</tag>
+        <tag>源码</tag>
       </tags>
   </entry>
   <entry>
@@ -177,6 +290,32 @@
       <tags>
         <tag>Spring</tag>
         <tag>IOC</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Spring事务整理</title>
+    <url>/2022/11/08/Spring%E4%BA%8B%E5%8A%A1%E6%95%B4%E7%90%86/</url>
+    <content><![CDATA[<p>参考文章  <a href="https://blog.csdn.net/donggua3694857/article/details/69858827">https://blog.csdn.net/donggua3694857/article/details/69858827</a></p>
+<h1 id="事务基本原理"><a href="#事务基本原理" class="headerlink" title="事务基本原理"></a>事务基本原理</h1><p>Spring事务的本质其实就是数据库对事务的支持，使用JDBC的事务管理机制,就是利用java.sql.Connection对象完成对事务的提交，那在没有Spring帮我们管理事务之前，我们要怎么做。<br>事务是一系列的动作，一旦其中有一个动作出现错误，必须全部回滚，系统将事务中对数据库的所有已完成的操作全部撤消，滚回到事务开始的状态，避免出现由于数据不一致而导致的接下来一系列的错误。事务的出现是为了确保数据的完整性和一致性，在目前企业级应用开发中，事务管理是必不可少的。</p>
+<p>典型案例：银行转账,A账户转钱给B账户100块钱，A账户少100，B账户多100。这两个动作合在一起是一个事务，不可分割。要么都成功要么都不成功。</p>
+<p>众所周知，事务有四大特性（ACID）</p>
+<p>1.原子性（Atomicity）事务是一个原子操作，由一系列动作组成。事务的原子性确保动作要么全部完成，要么完全不起作用。</p>
+<p>2.一致性（Consistency）事务在完成时，必须是所有的数据都保持一致状态。</p>
+<p>3.隔离性（Isolation）并发事务执行之间无影响，在一个事务内部的操作对其他事务是不产生影响，这需要事务隔离级别来指定隔离性。</p>
+<p>4.持久性（Durability）一旦事务完成，数据库的改变必须是持久化的。</p>
+<h1 id="并发MySQL读问题"><a href="#并发MySQL读问题" class="headerlink" title="并发MySQL读问题"></a>并发MySQL读问题</h1><p>在企业级应用中，多用户访问数据库是常见的场景，这就是所谓的事务的并发。事务并发所可能存在的问题：<br>1.脏读：一个事务读到另一个事务未提交的更新数据。<br>2.不可重复读：一个事务两次读同一行数据，可是这两次读到的数据不一样。<br>3.幻读：一个事务执行两次查询，但第二次查询比第一次查询多出了一些数据行。<br>4.丢失更新：撤消一个事务时，把其它事务已提交的更新的数据覆盖了。</p>
+<p>Spring框架对事务传播行为的7种</p>
+<p><img src="/images/image-20221108230605743.png" alt="image-20221108230605743"></p>
+<p>各方式对读问题的解决</p>
+<p><img src="/images/image-20221108230720533.png" alt="image-20221108230720533"></p>
+<p>具体Spring事务配置方式直接看Spring5笔记有很详细的步骤。</p>
+]]></content>
+      <categories>
+        <category>课程小结</category>
+      </categories>
+      <tags>
+        <tag>Spring</tag>
+        <tag>事务</tag>
       </tags>
   </entry>
   <entry>
@@ -2561,116 +2700,40 @@
       </tags>
   </entry>
   <entry>
-    <title>Reids项目学习小结</title>
-    <url>/2023/02/24/Reids%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0%E5%B0%8F%E7%BB%93/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>SpringMVC向域对象共享数据的5种方法</title>
-    <url>/2022/12/10/SpringMVC%E5%90%91%E5%9F%9F%E5%AF%B9%E8%B1%A1%E5%85%B1%E4%BA%AB%E6%95%B0%E6%8D%AE%E7%9A%845%E7%A7%8D%E6%96%B9%E6%B3%95/</url>
-    <content><![CDATA[<p>参考文章：<a href="https://blog.csdn.net/m0_49499183/article/details/119776961">https://blog.csdn.net/m0_49499183/article/details/119776961</a></p>
-<h1 id="使用原生的Servlet向Request域对象共享数据"><a href="#使用原生的Servlet向Request域对象共享数据" class="headerlink" title="使用原生的Servlet向Request域对象共享数据"></a>使用原生的Servlet向Request域对象共享数据</h1><p>在SpringMVC的控制器方法写如下代码：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ScopeController</span> &#123;</span><br><span class="line">    <span class="comment">//使用servletAPI向Request域对象共享数据</span></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/testRequestByServletAPI&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">testRequestByServletAPI</span><span class="params">(HttpServletRequest request)</span> &#123;</span><br><span class="line">        request.setAttribute(<span class="string">&quot;testRequestScope&quot;</span>, <span class="string">&quot;hello,servletAPI&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;success&quot;</span>; <span class="comment">//这里返回的就是视图名称</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>@Controller 方法就是将这个类标识为控制器，里面的方法就是控制器的方法。 @RequestMapping就是映射，将value属性的值作为将要被映射的地址，如果浏览器访问了该地址就会执行该被注释的方法，如果那个地址没有具体业务代码，只需要页面跳转可以使用SpringMVC的一个配置来解决。</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mvc:view-controller</span> <span class="attr">path</span>=<span class="string">&quot;/&quot;</span> <span class="attr">view-name</span>=<span class="string">&quot;index&quot;</span>/&gt;</span> <span class="comment">&lt;!-- SpringMVC映射注解。--&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 一般会配合注解驱动一起使用--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--    开启注解驱动--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mvc:annotation-driven</span>/&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>如果没有开启注解驱动，则会导致@RequestMapping就是方法上面的注解失效。</p>
-<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>从上面代码可得，在SpringMVC中使用原生的HttpServletRequest需要在形参列表上输入对应类型，这个是SpringMVC<font color="red">默认参数类型</font>，共有这些类型:</p>
-<p>1、HttpServletRequest 对象</p>
-<p>2、HttpServletResponse 对象</p>
-<p>3、HttpSession 对象</p>
-<p>4、Model&#x2F;ModelMap 对象</p>
-<p>在形参中申明好后，就可以在Web中一样的方式使用HttpServletRequest.</p>
-<h1 id="使用ModelAndView向Request域中共享数据"><a href="#使用ModelAndView向Request域中共享数据" class="headerlink" title="使用ModelAndView向Request域中共享数据"></a>使用ModelAndView向Request域中共享数据</h1><p>这个只需new一个ModelAndView对象即可向Request域中共享数据。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@RequestMapping(&quot;/testModelAndView&quot;)</span></span><br><span class="line"><span class="keyword">public</span> ModelAndView <span class="title function_">testModelAndView</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="comment">//ModeAndView两个功能，Model往请求域中共享数据，View是视图功能</span></span><br><span class="line">    <span class="type">ModelAndView</span> <span class="variable">modelAndView</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ModelAndView</span>();</span><br><span class="line">    <span class="comment">//处理模型数据，即向请求域Request共享数据</span></span><br><span class="line">    modelAndView.addObject(<span class="string">&quot;testRequestScope&quot;</span>, <span class="string">&quot;hello,ModelAndView&quot;</span>);</span><br><span class="line">    <span class="comment">//设置视图名称</span></span><br><span class="line">    modelAndView.setViewName(<span class="string">&quot;success&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> modelAndView;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="使用Model对象"><a href="#使用Model对象" class="headerlink" title="使用Model对象"></a>使用Model对象</h1><p>这个是SpringMVC的默认参数类型。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@RequestMapping(&quot;/testModel&quot;)</span></span><br><span class="line"><span class="keyword">public</span> String <span class="title function_">testModel</span><span class="params">(Model model)</span> &#123;</span><br><span class="line">    <span class="comment">//这个居然只要传入形参就可以了？</span></span><br><span class="line">    model.addAttribute(<span class="string">&quot;testRequestScope&quot;</span>, <span class="string">&quot;hello, model&quot;</span>);</span><br><span class="line">    System.out.println(model.getClass().getName());</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;success&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="使用Map向request域对象共享数据"><a href="#使用Map向request域对象共享数据" class="headerlink" title="使用Map向request域对象共享数据"></a>使用Map向request域对象共享数据</h1><p>没错这个就是JavaSE里面的Map</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//通过map集合向Request域对象输入</span></span><br><span class="line"><span class="meta">@RequestMapping(&quot;/testMap&quot;)</span></span><br><span class="line"><span class="keyword">public</span> String <span class="title function_">testMap</span><span class="params">(Map&lt;String, Object&gt; map)</span> &#123;</span><br><span class="line">    <span class="comment">//这个也是只需要形参就可以了</span></span><br><span class="line">    map.put(<span class="string">&quot;testRequestScope&quot;</span>, <span class="string">&quot;hello, map&quot;</span>);</span><br><span class="line">    System.out.println(map.getClass().getName());</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;success&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="使用ModelMap向request域对象共享数据"><a href="#使用ModelMap向request域对象共享数据" class="headerlink" title="使用ModelMap向request域对象共享数据"></a>使用ModelMap向request域对象共享数据</h1><p>为什么这里使用addAttribute就可以向request域对象，为什么不会共享到Response对象，因为默认是Request域对象。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//使用modelMap向request域对象共享数据</span></span><br><span class="line"><span class="meta">@RequestMapping(&quot;/testModelMap&quot;)</span></span><br><span class="line"><span class="keyword">public</span> String <span class="title function_">testModelMap</span><span class="params">(ModelMap modelMap)</span> &#123;</span><br><span class="line">    modelMap.addAttribute(<span class="string">&quot;testRequestScope&quot;</span>, <span class="string">&quot;hello, ModelMap&quot;</span>);</span><br><span class="line">    System.out.println(modelMap.getClass().getName());</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;success&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="使用Session向Request域对象中共享数据"><a href="#使用Session向Request域对象中共享数据" class="headerlink" title="使用Session向Request域对象中共享数据"></a>使用Session向Request域对象中共享数据</h1><p>这里默认也是向Request域共享数据</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//往session中共享数据</span></span><br><span class="line"><span class="meta">@RequestMapping(&quot;/testSession&quot;)</span></span><br><span class="line"><span class="keyword">public</span> String <span class="title function_">testSession</span><span class="params">(HttpSession session)</span> &#123;</span><br><span class="line">    session.setAttribute(<span class="string">&quot;testSessionScope&quot;</span>, <span class="string">&quot;hello, session&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;success&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="使用Session向ServletContext域中共享数据"><a href="#使用Session向ServletContext域中共享数据" class="headerlink" title="使用Session向ServletContext域中共享数据"></a>使用Session向ServletContext域中共享数据</h1><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//往ServletContext(Application)域中输入数据</span></span><br><span class="line"><span class="meta">@RequestMapping(&quot;/testApplication&quot;)</span></span><br><span class="line"><span class="keyword">public</span> String <span class="title function_">testApplication</span><span class="params">(HttpSession session)</span> &#123;</span><br><span class="line">    <span class="type">ServletContext</span> <span class="variable">servletContext</span> <span class="operator">=</span> session.getServletContext();</span><br><span class="line">    servletContext.setAttribute(<span class="string">&quot;testApplicationScope&quot;</span>,<span class="string">&quot;hello, Application&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;success&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <title>String框架--AOP原理</title>
+    <url>/2022/10/30/String%E6%A1%86%E6%9E%B6-AOP%E5%8E%9F%E7%90%86/</url>
+    <content><![CDATA[<h1 id="AOP-简介"><a href="#AOP-简介" class="headerlink" title="AOP 简介"></a>AOP 简介</h1><p>AOP(Aspect Oriented Programming)意为面向切面变成，是OOP(Object Oriented Programming)面向对象编程的”进化版”。面向对象编程在拓展功能时，需要改变源码会影响到原有的功能。而AOP则是横向的在不改变原有功能(源码)的基础上增加新功能。能够对业务逻辑的各个部分进行隔离，从而使得业务逻辑各部分之间的耦合度降低，提高程序的可重用性，同时提高了开发的效率。</p>
+<h1 id="底层原理"><a href="#底层原理" class="headerlink" title="底层原理"></a>底层原理</h1><p>AOP底层使用的是动态代理机制。分两种情况1、是由接口。2、没有接口</p>
+<p>1、有接口，使用JDK动态代理</p>
+<p><img src="/images/image-20221030203439949.png" alt="image-20221030203439949"></p>
+<p>2、没有接口，使用CGLB动态代理</p>
+<p><img src="/images/image-20221030203901539.png" alt="image-20221030203901539"></p>
+<p>具体JDK动态代理实现看笔记，动态代理在reflect包下。当然也使用了反射机制。</p>
+<h2 id="那么使用动态代理的好处是什么？"><a href="#那么使用动态代理的好处是什么？" class="headerlink" title="那么使用动态代理的好处是什么？"></a>那么使用动态代理的好处是什么？</h2><p>代理故名思意，让代理对象完成对业务逻辑完成。我们在要增强业务逻辑的时候只需要改变增强代理对象的业务逻辑。实现了开闭原则(OCP) Open Close Principle，对扩展是开放的，对修改是关闭的。降低耦合度。</p>
+<h2 id="动态代理和静态代理"><a href="#动态代理和静态代理" class="headerlink" title="动态代理和静态代理"></a>动态代理和静态代理</h2><p>所谓静态也就是在程序运行前就已经存在代理类的字节码文件，代理类和委托类的关系在运行前就确定了。 字节码不就是.class文件。在Java里面一提到动态，就是反射机制了。动态代理类的源码是在程序运行期间由JVM根据反射等机制动态的生成，所以不存在代理类的字节码文件。代理类和委托类的关系是在程序运行时确定。 好处也显然易见，相较静态代理动态代理降低代码之间耦合度的能力更强。</p>
+<h1 id="AOP术语"><a href="#AOP术语" class="headerlink" title="AOP术语"></a>AOP术语</h1><p>1、连接点</p>
+<p>类里面哪些方法可以被增强，这些方法被称为连接点。</p>
+<p>2、切入点</p>
+<p>实际被真正增强的方法，称为切入点。有切入点表达式指定</p>
+<p>3、通知</p>
+<p>1）实际增强的逻辑部分称为通知(增强);</p>
+<p>2）通知的多种类型</p>
+<p>​	前置通知</p>
+<p>​	后置通知</p>
+<p>​	环绕通知</p>
+<p>​	异常通知</p>
+<p>​	最终通知</p>
+<p>4、切面</p>
+<p>把通知应用到切入点过程</p>
+<p>其余XML配置文件，注解开发具体看笔记。</p>
 ]]></content>
       <categories>
         <category>课程小结</category>
+        <category>面向切面编程</category>
       </categories>
       <tags>
-        <tag>SpringMVC</tag>
-        <tag>复习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Mysql数据库</title>
-    <url>/2022/09/04/Mysql%E6%95%B0%E6%8D%AE%E5%BA%93/</url>
-    <content><![CDATA[<h1 id="数据库的作用"><a href="#数据库的作用" class="headerlink" title="数据库的作用"></a>数据库的作用</h1><ul>
-<li>问题</li>
-</ul>
-<p><img src="/images/image-20220904202508844.png" alt="image-20220904202508844"></p>
-<ul>
-<li>解决之道</li>
-</ul>
-<p>为了解决上述问题，使用更加利于管理数据的东西-数据库，它能更有效的管理数据。</p>
-<p>例子：</p>
-<p>如果说图书馆是保存书籍的，那么数据库就是保存数据的。</p>
-<p><img src="/images/image-20220904203216903.png" alt="image-20220904203216903"></p>
-<h1 id="命令行连接到Mysql"><a href="#命令行连接到Mysql" class="headerlink" title="命令行连接到Mysql"></a>命令行连接到Mysql</h1><p><img src="/images/image-20220906210857655.png" alt="image-20220906210857655"></p>
-<p>可以看出mysql是一个服务，服务就需要用一个端口。在配置文件中my.ini有具体端口配置。</p>
-<p><img src="/images/image-20220906211334693.png" alt="image-20220906211334693"></p>
-<p><img src="/images/image-20220906212119479.png" alt="image-20220906212119479"></p>
-<p>演示：</p>
-<p><img src="/images/image-20220906213002187.png" alt="image-20220906213002187"></p>
-<p>这个localhost：在有网络的情况，会自动解析localhost为127.0.0.1，而断网的情况下，localhost只是一个字符串，不代表一个ip地址。mysql配置文件的存储在hosts文件中，其位置在：</p>
-<p>Windows：c:\windows\system32\drives\etc\hosts<br>linux：&#x2F;etc&#x2F;hosts</p>
-<p>配置文件内容如下：可看到localhost的主机ip设置为127.0.0.1。</p>
-<p><img src="/images/image-20220906213208407.png" alt="image-20220906213208407"></p>
-<h1 id="MySQL三层结构"><a href="#MySQL三层结构" class="headerlink" title="MySQL三层结构"></a>MySQL三层结构</h1><p><img src="/images/image-20220906221631259.png" alt="image-20220906221631259"></p>
-<p>图解：</p>
-<p><img src="/images/image-20220906221558766.png" alt="image-20220906221558766"></p>
-<p><img src="/images/image-20220906221819644.png" alt="image-20220906221819644"></p>
-<p><img src="/images/image-20220906221945130.png" alt="image-20220906221945130"></p>
-<h1 id="Java操作Mysql"><a href="#Java操作Mysql" class="headerlink" title="Java操作Mysql"></a>Java操作Mysql</h1><h2 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h2><p><img src="/images/image-20220907145716337.png" alt="image-20220907145716337"></p>
-<p><img src="/images/image-20220907153717597.png" alt="image-20220907153717597"></p>
-<p>解释：默认的校对规则是不区分大小写的，在上面选择jth02数据库的时候，会检测出两个对象，utf8_bin是区分大小写的。</p>
-<h2 id="查看、删除数据库"><a href="#查看、删除数据库" class="headerlink" title="查看、删除数据库"></a>查看、删除数据库</h2><p><img src="/images/image-20220907153903823.png" alt="image-20220907153903823"></p>
-<p><img src="/images/image-20220907210545187.png" alt="image-20220907210545187"></p>
-<h2 id="备份恢复数据库"><a href="#备份恢复数据库" class="headerlink" title="备份恢复数据库"></a>备份恢复数据库</h2><p><img src="/images/image-20220907200804340.png" alt="image-20220907200804340"></p>
-<p><img src="/images/image-20220907210611029.png" alt="image-20220907210611029"></p>
-<h2 id="课堂练习"><a href="#课堂练习" class="headerlink" title="课堂练习"></a>课堂练习</h2><p><img src="/images/image-20220907202845387.png" alt="image-20220907202845387"></p>
-<h1 id="表"><a href="#表" class="headerlink" title="表"></a>表</h1><p><img src="/images/image-20220907205205515.png" alt="image-20220907205205515"></p>
-<h1 id="列类型有哪些（常用数据类型）"><a href="#列类型有哪些（常用数据类型）" class="headerlink" title="列类型有哪些（常用数据类型）"></a>列类型有哪些（常用数据类型）</h1><p>结合老韩笔记</p>
-<p>常用数据类型：</p>
-<p><img src="/images/image-20220908114059966.png" alt="image-20220908114059966"></p>
-<p><img src="/images/image-20220908114144745.png" alt="image-20220908114144745"></p>
-]]></content>
-      <categories>
-        <category>Mysql</category>
-        <category>数据库</category>
-      </categories>
-      <tags>
-        <tag>Mysql</tag>
-        <tag>数据库</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>SpringMVC视图源码</title>
-    <url>/2022/11/14/SpringMVC%E8%A7%86%E5%9B%BE%E6%BA%90%E7%A0%81/</url>
-    <content><![CDATA[<p><img src="/images/SpringMVC%E8%A7%86%E5%9B%BE%E6%BA%90%E7%A0%81.png" alt="SpringMVC视图源码"></p>
-<h2 id="补充，当视图名称没有前缀的时候，会被配置文件中配置的视图解析器解析。这里配置的是Thymeleaf。所以就被ThymeleafView解析。"><a href="#补充，当视图名称没有前缀的时候，会被配置文件中配置的视图解析器解析。这里配置的是Thymeleaf。所以就被ThymeleafView解析。" class="headerlink" title="补充，当视图名称没有前缀的时候，会被配置文件中配置的视图解析器解析。这里配置的是Thymeleaf。所以就被ThymeleafView解析。"></a>补充，当视图名称没有前缀的时候，会被配置文件中配置的视图解析器解析。这里配置的是Thymeleaf。所以就被ThymeleafView解析。</h2>]]></content>
-      <categories>
-        <category>整理</category>
-        <category>笔记</category>
-      </categories>
-      <tags>
-        <tag>SpringMVC</tag>
-        <tag>源码</tag>
+        <tag>Spring</tag>
+        <tag>AOP</tag>
       </tags>
   </entry>
   <entry>
@@ -2759,69 +2822,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Spring事务整理</title>
-    <url>/2022/11/08/Spring%E4%BA%8B%E5%8A%A1%E6%95%B4%E7%90%86/</url>
-    <content><![CDATA[<p>参考文章  <a href="https://blog.csdn.net/donggua3694857/article/details/69858827">https://blog.csdn.net/donggua3694857/article/details/69858827</a></p>
-<h1 id="事务基本原理"><a href="#事务基本原理" class="headerlink" title="事务基本原理"></a>事务基本原理</h1><p>Spring事务的本质其实就是数据库对事务的支持，使用JDBC的事务管理机制,就是利用java.sql.Connection对象完成对事务的提交，那在没有Spring帮我们管理事务之前，我们要怎么做。<br>事务是一系列的动作，一旦其中有一个动作出现错误，必须全部回滚，系统将事务中对数据库的所有已完成的操作全部撤消，滚回到事务开始的状态，避免出现由于数据不一致而导致的接下来一系列的错误。事务的出现是为了确保数据的完整性和一致性，在目前企业级应用开发中，事务管理是必不可少的。</p>
-<p>典型案例：银行转账,A账户转钱给B账户100块钱，A账户少100，B账户多100。这两个动作合在一起是一个事务，不可分割。要么都成功要么都不成功。</p>
-<p>众所周知，事务有四大特性（ACID）</p>
-<p>1.原子性（Atomicity）事务是一个原子操作，由一系列动作组成。事务的原子性确保动作要么全部完成，要么完全不起作用。</p>
-<p>2.一致性（Consistency）事务在完成时，必须是所有的数据都保持一致状态。</p>
-<p>3.隔离性（Isolation）并发事务执行之间无影响，在一个事务内部的操作对其他事务是不产生影响，这需要事务隔离级别来指定隔离性。</p>
-<p>4.持久性（Durability）一旦事务完成，数据库的改变必须是持久化的。</p>
-<h1 id="并发MySQL读问题"><a href="#并发MySQL读问题" class="headerlink" title="并发MySQL读问题"></a>并发MySQL读问题</h1><p>在企业级应用中，多用户访问数据库是常见的场景，这就是所谓的事务的并发。事务并发所可能存在的问题：<br>1.脏读：一个事务读到另一个事务未提交的更新数据。<br>2.不可重复读：一个事务两次读同一行数据，可是这两次读到的数据不一样。<br>3.幻读：一个事务执行两次查询，但第二次查询比第一次查询多出了一些数据行。<br>4.丢失更新：撤消一个事务时，把其它事务已提交的更新的数据覆盖了。</p>
-<p>Spring框架对事务传播行为的7种</p>
-<p><img src="/images/image-20221108230605743.png" alt="image-20221108230605743"></p>
-<p>各方式对读问题的解决</p>
-<p><img src="/images/image-20221108230720533.png" alt="image-20221108230720533"></p>
-<p>具体Spring事务配置方式直接看Spring5笔记有很详细的步骤。</p>
-]]></content>
-      <categories>
-        <category>课程小结</category>
-      </categories>
-      <tags>
-        <tag>Spring</tag>
-        <tag>事务</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>String框架--AOP原理</title>
-    <url>/2022/10/30/String%E6%A1%86%E6%9E%B6-AOP%E5%8E%9F%E7%90%86/</url>
-    <content><![CDATA[<h1 id="AOP-简介"><a href="#AOP-简介" class="headerlink" title="AOP 简介"></a>AOP 简介</h1><p>AOP(Aspect Oriented Programming)意为面向切面变成，是OOP(Object Oriented Programming)面向对象编程的”进化版”。面向对象编程在拓展功能时，需要改变源码会影响到原有的功能。而AOP则是横向的在不改变原有功能(源码)的基础上增加新功能。能够对业务逻辑的各个部分进行隔离，从而使得业务逻辑各部分之间的耦合度降低，提高程序的可重用性，同时提高了开发的效率。</p>
-<h1 id="底层原理"><a href="#底层原理" class="headerlink" title="底层原理"></a>底层原理</h1><p>AOP底层使用的是动态代理机制。分两种情况1、是由接口。2、没有接口</p>
-<p>1、有接口，使用JDK动态代理</p>
-<p><img src="/images/image-20221030203439949.png" alt="image-20221030203439949"></p>
-<p>2、没有接口，使用CGLB动态代理</p>
-<p><img src="/images/image-20221030203901539.png" alt="image-20221030203901539"></p>
-<p>具体JDK动态代理实现看笔记，动态代理在reflect包下。当然也使用了反射机制。</p>
-<h2 id="那么使用动态代理的好处是什么？"><a href="#那么使用动态代理的好处是什么？" class="headerlink" title="那么使用动态代理的好处是什么？"></a>那么使用动态代理的好处是什么？</h2><p>代理故名思意，让代理对象完成对业务逻辑完成。我们在要增强业务逻辑的时候只需要改变增强代理对象的业务逻辑。实现了开闭原则(OCP) Open Close Principle，对扩展是开放的，对修改是关闭的。降低耦合度。</p>
-<h2 id="动态代理和静态代理"><a href="#动态代理和静态代理" class="headerlink" title="动态代理和静态代理"></a>动态代理和静态代理</h2><p>所谓静态也就是在程序运行前就已经存在代理类的字节码文件，代理类和委托类的关系在运行前就确定了。 字节码不就是.class文件。在Java里面一提到动态，就是反射机制了。动态代理类的源码是在程序运行期间由JVM根据反射等机制动态的生成，所以不存在代理类的字节码文件。代理类和委托类的关系是在程序运行时确定。 好处也显然易见，相较静态代理动态代理降低代码之间耦合度的能力更强。</p>
-<h1 id="AOP术语"><a href="#AOP术语" class="headerlink" title="AOP术语"></a>AOP术语</h1><p>1、连接点</p>
-<p>类里面哪些方法可以被增强，这些方法被称为连接点。</p>
-<p>2、切入点</p>
-<p>实际被真正增强的方法，称为切入点。有切入点表达式指定</p>
-<p>3、通知</p>
-<p>1）实际增强的逻辑部分称为通知(增强);</p>
-<p>2）通知的多种类型</p>
-<p>​	前置通知</p>
-<p>​	后置通知</p>
-<p>​	环绕通知</p>
-<p>​	异常通知</p>
-<p>​	最终通知</p>
-<p>4、切面</p>
-<p>把通知应用到切入点过程</p>
-<p>其余XML配置文件，注解开发具体看笔记。</p>
-]]></content>
-      <categories>
-        <category>课程小结</category>
-        <category>面向切面编程</category>
-      </categories>
-      <tags>
-        <tag>Spring</tag>
-        <tag>AOP</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Vue学习之MVVM思想</title>
     <url>/2023/03/03/Vue%E5%AD%A6%E4%B9%A0%E4%B9%8BMVVM%E6%80%9D%E6%83%B3/</url>
     <content><![CDATA[<h1 id="MVVM思想"><a href="#MVVM思想" class="headerlink" title="MVVM思想"></a>MVVM思想</h1><ul>
@@ -2880,30 +2880,6 @@
       <tags>
         <tag>equals</tag>
         <tag>hashcode</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hexo使用方法包括themes</title>
-    <url>/2022/04/20/hexo%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E5%8C%85%E6%8B%ACthemes/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span>     //创建新的文章</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server          //本地服务器</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate          //搭建</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy            //部署生成 发布到GitHub</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-<h3 id="hexo-文章可配置属性"><a href="#hexo-文章可配置属性" class="headerlink" title="hexo 文章可配置属性"></a>hexo 文章可配置属性</h3><p><img src="/images/hexo%E6%96%87%E7%AB%A0%E5%8F%AF%E9%85%8D%E7%BD%AE%E5%B1%9E%E6%80%A7.png" alt="hexo文章可配置属性"></p>
-<h2 id="butterfly-主题配置"><a href="#butterfly-主题配置" class="headerlink" title="butterfly 主题配置"></a>butterfly 主题配置</h2><h3 id="Page页面可配置属性"><a href="#Page页面可配置属性" class="headerlink" title="Page页面可配置属性"></a>Page页面可配置属性</h3><p><img src="/images/%E6%96%87%E7%AB%A0%E5%8F%AF%E9%85%8D%E7%BD%AE%E5%B1%9E%E6%80%A7.png" alt="文章可配置属性"></p>
-<h3 id="Post文章可配置属性"><a href="#Post文章可配置属性" class="headerlink" title="Post文章可配置属性"></a>Post文章可配置属性</h3><p><img src="/images/post%E9%85%8D%E7%BD%AE1.png" alt="Post1"> <img src="/images/post%E9%85%8D%E7%BD%AE2.png" alt="Post2"></p>
-]]></content>
-      <tags>
-        <tag>教程</tag>
       </tags>
   </entry>
   <entry>
@@ -2967,45 +2943,48 @@
       </tags>
   </entry>
   <entry>
-    <title>代码执行顺序--静态代码块、构造方法等及子父类相关问题</title>
-    <url>/2022/07/30/%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F-%E9%9D%99%E6%80%81%E4%BB%A3%E7%A0%81%E5%9D%97%E3%80%81%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95%E7%AD%89%E5%8F%8A%E5%AD%90%E7%88%B6%E7%B1%BB%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<h1 id="问题引出"><a href="#问题引出" class="headerlink" title="问题引出"></a><font color="2474B5">问题引出</font></h1><p>在做题时遇到静态代码块和其他数据加载先后顺序问题，平时写程序没有遇到。所以在这总结一下。</p>
-<h1 id="结论"><a href="#结论" class="headerlink" title="结论"></a><font color="2474B5">结论</font></h1><blockquote>
-<p>执行顺序为</p>
-<p>​	父类静态代码块、父类静态变量 ps：按照声明顺序执行（即先后顺序）</p>
-<p>​	子类静态代码块、静态变量 ps：按声明顺序执行</p>
-<p>​	父类局部代码块、成员变量ps：按声明顺序执行</p>
-<p>​	父类构造器函数</p>
-<p>​	子类局部代码块、成员变量ps：按声明顺序执行</p>
-<p>​	子类构造函数</p>
-</blockquote>
-<h1 id="代码测试"><a href="#代码测试" class="headerlink" title="代码测试"></a><font color="2474B5">代码测试</font></h1><ol>
-<li>静态代码块和静态变量</li>
-</ol>
-<p><img src="/images/image-20220730144317566.png" alt="image-20220730144317566"></p>
-<p><img src="/images/image-20220730144333226.png" alt="image-20220730144333226"></p>
-<p>可以看出来，当静态变量在静态代码块上面的时候编译不会报错，反之会报错。说明两者并没有先后关系。而是并列关系。</p>
-<ol start="2">
-<li>成员变量和局部代码块 与 静态代码块</li>
-</ol>
-<p><img src="/images/image-20220730145114251.png" alt="image-20220730145114251"></p>
-<p>可以看出即使普通成员变量声明顺序在静态代码块的前面还是无法引用，说明静态代码块的优先级高于普通成员变量。</p>
-<ol start="3">
-<li>整体来看</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">StaticTest</span> <span class="keyword">extends</span> <span class="title class_">A</span>&#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="type">String</span> <span class="variable">ss</span> <span class="operator">=</span> <span class="string">&quot;子类静态变量&quot;</span>;</span><br><span class="line">    <span class="type">String</span> <span class="variable">sss</span> <span class="operator">=</span> <span class="string">&quot;子类正常变量&quot;</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">StaticTest</span> <span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;子类构造函数&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;子类局部代码块&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;子类静态代码块&quot;</span>);</span><br><span class="line">        System.out.println(ss);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;子类main方法&quot;</span>);</span><br><span class="line">        <span class="keyword">new</span> <span class="title class_">StaticTest</span>();<span class="comment">//生成new子类对象</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">A</span> &#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">&quot;父类静态变量&quot;</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">A</span> <span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;父类构造器&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;父类局部代码块&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">String</span> <span class="variable">ss</span> <span class="operator">=</span> <span class="string">&quot;父类成员变量&quot;</span>;</span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        System.out.println(s);</span><br><span class="line">        System.out.println(<span class="string">&quot;父类静态代码块&quot;</span>);</span><br><span class="line">        <span class="type">String</span> <span class="variable">s1</span> <span class="operator">=</span> <span class="string">&quot;父类静态代码块中的成员变量&quot;</span>;</span><br><span class="line">        <span class="comment">//System.out.println(ss);无法调用普通成员变量，因为静态代码块优先级高于它</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <title>hexo使用方法包括themes</title>
+    <url>/2022/04/20/hexo%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E5%8C%85%E6%8B%ACthemes/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span>     //创建新的文章</span><br></pre></td></tr></table></figure>
 
-<p>输出结果：</p>
-<p><img src="/images/image-20220730145837459.png" alt="image-20220730145837459"></p>
-<mark class="hl-label purple">总结</mark> ：
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server          //本地服务器</span><br></pre></td></tr></table></figure>
 
-<p>与先前的结论一直。还需注意的是new一个子类对象的时候，会先调用父类的构造器然后再调用子类构造器。</p>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate          //搭建</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy            //部署生成 发布到GitHub</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h3 id="hexo-文章可配置属性"><a href="#hexo-文章可配置属性" class="headerlink" title="hexo 文章可配置属性"></a>hexo 文章可配置属性</h3><p><img src="/images/hexo%E6%96%87%E7%AB%A0%E5%8F%AF%E9%85%8D%E7%BD%AE%E5%B1%9E%E6%80%A7.png" alt="hexo文章可配置属性"></p>
+<h2 id="butterfly-主题配置"><a href="#butterfly-主题配置" class="headerlink" title="butterfly 主题配置"></a>butterfly 主题配置</h2><h3 id="Page页面可配置属性"><a href="#Page页面可配置属性" class="headerlink" title="Page页面可配置属性"></a>Page页面可配置属性</h3><p><img src="/images/%E6%96%87%E7%AB%A0%E5%8F%AF%E9%85%8D%E7%BD%AE%E5%B1%9E%E6%80%A7.png" alt="文章可配置属性"></p>
+<h3 id="Post文章可配置属性"><a href="#Post文章可配置属性" class="headerlink" title="Post文章可配置属性"></a>Post文章可配置属性</h3><p><img src="/images/post%E9%85%8D%E7%BD%AE1.png" alt="Post1"> <img src="/images/post%E9%85%8D%E7%BD%AE2.png" alt="Post2"></p>
+]]></content>
+      <tags>
+        <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>json、xml、Ajax简单理解</title>
+    <url>/2022/11/30/json%E3%80%81xml%E3%80%81Ajax%E7%AE%80%E5%8D%95%E7%90%86%E8%A7%A3/</url>
+    <content><![CDATA[<h1 id="JSON和XML"><a href="#JSON和XML" class="headerlink" title="JSON和XML"></a>JSON和XML</h1><p>JSON是Javascript的一种数据格式，全称JSON（ JavaScript Object Notation, JS对象简谱）是一种轻量级的数据交换格式。XML也是一种数据交互格式。XML (<strong>Extensible Markup Language</strong>) 是一种类似于 HTML 的标记语言，但是 XML 没有使用预定义的标记。XML较多用于配置文件，JSON较多用户数据交互格式。</p>
+<p>因为JSON数据量少，简单。</p>
+<p><img src="/images/image-20221130105628681.png" alt="image-20221130105628681"></p>
+<h1 id="两者解析能力"><a href="#两者解析能力" class="headerlink" title="两者解析能力"></a>两者解析能力</h1><p>XML解析使用dom4j、xpath。dom就是一个文档，和html很像，使用文档解析。解析的时候将整个XML文件当作document，先读根标签。根标签就是类似于HTML中的HTML标签，是最外层的标签。然后获取子标签，一层一层的解析。</p>
+<p>JSON两种格式：1、一种对象。2、一种数组。获取方式：对象： 使用对象.键获取值。数组for循环获取。</p>
+<p>对象是放在{}中以键值对的形式存储，而数组是[]存储的是一个一个数据。</p>
+<p>Java实体类和map转换成json对象就是JSON对象，list之类的就是JSON数组</p>
+<h1 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h1><p>Ajax 的全称是asynchronous javascript and xml</p>
+<p>Ajax是一种用于创建快速动态网页的技术，使用JavaScript操作异步对象XMLHttpRequest，和服务器交换使用json数据格式。通过在后台与服务器进行少量数据交换，前后端数据交互。</p>
+<p>简单来说：可以在页面不刷新就实现和服务器数据交互。</p>
 ]]></content>
       <categories>
-        <category>刷题笔记</category>
+        <category>数据交互格式</category>
       </categories>
       <tags>
-        <tag>Java</tag>
+        <tag>JavaWeb</tag>
       </tags>
   </entry>
   <entry>
@@ -3051,24 +3030,45 @@
       </tags>
   </entry>
   <entry>
-    <title>json、xml、Ajax简单理解</title>
-    <url>/2022/11/30/json%E3%80%81xml%E3%80%81Ajax%E7%AE%80%E5%8D%95%E7%90%86%E8%A7%A3/</url>
-    <content><![CDATA[<h1 id="JSON和XML"><a href="#JSON和XML" class="headerlink" title="JSON和XML"></a>JSON和XML</h1><p>JSON是Javascript的一种数据格式，全称JSON（ JavaScript Object Notation, JS对象简谱）是一种轻量级的数据交换格式。XML也是一种数据交互格式。XML (<strong>Extensible Markup Language</strong>) 是一种类似于 HTML 的标记语言，但是 XML 没有使用预定义的标记。XML较多用于配置文件，JSON较多用户数据交互格式。</p>
-<p>因为JSON数据量少，简单。</p>
-<p><img src="/images/image-20221130105628681.png" alt="image-20221130105628681"></p>
-<h1 id="两者解析能力"><a href="#两者解析能力" class="headerlink" title="两者解析能力"></a>两者解析能力</h1><p>XML解析使用dom4j、xpath。dom就是一个文档，和html很像，使用文档解析。解析的时候将整个XML文件当作document，先读根标签。根标签就是类似于HTML中的HTML标签，是最外层的标签。然后获取子标签，一层一层的解析。</p>
-<p>JSON两种格式：1、一种对象。2、一种数组。获取方式：对象： 使用对象.键获取值。数组for循环获取。</p>
-<p>对象是放在{}中以键值对的形式存储，而数组是[]存储的是一个一个数据。</p>
-<p>Java实体类和map转换成json对象就是JSON对象，list之类的就是JSON数组</p>
-<h1 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h1><p>Ajax 的全称是asynchronous javascript and xml</p>
-<p>Ajax是一种用于创建快速动态网页的技术，使用JavaScript操作异步对象XMLHttpRequest，和服务器交换使用json数据格式。通过在后台与服务器进行少量数据交换，前后端数据交互。</p>
-<p>简单来说：可以在页面不刷新就实现和服务器数据交互。</p>
+    <title>代码执行顺序--静态代码块、构造方法等及子父类相关问题</title>
+    <url>/2022/07/30/%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F-%E9%9D%99%E6%80%81%E4%BB%A3%E7%A0%81%E5%9D%97%E3%80%81%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95%E7%AD%89%E5%8F%8A%E5%AD%90%E7%88%B6%E7%B1%BB%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<h1 id="问题引出"><a href="#问题引出" class="headerlink" title="问题引出"></a><font color="2474B5">问题引出</font></h1><p>在做题时遇到静态代码块和其他数据加载先后顺序问题，平时写程序没有遇到。所以在这总结一下。</p>
+<h1 id="结论"><a href="#结论" class="headerlink" title="结论"></a><font color="2474B5">结论</font></h1><blockquote>
+<p>执行顺序为</p>
+<p>​	父类静态代码块、父类静态变量 ps：按照声明顺序执行（即先后顺序）</p>
+<p>​	子类静态代码块、静态变量 ps：按声明顺序执行</p>
+<p>​	父类局部代码块、成员变量ps：按声明顺序执行</p>
+<p>​	父类构造器函数</p>
+<p>​	子类局部代码块、成员变量ps：按声明顺序执行</p>
+<p>​	子类构造函数</p>
+</blockquote>
+<h1 id="代码测试"><a href="#代码测试" class="headerlink" title="代码测试"></a><font color="2474B5">代码测试</font></h1><ol>
+<li>静态代码块和静态变量</li>
+</ol>
+<p><img src="/images/image-20220730144317566.png" alt="image-20220730144317566"></p>
+<p><img src="/images/image-20220730144333226.png" alt="image-20220730144333226"></p>
+<p>可以看出来，当静态变量在静态代码块上面的时候编译不会报错，反之会报错。说明两者并没有先后关系。而是并列关系。</p>
+<ol start="2">
+<li>成员变量和局部代码块 与 静态代码块</li>
+</ol>
+<p><img src="/images/image-20220730145114251.png" alt="image-20220730145114251"></p>
+<p>可以看出即使普通成员变量声明顺序在静态代码块的前面还是无法引用，说明静态代码块的优先级高于普通成员变量。</p>
+<ol start="3">
+<li>整体来看</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">StaticTest</span> <span class="keyword">extends</span> <span class="title class_">A</span>&#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="type">String</span> <span class="variable">ss</span> <span class="operator">=</span> <span class="string">&quot;子类静态变量&quot;</span>;</span><br><span class="line">    <span class="type">String</span> <span class="variable">sss</span> <span class="operator">=</span> <span class="string">&quot;子类正常变量&quot;</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">StaticTest</span> <span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;子类构造函数&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;子类局部代码块&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;子类静态代码块&quot;</span>);</span><br><span class="line">        System.out.println(ss);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;子类main方法&quot;</span>);</span><br><span class="line">        <span class="keyword">new</span> <span class="title class_">StaticTest</span>();<span class="comment">//生成new子类对象</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">A</span> &#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">&quot;父类静态变量&quot;</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">A</span> <span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;父类构造器&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;父类局部代码块&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">String</span> <span class="variable">ss</span> <span class="operator">=</span> <span class="string">&quot;父类成员变量&quot;</span>;</span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        System.out.println(s);</span><br><span class="line">        System.out.println(<span class="string">&quot;父类静态代码块&quot;</span>);</span><br><span class="line">        <span class="type">String</span> <span class="variable">s1</span> <span class="operator">=</span> <span class="string">&quot;父类静态代码块中的成员变量&quot;</span>;</span><br><span class="line">        <span class="comment">//System.out.println(ss);无法调用普通成员变量，因为静态代码块优先级高于它</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>输出结果：</p>
+<p><img src="/images/image-20220730145837459.png" alt="image-20220730145837459"></p>
+<mark class="hl-label purple">总结</mark> ：
+
+<p>与先前的结论一直。还需注意的是new一个子类对象的时候，会先调用父类的构造器然后再调用子类构造器。</p>
 ]]></content>
       <categories>
-        <category>数据交互格式</category>
+        <category>刷题笔记</category>
       </categories>
       <tags>
-        <tag>JavaWeb</tag>
+        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
@@ -3393,6 +3393,26 @@
       </tags>
   </entry>
   <entry>
+    <title>增强for出现ConcurrentModificationException</title>
+    <url>/2022/08/04/%E5%A2%9E%E5%BC%BAfor%E5%87%BA%E7%8E%B0ConcurrentModificationException/</url>
+    <content><![CDATA[<ul>
+<li>问题复现</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        Vector&lt;String&gt; vector = <span class="keyword">new</span> <span class="title class_">Vector</span>&lt;&gt;();</span><br><span class="line">        vector.add(<span class="string">&quot;ss&quot;</span>);</span><br><span class="line">        vector.add(<span class="string">&quot;ss1&quot;</span>);</span><br><span class="line">        vector.add(<span class="string">&quot;22222&quot;</span>);</span><br><span class="line">        <span class="comment">//增强for遍历</span></span><br><span class="line">        <span class="keyword">for</span> (String s : vector) &#123;</span><br><span class="line">            System.out.println(s);</span><br><span class="line">            vector.remove(<span class="string">&quot;ss&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/image-20220804172251868.png" alt="image-20220804172251868"></p>
+<p>这是由于增强for循环底层调用的是迭代器的next和hasnext方法来遍历的，移除元素后，无法预知到元素的位置。这也是增强for的缺点，不能获取下标，不能动态删除集合中的内容。</p>
+<p>解决办法：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">List&lt;String&gt; list = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;String&gt;();</span><br><span class="line">     list.add(<span class="string">&quot;h&quot;</span>);</span><br><span class="line">     list.add(<span class="string">&quot;y&quot;</span>);</span><br><span class="line">     list.add(<span class="string">&quot;q&quot;</span>);</span><br><span class="line">List&lt;String&gt; list_remove = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;String&gt;();</span><br><span class="line"> <span class="keyword">for</span>(String s : list)&#123;</span><br><span class="line">     <span class="keyword">if</span>(<span class="string">&quot;q&quot;</span>.equals(s))&#123;</span><br><span class="line">     list_remove.add(s); <span class="comment">//把要移除的统一放在一个集合</span></span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="comment">//统一移除</span></span><br><span class="line"> list.removeAll(list_remove);</span><br><span class="line"> System.out.println(list);<span class="comment">//[h, y]</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>多用户通信系统</title>
     <url>/2022/08/10/%E5%A4%9A%E7%94%A8%E6%88%B7%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><ul>
@@ -3465,42 +3485,6 @@
         <tag>Java</tag>
         <tag>IO</tag>
         <tag>网络编程</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>常用类String</title>
-    <url>/2023/02/24/%E5%B8%B8%E7%94%A8%E7%B1%BBString/</url>
-    <content><![CDATA[<h2 id="String为什么是不可变的"><a href="#String为什么是不可变的" class="headerlink" title="String为什么是不可变的"></a>String为什么是不可变的</h2><p>1、首先String中的保存字符的数组是由Final关键字修饰的，并且是<code>private</code>私有的且没有提供外部的访问的方法。这就说明这个数组的变量是不可修改的。虽然并没有保证这个字符数组是不可变的。(final关键字修饰引用类型的时候，只保证这个变量指向的地址是不变的。但是地址中的内容可以改变)。</p>
-<p>2、其次String类是由Final修饰的，不能由其他类继承和修改字符数组。这两个加起来才说明String是不可变的。</p>
-<h2 id="Java9"><a href="#Java9" class="headerlink" title="Java9"></a>Java9</h2><p>Java9将String底层<code>char[]</code>字符数组改成<code>byte[]</code>。显然byte数组的空间更少，表示的数量也越小。</p>
-<p>因为字符串包含的汉字没有超过标准<code>Latin-1</code>可表示的范围。</p>
-<h2 id="字符串常量池"><a href="#字符串常量池" class="headerlink" title="字符串常量池"></a>字符串常量池</h2>]]></content>
-      <categories>
-        <category>常用类</category>
-      </categories>
-      <tags>
-        <tag>String</tag>
-        <tag>常用类</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>增强for出现ConcurrentModificationException</title>
-    <url>/2022/08/04/%E5%A2%9E%E5%BC%BAfor%E5%87%BA%E7%8E%B0ConcurrentModificationException/</url>
-    <content><![CDATA[<ul>
-<li>问题复现</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        Vector&lt;String&gt; vector = <span class="keyword">new</span> <span class="title class_">Vector</span>&lt;&gt;();</span><br><span class="line">        vector.add(<span class="string">&quot;ss&quot;</span>);</span><br><span class="line">        vector.add(<span class="string">&quot;ss1&quot;</span>);</span><br><span class="line">        vector.add(<span class="string">&quot;22222&quot;</span>);</span><br><span class="line">        <span class="comment">//增强for遍历</span></span><br><span class="line">        <span class="keyword">for</span> (String s : vector) &#123;</span><br><span class="line">            System.out.println(s);</span><br><span class="line">            vector.remove(<span class="string">&quot;ss&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src="/images/image-20220804172251868.png" alt="image-20220804172251868"></p>
-<p>这是由于增强for循环底层调用的是迭代器的next和hasnext方法来遍历的，移除元素后，无法预知到元素的位置。这也是增强for的缺点，不能获取下标，不能动态删除集合中的内容。</p>
-<p>解决办法：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">List&lt;String&gt; list = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;String&gt;();</span><br><span class="line">     list.add(<span class="string">&quot;h&quot;</span>);</span><br><span class="line">     list.add(<span class="string">&quot;y&quot;</span>);</span><br><span class="line">     list.add(<span class="string">&quot;q&quot;</span>);</span><br><span class="line">List&lt;String&gt; list_remove = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;String&gt;();</span><br><span class="line"> <span class="keyword">for</span>(String s : list)&#123;</span><br><span class="line">     <span class="keyword">if</span>(<span class="string">&quot;q&quot;</span>.equals(s))&#123;</span><br><span class="line">     list_remove.add(s); <span class="comment">//把要移除的统一放在一个集合</span></span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="comment">//统一移除</span></span><br><span class="line"> list.removeAll(list_remove);</span><br><span class="line"> System.out.println(list);<span class="comment">//[h, y]</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
@@ -3679,6 +3663,45 @@
     <content><![CDATA[]]></content>
   </entry>
   <entry>
+    <title>简单JVM内存</title>
+    <url>/2022/10/13/%E7%AE%80%E5%8D%95JVM%E5%86%85%E5%AD%98/</url>
+    <content><![CDATA[<h1 id="简单JVM内存模型图"><a href="#简单JVM内存模型图" class="headerlink" title="简单JVM内存模型图"></a>简单JVM内存模型图</h1><p><img src="/images/image-20221013225543790.png" alt="image-20221013225543790"></p>
+<p>堆区：存放的使用new关键字创建的类或者数组的(含成员变量)；类对象也保存在堆中</p>
+<p>栈区：存放的是局部变量(注:形参也是局部变量的一种)和对象的声明引用;</p>
+<p>方法区(常量池):存放的是字符串，其他基本数据类型的常量，方法区包含所有的class（类信息)，方法区中包含的都是在程序中永远的唯一的元素（String字符串类型也是哦）所以字符串类型是不变的</p>
+<p>final修饰的变量也放在方法区</p>
+<p>静态域:静态变量</p>
+<p><font color="red">老韩解读:</font></p>
+<p>JDK8以前：类对象放在方法区里面<br>JDK8以后:   类对象放在堆里面。 Static 变量保存在Class实例的尾部，这个Class对象在堆中。</p>
+<p><img src="/images/image-20221013232033771.png" alt="image-20221013232033771"></p>
+<p><img src="/images/image-20220822234037124.png" alt="image-20220822234037124"></p>
+<h1 id="具体问题"><a href="#具体问题" class="headerlink" title="具体问题"></a>具体问题</h1><p>假设内存中没有连续的20MB空间。但不连续的空间很大，此时有一个长度为20的数据，每个下标放了一个1MB对象，请问这个内存能否放下这个数组！</p>
+<p>答案是可以的。数组放的是对象的引用，对象分散存在堆中间的，然后他的引用是连续的但是占不了很多空间的。所以这个能放下。</p>
+]]></content>
+      <categories>
+        <category>-JVM</category>
+      </categories>
+      <tags>
+        <tag>-JVM -堆栈</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>常用类String</title>
+    <url>/2023/02/24/%E5%B8%B8%E7%94%A8%E7%B1%BBString/</url>
+    <content><![CDATA[<h2 id="String为什么是不可变的"><a href="#String为什么是不可变的" class="headerlink" title="String为什么是不可变的"></a>String为什么是不可变的</h2><p>1、首先String中的保存字符的数组是由Final关键字修饰的，并且是<code>private</code>私有的且没有提供外部的访问的方法。这就说明这个数组的变量是不可修改的。虽然并没有保证这个字符数组是不可变的。(final关键字修饰引用类型的时候，只保证这个变量指向的地址是不变的。但是地址中的内容可以改变)。</p>
+<p>2、其次String类是由Final修饰的，不能由其他类继承和修改字符数组。这两个加起来才说明String是不可变的。</p>
+<h2 id="Java9"><a href="#Java9" class="headerlink" title="Java9"></a>Java9</h2><p>Java9将String底层<code>char[]</code>字符数组改成<code>byte[]</code>。显然byte数组的空间更少，表示的数量也越小。</p>
+<p>因为字符串包含的汉字没有超过标准<code>Latin-1</code>可表示的范围。</p>
+<h2 id="字符串常量池"><a href="#字符串常量池" class="headerlink" title="字符串常量池"></a>字符串常量池</h2>]]></content>
+      <categories>
+        <category>常用类</category>
+      </categories>
+      <tags>
+        <tag>String</tag>
+        <tag>常用类</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>算法题</title>
     <url>/2022/07/04/%E7%AE%97%E6%B3%95%E9%A2%98/</url>
     <content><![CDATA[<h1 id="双指针"><a href="#双指针" class="headerlink" title="双指针"></a><font color="#6dc1f7">双指针</font></h1><blockquote>
@@ -3716,29 +3739,6 @@
       </tags>
   </entry>
   <entry>
-    <title>简单JVM内存</title>
-    <url>/2022/10/13/%E7%AE%80%E5%8D%95JVM%E5%86%85%E5%AD%98/</url>
-    <content><![CDATA[<h1 id="简单JVM内存模型图"><a href="#简单JVM内存模型图" class="headerlink" title="简单JVM内存模型图"></a>简单JVM内存模型图</h1><p><img src="/images/image-20221013225543790.png" alt="image-20221013225543790"></p>
-<p>堆区：存放的使用new关键字创建的类或者数组的(含成员变量)；类对象也保存在堆中</p>
-<p>栈区：存放的是局部变量(注:形参也是局部变量的一种)和对象的声明引用;</p>
-<p>方法区(常量池):存放的是字符串，其他基本数据类型的常量，方法区包含所有的class（类信息)，方法区中包含的都是在程序中永远的唯一的元素（String字符串类型也是哦）所以字符串类型是不变的</p>
-<p>final修饰的变量也放在方法区</p>
-<p>静态域:静态变量</p>
-<p><font color="red">老韩解读:</font></p>
-<p>JDK8以前：类对象放在方法区里面<br>JDK8以后:   类对象放在堆里面。 Static 变量保存在Class实例的尾部，这个Class对象在堆中。</p>
-<p><img src="/images/image-20221013232033771.png" alt="image-20221013232033771"></p>
-<p><img src="/images/image-20220822234037124.png" alt="image-20220822234037124"></p>
-<h1 id="具体问题"><a href="#具体问题" class="headerlink" title="具体问题"></a>具体问题</h1><p>假设内存中没有连续的20MB空间。但不连续的空间很大，此时有一个长度为20的数据，每个下标放了一个1MB对象，请问这个内存能否放下这个数组！</p>
-<p>答案是可以的。数组放的是对象的引用，对象分散存在堆中间的，然后他的引用是连续的但是占不了很多空间的。所以这个能放下。</p>
-]]></content>
-      <categories>
-        <category>-JVM</category>
-      </categories>
-      <tags>
-        <tag>-JVM -堆栈</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>面经</title>
     <url>/2023/03/11/%E7%BA%BF%E7%A8%8B%E5%92%8C%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
     <content><![CDATA[<h1 id="请你说说线程和进程的区别"><a href="#请你说说线程和进程的区别" class="headerlink" title="请你说说线程和进程的区别"></a>请你说说线程和进程的区别</h1><h2 id="我的理解"><a href="#我的理解" class="headerlink" title="我的理解"></a>我的理解</h2><p>首先:这两者的关系是一个进程可以使用多个线程来执行当前的进程任务。</p>
@@ -3764,18 +3764,6 @@
       <tags>
         <tag>Java</tag>
         <tag>操作系统</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>计算机组成原理</title>
-    <url>/2023/03/11/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/</url>
-    <content><![CDATA[<h3 id="机器字长"><a href="#机器字长" class="headerlink" title="机器字长"></a>机器字长</h3><p>指的就是计算机一次整数运算能处理的2进制位数，就是平时说的计算机是多少位的。</p>
-]]></content>
-      <categories>
-        <category>考研</category>
-      </categories>
-      <tags>
-        <tag>原理</tag>
       </tags>
   </entry>
   <entry>
@@ -3820,6 +3808,18 @@
       </categories>
       <tags>
         <tag>Java核心技术卷1</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>计算机组成原理</title>
+    <url>/2023/03/11/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/</url>
+    <content><![CDATA[<h3 id="机器字长"><a href="#机器字长" class="headerlink" title="机器字长"></a>机器字长</h3><p>指的就是计算机一次整数运算能处理的2进制位数，就是平时说的计算机是多少位的。</p>
+]]></content>
+      <categories>
+        <category>考研</category>
+      </categories>
+      <tags>
+        <tag>原理</tag>
       </tags>
   </entry>
 </search>
