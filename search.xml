@@ -3822,4 +3822,41 @@
         <tag>原理</tag>
       </tags>
   </entry>
+  <entry>
+    <title>408——数据结构</title>
+    <url>/2023/03/30/408%E2%80%94%E2%80%94%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>考研</category>
+      </categories>
+      <tags>
+        <tag>数据结构</tag>
+        <tag>408</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>点评项目简略</title>
+    <url>/2024/03/17/%E7%82%B9%E8%AF%84%E9%A1%B9%E7%9B%AE%E7%AE%80%E7%95%A5/</url>
+    <content><![CDATA[<p>1 拦截器（<em><strong>双拦截器</strong></em>）</p>
+<p>​	拦截器在controller<em><strong>（指定的，排除的）</strong></em>执行前都会执行，进行用户校验，存储用户信息到threadLocal。</p>
+<p>​	&#x2F;&#x2F;登录拦截器 &#x2F;&#x2F;token拦截器</p>
+<p><img src="/xiaojingangxiaoxiang/xiaojingangxiaoxiang.github/mybloghexo\source\images\image-20240317170532676.png" alt="image-20240317170532676"></p>
+<p>2 session共享问题 <em><strong>（使用redis替代）</strong></em></p>
+<p>​	在Tomcat集群的时候session无法共享，使用redis处理：速度快、共享存储，键值对结构。</p>
+<p>​	redis验证码： 使用string类型作为 value验证码，使用手机号(<em><strong>改为token保证数据安全</strong></em>)码做key。</p>
+<p>​	redis保存用户对象（保持用户登录状态等）：hash map数据结构</p>
+<p>​	拦截器刷新token有效期。</p>
+<p>​	threadLocal保存用户信息。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">在多线程编程中，ThreadLocal 是一个非常有用的工具，它可以让每个线程都拥有自己独立的变量副本，从而避免了线程间共享变量时可能出现的竞争和同步问题。将用户信息保存在 ThreadLocal 中有以下好处：</span><br><span class="line"></span><br><span class="line">线程隔离：每个线程可以独立地存储和修改自己的用户信息，不会相互影响，这在多线程并发处理的场景下非常有用。</span><br><span class="line"></span><br><span class="line">上下文信息传递：在一些框架中，比如Web开发中，可以将用户信息存储在 ThreadLocal 中，这样在整个请求处理过程中都可以方便地获取到用户信息，而无需显式传递。</span><br><span class="line"></span><br><span class="line">减少参数传递：通过将用户信息存储在 ThreadLocal 中，可以减少方法之间需要传递的参数，简化代码逻辑。</span><br><span class="line"></span><br><span class="line">避免单例陷阱：一些开发人员可能会倾向于使用单例来存储全局的用户信息，但这样做可能会引入线程安全问题。使用 ThreadLocal 可以避免这种问题，因为每个线程有自己的用户信息副本。</span><br><span class="line"></span><br><span class="line">然而，需要注意的是，滥用 ThreadLocal 也可能导致内存泄漏和上下文混乱的问题，因此在使用过程中需要谨慎考虑清除操作，并且仔细评估是否真的需要在每个线程中存储独立的用户信息。</span><br></pre></td></tr></table></figure>
+
+<p>​	</p>
+]]></content>
+      <categories>
+        <category>复习</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>redis</tag>
+      </tags>
+  </entry>
 </search>
