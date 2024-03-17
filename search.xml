@@ -1,18 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Javascript笔记随笔</title>
-    <url>/2022/04/20/Javascript%E7%AC%94%E8%AE%B01/</url>
-    <content><![CDATA[<hr>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-      <tags>
-        <tag>Javascript</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>408——数据结构</title>
     <url>/2023/03/30/408%E2%80%94%E2%80%94%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</url>
     <content><![CDATA[]]></content>
@@ -22,6 +10,31 @@
       <tags>
         <tag>数据结构</tag>
         <tag>408</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JavaWeb</title>
+    <url>/2022/09/01/JavaWeb/</url>
+    <content><![CDATA[<h2 id="CS和BS的异同点"><a href="#CS和BS的异同点" class="headerlink" title="CS和BS的异同点"></a>CS和BS的异同点</h2><p><img src="/images/image-20220901200621183.png" alt="image-20220901200621183"></p>
+<h2 id="Tomcat"><a href="#Tomcat" class="headerlink" title="Tomcat"></a>Tomcat</h2><p><img src="/images/image-20220904174047101.png" alt="image-20220904174047101"></p>
+<p>localhost:8080是默认网址。</p>
+<p>通过网址可以访问不同主机的tomcat。</p>
+<p>通过context root 访问不同项目。</p>
+<h2 id="Idea配置Tomcat"><a href="#Idea配置Tomcat" class="headerlink" title="Idea配置Tomcat"></a>Idea配置Tomcat</h2><p><img src="/images/image-20220904200149550.png" alt="image-20220904200149550"></p>
+<p>不同版本idea配置不同，具体可百度。</p>
+<p>教程：<a href="https://www.bilibili.com/video/BV1AS4y177xJ?p=20&amp;vd_source=965a4445e7b07ab5faef9dc78ccf37a7">https://www.bilibili.com/video/BV1AS4y177xJ?p=20&amp;vd_source=965a4445e7b07ab5faef9dc78ccf37a7</a></p>
+<h2 id="Servlet"><a href="#Servlet" class="headerlink" title="Servlet"></a>Servlet</h2>]]></content>
+  </entry>
+  <entry>
+    <title>Javascript笔记随笔</title>
+    <url>/2022/04/20/Javascript%E7%AC%94%E8%AE%B01/</url>
+    <content><![CDATA[<hr>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>Javascript</tag>
       </tags>
   </entry>
   <entry>
@@ -43,19 +56,6 @@
         <tag>Java</tag>
         <tag>基础</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>JavaWeb</title>
-    <url>/2022/09/01/JavaWeb/</url>
-    <content><![CDATA[<h2 id="CS和BS的异同点"><a href="#CS和BS的异同点" class="headerlink" title="CS和BS的异同点"></a>CS和BS的异同点</h2><p><img src="/images/image-20220901200621183.png" alt="image-20220901200621183"></p>
-<h2 id="Tomcat"><a href="#Tomcat" class="headerlink" title="Tomcat"></a>Tomcat</h2><p><img src="/images/image-20220904174047101.png" alt="image-20220904174047101"></p>
-<p>localhost:8080是默认网址。</p>
-<p>通过网址可以访问不同主机的tomcat。</p>
-<p>通过context root 访问不同项目。</p>
-<h2 id="Idea配置Tomcat"><a href="#Idea配置Tomcat" class="headerlink" title="Idea配置Tomcat"></a>Idea配置Tomcat</h2><p><img src="/images/image-20220904200149550.png" alt="image-20220904200149550"></p>
-<p>不同版本idea配置不同，具体可百度。</p>
-<p>教程：<a href="https://www.bilibili.com/video/BV1AS4y177xJ?p=20&amp;vd_source=965a4445e7b07ab5faef9dc78ccf37a7">https://www.bilibili.com/video/BV1AS4y177xJ?p=20&amp;vd_source=965a4445e7b07ab5faef9dc78ccf37a7</a></p>
-<h2 id="Servlet"><a href="#Servlet" class="headerlink" title="Servlet"></a>Servlet</h2>]]></content>
   </entry>
   <entry>
     <title>Java变量何时需要初始化</title>
@@ -103,6 +103,23 @@
       <tags>
         <tag>Java复习</tag>
         <tag>细节</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MyFirst-ChromeExtention</title>
+    <url>/2022/05/01/MyFirst-ChromeExtention/</url>
+    <content><![CDATA[<hr>
+<h1 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h1><p>该chrome主要有两方面功能和两种展现方式: <font color="#f89996"><strong>popup</strong> </font>和<font color="#f89996"><strong>option</strong></font>。<br>成功安装时，会跳转到B站<strong>A-SOUL_Official</strong>个人空间  </p>
+<h2 id="popop"><a href="#popop" class="headerlink" title="popop"></a>popop</h2><p>将插件置顶后<font color="#f89996"><strong>左键</strong></font>单击调用出popup窗口，可以看见有一个按钮和输入框: 点击按钮后会根据当前按钮<br>的颜色来改变当前浏览器的<font color="#f89996"><strong>背景颜色</strong></font>。 输入框是记录键盘输入的文字，并在上面<font color="#f89996"><strong>红色小条</strong></font>中显示。<br>注意: 关闭popup页面后输入的文字不会被保存。</p>
+<h2 id="option"><a href="#option" class="headerlink" title="option"></a>option</h2><p>右键置顶的插件，并选中<font color="#f89996"><strong>选项</strong></font>跳转到选项页面，其中有五个按钮供选择，来更改popup页面中的按钮颜色。  </p>
+<h2 id="图片更改"><a href="#图片更改" class="headerlink" title="图片更改"></a>图片更改</h2><p>在根目录中找到<code>popup.html</code>文件，找到<code>img</code>更改<font color="#f89996"><strong>popup</strong></font>窗口对应的图片<br>相应的找到<code>option.html</code>文件，更改<font color="#f89996"><strong>option</strong></font>窗口对应的图片</p>
+<hr>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>Chrome Extention</tag>
       </tags>
   </entry>
   <entry>
@@ -2487,23 +2504,6 @@
       </tags>
   </entry>
   <entry>
-    <title>MyFirst-ChromeExtention</title>
-    <url>/2022/05/01/MyFirst-ChromeExtention/</url>
-    <content><![CDATA[<hr>
-<h1 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h1><p>该chrome主要有两方面功能和两种展现方式: <font color="#f89996"><strong>popup</strong> </font>和<font color="#f89996"><strong>option</strong></font>。<br>成功安装时，会跳转到B站<strong>A-SOUL_Official</strong>个人空间  </p>
-<h2 id="popop"><a href="#popop" class="headerlink" title="popop"></a>popop</h2><p>将插件置顶后<font color="#f89996"><strong>左键</strong></font>单击调用出popup窗口，可以看见有一个按钮和输入框: 点击按钮后会根据当前按钮<br>的颜色来改变当前浏览器的<font color="#f89996"><strong>背景颜色</strong></font>。 输入框是记录键盘输入的文字，并在上面<font color="#f89996"><strong>红色小条</strong></font>中显示。<br>注意: 关闭popup页面后输入的文字不会被保存。</p>
-<h2 id="option"><a href="#option" class="headerlink" title="option"></a>option</h2><p>右键置顶的插件，并选中<font color="#f89996"><strong>选项</strong></font>跳转到选项页面，其中有五个按钮供选择，来更改popup页面中的按钮颜色。  </p>
-<h2 id="图片更改"><a href="#图片更改" class="headerlink" title="图片更改"></a>图片更改</h2><p>在根目录中找到<code>popup.html</code>文件，找到<code>img</code>更改<font color="#f89996"><strong>popup</strong></font>窗口对应的图片<br>相应的找到<code>option.html</code>文件，更改<font color="#f89996"><strong>option</strong></font>窗口对应的图片</p>
-<hr>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-      <tags>
-        <tag>Chrome Extention</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Mysql数据库</title>
     <url>/2022/09/04/Mysql%E6%95%B0%E6%8D%AE%E5%BA%93/</url>
     <content><![CDATA[<h1 id="数据库的作用"><a href="#数据库的作用" class="headerlink" title="数据库的作用"></a>数据库的作用</h1><ul>
@@ -2834,6 +2834,49 @@
       </tags>
   </entry>
   <entry>
+    <title>equal&amp;hashcode重写</title>
+    <url>/2022/10/20/equal-hashcode%E9%87%8D%E5%86%99/</url>
+    <content><![CDATA[<h1 id="hashcode在哪里使用，hashcode的作用"><a href="#hashcode在哪里使用，hashcode的作用" class="headerlink" title="hashcode在哪里使用，hashcode的作用"></a>hashcode在哪里使用，hashcode的作用</h1><p>Java中hashCode()方法是用来生成hashCode值,hashCode值是JDK根据对象的地址或者<a href="https://so.csdn.net/so/search?q=%E5%AD%97%E7%AC%A6%E4%B8%B2&spm=1001.2101.3001.7020">字符串</a>或者数字算出来的int类型的数值。这个数值是为了提高集合类的性能</p>
+<p>Java 底层的hashMap, hashSet(底层是调用hashMap)类都是实现了哈希表的，之所以采用hash表，因为他能克服链表和二叉树等数据结构在查询上的低效率问题。hash值就是根据hashcode算出来的，把任意长度的输入通过散列算法变换成固定长度的输出，该输出就是散列值。这种转换是一种压缩映射，也就是，散列值的空间通常远小于输入的空间，不同的输入可能会散列成相同的输出，所以不可能从散列值来确定唯一的输入值。即不同hashcode可能转换成相同的hash（散列值）。</p>
+<p>那么哈希表是什么，是什么样子的</p>
+<h2 id="哈希表"><a href="#哈希表" class="headerlink" title="哈希表"></a>哈希表</h2><p>哈希表是一种数据结构。也可以称之为散列表或者hash表。</p>
+<p>哈希表用的是<strong>数组支持按照下标随机访问数据的特性</strong>，所以哈希表其实就是数组的一种扩展，由数组演化而来。可以说，如果没有数组，就没有散列表。</p>
+<p><strong>哈希表存储的是由键（key）和值（value）组成的数据。</strong></p>
+<p>哈希表有一个hash table可以看作一个数组，每个索引可以看作一个桶子。可以在这个桶子里面装数据，</p>
+<h1 id="hashcode"><a href="#hashcode" class="headerlink" title="hashcode"></a>hashcode</h1><p>hashcode是Java底层根据对象返回一串数字，返回机制是通过算法，然后在通过算法(无符号右移)得到hash。具体可以看Java hashMap集合的底层。</p>
+<p>最后还需要通过算法得到索引。但是会有冲突，因为算法是固定的，极大可能出现索引值一样的对象。</p>
+<p>但是hashcode是反应对象存在内存上的位置，不会相同，（前提是没有重写hashcode方法）</p>
+<p>这种现象被称为哈希冲突，HashMap是通过链表法解决的，在hashtable的每个索引后面生成一个链表</p>
+<p><strong>拓展</strong></p>
+<p>解决hash冲突还有<strong>开放地址法</strong>或称<strong>开放寻址法</strong>，这种方法是指当冲突发生时，立刻计算出一个候补地址（数组上的位置）并将数据存进去。如果仍然有冲突，便继续计算下一个候补地址，直到有空地址为止，可以通过多次使用<strong>哈希函数</strong>或<strong>线性探测法</strong>等方法计算候补地址。在Java中，ThreadLocal就是用的<strong>开放地址法</strong></p>
+<h1 id="equals和hashcode"><a href="#equals和hashcode" class="headerlink" title="equals和hashcode"></a>equals和hashcode</h1><p> 那么equals是什么呢</p>
+<p><img src="/images/image-20221023133940731.png" alt="image-20221023133940731"></p>
+<p>上图是不添加的情况</p>
+<p>因为hashMap是不允许有重复对象的，在进行add方法时候会调用equals方法，Object类的默认equals是比较对象地址，但是我们程序员创建的对象，如果对象内容相同也应该归类为相同对象。这就要重写equals方法。我们也经常用到。</p>
+<p>但是如果不重写hashcode方法就会有一个问题，不同的对象hashcode肯定不同，但是equals比较根据我们的需求，不一定要地址不同。所以这会导致equals比较的结果是认为这两个对象是内容相同的，但是hashcode却不是同一个对象。hashMap底层一旦看到hash不同，直接就添加进去了，这就不符合我们预期要去</p>
+<p><img src="/images/image-20221023191550142.png" alt="image-20221023191550142"></p>
+<p>可以看到底层一旦看到hash值不一样他就添加了。hash是对应hashcode的一个值。</p>
+<h2 id="为什么要用equals"><a href="#为什么要用equals" class="headerlink" title="为什么要用equals"></a>为什么要用equals</h2><p>因为hash是hashcode的压缩，即使两个对象地址不同，也有可能出现hash相等的情况。好在hashMap底层还实现了equals。</p>
+<p><img src="/images/image-20221023192040057.png" alt="image-20221023192040057"></p>
+<p>要求是hash相等并且值为null或者equals原来的。就不添加这个数。</p>
+<p>所以hash相等的两个对象不一定相等(还要根据equals)，但是hash不相等的两个对象一定不相等。</p>
+<h1 id="为什么要重写hashcode"><a href="#为什么要重写hashcode" class="headerlink" title="为什么要重写hashcode"></a>为什么要重写hashcode</h1><p>hashcode 的作用是为了更快找到对象、提高效率。但是实际使用过程中，我们会有需求让两个不同对象但是内容相同的作为一个对象(即不用存在HashMap里面)。重写hashcode就是为了解决这个需求。让两个对象内容相同返回同一个hashcode值。</p>
+<h2 id="习题"><a href="#习题" class="headerlink" title="习题"></a>习题</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 定义一个Employee类，要求有两个private属性name，age</span></span><br><span class="line"><span class="comment"> * //添加三个Employee对象到Hashset中</span></span><br><span class="line"><span class="comment"> * 当name和age相同时候，认为是相同员工，不添加</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Exercise_</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        HashSet&lt;Object&gt; hashSet = <span class="keyword">new</span> <span class="title class_">HashSet</span>&lt;&gt;();</span><br><span class="line">        hashSet.add(<span class="keyword">new</span> <span class="title class_">Employee_1</span>(<span class="string">&quot;李文涛&quot;</span>, <span class="number">2</span>));</span><br><span class="line">        hashSet.add(<span class="keyword">new</span> <span class="title class_">Employee_1</span>(<span class="string">&quot;李文涛&quot;</span>, <span class="number">2</span>));</span><br><span class="line">        hashSet.add(<span class="keyword">new</span> <span class="title class_">Employee_1</span>(<span class="string">&quot;李文涛&quot;</span>, <span class="number">3</span>));</span><br><span class="line">        hashSet.add(<span class="keyword">new</span> <span class="title class_">Employee_1</span>(<span class="string">&quot;李文涛&quot;</span>, <span class="number">4</span>));</span><br><span class="line">        hashSet.add(<span class="keyword">new</span> <span class="title class_">Employee_1</span>(<span class="string">&quot;李文涛&quot;</span>, <span class="number">2</span>));</span><br><span class="line">        System.out.println(hashSet);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Employee_1</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> age;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Employee_1</span><span class="params">(String name, <span class="type">int</span> age)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">        <span class="built_in">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">equals</span><span class="params">(Object o)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">this</span> == o) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">if</span> (o == <span class="literal">null</span> || getClass() != o.getClass()) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="type">Employee_1</span> <span class="variable">that</span> <span class="operator">=</span> (Employee_1) o;</span><br><span class="line">        <span class="keyword">return</span> age == that.age &amp;&amp; Objects.equals(name, that.name);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//如果name和age相同则返回相同的hashcode值</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">hashCode</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> Objects.hash(name, age);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">toString</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;Employee_1&#123;&quot;</span> +</span><br><span class="line">                <span class="string">&quot;name=&#x27;&quot;</span> + name + <span class="string">&#x27;\&#x27;&#x27;</span> +</span><br><span class="line">                <span class="string">&quot;, age=&quot;</span> + age +</span><br><span class="line">                <span class="string">&#x27;&#125;&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>必须也要重写equals。添加根据hashcode的hash和equals，不重写又比较两者地址去了。</p>
+<p>重写hashcode方法里面是防止碰撞算法。</p>
+<p><img src="/images/image-20221023193121982.png" alt="image-20221023193121982"></p>
+]]></content>
+      <categories>
+        <category>集合</category>
+        <category>底层</category>
+      </categories>
+      <tags>
+        <tag>equals</tag>
+        <tag>hashcode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Vue学习之MVVM思想</title>
     <url>/2023/03/03/Vue%E5%AD%A6%E4%B9%A0%E4%B9%8BMVVM%E6%80%9D%E6%83%B3/</url>
     <content><![CDATA[<h1 id="MVVM思想"><a href="#MVVM思想" class="headerlink" title="MVVM思想"></a>MVVM思想</h1><ul>
@@ -2909,49 +2952,6 @@
       <tags>
         <tag>底层</tag>
         <tag>final</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>equal&amp;hashcode重写</title>
-    <url>/2022/10/20/equal-hashcode%E9%87%8D%E5%86%99/</url>
-    <content><![CDATA[<h1 id="hashcode在哪里使用，hashcode的作用"><a href="#hashcode在哪里使用，hashcode的作用" class="headerlink" title="hashcode在哪里使用，hashcode的作用"></a>hashcode在哪里使用，hashcode的作用</h1><p>Java中hashCode()方法是用来生成hashCode值,hashCode值是JDK根据对象的地址或者<a href="https://so.csdn.net/so/search?q=%E5%AD%97%E7%AC%A6%E4%B8%B2&spm=1001.2101.3001.7020">字符串</a>或者数字算出来的int类型的数值。这个数值是为了提高集合类的性能</p>
-<p>Java 底层的hashMap, hashSet(底层是调用hashMap)类都是实现了哈希表的，之所以采用hash表，因为他能克服链表和二叉树等数据结构在查询上的低效率问题。hash值就是根据hashcode算出来的，把任意长度的输入通过散列算法变换成固定长度的输出，该输出就是散列值。这种转换是一种压缩映射，也就是，散列值的空间通常远小于输入的空间，不同的输入可能会散列成相同的输出，所以不可能从散列值来确定唯一的输入值。即不同hashcode可能转换成相同的hash（散列值）。</p>
-<p>那么哈希表是什么，是什么样子的</p>
-<h2 id="哈希表"><a href="#哈希表" class="headerlink" title="哈希表"></a>哈希表</h2><p>哈希表是一种数据结构。也可以称之为散列表或者hash表。</p>
-<p>哈希表用的是<strong>数组支持按照下标随机访问数据的特性</strong>，所以哈希表其实就是数组的一种扩展，由数组演化而来。可以说，如果没有数组，就没有散列表。</p>
-<p><strong>哈希表存储的是由键（key）和值（value）组成的数据。</strong></p>
-<p>哈希表有一个hash table可以看作一个数组，每个索引可以看作一个桶子。可以在这个桶子里面装数据，</p>
-<h1 id="hashcode"><a href="#hashcode" class="headerlink" title="hashcode"></a>hashcode</h1><p>hashcode是Java底层根据对象返回一串数字，返回机制是通过算法，然后在通过算法(无符号右移)得到hash。具体可以看Java hashMap集合的底层。</p>
-<p>最后还需要通过算法得到索引。但是会有冲突，因为算法是固定的，极大可能出现索引值一样的对象。</p>
-<p>但是hashcode是反应对象存在内存上的位置，不会相同，（前提是没有重写hashcode方法）</p>
-<p>这种现象被称为哈希冲突，HashMap是通过链表法解决的，在hashtable的每个索引后面生成一个链表</p>
-<p><strong>拓展</strong></p>
-<p>解决hash冲突还有<strong>开放地址法</strong>或称<strong>开放寻址法</strong>，这种方法是指当冲突发生时，立刻计算出一个候补地址（数组上的位置）并将数据存进去。如果仍然有冲突，便继续计算下一个候补地址，直到有空地址为止，可以通过多次使用<strong>哈希函数</strong>或<strong>线性探测法</strong>等方法计算候补地址。在Java中，ThreadLocal就是用的<strong>开放地址法</strong></p>
-<h1 id="equals和hashcode"><a href="#equals和hashcode" class="headerlink" title="equals和hashcode"></a>equals和hashcode</h1><p> 那么equals是什么呢</p>
-<p><img src="/images/image-20221023133940731.png" alt="image-20221023133940731"></p>
-<p>上图是不添加的情况</p>
-<p>因为hashMap是不允许有重复对象的，在进行add方法时候会调用equals方法，Object类的默认equals是比较对象地址，但是我们程序员创建的对象，如果对象内容相同也应该归类为相同对象。这就要重写equals方法。我们也经常用到。</p>
-<p>但是如果不重写hashcode方法就会有一个问题，不同的对象hashcode肯定不同，但是equals比较根据我们的需求，不一定要地址不同。所以这会导致equals比较的结果是认为这两个对象是内容相同的，但是hashcode却不是同一个对象。hashMap底层一旦看到hash不同，直接就添加进去了，这就不符合我们预期要去</p>
-<p><img src="/images/image-20221023191550142.png" alt="image-20221023191550142"></p>
-<p>可以看到底层一旦看到hash值不一样他就添加了。hash是对应hashcode的一个值。</p>
-<h2 id="为什么要用equals"><a href="#为什么要用equals" class="headerlink" title="为什么要用equals"></a>为什么要用equals</h2><p>因为hash是hashcode的压缩，即使两个对象地址不同，也有可能出现hash相等的情况。好在hashMap底层还实现了equals。</p>
-<p><img src="/images/image-20221023192040057.png" alt="image-20221023192040057"></p>
-<p>要求是hash相等并且值为null或者equals原来的。就不添加这个数。</p>
-<p>所以hash相等的两个对象不一定相等(还要根据equals)，但是hash不相等的两个对象一定不相等。</p>
-<h1 id="为什么要重写hashcode"><a href="#为什么要重写hashcode" class="headerlink" title="为什么要重写hashcode"></a>为什么要重写hashcode</h1><p>hashcode 的作用是为了更快找到对象、提高效率。但是实际使用过程中，我们会有需求让两个不同对象但是内容相同的作为一个对象(即不用存在HashMap里面)。重写hashcode就是为了解决这个需求。让两个对象内容相同返回同一个hashcode值。</p>
-<h2 id="习题"><a href="#习题" class="headerlink" title="习题"></a>习题</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 定义一个Employee类，要求有两个private属性name，age</span></span><br><span class="line"><span class="comment"> * //添加三个Employee对象到Hashset中</span></span><br><span class="line"><span class="comment"> * 当name和age相同时候，认为是相同员工，不添加</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Exercise_</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        HashSet&lt;Object&gt; hashSet = <span class="keyword">new</span> <span class="title class_">HashSet</span>&lt;&gt;();</span><br><span class="line">        hashSet.add(<span class="keyword">new</span> <span class="title class_">Employee_1</span>(<span class="string">&quot;李文涛&quot;</span>, <span class="number">2</span>));</span><br><span class="line">        hashSet.add(<span class="keyword">new</span> <span class="title class_">Employee_1</span>(<span class="string">&quot;李文涛&quot;</span>, <span class="number">2</span>));</span><br><span class="line">        hashSet.add(<span class="keyword">new</span> <span class="title class_">Employee_1</span>(<span class="string">&quot;李文涛&quot;</span>, <span class="number">3</span>));</span><br><span class="line">        hashSet.add(<span class="keyword">new</span> <span class="title class_">Employee_1</span>(<span class="string">&quot;李文涛&quot;</span>, <span class="number">4</span>));</span><br><span class="line">        hashSet.add(<span class="keyword">new</span> <span class="title class_">Employee_1</span>(<span class="string">&quot;李文涛&quot;</span>, <span class="number">2</span>));</span><br><span class="line">        System.out.println(hashSet);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Employee_1</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> age;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Employee_1</span><span class="params">(String name, <span class="type">int</span> age)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">        <span class="built_in">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">equals</span><span class="params">(Object o)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">this</span> == o) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">if</span> (o == <span class="literal">null</span> || getClass() != o.getClass()) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="type">Employee_1</span> <span class="variable">that</span> <span class="operator">=</span> (Employee_1) o;</span><br><span class="line">        <span class="keyword">return</span> age == that.age &amp;&amp; Objects.equals(name, that.name);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//如果name和age相同则返回相同的hashcode值</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">hashCode</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> Objects.hash(name, age);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">toString</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;Employee_1&#123;&quot;</span> +</span><br><span class="line">                <span class="string">&quot;name=&#x27;&quot;</span> + name + <span class="string">&#x27;\&#x27;&#x27;</span> +</span><br><span class="line">                <span class="string">&quot;, age=&quot;</span> + age +</span><br><span class="line">                <span class="string">&#x27;&#125;&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>必须也要重写equals。添加根据hashcode的hash和equals，不重写又比较两者地址去了。</p>
-<p>重写hashcode方法里面是防止碰撞算法。</p>
-<p><img src="/images/image-20221023193121982.png" alt="image-20221023193121982"></p>
-]]></content>
-      <categories>
-        <category>集合</category>
-        <category>底层</category>
-      </categories>
-      <tags>
-        <tag>equals</tag>
-        <tag>hashcode</tag>
       </tags>
   </entry>
   <entry>
@@ -3036,6 +3036,26 @@
 ]]></content>
       <categories>
         <category>刷题笔记</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>增强for出现ConcurrentModificationException</title>
+    <url>/2022/08/04/%E5%A2%9E%E5%BC%BAfor%E5%87%BA%E7%8E%B0ConcurrentModificationException/</url>
+    <content><![CDATA[<ul>
+<li>问题复现</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        Vector&lt;String&gt; vector = <span class="keyword">new</span> <span class="title class_">Vector</span>&lt;&gt;();</span><br><span class="line">        vector.add(<span class="string">&quot;ss&quot;</span>);</span><br><span class="line">        vector.add(<span class="string">&quot;ss1&quot;</span>);</span><br><span class="line">        vector.add(<span class="string">&quot;22222&quot;</span>);</span><br><span class="line">        <span class="comment">//增强for遍历</span></span><br><span class="line">        <span class="keyword">for</span> (String s : vector) &#123;</span><br><span class="line">            System.out.println(s);</span><br><span class="line">            vector.remove(<span class="string">&quot;ss&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/image-20220804172251868.png" alt="image-20220804172251868"></p>
+<p>这是由于增强for循环底层调用的是迭代器的next和hasnext方法来遍历的，移除元素后，无法预知到元素的位置。这也是增强for的缺点，不能获取下标，不能动态删除集合中的内容。</p>
+<p>解决办法：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">List&lt;String&gt; list = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;String&gt;();</span><br><span class="line">     list.add(<span class="string">&quot;h&quot;</span>);</span><br><span class="line">     list.add(<span class="string">&quot;y&quot;</span>);</span><br><span class="line">     list.add(<span class="string">&quot;q&quot;</span>);</span><br><span class="line">List&lt;String&gt; list_remove = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;String&gt;();</span><br><span class="line"> <span class="keyword">for</span>(String s : list)&#123;</span><br><span class="line">     <span class="keyword">if</span>(<span class="string">&quot;q&quot;</span>.equals(s))&#123;</span><br><span class="line">     list_remove.add(s); <span class="comment">//把要移除的统一放在一个集合</span></span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="comment">//统一移除</span></span><br><span class="line"> list.removeAll(list_remove);</span><br><span class="line"> System.out.println(list);<span class="comment">//[h, y]</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
       </categories>
       <tags>
         <tag>Java</tag>
@@ -3405,26 +3425,6 @@
       </tags>
   </entry>
   <entry>
-    <title>增强for出现ConcurrentModificationException</title>
-    <url>/2022/08/04/%E5%A2%9E%E5%BC%BAfor%E5%87%BA%E7%8E%B0ConcurrentModificationException/</url>
-    <content><![CDATA[<ul>
-<li>问题复现</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        Vector&lt;String&gt; vector = <span class="keyword">new</span> <span class="title class_">Vector</span>&lt;&gt;();</span><br><span class="line">        vector.add(<span class="string">&quot;ss&quot;</span>);</span><br><span class="line">        vector.add(<span class="string">&quot;ss1&quot;</span>);</span><br><span class="line">        vector.add(<span class="string">&quot;22222&quot;</span>);</span><br><span class="line">        <span class="comment">//增强for遍历</span></span><br><span class="line">        <span class="keyword">for</span> (String s : vector) &#123;</span><br><span class="line">            System.out.println(s);</span><br><span class="line">            vector.remove(<span class="string">&quot;ss&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src="/images/image-20220804172251868.png" alt="image-20220804172251868"></p>
-<p>这是由于增强for循环底层调用的是迭代器的next和hasnext方法来遍历的，移除元素后，无法预知到元素的位置。这也是增强for的缺点，不能获取下标，不能动态删除集合中的内容。</p>
-<p>解决办法：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">List&lt;String&gt; list = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;String&gt;();</span><br><span class="line">     list.add(<span class="string">&quot;h&quot;</span>);</span><br><span class="line">     list.add(<span class="string">&quot;y&quot;</span>);</span><br><span class="line">     list.add(<span class="string">&quot;q&quot;</span>);</span><br><span class="line">List&lt;String&gt; list_remove = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;String&gt;();</span><br><span class="line"> <span class="keyword">for</span>(String s : list)&#123;</span><br><span class="line">     <span class="keyword">if</span>(<span class="string">&quot;q&quot;</span>.equals(s))&#123;</span><br><span class="line">     list_remove.add(s); <span class="comment">//把要移除的统一放在一个集合</span></span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="comment">//统一移除</span></span><br><span class="line"> list.removeAll(list_remove);</span><br><span class="line"> System.out.println(list);<span class="comment">//[h, y]</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>多用户通信系统</title>
     <url>/2022/08/10/%E5%A4%9A%E7%94%A8%E6%88%B7%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><ul>
@@ -3612,6 +3612,11 @@
       </tags>
   </entry>
   <entry>
+    <title>浅拷贝与深拷贝</title>
+    <url>/2023/02/24/%E6%B5%85%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B7%B1%E6%8B%B7%E8%B4%9D/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>数据结构与算法</title>
     <url>/2022/08/31/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/</url>
     <content><![CDATA[<h1 id="数据结构与算法的关系"><a href="#数据结构与算法的关系" class="headerlink" title="数据结构与算法的关系"></a>数据结构与算法的关系</h1><p><img src="/images/image-20220831200641252.png" alt="image-20220831200641252"></p>
@@ -3686,11 +3691,6 @@
       </tags>
   </entry>
   <entry>
-    <title>浅拷贝与深拷贝</title>
-    <url>/2023/02/24/%E6%B5%85%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B7%B1%E6%8B%B7%E8%B4%9D/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>点评项目简略</title>
     <url>/2024/03/17/%E7%82%B9%E8%AF%84%E9%A1%B9%E7%9B%AE%E7%AE%80%E7%95%A5/</url>
     <content><![CDATA[<h2 id="1-拦截器（双拦截器）"><a href="#1-拦截器（双拦截器）" class="headerlink" title="1 拦截器（双拦截器）"></a>1 拦截器（<em><strong>双拦截器</strong></em>）</h2><p>​	拦截器在controller<em><strong>（指定的，排除的）</strong></em>执行前都会执行，进行用户校验，存储用户信息到threadLocal。</p>
@@ -3727,7 +3727,7 @@
 </ul>
 <h3 id="缓存穿透问题"><a href="#缓存穿透问题" class="headerlink" title="缓存穿透问题"></a>缓存穿透问题</h3><p><strong>缓存穿透</strong>是指客户端请求的数据在缓存和数据库中都不存在，这样缓存永远都不会生效，请求一直打到数据库中。</p>
 <ul>
-<li>缓存空对象</li>
+<li>缓存空对象（<strong>使用TTL时间</strong>）</li>
 </ul>
 <p>​		优点：实现简单，维护方便。</p>
 <p>​		缺点：额外的内存消耗，且可能造成短期的不一致。</p>
@@ -3767,34 +3767,6 @@
       </categories>
       <tags>
         <tag>-JVM -堆栈</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>面经</title>
-    <url>/2023/03/11/%E7%BA%BF%E7%A8%8B%E5%92%8C%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
-    <content><![CDATA[<h1 id="请你说说线程和进程的区别"><a href="#请你说说线程和进程的区别" class="headerlink" title="请你说说线程和进程的区别"></a>请你说说线程和进程的区别</h1><h2 id="我的理解"><a href="#我的理解" class="headerlink" title="我的理解"></a>我的理解</h2><p>首先:这两者的关系是一个进程可以使用多个线程来执行当前的进程任务。</p>
-<p>进程和进程之间是分开的，是通过进程之间的进程通信来完成交流。</p>
-<p>而线程与线程之间是有共享空间的。</p>
-<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><h3 id="地址空间、开销、并发性、内存"><a href="#地址空间、开销、并发性、内存" class="headerlink" title="地址空间、开销、并发性、内存"></a>地址空间、开销、并发性、内存</h3><p>进程和线程的主要差别在于它们是不同的操作系统资源管理方式</p>
-<p>1.进程有独立的地址空间,线程有自己的堆栈和局部变量,但线程之间没有单独的地址空间；</p>
-<p>2.进程和线程切换时,需要切换进程和线程的上下文,进程的上下文切换时间开销远远大于线程上下文切换时间,耗费资源较大,效率要差一些；</p>
-<p>3.进程的并发性较低,线程的并发性较高；</p>
-<p>4.每个独立的进程有一个程序运行的入口、顺序执行序列和程序的出口,但是线程不能够独立执行,必须依存在应用程序中,由应用程序提供多个线程执行控制；</p>
-<p>5.系统在运行的时候会为每个进程分配不同的内存空间；而对线程而言,除了 CPU 外,系统不会为线程分配内存（线程所使用的资源来自其所属进程的资源）,线程组之间只能共享资源；</p>
-<p>6.一个进程崩溃后,在保护模式下不会对其他进程产生影响,但是一个线程崩溃整个进程都死掉。所以多进程要比多线程健壮。</p>
-<h1 id="说说MySQL索引好处和坏处"><a href="#说说MySQL索引好处和坏处" class="headerlink" title="说说MySQL索引好处和坏处"></a>说说MySQL索引好处和坏处</h1><p>我的理解:在表的数据多的时候，使用索引可以加快查询速度。坏处是会占用一定的空间。提高维护的成本，在添加数据或者删除数据时候都需要更改索引。有些情况下，索引不会生效。比如建立一个以字段(age,name)的索引，如果之查询name，则索引不会生效。</p>
-<p>得分点 检索效率、存储资源、索引维护 标准回答 索引就像指向表行的指针,是一种允许查询操作快速确定哪些行符合WHERE子句中的条件,并检索到这些行的其他列值的数据结构； 索引主要有普通索引、唯一索引、主键索引、外键索引、全文索引、复合索引几种； 在大数据量的查询中,合理使用索引的优点非常明显,不仅能大幅提高匹配where条件的检索效率,还能用于排序和分组操作的加速。 当时索引如果使用不当也有比较大的坏处：比如索引必定会增加存储资源的消耗；同时也增大了插入、更新和删除操作的维护成本,因为每个增删改操作后相应列的索引都必须被更新。 加分回答 只要创建了索引,就一定会走索引吗？ 不一定。 比如,在使用组合索引的时候,如果没有遵从<font color="red">“最左前缀”</font>的原则进行搜索,则索引是不起作用的。 举例,假设在id、name、age字段上已经成功建立了一个名为MultiIdx的组合索引。索引行中按id、name、age的顺序存放,索引可以搜索id、（id,name）、（id, name, age）字段组合。如果列不构成索引最左面的前缀,那么MySQL不能使用局部索引,如（age）或者（name,age）组合则不能使用该索引查询。</p>
-<h1 id="说说多线程"><a href="#说说多线程" class="headerlink" title="说说多线程"></a>说说多线程</h1><p>我的理解:多线程就是一个进程中有多个任务的时候，多个线程会并发的执行这些任务。多线程之间是共享资源的，一般多线程不会额外分配资源，他们的资源都来自进程。各个线程之间是各自占有堆栈资源，程序计数器等。</p>
-<p>得分点 线程和进程的关系、为什么使用多线程 标准回答 线程是操作系统调度的最小单元,它可以让一个进程并发地处理多个任务,也叫轻量级进程。所以,在一个进程里可以创建多个线程,这些线程都拥有各自的计数器、堆栈、局部变量,并且能够共享进程内的资源。由于共享资源,处理器便可以在这些线程之间快速切换,从而让使用者感觉这些线程在同时执行。 总的来说,操作系统可以同时执行多个任务,每个任务就是一个进程。进程可以同时执行多个任务,每个任务就是一个线程。一个程序运行之后至少有一个进程,而一个进程可以包含多个线程,但至少要包含一个线程。 使用多线程会给开发人员带来显著的好处,而使用多线程的原因主要有以下几点：</p>
-<p>\1. 更多的CPU核心 现代计算机处理器性能的提升方式,已经从追求更高的主频向追求更多的核心发展,所以处理器的核心数量会越来越多,充分地利用处理器的核心则会显著地提高程序的性能。而程序使用多线程技术,就可以将计算逻辑分配到多个处理器核心上,显著减少程序的处理时间,从而随着更多处理器核心的加入而变得更有效率。</p>
-<p>\2. 更快的响应时间 我们经常要针对复杂的业务编写出复杂的代码,如果使用多线程技术,就可以将数据一致性不强的操作派发给其他线程处理（也可以是消息队列）,如上传图片、发送邮件、生成订单等。这样响应用户请求的线程就能够尽快地完成处理,大大地缩短了响应时间,从而提升了用户体验。 3. 更好的编程模型 Java为多线程编程提供了良好且一致的编程模型,使开发人员能够更加专注于问题的解决,开发者只需为此问题建立合适的业务模型,而无需绞尽脑汁地考虑如何实现多线程。一旦开发人员建立好了业务模型,稍作修改就可以将其方便地映射到Java提供的多线程编程模型上。</p>
-<h1 id="说说怎么保证线程安全"><a href="#说说怎么保证线程安全" class="headerlink" title="说说怎么保证线程安全"></a>说说怎么保证线程安全</h1><h1 id="请你说说死锁定义及发生的条件"><a href="#请你说说死锁定义及发生的条件" class="headerlink" title="请你说说死锁定义及发生的条件"></a>请你说说死锁定义及发生的条件</h1>]]></content>
-      <categories>
-        <category>面经</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>操作系统</tag>
       </tags>
   </entry>
   <entry>
@@ -3876,6 +3848,34 @@
       </categories>
       <tags>
         <tag>Java核心技术卷1</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>面经</title>
+    <url>/2023/03/11/%E7%BA%BF%E7%A8%8B%E5%92%8C%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+    <content><![CDATA[<h1 id="请你说说线程和进程的区别"><a href="#请你说说线程和进程的区别" class="headerlink" title="请你说说线程和进程的区别"></a>请你说说线程和进程的区别</h1><h2 id="我的理解"><a href="#我的理解" class="headerlink" title="我的理解"></a>我的理解</h2><p>首先:这两者的关系是一个进程可以使用多个线程来执行当前的进程任务。</p>
+<p>进程和进程之间是分开的，是通过进程之间的进程通信来完成交流。</p>
+<p>而线程与线程之间是有共享空间的。</p>
+<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><h3 id="地址空间、开销、并发性、内存"><a href="#地址空间、开销、并发性、内存" class="headerlink" title="地址空间、开销、并发性、内存"></a>地址空间、开销、并发性、内存</h3><p>进程和线程的主要差别在于它们是不同的操作系统资源管理方式</p>
+<p>1.进程有独立的地址空间,线程有自己的堆栈和局部变量,但线程之间没有单独的地址空间；</p>
+<p>2.进程和线程切换时,需要切换进程和线程的上下文,进程的上下文切换时间开销远远大于线程上下文切换时间,耗费资源较大,效率要差一些；</p>
+<p>3.进程的并发性较低,线程的并发性较高；</p>
+<p>4.每个独立的进程有一个程序运行的入口、顺序执行序列和程序的出口,但是线程不能够独立执行,必须依存在应用程序中,由应用程序提供多个线程执行控制；</p>
+<p>5.系统在运行的时候会为每个进程分配不同的内存空间；而对线程而言,除了 CPU 外,系统不会为线程分配内存（线程所使用的资源来自其所属进程的资源）,线程组之间只能共享资源；</p>
+<p>6.一个进程崩溃后,在保护模式下不会对其他进程产生影响,但是一个线程崩溃整个进程都死掉。所以多进程要比多线程健壮。</p>
+<h1 id="说说MySQL索引好处和坏处"><a href="#说说MySQL索引好处和坏处" class="headerlink" title="说说MySQL索引好处和坏处"></a>说说MySQL索引好处和坏处</h1><p>我的理解:在表的数据多的时候，使用索引可以加快查询速度。坏处是会占用一定的空间。提高维护的成本，在添加数据或者删除数据时候都需要更改索引。有些情况下，索引不会生效。比如建立一个以字段(age,name)的索引，如果之查询name，则索引不会生效。</p>
+<p>得分点 检索效率、存储资源、索引维护 标准回答 索引就像指向表行的指针,是一种允许查询操作快速确定哪些行符合WHERE子句中的条件,并检索到这些行的其他列值的数据结构； 索引主要有普通索引、唯一索引、主键索引、外键索引、全文索引、复合索引几种； 在大数据量的查询中,合理使用索引的优点非常明显,不仅能大幅提高匹配where条件的检索效率,还能用于排序和分组操作的加速。 当时索引如果使用不当也有比较大的坏处：比如索引必定会增加存储资源的消耗；同时也增大了插入、更新和删除操作的维护成本,因为每个增删改操作后相应列的索引都必须被更新。 加分回答 只要创建了索引,就一定会走索引吗？ 不一定。 比如,在使用组合索引的时候,如果没有遵从<font color="red">“最左前缀”</font>的原则进行搜索,则索引是不起作用的。 举例,假设在id、name、age字段上已经成功建立了一个名为MultiIdx的组合索引。索引行中按id、name、age的顺序存放,索引可以搜索id、（id,name）、（id, name, age）字段组合。如果列不构成索引最左面的前缀,那么MySQL不能使用局部索引,如（age）或者（name,age）组合则不能使用该索引查询。</p>
+<h1 id="说说多线程"><a href="#说说多线程" class="headerlink" title="说说多线程"></a>说说多线程</h1><p>我的理解:多线程就是一个进程中有多个任务的时候，多个线程会并发的执行这些任务。多线程之间是共享资源的，一般多线程不会额外分配资源，他们的资源都来自进程。各个线程之间是各自占有堆栈资源，程序计数器等。</p>
+<p>得分点 线程和进程的关系、为什么使用多线程 标准回答 线程是操作系统调度的最小单元,它可以让一个进程并发地处理多个任务,也叫轻量级进程。所以,在一个进程里可以创建多个线程,这些线程都拥有各自的计数器、堆栈、局部变量,并且能够共享进程内的资源。由于共享资源,处理器便可以在这些线程之间快速切换,从而让使用者感觉这些线程在同时执行。 总的来说,操作系统可以同时执行多个任务,每个任务就是一个进程。进程可以同时执行多个任务,每个任务就是一个线程。一个程序运行之后至少有一个进程,而一个进程可以包含多个线程,但至少要包含一个线程。 使用多线程会给开发人员带来显著的好处,而使用多线程的原因主要有以下几点：</p>
+<p>\1. 更多的CPU核心 现代计算机处理器性能的提升方式,已经从追求更高的主频向追求更多的核心发展,所以处理器的核心数量会越来越多,充分地利用处理器的核心则会显著地提高程序的性能。而程序使用多线程技术,就可以将计算逻辑分配到多个处理器核心上,显著减少程序的处理时间,从而随着更多处理器核心的加入而变得更有效率。</p>
+<p>\2. 更快的响应时间 我们经常要针对复杂的业务编写出复杂的代码,如果使用多线程技术,就可以将数据一致性不强的操作派发给其他线程处理（也可以是消息队列）,如上传图片、发送邮件、生成订单等。这样响应用户请求的线程就能够尽快地完成处理,大大地缩短了响应时间,从而提升了用户体验。 3. 更好的编程模型 Java为多线程编程提供了良好且一致的编程模型,使开发人员能够更加专注于问题的解决,开发者只需为此问题建立合适的业务模型,而无需绞尽脑汁地考虑如何实现多线程。一旦开发人员建立好了业务模型,稍作修改就可以将其方便地映射到Java提供的多线程编程模型上。</p>
+<h1 id="说说怎么保证线程安全"><a href="#说说怎么保证线程安全" class="headerlink" title="说说怎么保证线程安全"></a>说说怎么保证线程安全</h1><h1 id="请你说说死锁定义及发生的条件"><a href="#请你说说死锁定义及发生的条件" class="headerlink" title="请你说说死锁定义及发生的条件"></a>请你说说死锁定义及发生的条件</h1>]]></content>
+      <categories>
+        <category>面经</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>操作系统</tag>
       </tags>
   </entry>
   <entry>
