@@ -13,6 +13,31 @@
       </tags>
   </entry>
   <entry>
+    <title>JavaWeb</title>
+    <url>/2022/09/01/JavaWeb/</url>
+    <content><![CDATA[<h2 id="CS和BS的异同点"><a href="#CS和BS的异同点" class="headerlink" title="CS和BS的异同点"></a>CS和BS的异同点</h2><p><img src="/images/image-20220901200621183.png" alt="image-20220901200621183"></p>
+<h2 id="Tomcat"><a href="#Tomcat" class="headerlink" title="Tomcat"></a>Tomcat</h2><p><img src="/images/image-20220904174047101.png" alt="image-20220904174047101"></p>
+<p>localhost:8080是默认网址。</p>
+<p>通过网址可以访问不同主机的tomcat。</p>
+<p>通过context root 访问不同项目。</p>
+<h2 id="Idea配置Tomcat"><a href="#Idea配置Tomcat" class="headerlink" title="Idea配置Tomcat"></a>Idea配置Tomcat</h2><p><img src="/images/image-20220904200149550.png" alt="image-20220904200149550"></p>
+<p>不同版本idea配置不同，具体可百度。</p>
+<p>教程：<a href="https://www.bilibili.com/video/BV1AS4y177xJ?p=20&amp;vd_source=965a4445e7b07ab5faef9dc78ccf37a7">https://www.bilibili.com/video/BV1AS4y177xJ?p=20&amp;vd_source=965a4445e7b07ab5faef9dc78ccf37a7</a></p>
+<h2 id="Servlet"><a href="#Servlet" class="headerlink" title="Servlet"></a>Servlet</h2>]]></content>
+  </entry>
+  <entry>
+    <title>Javascript笔记随笔</title>
+    <url>/2022/04/20/Javascript%E7%AC%94%E8%AE%B01/</url>
+    <content><![CDATA[<hr>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>Javascript</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Java为数不多的重载运算符</title>
     <url>/2023/02/24/Java%E4%B8%BA%E6%95%B0%E4%B8%8D%E5%A4%9A%E7%9A%84%E9%87%8D%E8%BD%BD%E8%BF%90%E7%AE%97%E7%AC%A6/</url>
     <content><![CDATA[<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>重载运算符就是改变原来运算符的意义。</p>
@@ -30,55 +55,6 @@
       <tags>
         <tag>Java</tag>
         <tag>基础</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Javascript笔记随笔</title>
-    <url>/2022/04/20/Javascript%E7%AC%94%E8%AE%B01/</url>
-    <content><![CDATA[<hr>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-      <tags>
-        <tag>Javascript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JavaWeb</title>
-    <url>/2022/09/01/JavaWeb/</url>
-    <content><![CDATA[<h2 id="CS和BS的异同点"><a href="#CS和BS的异同点" class="headerlink" title="CS和BS的异同点"></a>CS和BS的异同点</h2><p><img src="/images/image-20220901200621183.png" alt="image-20220901200621183"></p>
-<h2 id="Tomcat"><a href="#Tomcat" class="headerlink" title="Tomcat"></a>Tomcat</h2><p><img src="/images/image-20220904174047101.png" alt="image-20220904174047101"></p>
-<p>localhost:8080是默认网址。</p>
-<p>通过网址可以访问不同主机的tomcat。</p>
-<p>通过context root 访问不同项目。</p>
-<h2 id="Idea配置Tomcat"><a href="#Idea配置Tomcat" class="headerlink" title="Idea配置Tomcat"></a>Idea配置Tomcat</h2><p><img src="/images/image-20220904200149550.png" alt="image-20220904200149550"></p>
-<p>不同版本idea配置不同，具体可百度。</p>
-<p>教程：<a href="https://www.bilibili.com/video/BV1AS4y177xJ?p=20&amp;vd_source=965a4445e7b07ab5faef9dc78ccf37a7">https://www.bilibili.com/video/BV1AS4y177xJ?p=20&amp;vd_source=965a4445e7b07ab5faef9dc78ccf37a7</a></p>
-<h2 id="Servlet"><a href="#Servlet" class="headerlink" title="Servlet"></a>Servlet</h2>]]></content>
-  </entry>
-  <entry>
-    <title>Java重载和重写的一些小细节</title>
-    <url>/2023/02/24/Java%E9%87%8D%E8%BD%BD%E5%92%8C%E9%87%8D%E5%86%99%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8F%E7%BB%86%E8%8A%82/</url>
-    <content><![CDATA[<h2 id="重写"><a href="#重写" class="headerlink" title="重写"></a>重写</h2><p>Java作为纯面向对象的语言，继承是再熟悉不过了。不过还是有一些细节在平时不回去注意，用到的场景也比较少。也是随着框架技术的成熟，解耦越来越强。许多底层代码都很少再去注意。</p>
-<h3 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h3><p>Java修饰符如下图所示:</p>
-<p><img src="/images/xiushifu.png" alt="在这里插入图片描述"></p>
-<p>Java子类重写父类的方法，修饰符范围扩大范围，即降低限制。可以这样理解，子类是对父类的拓展和增强。所以修饰扩大能更好使得父类的方法变强。</p>
-<h3 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h3><p>子类的重写只能抛出范围更小的异常，还是子类方法是对父类的增强， 应该异常要不父类小。</p>
-<h3 id="返回类型"><a href="#返回类型" class="headerlink" title="返回类型"></a>返回类型</h3><p>返回类型应该更强精确和范围小(返回的类型是原来的子类或者更小类型等)。</p>
-<h3 id="发生阶段"><a href="#发生阶段" class="headerlink" title="发生阶段"></a>发生阶段</h3><p>运行期，为什么是运行期。如果没有@Override注释。你即使在子类写了不符合规则的继承方法，也不会报错。而@Override这个注释就是帮你检查和提高可读性。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">protected</span> Object <span class="title function_">f1</span><span class="params">()</span> <span class="keyword">throws</span> Exception&#123;</span><br><span class="line">    </span><br><span class="line">        System.out.println(<span class="string">&quot;父类方法&quot;</span>);</span><br><span class="line">    </span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">public</span> String <span class="title function_">f1</span><span class="params">()</span> <span class="keyword">throws</span> IOException&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>可以通过举例来记忆。比如:Object的Clone方法，访问修饰符是Protected，需要子类重写，并将访问修饰符改成public，才能正常使用。</p>
-<h2 id="重载"><a href="#重载" class="headerlink" title="重载"></a>重载</h2><h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>重载必须是在同一个类中，方法名必须相同，参数列表必须更改，可以是可变数组类型。相较于重写，异常、访问修饰符、返回类型都没有做严格要求可修改和不修改都可。<font color="red">发生阶段</font>:编译期。</p>
-<h2 id="对比"><a href="#对比" class="headerlink" title="对比"></a>对比</h2><p><img src="/images/image-20230301002202227.png" alt="image-20230301002202227"></p>
-]]></content>
-      <categories>
-        <category>复习</category>
-      </categories>
-      <tags>
-        <tag>Java复习</tag>
-        <tag>细节</tag>
       </tags>
   </entry>
   <entry>
@@ -106,20 +82,27 @@
       </tags>
   </entry>
   <entry>
-    <title>MyFirst-ChromeExtention</title>
-    <url>/2022/05/01/MyFirst-ChromeExtention/</url>
-    <content><![CDATA[<hr>
-<h1 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h1><p>该chrome主要有两方面功能和两种展现方式: <font color="#f89996"><strong>popup</strong> </font>和<font color="#f89996"><strong>option</strong></font>。<br>成功安装时，会跳转到B站<strong>A-SOUL_Official</strong>个人空间  </p>
-<h2 id="popop"><a href="#popop" class="headerlink" title="popop"></a>popop</h2><p>将插件置顶后<font color="#f89996"><strong>左键</strong></font>单击调用出popup窗口，可以看见有一个按钮和输入框: 点击按钮后会根据当前按钮<br>的颜色来改变当前浏览器的<font color="#f89996"><strong>背景颜色</strong></font>。 输入框是记录键盘输入的文字，并在上面<font color="#f89996"><strong>红色小条</strong></font>中显示。<br>注意: 关闭popup页面后输入的文字不会被保存。</p>
-<h2 id="option"><a href="#option" class="headerlink" title="option"></a>option</h2><p>右键置顶的插件，并选中<font color="#f89996"><strong>选项</strong></font>跳转到选项页面，其中有五个按钮供选择，来更改popup页面中的按钮颜色。  </p>
-<h2 id="图片更改"><a href="#图片更改" class="headerlink" title="图片更改"></a>图片更改</h2><p>在根目录中找到<code>popup.html</code>文件，找到<code>img</code>更改<font color="#f89996"><strong>popup</strong></font>窗口对应的图片<br>相应的找到<code>option.html</code>文件，更改<font color="#f89996"><strong>option</strong></font>窗口对应的图片</p>
-<hr>
+    <title>Java重载和重写的一些小细节</title>
+    <url>/2023/02/24/Java%E9%87%8D%E8%BD%BD%E5%92%8C%E9%87%8D%E5%86%99%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8F%E7%BB%86%E8%8A%82/</url>
+    <content><![CDATA[<h2 id="重写"><a href="#重写" class="headerlink" title="重写"></a>重写</h2><p>Java作为纯面向对象的语言，继承是再熟悉不过了。不过还是有一些细节在平时不回去注意，用到的场景也比较少。也是随着框架技术的成熟，解耦越来越强。许多底层代码都很少再去注意。</p>
+<h3 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h3><p>Java修饰符如下图所示:</p>
+<p><img src="/images/xiushifu.png" alt="在这里插入图片描述"></p>
+<p>Java子类重写父类的方法，修饰符范围扩大范围，即降低限制。可以这样理解，子类是对父类的拓展和增强。所以修饰扩大能更好使得父类的方法变强。</p>
+<h3 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h3><p>子类的重写只能抛出范围更小的异常，还是子类方法是对父类的增强， 应该异常要不父类小。</p>
+<h3 id="返回类型"><a href="#返回类型" class="headerlink" title="返回类型"></a>返回类型</h3><p>返回类型应该更强精确和范围小(返回的类型是原来的子类或者更小类型等)。</p>
+<h3 id="发生阶段"><a href="#发生阶段" class="headerlink" title="发生阶段"></a>发生阶段</h3><p>运行期，为什么是运行期。如果没有@Override注释。你即使在子类写了不符合规则的继承方法，也不会报错。而@Override这个注释就是帮你检查和提高可读性。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">protected</span> Object <span class="title function_">f1</span><span class="params">()</span> <span class="keyword">throws</span> Exception&#123;</span><br><span class="line">    </span><br><span class="line">        System.out.println(<span class="string">&quot;父类方法&quot;</span>);</span><br><span class="line">    </span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">public</span> String <span class="title function_">f1</span><span class="params">()</span> <span class="keyword">throws</span> IOException&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>可以通过举例来记忆。比如:Object的Clone方法，访问修饰符是Protected，需要子类重写，并将访问修饰符改成public，才能正常使用。</p>
+<h2 id="重载"><a href="#重载" class="headerlink" title="重载"></a>重载</h2><h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>重载必须是在同一个类中，方法名必须相同，参数列表必须更改，可以是可变数组类型。相较于重写，异常、访问修饰符、返回类型都没有做严格要求可修改和不修改都可。<font color="red">发生阶段</font>:编译期。</p>
+<h2 id="对比"><a href="#对比" class="headerlink" title="对比"></a>对比</h2><p><img src="/images/image-20230301002202227.png" alt="image-20230301002202227"></p>
 ]]></content>
       <categories>
-        <category>学习笔记</category>
+        <category>复习</category>
       </categories>
       <tags>
-        <tag>Chrome Extention</tag>
+        <tag>Java复习</tag>
+        <tag>细节</tag>
       </tags>
   </entry>
   <entry>
@@ -172,6 +155,23 @@
       <tags>
         <tag>Mysql</tag>
         <tag>数据库</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MyFirst-ChromeExtention</title>
+    <url>/2022/05/01/MyFirst-ChromeExtention/</url>
+    <content><![CDATA[<hr>
+<h1 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h1><p>该chrome主要有两方面功能和两种展现方式: <font color="#f89996"><strong>popup</strong> </font>和<font color="#f89996"><strong>option</strong></font>。<br>成功安装时，会跳转到B站<strong>A-SOUL_Official</strong>个人空间  </p>
+<h2 id="popop"><a href="#popop" class="headerlink" title="popop"></a>popop</h2><p>将插件置顶后<font color="#f89996"><strong>左键</strong></font>单击调用出popup窗口，可以看见有一个按钮和输入框: 点击按钮后会根据当前按钮<br>的颜色来改变当前浏览器的<font color="#f89996"><strong>背景颜色</strong></font>。 输入框是记录键盘输入的文字，并在上面<font color="#f89996"><strong>红色小条</strong></font>中显示。<br>注意: 关闭popup页面后输入的文字不会被保存。</p>
+<h2 id="option"><a href="#option" class="headerlink" title="option"></a>option</h2><p>右键置顶的插件，并选中<font color="#f89996"><strong>选项</strong></font>跳转到选项页面，其中有五个按钮供选择，来更改popup页面中的按钮颜色。  </p>
+<h2 id="图片更改"><a href="#图片更改" class="headerlink" title="图片更改"></a>图片更改</h2><p>在根目录中找到<code>popup.html</code>文件，找到<code>img</code>更改<font color="#f89996"><strong>popup</strong></font>窗口对应的图片<br>相应的找到<code>option.html</code>文件，更改<font color="#f89996"><strong>option</strong></font>窗口对应的图片</p>
+<hr>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>Chrome Extention</tag>
       </tags>
   </entry>
   <entry>
@@ -328,6 +328,24 @@
       <tags>
         <tag>Spring</tag>
         <tag>事务</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vue学习之MVVM思想</title>
+    <url>/2023/03/03/Vue%E5%AD%A6%E4%B9%A0%E4%B9%8BMVVM%E6%80%9D%E6%83%B3/</url>
+    <content><![CDATA[<h1 id="MVVM思想"><a href="#MVVM思想" class="headerlink" title="MVVM思想"></a>MVVM思想</h1><ul>
+<li>M: 即Model，模型，包括数据和一些基本操作。</li>
+<li>V: 即View，视图，页面渲染结果。<ul>
+<li>VM：即View-Model，模型与视图间的双向操作(无需开发人员干涉)</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>Vue</tag>
       </tags>
   </entry>
   <entry>
@@ -496,24 +514,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Vue学习之MVVM思想</title>
-    <url>/2023/03/03/Vue%E5%AD%A6%E4%B9%A0%E4%B9%8BMVVM%E6%80%9D%E6%83%B3/</url>
-    <content><![CDATA[<h1 id="MVVM思想"><a href="#MVVM思想" class="headerlink" title="MVVM思想"></a>MVVM思想</h1><ul>
-<li>M: 即Model，模型，包括数据和一些基本操作。</li>
-<li>V: 即View，视图，页面渲染结果。<ul>
-<li>VM：即View-Model，模型与视图间的双向操作(无需开发人员干涉)</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>Vue</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>hexo使用方法包括themes</title>
     <url>/2022/04/20/hexo%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E5%8C%85%E6%8B%ACthemes/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -538,24 +538,45 @@
       </tags>
   </entry>
   <entry>
-    <title>json、xml、Ajax简单理解</title>
-    <url>/2022/11/30/json%E3%80%81xml%E3%80%81Ajax%E7%AE%80%E5%8D%95%E7%90%86%E8%A7%A3/</url>
-    <content><![CDATA[<h1 id="JSON和XML"><a href="#JSON和XML" class="headerlink" title="JSON和XML"></a>JSON和XML</h1><p>JSON是Javascript的一种数据格式，全称JSON（ JavaScript Object Notation, JS对象简谱）是一种轻量级的数据交换格式。XML也是一种数据交互格式。XML (<strong>Extensible Markup Language</strong>) 是一种类似于 HTML 的标记语言，但是 XML 没有使用预定义的标记。XML较多用于配置文件，JSON较多用户数据交互格式。</p>
-<p>因为JSON数据量少，简单。</p>
-<p><img src="/images/image-20221130105628681.png" alt="image-20221130105628681"></p>
-<h1 id="两者解析能力"><a href="#两者解析能力" class="headerlink" title="两者解析能力"></a>两者解析能力</h1><p>XML解析使用dom4j、xpath。dom就是一个文档，和html很像，使用文档解析。解析的时候将整个XML文件当作document，先读根标签。根标签就是类似于HTML中的HTML标签，是最外层的标签。然后获取子标签，一层一层的解析。</p>
-<p>JSON两种格式：1、一种对象。2、一种数组。获取方式：对象： 使用对象.键获取值。数组for循环获取。</p>
-<p>对象是放在{}中以键值对的形式存储，而数组是[]存储的是一个一个数据。</p>
-<p>Java实体类和map转换成json对象就是JSON对象，list之类的就是JSON数组</p>
-<h1 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h1><p>Ajax 的全称是asynchronous javascript and xml</p>
-<p>Ajax是一种用于创建快速动态网页的技术，使用JavaScript操作异步对象XMLHttpRequest，和服务器交换使用json数据格式。通过在后台与服务器进行少量数据交换，前后端数据交互。</p>
-<p>简单来说：可以在页面不刷新就实现和服务器数据交互。</p>
+    <title>代码执行顺序--静态代码块、构造方法等及子父类相关问题</title>
+    <url>/2022/07/30/%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F-%E9%9D%99%E6%80%81%E4%BB%A3%E7%A0%81%E5%9D%97%E3%80%81%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95%E7%AD%89%E5%8F%8A%E5%AD%90%E7%88%B6%E7%B1%BB%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<h1 id="问题引出"><a href="#问题引出" class="headerlink" title="问题引出"></a><font color="2474B5">问题引出</font></h1><p>在做题时遇到静态代码块和其他数据加载先后顺序问题，平时写程序没有遇到。所以在这总结一下。</p>
+<h1 id="结论"><a href="#结论" class="headerlink" title="结论"></a><font color="2474B5">结论</font></h1><blockquote>
+<p>执行顺序为</p>
+<p>​	父类静态代码块、父类静态变量 ps：按照声明顺序执行（即先后顺序）</p>
+<p>​	子类静态代码块、静态变量 ps：按声明顺序执行</p>
+<p>​	父类局部代码块、成员变量ps：按声明顺序执行</p>
+<p>​	父类构造器函数</p>
+<p>​	子类局部代码块、成员变量ps：按声明顺序执行</p>
+<p>​	子类构造函数</p>
+</blockquote>
+<h1 id="代码测试"><a href="#代码测试" class="headerlink" title="代码测试"></a><font color="2474B5">代码测试</font></h1><ol>
+<li>静态代码块和静态变量</li>
+</ol>
+<p><img src="/images/image-20220730144317566.png" alt="image-20220730144317566"></p>
+<p><img src="/images/image-20220730144333226.png" alt="image-20220730144333226"></p>
+<p>可以看出来，当静态变量在静态代码块上面的时候编译不会报错，反之会报错。说明两者并没有先后关系。而是并列关系。</p>
+<ol start="2">
+<li>成员变量和局部代码块 与 静态代码块</li>
+</ol>
+<p><img src="/images/image-20220730145114251.png" alt="image-20220730145114251"></p>
+<p>可以看出即使普通成员变量声明顺序在静态代码块的前面还是无法引用，说明静态代码块的优先级高于普通成员变量。</p>
+<ol start="3">
+<li>整体来看</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">StaticTest</span> <span class="keyword">extends</span> <span class="title class_">A</span>&#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="type">String</span> <span class="variable">ss</span> <span class="operator">=</span> <span class="string">&quot;子类静态变量&quot;</span>;</span><br><span class="line">    <span class="type">String</span> <span class="variable">sss</span> <span class="operator">=</span> <span class="string">&quot;子类正常变量&quot;</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">StaticTest</span> <span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;子类构造函数&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;子类局部代码块&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;子类静态代码块&quot;</span>);</span><br><span class="line">        System.out.println(ss);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;子类main方法&quot;</span>);</span><br><span class="line">        <span class="keyword">new</span> <span class="title class_">StaticTest</span>();<span class="comment">//生成new子类对象</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">A</span> &#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">&quot;父类静态变量&quot;</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">A</span> <span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;父类构造器&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;父类局部代码块&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">String</span> <span class="variable">ss</span> <span class="operator">=</span> <span class="string">&quot;父类成员变量&quot;</span>;</span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        System.out.println(s);</span><br><span class="line">        System.out.println(<span class="string">&quot;父类静态代码块&quot;</span>);</span><br><span class="line">        <span class="type">String</span> <span class="variable">s1</span> <span class="operator">=</span> <span class="string">&quot;父类静态代码块中的成员变量&quot;</span>;</span><br><span class="line">        <span class="comment">//System.out.println(ss);无法调用普通成员变量，因为静态代码块优先级高于它</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>输出结果：</p>
+<p><img src="/images/image-20220730145837459.png" alt="image-20220730145837459"></p>
+<mark class="hl-label purple">总结</mark> ：
+
+<p>与先前的结论一直。还需注意的是new一个子类对象的时候，会先调用父类的构造器然后再调用子类构造器。</p>
 ]]></content>
       <categories>
-        <category>数据交互格式</category>
+        <category>刷题笔记</category>
       </categories>
       <tags>
-        <tag>JavaWeb</tag>
+        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
@@ -619,45 +640,24 @@
       </tags>
   </entry>
   <entry>
-    <title>关于子父类初始化问题</title>
-    <url>/2022/08/11/%E5%85%B3%E4%BA%8E%E5%AD%90%E5%A4%AB%E7%B1%BB%E5%88%9D%E5%A7%8B%E5%8C%96%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<p>虚拟机规范严格规定了有且只有五种情况必须立即对类进行“初始化”</p>
-<ol>
-<li>使用new关键字<font color="ED5A65">实例化对象</font>的时候、读取或设置一个类的<font color="ED5A65">静态字段</font>的时候，已经调用一个类的<font color="ED5A65">静态方法</font>的时候。（静态加载）</li>
-<li>使用java.lang.reflect包的方法对类进行<font color="ED5A65">反射调用</font>的时候，如果类没有初始化，则需要先触发其初始化。<font color="ED5A65">（动态加载）</font></li>
-<li>当初始化一个类的时候，如果发现其<font color="ED5A65">父类没有被初始化</font>就会<font color="ED5A65">先初始化</font>它的父类。(静态加载)</li>
-<li>当虚拟机启动的时候，用户需要指定一个要执行的主类<font color="ED5A65">（就是包含main()方法的那个类）</font>，虚拟机会先初始化这个类；</li>
-<li>使用<font color="ED5A65">Jdk1.7动态语言</font>支持的时候的一些情况。</li>
-</ol>
-<p><font color="ED5A65">反射动态加载具体情况在Java文章中有提及。</font></p>
-<p>除了这五种之外，其他的所有引用类的方式都不会触发初始化，称为被动引用。下面是被动引用的三个例子：</p>
-<p>\1.   通过子类引用父类的的静态字段，不会导致子类初始化。</p>
-<p>\2.   通过数组定义来引用类，不会触发此类的初始化。</p>
-<p>public class NotInitialization { </p>
-<p>  public static void main(String[] args) { </p>
-<p>​    SuperClass[] sca &#x3D; new SuperClass[10]; </p>
-<p>  }  </p>
-<p>}</p>
-<p>\3.   常量在编译阶段会存入调用类的常量池中，本质上没有直接引用到定义常量的类，因此不会触发定义常量的类的初始化。</p>
-<p>public class ConstClass { </p>
-<p>  static { </p>
-<p>​    System.out.println(“ConstClass init!”); </p>
-<p>  } </p>
-<p>  public static final int value &#x3D; 123; </p>
-<p>} </p>
-<p>public class NotInitialization{ </p>
-<p>  public static void main(String[] args) { </p>
-<p>​    int x &#x3D; ConstClass.value; </p>
-<p>  } </p>
-<p>} </p>
-<p>上述代码运行之后，也没有输出“ConstClass init！”，这是因为虽然在Java源码中引用了ConstClass类中的常量HELLOWORLD，但其实在编译阶段通过常量传播优化，已经将此常量的值“hello world”存储到了NotInitialization类的常量池中，以后NotInitialization对常量ConstClass.HELLOWORLD的引用实际都被转化为NotInitialization类对自身常量池的引用了。也就是说，实际上NotInitialization的Class文件之中并没有ConstClass类的符号引用入口，这两个类在编译成Class之后就不存在任何联系了。参考资料：<a href="https://blog.csdn.net/qq_22771739/article/details/86348962">https://blog.csdn.net/qq_22771739/article/details/86348962</a></p>
-<p><img src="/images/image-20220811195944140.png" alt="image-20220811195944140"></p>
+    <title>json、xml、Ajax简单理解</title>
+    <url>/2022/11/30/json%E3%80%81xml%E3%80%81Ajax%E7%AE%80%E5%8D%95%E7%90%86%E8%A7%A3/</url>
+    <content><![CDATA[<h1 id="JSON和XML"><a href="#JSON和XML" class="headerlink" title="JSON和XML"></a>JSON和XML</h1><p>JSON是Javascript的一种数据格式，全称JSON（ JavaScript Object Notation, JS对象简谱）是一种轻量级的数据交换格式。XML也是一种数据交互格式。XML (<strong>Extensible Markup Language</strong>) 是一种类似于 HTML 的标记语言，但是 XML 没有使用预定义的标记。XML较多用于配置文件，JSON较多用户数据交互格式。</p>
+<p>因为JSON数据量少，简单。</p>
+<p><img src="/images/image-20221130105628681.png" alt="image-20221130105628681"></p>
+<h1 id="两者解析能力"><a href="#两者解析能力" class="headerlink" title="两者解析能力"></a>两者解析能力</h1><p>XML解析使用dom4j、xpath。dom就是一个文档，和html很像，使用文档解析。解析的时候将整个XML文件当作document，先读根标签。根标签就是类似于HTML中的HTML标签，是最外层的标签。然后获取子标签，一层一层的解析。</p>
+<p>JSON两种格式：1、一种对象。2、一种数组。获取方式：对象： 使用对象.键获取值。数组for循环获取。</p>
+<p>对象是放在{}中以键值对的形式存储，而数组是[]存储的是一个一个数据。</p>
+<p>Java实体类和map转换成json对象就是JSON对象，list之类的就是JSON数组</p>
+<h1 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h1><p>Ajax 的全称是asynchronous javascript and xml</p>
+<p>Ajax是一种用于创建快速动态网页的技术，使用JavaScript操作异步对象XMLHttpRequest，和服务器交换使用json数据格式。通过在后台与服务器进行少量数据交换，前后端数据交互。</p>
+<p>简单来说：可以在页面不刷新就实现和服务器数据交互。</p>
 ]]></content>
       <categories>
-        <category>刷题笔记</category>
+        <category>数据交互格式</category>
       </categories>
       <tags>
-        <tag>Java</tag>
+        <tag>JavaWeb</tag>
       </tags>
   </entry>
   <entry>
@@ -3042,188 +3042,39 @@
       </tags>
   </entry>
   <entry>
-    <title>代码执行顺序--静态代码块、构造方法等及子父类相关问题</title>
-    <url>/2022/07/30/%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F-%E9%9D%99%E6%80%81%E4%BB%A3%E7%A0%81%E5%9D%97%E3%80%81%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95%E7%AD%89%E5%8F%8A%E5%AD%90%E7%88%B6%E7%B1%BB%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<h1 id="问题引出"><a href="#问题引出" class="headerlink" title="问题引出"></a><font color="2474B5">问题引出</font></h1><p>在做题时遇到静态代码块和其他数据加载先后顺序问题，平时写程序没有遇到。所以在这总结一下。</p>
-<h1 id="结论"><a href="#结论" class="headerlink" title="结论"></a><font color="2474B5">结论</font></h1><blockquote>
-<p>执行顺序为</p>
-<p>​	父类静态代码块、父类静态变量 ps：按照声明顺序执行（即先后顺序）</p>
-<p>​	子类静态代码块、静态变量 ps：按声明顺序执行</p>
-<p>​	父类局部代码块、成员变量ps：按声明顺序执行</p>
-<p>​	父类构造器函数</p>
-<p>​	子类局部代码块、成员变量ps：按声明顺序执行</p>
-<p>​	子类构造函数</p>
-</blockquote>
-<h1 id="代码测试"><a href="#代码测试" class="headerlink" title="代码测试"></a><font color="2474B5">代码测试</font></h1><ol>
-<li>静态代码块和静态变量</li>
-</ol>
-<p><img src="/images/image-20220730144317566.png" alt="image-20220730144317566"></p>
-<p><img src="/images/image-20220730144333226.png" alt="image-20220730144333226"></p>
-<p>可以看出来，当静态变量在静态代码块上面的时候编译不会报错，反之会报错。说明两者并没有先后关系。而是并列关系。</p>
-<ol start="2">
-<li>成员变量和局部代码块 与 静态代码块</li>
-</ol>
-<p><img src="/images/image-20220730145114251.png" alt="image-20220730145114251"></p>
-<p>可以看出即使普通成员变量声明顺序在静态代码块的前面还是无法引用，说明静态代码块的优先级高于普通成员变量。</p>
-<ol start="3">
-<li>整体来看</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">StaticTest</span> <span class="keyword">extends</span> <span class="title class_">A</span>&#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="type">String</span> <span class="variable">ss</span> <span class="operator">=</span> <span class="string">&quot;子类静态变量&quot;</span>;</span><br><span class="line">    <span class="type">String</span> <span class="variable">sss</span> <span class="operator">=</span> <span class="string">&quot;子类正常变量&quot;</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">StaticTest</span> <span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;子类构造函数&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;子类局部代码块&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;子类静态代码块&quot;</span>);</span><br><span class="line">        System.out.println(ss);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;子类main方法&quot;</span>);</span><br><span class="line">        <span class="keyword">new</span> <span class="title class_">StaticTest</span>();<span class="comment">//生成new子类对象</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">A</span> &#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">&quot;父类静态变量&quot;</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">A</span> <span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;父类构造器&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;父类局部代码块&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">String</span> <span class="variable">ss</span> <span class="operator">=</span> <span class="string">&quot;父类成员变量&quot;</span>;</span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        System.out.println(s);</span><br><span class="line">        System.out.println(<span class="string">&quot;父类静态代码块&quot;</span>);</span><br><span class="line">        <span class="type">String</span> <span class="variable">s1</span> <span class="operator">=</span> <span class="string">&quot;父类静态代码块中的成员变量&quot;</span>;</span><br><span class="line">        <span class="comment">//System.out.println(ss);无法调用普通成员变量，因为静态代码块优先级高于它</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>输出结果：</p>
-<p><img src="/images/image-20220730145837459.png" alt="image-20220730145837459"></p>
-<mark class="hl-label purple">总结</mark> ：
-
-<p>与先前的结论一直。还需注意的是new一个子类对象的时候，会先调用父类的构造器然后再调用子类构造器。</p>
-]]></content>
-      <categories>
-        <category>刷题笔记</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>增强for出现ConcurrentModificationException</title>
-    <url>/2022/08/04/%E5%A2%9E%E5%BC%BAfor%E5%87%BA%E7%8E%B0ConcurrentModificationException/</url>
-    <content><![CDATA[<ul>
-<li>问题复现</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        Vector&lt;String&gt; vector = <span class="keyword">new</span> <span class="title class_">Vector</span>&lt;&gt;();</span><br><span class="line">        vector.add(<span class="string">&quot;ss&quot;</span>);</span><br><span class="line">        vector.add(<span class="string">&quot;ss1&quot;</span>);</span><br><span class="line">        vector.add(<span class="string">&quot;22222&quot;</span>);</span><br><span class="line">        <span class="comment">//增强for遍历</span></span><br><span class="line">        <span class="keyword">for</span> (String s : vector) &#123;</span><br><span class="line">            System.out.println(s);</span><br><span class="line">            vector.remove(<span class="string">&quot;ss&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src="/images/image-20220804172251868.png" alt="image-20220804172251868"></p>
-<p>这是由于增强for循环底层调用的是迭代器的next和hasnext方法来遍历的，移除元素后，无法预知到元素的位置。这也是增强for的缺点，不能获取下标，不能动态删除集合中的内容。</p>
-<p>解决办法：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">List&lt;String&gt; list = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;String&gt;();</span><br><span class="line">     list.add(<span class="string">&quot;h&quot;</span>);</span><br><span class="line">     list.add(<span class="string">&quot;y&quot;</span>);</span><br><span class="line">     list.add(<span class="string">&quot;q&quot;</span>);</span><br><span class="line">List&lt;String&gt; list_remove = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;String&gt;();</span><br><span class="line"> <span class="keyword">for</span>(String s : list)&#123;</span><br><span class="line">     <span class="keyword">if</span>(<span class="string">&quot;q&quot;</span>.equals(s))&#123;</span><br><span class="line">     list_remove.add(s); <span class="comment">//把要移除的统一放在一个集合</span></span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="comment">//统一移除</span></span><br><span class="line"> list.removeAll(list_remove);</span><br><span class="line"> System.out.println(list);<span class="comment">//[h, y]</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>多用户通信系统</title>
-    <url>/2022/08/10/%E5%A4%9A%E7%94%A8%E6%88%B7%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><ul>
-<li>为什么选择这个项目</li>
-</ul>
+    <title>关于子父类初始化问题</title>
+    <url>/2022/08/11/%E5%85%B3%E4%BA%8E%E5%AD%90%E5%A4%AB%E7%B1%BB%E5%88%9D%E5%A7%8B%E5%8C%96%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<p>虚拟机规范严格规定了有且只有五种情况必须立即对类进行“初始化”</p>
 <ol>
-<li><p>有趣</p>
-</li>
-<li><p>涉及到Java各个方面的技术</p>
-</li>
-<li><p>项目框架设计</p>
-<p>​		Java面向对象编程</p>
-<p>​		网络编程</p>
-<p>​		多线程</p>
-<p>​		IO流</p>
-<p>​		Mysql&#x2F;使用集合充当内存数据库</p>
-</li>
-<li><p>巩固旧知识，学习新知识</p>
-</li>
+<li>使用new关键字<font color="ED5A65">实例化对象</font>的时候、读取或设置一个类的<font color="ED5A65">静态字段</font>的时候，已经调用一个类的<font color="ED5A65">静态方法</font>的时候。（静态加载）</li>
+<li>使用java.lang.reflect包的方法对类进行<font color="ED5A65">反射调用</font>的时候，如果类没有初始化，则需要先触发其初始化。<font color="ED5A65">（动态加载）</font></li>
+<li>当初始化一个类的时候，如果发现其<font color="ED5A65">父类没有被初始化</font>就会<font color="ED5A65">先初始化</font>它的父类。(静态加载)</li>
+<li>当虚拟机启动的时候，用户需要指定一个要执行的主类<font color="ED5A65">（就是包含main()方法的那个类）</font>，虚拟机会先初始化这个类；</li>
+<li>使用<font color="ED5A65">Jdk1.7动态语言</font>支持的时候的一些情况。</li>
 </ol>
-<h1 id="项目开发流程"><a href="#项目开发流程" class="headerlink" title="项目开发流程"></a>项目开发流程</h1><p>需求分析- - &gt; 设计阶段 - - &gt; 编码实现 - -&gt; 测试阶段 - - &gt; 实施阶段</p>
-<mark class="hl-label blue">示意图</mark> ：
-
-<p><img src="/images/image-20220810205517070.png" alt="image-20220810205517070"></p>
-<h1 id="需求分析"><a href="#需求分析" class="headerlink" title="需求分析"></a>需求分析</h1><ol>
-<li>用户登录<br><img src="/images/image-20220810211254265.png" alt="image-20220810211254265"></li>
-<li>拉取在线用户列表<br><img src="/images/image-20220810211309402.png" alt="image-20220810211309402"></li>
-<li><font color="ED5A65">无异常</font>退出(客服端、服务器端System.exit(0)不行)</li>
-<li>私聊<br><img src="/images/image-20220810211334570.png" alt="image-20220810211334570"></li>
-<li>群聊<br><img src="/images/image-20220810211408168.png" alt="image-20220810211408168"></li>
-<li>发文件<br><img src="/images/image-20220810211508797.png" alt="image-20220810211508797"></li>
-<li>服务器推送新闻<br><img src="/images/image-20220810211543871.png" alt="image-20220810211543871"></li>
-</ol>
-<h1 id="通信系统整体分析"><a href="#通信系统整体分析" class="headerlink" title="通信系统整体分析"></a>通信系统整体分析</h1><mark class="hl-label blue">示意图</mark> ：
-
-<p><img src="/images/image-20220810213209973.png" alt="image-20220810213209973"></p>
-<h1 id="QQ用户登录"><a href="#QQ用户登录" class="headerlink" title="QQ用户登录"></a>QQ用户登录</h1><ul>
-<li>功能实现-用户登录</li>
-</ul>
-<ol>
-<li><p>功能说明</p>
-<p>因为还没有学习数据库，我们人为规定用户名&#x2F;id &#x3D; 100，密码123456就可以登陆，其他用户不能登录<br>后面使用HashMap模拟数据库，可以多个用户登录。</p>
-<p><img src="/images/image-20220810211254265.png" alt="image-20220810211254265"></p>
-</li>
-<li><p>思路分析+程序框架图</p>
-</li>
-<li><p>代码实现</p>
-</li>
-</ol>
-<p>放github上吧</p>
-<p>思路分析</p>
-<p>Socket放到线程中，并用集合管理，</p>
-<p>放到线程中是，线程就是为了同时干多件事情，集合管理是为了拓展，如果有多个功能就需要用集合管理。</p>
-<p>不断的运行用线程run - while死循环体现。</p>
-<mark class="hl-label blue">注意</mark> ：
-
-<p>QQcommon包如果是序列化需要共享，那么在不同模块下路径必须一样，而且名字要一样。或者就写在单独一个包也行。</p>
-<p><img src="/images/image-20220818154345814.png" alt="image-20220818154345814"></p>
-<mark class="hl-label blue">注意</mark> ：
-
-<p>DB本来用数据库，这里用集合替代。</p>
-<h1 id="无异常退出"><a href="#无异常退出" class="headerlink" title="无异常退出"></a>无异常退出</h1><p><img src="/images/image-20220818161158690.png" alt="image-20220818161158690"></p>
-<h1 id="传输文件"><a href="#传输文件" class="headerlink" title="传输文件"></a>传输文件</h1><p><img src="/images/image-20220820152728366.png" alt="image-20220820152728366"></p>
-<h1 id="服务器推送消息"><a href="#服务器推送消息" class="headerlink" title="服务器推送消息"></a>服务器推送消息</h1>]]></content>
-      <categories>
-        <category>Java网络编程</category>
-        <category>JavaIO</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>IO</tag>
-        <tag>网络编程</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>常用类String</title>
-    <url>/2023/02/24/%E5%B8%B8%E7%94%A8%E7%B1%BBString/</url>
-    <content><![CDATA[<h2 id="String为什么是不可变的"><a href="#String为什么是不可变的" class="headerlink" title="String为什么是不可变的"></a>String为什么是不可变的</h2><p>1、首先String中的保存字符的数组是由Final关键字修饰的，并且是<code>private</code>私有的且没有提供外部的访问的方法。这就说明这个数组的变量是不可修改的。虽然并没有保证这个字符数组是不可变的。(final关键字修饰引用类型的时候，只保证这个变量指向的地址是不变的。但是地址中的内容可以改变)。</p>
-<p>2、其次String类是由Final修饰的，不能由其他类继承和修改字符数组。这两个加起来才说明String是不可变的。</p>
-<h2 id="Java9"><a href="#Java9" class="headerlink" title="Java9"></a>Java9</h2><p>Java9将String底层<code>char[]</code>字符数组改成<code>byte[]</code>。显然byte数组的空间更少，表示的数量也越小。</p>
-<p>因为字符串包含的汉字没有超过标准<code>Latin-1</code>可表示的范围。</p>
-<h2 id="字符串常量池"><a href="#字符串常量池" class="headerlink" title="字符串常量池"></a>字符串常量池</h2>]]></content>
-      <categories>
-        <category>常用类</category>
-      </categories>
-      <tags>
-        <tag>String</tag>
-        <tag>常用类</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>子类父类构造器问题</title>
-    <url>/2022/07/30/%E5%AD%90%E7%B1%BB%E7%88%B6%E7%B1%BB%E6%9E%84%E9%80%A0%E5%99%A8%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<h1 id="问题引出"><a href="#问题引出" class="headerlink" title="问题引出"></a><font color="428675">问题引出</font></h1><p>牛客网题库中遇到这个问题：<font color="ED5A65">子类不但可以继承父类的无参构造函数也可以继承父类的有参构造函数?</font></p>
-<p>第一次时判断错了，这个问题本身是错误的。</p>
-<h1 id="知识储备"><a href="#知识储备" class="headerlink" title="知识储备"></a><font color="428675">知识储备</font></h1><ol>
-<li>虽然子类会继承父类的成员、方法等。但是不会继承构造器。构造方法只能被调用，不被继承。子类默认是调用父类的无参构造器，若需要调用父类有参构造器，则需要用<code>super(形参)</code>来调用。并且需写在子类构造器代码的第一行。</li>
-<li>任何类，如果没有写任何构造器，JVM则会提供一个对应的无参构造器。如果了有了有参构造器，则不会提供无参构造器，需要自己写。</li>
-<li>有参构造器不一定需要将所有成员都写入，根据业务需求传参。</li>
-</ol>
-<h1 id="情况分析"><a href="#情况分析" class="headerlink" title="情况分析"></a><font color="428675">情况分析</font></h1><p>1、父类没有任何构造器</p>
-<p>​	子类无法通过有参构造器初始化父类的成员变量。</p>
-<p>​	子类可以使用有参构造器，默认会调用父类的无参构造器，即时没写JVM会提供一个无参构造器</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> class 子父类构造器问题 &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="keyword">new</span> <span class="title class_">AA</span>(<span class="string">&quot;s&quot;</span>);<span class="comment">//调用子类有参构造器</span></span><br><span class="line">        <span class="keyword">new</span> <span class="title class_">AA</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">AA</span> <span class="keyword">extends</span> <span class="title class_">BB</span>&#123;</span><br><span class="line">    <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> <span class="string">&quot;s&quot;</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">AA</span><span class="params">(String name)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">AA</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;子类无参构造器&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">BB</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">BB</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;父类无参构造器&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<mark class="hl-label blue">输出</mark> 
-
-<p>​	父类无参构造器<br>​	子类有参构造器<br>​	父类无参构造器<br>​	子类无参构造器</p>
-<p>这里用<code>System.out.println(&quot;父类无参构造器&quot;);</code>来展示子类是否调用了父类的无参构造器。根据结果结论是无论子类使用<font color="ED5A65">有参构造器</font>还是使用无参构造器，默认都会调用父类的无参构造器然后调用自己对应的构造器。</p>
-<p>2、证明JVM提供的无参构造器</p>
-<p><img src="/images/image-20220730161607971.png" alt="image-20220730161607971"></p>
-<p>当父类只有有参构造器时候，编译报错，因为JVM判断你有构造器，则不提供无参构造器。则子类默认调用的无参构造器无了-&gt;报错。</p>
-<p><img src="/images/image-20220730161739351.png" alt="image-20220730161739351"></p>
-<p>当父类没有任何东西的时候，JVM又会提供无参构造器，则编译通过。</p>
-<p>3、子类调用父类有参构造器</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="title function_">AA</span><span class="params">(String age, String name)</span> &#123;</span><br><span class="line">    <span class="built_in">super</span>(age);</span><br><span class="line">    <span class="built_in">this</span>.name = name;</span><br><span class="line">    System.out.println(<span class="string">&quot;子类有参构造器&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<mark class="hl-label red">注意</mark> 
-
-<p><code>super()</code>写在第一行即可。</p>
+<p><font color="ED5A65">反射动态加载具体情况在Java文章中有提及。</font></p>
+<p>除了这五种之外，其他的所有引用类的方式都不会触发初始化，称为被动引用。下面是被动引用的三个例子：</p>
+<p>\1.   通过子类引用父类的的静态字段，不会导致子类初始化。</p>
+<p>\2.   通过数组定义来引用类，不会触发此类的初始化。</p>
+<p>public class NotInitialization { </p>
+<p>  public static void main(String[] args) { </p>
+<p>​    SuperClass[] sca &#x3D; new SuperClass[10]; </p>
+<p>  }  </p>
+<p>}</p>
+<p>\3.   常量在编译阶段会存入调用类的常量池中，本质上没有直接引用到定义常量的类，因此不会触发定义常量的类的初始化。</p>
+<p>public class ConstClass { </p>
+<p>  static { </p>
+<p>​    System.out.println(“ConstClass init!”); </p>
+<p>  } </p>
+<p>  public static final int value &#x3D; 123; </p>
+<p>} </p>
+<p>public class NotInitialization{ </p>
+<p>  public static void main(String[] args) { </p>
+<p>​    int x &#x3D; ConstClass.value; </p>
+<p>  } </p>
+<p>} </p>
+<p>上述代码运行之后，也没有输出“ConstClass init！”，这是因为虽然在Java源码中引用了ConstClass类中的常量HELLOWORLD，但其实在编译阶段通过常量传播优化，已经将此常量的值“hello world”存储到了NotInitialization类的常量池中，以后NotInitialization对常量ConstClass.HELLOWORLD的引用实际都被转化为NotInitialization类对自身常量池的引用了。也就是说，实际上NotInitialization的Class文件之中并没有ConstClass类的符号引用入口，这两个类在编译成Class之后就不存在任何联系了。参考资料：<a href="https://blog.csdn.net/qq_22771739/article/details/86348962">https://blog.csdn.net/qq_22771739/article/details/86348962</a></p>
+<p><img src="/images/image-20220811195944140.png" alt="image-20220811195944140"></p>
 ]]></content>
       <categories>
         <category>刷题笔记</category>
@@ -3554,6 +3405,229 @@
       </tags>
   </entry>
   <entry>
+    <title>多用户通信系统</title>
+    <url>/2022/08/10/%E5%A4%9A%E7%94%A8%E6%88%B7%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><ul>
+<li>为什么选择这个项目</li>
+</ul>
+<ol>
+<li><p>有趣</p>
+</li>
+<li><p>涉及到Java各个方面的技术</p>
+</li>
+<li><p>项目框架设计</p>
+<p>​		Java面向对象编程</p>
+<p>​		网络编程</p>
+<p>​		多线程</p>
+<p>​		IO流</p>
+<p>​		Mysql&#x2F;使用集合充当内存数据库</p>
+</li>
+<li><p>巩固旧知识，学习新知识</p>
+</li>
+</ol>
+<h1 id="项目开发流程"><a href="#项目开发流程" class="headerlink" title="项目开发流程"></a>项目开发流程</h1><p>需求分析- - &gt; 设计阶段 - - &gt; 编码实现 - -&gt; 测试阶段 - - &gt; 实施阶段</p>
+<mark class="hl-label blue">示意图</mark> ：
+
+<p><img src="/images/image-20220810205517070.png" alt="image-20220810205517070"></p>
+<h1 id="需求分析"><a href="#需求分析" class="headerlink" title="需求分析"></a>需求分析</h1><ol>
+<li>用户登录<br><img src="/images/image-20220810211254265.png" alt="image-20220810211254265"></li>
+<li>拉取在线用户列表<br><img src="/images/image-20220810211309402.png" alt="image-20220810211309402"></li>
+<li><font color="ED5A65">无异常</font>退出(客服端、服务器端System.exit(0)不行)</li>
+<li>私聊<br><img src="/images/image-20220810211334570.png" alt="image-20220810211334570"></li>
+<li>群聊<br><img src="/images/image-20220810211408168.png" alt="image-20220810211408168"></li>
+<li>发文件<br><img src="/images/image-20220810211508797.png" alt="image-20220810211508797"></li>
+<li>服务器推送新闻<br><img src="/images/image-20220810211543871.png" alt="image-20220810211543871"></li>
+</ol>
+<h1 id="通信系统整体分析"><a href="#通信系统整体分析" class="headerlink" title="通信系统整体分析"></a>通信系统整体分析</h1><mark class="hl-label blue">示意图</mark> ：
+
+<p><img src="/images/image-20220810213209973.png" alt="image-20220810213209973"></p>
+<h1 id="QQ用户登录"><a href="#QQ用户登录" class="headerlink" title="QQ用户登录"></a>QQ用户登录</h1><ul>
+<li>功能实现-用户登录</li>
+</ul>
+<ol>
+<li><p>功能说明</p>
+<p>因为还没有学习数据库，我们人为规定用户名&#x2F;id &#x3D; 100，密码123456就可以登陆，其他用户不能登录<br>后面使用HashMap模拟数据库，可以多个用户登录。</p>
+<p><img src="/images/image-20220810211254265.png" alt="image-20220810211254265"></p>
+</li>
+<li><p>思路分析+程序框架图</p>
+</li>
+<li><p>代码实现</p>
+</li>
+</ol>
+<p>放github上吧</p>
+<p>思路分析</p>
+<p>Socket放到线程中，并用集合管理，</p>
+<p>放到线程中是，线程就是为了同时干多件事情，集合管理是为了拓展，如果有多个功能就需要用集合管理。</p>
+<p>不断的运行用线程run - while死循环体现。</p>
+<mark class="hl-label blue">注意</mark> ：
+
+<p>QQcommon包如果是序列化需要共享，那么在不同模块下路径必须一样，而且名字要一样。或者就写在单独一个包也行。</p>
+<p><img src="/images/image-20220818154345814.png" alt="image-20220818154345814"></p>
+<mark class="hl-label blue">注意</mark> ：
+
+<p>DB本来用数据库，这里用集合替代。</p>
+<h1 id="无异常退出"><a href="#无异常退出" class="headerlink" title="无异常退出"></a>无异常退出</h1><p><img src="/images/image-20220818161158690.png" alt="image-20220818161158690"></p>
+<h1 id="传输文件"><a href="#传输文件" class="headerlink" title="传输文件"></a>传输文件</h1><p><img src="/images/image-20220820152728366.png" alt="image-20220820152728366"></p>
+<h1 id="服务器推送消息"><a href="#服务器推送消息" class="headerlink" title="服务器推送消息"></a>服务器推送消息</h1>]]></content>
+      <categories>
+        <category>Java网络编程</category>
+        <category>JavaIO</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>IO</tag>
+        <tag>网络编程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>增强for出现ConcurrentModificationException</title>
+    <url>/2022/08/04/%E5%A2%9E%E5%BC%BAfor%E5%87%BA%E7%8E%B0ConcurrentModificationException/</url>
+    <content><![CDATA[<ul>
+<li>问题复现</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        Vector&lt;String&gt; vector = <span class="keyword">new</span> <span class="title class_">Vector</span>&lt;&gt;();</span><br><span class="line">        vector.add(<span class="string">&quot;ss&quot;</span>);</span><br><span class="line">        vector.add(<span class="string">&quot;ss1&quot;</span>);</span><br><span class="line">        vector.add(<span class="string">&quot;22222&quot;</span>);</span><br><span class="line">        <span class="comment">//增强for遍历</span></span><br><span class="line">        <span class="keyword">for</span> (String s : vector) &#123;</span><br><span class="line">            System.out.println(s);</span><br><span class="line">            vector.remove(<span class="string">&quot;ss&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/image-20220804172251868.png" alt="image-20220804172251868"></p>
+<p>这是由于增强for循环底层调用的是迭代器的next和hasnext方法来遍历的，移除元素后，无法预知到元素的位置。这也是增强for的缺点，不能获取下标，不能动态删除集合中的内容。</p>
+<p>解决办法：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">List&lt;String&gt; list = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;String&gt;();</span><br><span class="line">     list.add(<span class="string">&quot;h&quot;</span>);</span><br><span class="line">     list.add(<span class="string">&quot;y&quot;</span>);</span><br><span class="line">     list.add(<span class="string">&quot;q&quot;</span>);</span><br><span class="line">List&lt;String&gt; list_remove = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;String&gt;();</span><br><span class="line"> <span class="keyword">for</span>(String s : list)&#123;</span><br><span class="line">     <span class="keyword">if</span>(<span class="string">&quot;q&quot;</span>.equals(s))&#123;</span><br><span class="line">     list_remove.add(s); <span class="comment">//把要移除的统一放在一个集合</span></span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="comment">//统一移除</span></span><br><span class="line"> list.removeAll(list_remove);</span><br><span class="line"> System.out.println(list);<span class="comment">//[h, y]</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>子类父类构造器问题</title>
+    <url>/2022/07/30/%E5%AD%90%E7%B1%BB%E7%88%B6%E7%B1%BB%E6%9E%84%E9%80%A0%E5%99%A8%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<h1 id="问题引出"><a href="#问题引出" class="headerlink" title="问题引出"></a><font color="428675">问题引出</font></h1><p>牛客网题库中遇到这个问题：<font color="ED5A65">子类不但可以继承父类的无参构造函数也可以继承父类的有参构造函数?</font></p>
+<p>第一次时判断错了，这个问题本身是错误的。</p>
+<h1 id="知识储备"><a href="#知识储备" class="headerlink" title="知识储备"></a><font color="428675">知识储备</font></h1><ol>
+<li>虽然子类会继承父类的成员、方法等。但是不会继承构造器。构造方法只能被调用，不被继承。子类默认是调用父类的无参构造器，若需要调用父类有参构造器，则需要用<code>super(形参)</code>来调用。并且需写在子类构造器代码的第一行。</li>
+<li>任何类，如果没有写任何构造器，JVM则会提供一个对应的无参构造器。如果了有了有参构造器，则不会提供无参构造器，需要自己写。</li>
+<li>有参构造器不一定需要将所有成员都写入，根据业务需求传参。</li>
+</ol>
+<h1 id="情况分析"><a href="#情况分析" class="headerlink" title="情况分析"></a><font color="428675">情况分析</font></h1><p>1、父类没有任何构造器</p>
+<p>​	子类无法通过有参构造器初始化父类的成员变量。</p>
+<p>​	子类可以使用有参构造器，默认会调用父类的无参构造器，即时没写JVM会提供一个无参构造器</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> class 子父类构造器问题 &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="keyword">new</span> <span class="title class_">AA</span>(<span class="string">&quot;s&quot;</span>);<span class="comment">//调用子类有参构造器</span></span><br><span class="line">        <span class="keyword">new</span> <span class="title class_">AA</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">AA</span> <span class="keyword">extends</span> <span class="title class_">BB</span>&#123;</span><br><span class="line">    <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> <span class="string">&quot;s&quot;</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">AA</span><span class="params">(String name)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">AA</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;子类无参构造器&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">BB</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">BB</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;父类无参构造器&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<mark class="hl-label blue">输出</mark> 
+
+<p>​	父类无参构造器<br>​	子类有参构造器<br>​	父类无参构造器<br>​	子类无参构造器</p>
+<p>这里用<code>System.out.println(&quot;父类无参构造器&quot;);</code>来展示子类是否调用了父类的无参构造器。根据结果结论是无论子类使用<font color="ED5A65">有参构造器</font>还是使用无参构造器，默认都会调用父类的无参构造器然后调用自己对应的构造器。</p>
+<p>2、证明JVM提供的无参构造器</p>
+<p><img src="/images/image-20220730161607971.png" alt="image-20220730161607971"></p>
+<p>当父类只有有参构造器时候，编译报错，因为JVM判断你有构造器，则不提供无参构造器。则子类默认调用的无参构造器无了-&gt;报错。</p>
+<p><img src="/images/image-20220730161739351.png" alt="image-20220730161739351"></p>
+<p>当父类没有任何东西的时候，JVM又会提供无参构造器，则编译通过。</p>
+<p>3、子类调用父类有参构造器</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="title function_">AA</span><span class="params">(String age, String name)</span> &#123;</span><br><span class="line">    <span class="built_in">super</span>(age);</span><br><span class="line">    <span class="built_in">this</span>.name = name;</span><br><span class="line">    System.out.println(<span class="string">&quot;子类有参构造器&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<mark class="hl-label red">注意</mark> 
+
+<p><code>super()</code>写在第一行即可。</p>
+]]></content>
+      <categories>
+        <category>刷题笔记</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>常用类String</title>
+    <url>/2023/02/24/%E5%B8%B8%E7%94%A8%E7%B1%BBString/</url>
+    <content><![CDATA[<h2 id="String为什么是不可变的"><a href="#String为什么是不可变的" class="headerlink" title="String为什么是不可变的"></a>String为什么是不可变的</h2><p>1、首先String中的保存字符的数组是由Final关键字修饰的，并且是<code>private</code>私有的且没有提供外部的访问的方法。这就说明这个数组的变量是不可修改的。虽然并没有保证这个字符数组是不可变的。(final关键字修饰引用类型的时候，只保证这个变量指向的地址是不变的。但是地址中的内容可以改变)。</p>
+<p>2、其次String类是由Final修饰的，不能由其他类继承和修改字符数组。这两个加起来才说明String是不可变的。</p>
+<h2 id="Java9"><a href="#Java9" class="headerlink" title="Java9"></a>Java9</h2><p>Java9将String底层<code>char[]</code>字符数组改成<code>byte[]</code>。显然byte数组的空间更少，表示的数量也越小。</p>
+<p>因为字符串包含的汉字没有超过标准<code>Latin-1</code>可表示的范围。</p>
+<h2 id="字符串常量池"><a href="#字符串常量池" class="headerlink" title="字符串常量池"></a>字符串常量池</h2>]]></content>
+      <categories>
+        <category>常用类</category>
+      </categories>
+      <tags>
+        <tag>String</tag>
+        <tag>常用类</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据结构与算法</title>
+    <url>/2022/08/31/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/</url>
+    <content><![CDATA[<h1 id="数据结构与算法的关系"><a href="#数据结构与算法的关系" class="headerlink" title="数据结构与算法的关系"></a>数据结构与算法的关系</h1><p><img src="/images/image-20220831200641252.png" alt="image-20220831200641252"></p>
+<h1 id="线性结构"><a href="#线性结构" class="headerlink" title="线性结构"></a>线性结构</h1><p><img src="/images/image-20220831202036316.png" alt="image-20220831202036316"></p>
+<blockquote>
+<p>这里连续指的是内存地址连续的。</p>
+</blockquote>
+<h1 id="非线性结构"><a href="#非线性结构" class="headerlink" title="非线性结构"></a>非线性结构</h1><p><img src="/images/image-20220831202048458.png" alt="image-20220831202048458"></p>
+<h1 id="稀疏数组"><a href="#稀疏数组" class="headerlink" title="稀疏数组"></a>稀疏数组</h1><p><img src="/images/image-20220831202747749.png" alt="image-20220831202747749"></p>
+<p><img src="/images/image-20220831202819503.png" alt="image-20220831202819503"></p>
+<p>代码：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SparseArray</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">//先创建一个原始数组</span></span><br><span class="line">        <span class="comment">//二维数组是有很多行组成的</span></span><br><span class="line">        <span class="comment">//0: 没有棋子 1:表示黑子 2：表示蓝子</span></span><br><span class="line">        <span class="type">int</span>[][] chessArr = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">11</span>][<span class="number">11</span>];</span><br><span class="line">        chessArr[<span class="number">1</span>][<span class="number">2</span>] = <span class="number">1</span>;</span><br><span class="line">        chessArr[<span class="number">2</span>][<span class="number">3</span>] = <span class="number">2</span>;</span><br><span class="line">        chessArr[<span class="number">3</span>][<span class="number">4</span>] = <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span>[] ints : chessArr) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> anInt : ints) &#123;</span><br><span class="line">                System.out.print(anInt + <span class="string">&quot;\t&quot;</span>);  <span class="comment">//System.out.printf(&quot;%d/t&quot;, data);</span></span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println();<span class="comment">//换行</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//转换成稀疏数组</span></span><br><span class="line">        <span class="comment">//1、先遍历二维数组，得到非 0 数据的个数</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">sum</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">cow</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">row</span> <span class="operator">=</span> chessArr.length;<span class="comment">//输出二维数组的行</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span>[] ints : chessArr) &#123;</span><br><span class="line">            cow = ints.length;<span class="comment">//二维数组每一行的长度，</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> anInt : ints) &#123;</span><br><span class="line">                <span class="keyword">if</span> (anInt != <span class="number">0</span>) &#123;</span><br><span class="line">                    sum++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//2、创建对应的稀疏数组</span></span><br><span class="line">        <span class="type">int</span> sparseArr [][] = <span class="keyword">new</span> <span class="title class_">int</span>[sum + <span class="number">1</span>][<span class="number">3</span>];</span><br><span class="line">        <span class="comment">//3、给稀疏数组赋值</span></span><br><span class="line">        sparseArr[<span class="number">0</span>][<span class="number">0</span>] = row;</span><br><span class="line">        sparseArr[<span class="number">0</span>][<span class="number">1</span>] = cow;</span><br><span class="line">        sparseArr[<span class="number">0</span>][<span class="number">2</span>] = sum;</span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> <span class="variable">count</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; sparseArr.length; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; cow; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (chessArr[i][j] != <span class="number">0</span>) &#123;</span><br><span class="line">                    count++;</span><br><span class="line">                    sparseArr[count][<span class="number">0</span>] = i;</span><br><span class="line">                    sparseArr[count][<span class="number">1</span>] = j;</span><br><span class="line">                    sparseArr[count][<span class="number">2</span>] = chessArr[i][j];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//输出稀疏数组</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span>[] ints : sparseArr) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> anInt : ints) &#123;</span><br><span class="line">                System.out.print(anInt + <span class="string">&quot;\t&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println();<span class="comment">//换行</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//将稀疏数组转换成二维数组</span></span><br><span class="line">        <span class="type">int</span> chessArr1[][] = <span class="keyword">new</span> <span class="title class_">int</span>[sparseArr[<span class="number">0</span>][<span class="number">0</span>]][sparseArr[<span class="number">0</span>][<span class="number">1</span>]];</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt; sparseArr.length; i++) &#123;</span><br><span class="line">            chessArr1[sparseArr[i][<span class="number">0</span>]][sparseArr[i][<span class="number">1</span>]] = sparseArr[i][<span class="number">2</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(Arrays.deepToString(chessArr1));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>拓展：使用io流</p>
+<p><img src="/images/image-20220831223711151.png" alt="image-20220831223711151"></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">FileWriter</span> <span class="variable">fileWriter</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileWriter</span>(<span class="string">&quot;D:/map.data&quot;</span>);</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span>[] ints : sparseArr) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> anInt : ints) &#123;</span><br><span class="line">        System.out.print(anInt + <span class="string">&quot;\t&quot;</span>);</span><br><span class="line">        fileWriter.write(anInt + <span class="string">&quot;\t&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    fileWriter.write(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">    System.out.println();<span class="comment">//换行</span></span><br><span class="line">&#125;</span><br><span class="line">fileWriter.close();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//从磁盘读取稀疏数组</span></span><br><span class="line"><span class="type">FileReader</span> <span class="variable">fileReader</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileReader</span>(<span class="string">&quot;D:/map.data&quot;</span>);</span><br><span class="line"><span class="type">BufferedReader</span> <span class="variable">bufferedReader</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BufferedReader</span>(fileReader);</span><br><span class="line"><span class="type">int</span> <span class="variable">lineNumber</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line"><span class="type">String</span> <span class="variable">context</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line"><span class="type">int</span> [][] sparseArr1 = <span class="literal">null</span>;</span><br><span class="line">String[] split = <span class="literal">null</span>;</span><br><span class="line"><span class="keyword">while</span>((context = bufferedReader.readLine()) != <span class="literal">null</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (lineNumber == <span class="number">0</span>) &#123;</span><br><span class="line">        split = context.split(<span class="string">&quot;\t&quot;</span>);</span><br><span class="line">        System.out.println(split[<span class="number">2</span>]);</span><br><span class="line">        sparseArr1 = <span class="keyword">new</span> <span class="title class_">int</span>[Integer.parseInt(split[<span class="number">2</span>]) + <span class="number">1</span>][<span class="number">3</span>];</span><br><span class="line">        sparseArr1[<span class="number">0</span>][<span class="number">0</span>] = Integer.parseInt(split[<span class="number">0</span>]);</span><br><span class="line">        sparseArr1[<span class="number">0</span>][<span class="number">1</span>] = Integer.parseInt(split[<span class="number">1</span>]);</span><br><span class="line">        sparseArr1[<span class="number">0</span>][<span class="number">2</span>] = Integer.parseInt(split[<span class="number">2</span>]);</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">            split = context.split(<span class="string">&quot;\t&quot;</span>);</span><br><span class="line">            sparseArr1[lineNumber][i] = Integer.parseInt(split[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    lineNumber++;</span><br><span class="line">&#125;</span><br><span class="line">System.out.println(<span class="string">&quot;======&quot;</span>);</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span>[] ints : sparseArr1) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> anInt : ints) &#123;</span><br><span class="line">        System.out.print(anInt + <span class="string">&quot;\t&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println();</span><br><span class="line">&#125;</span><br><span class="line">System.out.println(<span class="string">&quot;=====&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>数组不用字节流，直接用字符流即可。用上正则表达式，用”\t”、”\n”区分各个数，各个行。</p>
+<h1 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h1><p><img src="/images/image-20220905110534552.png" alt="image-20220905110534552"></p>
+<p>用数组存储是顺序存储。</p>
+<p>用链表存储是链式存储。</p>
+<h2 id="数组模拟队列"><a href="#数组模拟队列" class="headerlink" title="数组模拟队列"></a>数组模拟队列</h2><p><img src="/images/image-20220905110803288.png" alt="image-20220905110803288"></p>
+<p><img src="/images/image-20220905111031334.png" alt="image-20220905111031334"></p>
+<p>代码：一次性队列</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ArrayQueueDemo</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">ArrayQueue</span> <span class="variable">arrayQueue</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ArrayQueue</span>(<span class="number">3</span>);</span><br><span class="line">        <span class="type">char</span> <span class="variable">key</span> <span class="operator">=</span> <span class="string">&#x27; &#x27;</span>; <span class="comment">//接受用户输入</span></span><br><span class="line">        <span class="type">Scanner</span> <span class="variable">scanner</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);</span><br><span class="line">        <span class="type">boolean</span> <span class="variable">loop</span> <span class="operator">=</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="comment">//输出一个菜单</span></span><br><span class="line">        <span class="keyword">while</span> (loop) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;s(show) : 显示队列&quot;</span>);</span><br><span class="line">            System.out.println(<span class="string">&quot;e(exit) : 退出队列&quot;</span>);</span><br><span class="line">            System.out.println(<span class="string">&quot;a(add) : 添加数据到队列&quot;</span>);</span><br><span class="line">            System.out.println(<span class="string">&quot;g(get) : 从队列取出数据&quot;</span>);</span><br><span class="line">            System.out.println(<span class="string">&quot;h(head) : 查看队列头的数据&quot;</span>);</span><br><span class="line">            key = scanner.next().charAt(<span class="number">0</span>); <span class="comment">//接收一个字符</span></span><br><span class="line">            <span class="keyword">switch</span> (key) &#123;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">&#x27;s&#x27;</span> :</span><br><span class="line">                    arrayQueue.showQueue();</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">&#x27;e&#x27;</span> :</span><br><span class="line">                    <span class="comment">//退出程序</span></span><br><span class="line">                    scanner.close();</span><br><span class="line">                    loop = <span class="literal">false</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">&#x27;a&#x27;</span> :</span><br><span class="line">                    System.out.println(<span class="string">&quot;输出一个数&quot;</span>);</span><br><span class="line">                    <span class="type">int</span> <span class="variable">value</span> <span class="operator">=</span> scanner.nextInt();</span><br><span class="line">                    arrayQueue.add(value);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">&#x27;g&#x27;</span> :</span><br><span class="line">                    <span class="comment">//因为get这个方法会有异常这里用try-catch</span></span><br><span class="line">                    <span class="keyword">try</span> &#123;</span><br><span class="line">                        <span class="type">int</span> <span class="variable">res</span> <span class="operator">=</span> arrayQueue.getQueue();</span><br><span class="line">                        System.out.println(<span class="string">&quot;取出的数据是&quot;</span> + res);</span><br><span class="line">                    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">                        <span class="comment">//抛出异常</span></span><br><span class="line">                        System.out.println(e.getMessage());</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">&#x27;h&#x27;</span> :</span><br><span class="line">                    <span class="keyword">try</span> &#123;</span><br><span class="line">                        <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> arrayQueue.headQueue();</span><br><span class="line">                        System.out.println(<span class="string">&quot;头部数据是&quot;</span> + i);</span><br><span class="line">                    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">                        System.out.println(e.getMessage());</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//使用数组模拟队列</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">ArrayQueue</span> &#123;</span><br><span class="line">    <span class="comment">//表示数组最大容量</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> maxSize;</span><br><span class="line">    <span class="comment">//指向队列的头部</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> font;</span><br><span class="line">    <span class="comment">//指向队列的尾部</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> rear;</span><br><span class="line">    <span class="comment">//模拟队列的数组</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span>[] arr;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//构造器</span></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">ArrayQueue</span><span class="params">(<span class="type">int</span> maxSize)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.maxSize = maxSize;</span><br><span class="line">        <span class="built_in">this</span>.font = -<span class="number">1</span>;  <span class="comment">//指向队列头部，分析出font是指向队列头的前一个位置</span></span><br><span class="line">        <span class="built_in">this</span>.rear = -<span class="number">1</span>;  <span class="comment">//指向队列尾，指向队列尾的数据(即就是队列最后一个数据)</span></span><br><span class="line">        <span class="built_in">this</span>.arr = <span class="keyword">new</span> <span class="title class_">int</span>[maxSize];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//判断队列是否满的</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">isFull</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> rear == maxSize -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//判断队列是否为空</span></span><br><span class="line">    <span class="keyword">public</span> Boolean <span class="title function_">isEmpty</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> font == rear;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//添加数据到队列</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">add</span><span class="params">(<span class="type">int</span> value)</span> &#123;</span><br><span class="line"><span class="comment">//        if (!isFull()) &#123;</span></span><br><span class="line"><span class="comment">//            arr[rear + 1] = value;</span></span><br><span class="line"><span class="comment">//        &#125;</span></span><br><span class="line"><span class="comment">//        rear++;</span></span><br><span class="line">        <span class="comment">//判断队列是否满了</span></span><br><span class="line">        <span class="keyword">if</span> (isFull()) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;队列已经满了&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        rear++;</span><br><span class="line">        arr[rear] = value;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//出队列、或者叫获取队列的数据</span></span><br><span class="line">    <span class="comment">//伪取数据，没有删除队列里面的数据、只是font后移</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getQueue</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (isEmpty()) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">RuntimeException</span>(<span class="string">&quot;队列为空，不能取数据&quot;</span>); <span class="comment">//throw本身就有return的作用，下面就不用写东西了</span></span><br><span class="line">        &#125;</span><br><span class="line">        font++;</span><br><span class="line">        <span class="keyword">return</span> arr[font];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//显示队列的所有数据</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">showQueue</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="comment">//遍历</span></span><br><span class="line">        <span class="keyword">if</span> (isEmpty()) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;队列空的，无数据！&quot;</span>);</span><br><span class="line">            <span class="keyword">return</span>; <span class="comment">//结束方法</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; arr.length; i++ ) &#123;</span><br><span class="line">            System.out.print(arr[i] + <span class="string">&quot;\t&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//显示队列头的数据,不是取出数据</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">headQueue</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="comment">//判断是否为空</span></span><br><span class="line">        <span class="keyword">if</span> (isEmpty()) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">RuntimeException</span>(<span class="string">&quot;队列为空，没有数据&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> arr[font + <span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>问题：</p>
+<p>数据不能重复使用。没有达到复用的效果。</p>
+<p>将这个数组使用算法，改进成一个环形的队列：取模的方式 % 。</p>
+<h2 id="环形队列"><a href="#环形队列" class="headerlink" title="环形队列"></a>环形队列</h2><p>条件：</p>
+<p><img src="/images/image-20220905201935420.png" alt="image-20220905201935420"></p>
+<p>为什么队列满的时候用这个算法：</p>
+<p>首先这个原理，是需要预留一个空位的。再这个队列弄成一个环，就是中间空一格的环，那么就会出现两种情况，第一是rear大于front，当然也会出现front大于rear。但是实际上rear一直指向数组的最后一个，要求它必须大于front。</p>
+<p>所以在判断是否为满的时候，只要判断front和rear是否差一格就行，无需谁在上。</p>
+<p>在判断有效个数的时候，就需要两种情况分开来看，</p>
+<p>+maxSize是为了当rear在front上面时准备的。</p>
+<p>%maxSize是为了当rear在front上面时准备的。</p>
+<p>还是要注意最大值时maxSize-1需要预留一个位置。这样好判断为空的情况和满的情况。图上font和rear是从-1开始。其实不太对也对的。</p>
+<p>因为如果是-1的话计算就会出问题。</p>
+<p><img src="/images/image-20220905211624863.png" alt="image-20220905211624863"></p>
+<p>这里图就非常明显，这就是为什么要空一个的原因，因为初始值指针是0，添加一个元素后，指针会超过一个身为。其实默认值-1也行，这样就能和值一起移动，但是font是-1.还是默认为0的好理解一点。</p>
+<p>代码：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">CircleArrayQueue</span> &#123;</span><br><span class="line">    <span class="comment">//表示数组最大容量</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> maxSize;</span><br><span class="line">    <span class="comment">//指向队列的头部</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> front;</span><br><span class="line">    <span class="comment">//指向队列的尾部</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> rear;</span><br><span class="line">    <span class="comment">//模拟队列的数组</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span>[] arr;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//构造器</span></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">CircleArrayQueue</span><span class="params">(<span class="type">int</span> maxSize)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.maxSize = maxSize;</span><br><span class="line">        <span class="built_in">this</span>.arr = <span class="keyword">new</span> <span class="title class_">int</span>[maxSize];</span><br><span class="line">        <span class="comment">//front 和rear指针默认为0</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//判断是否为满</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">isFull</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> (rear + <span class="number">1</span>) % maxSize == front;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//判断队列是否为空</span></span><br><span class="line">    <span class="keyword">public</span> Boolean <span class="title function_">isEmpty</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> front == rear;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//添加数据方法</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">addQueue</span><span class="params">(<span class="type">int</span> value)</span> &#123;</span><br><span class="line">        <span class="comment">//判断是否为空</span></span><br><span class="line">        <span class="keyword">if</span> (isFull()) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;队列满了，不能添加数据&quot;</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            arr[rear] = value;</span><br><span class="line">            rear = (rear + <span class="number">1</span>) % maxSize;<span class="comment">//要考虑到如果指针在最后面的话，下一个就必须移动到数组的第一个位置</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//出队列、或者叫获取队列的数据</span></span><br><span class="line">    <span class="comment">//伪取数据，没有删除队列里面的数据、只是font后移</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getQueue</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (isEmpty()) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">RuntimeException</span>(<span class="string">&quot;队列为空，不能取数据&quot;</span>); <span class="comment">//throw本身就有return的作用，下面就不用写东西了</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//这里需要分析出front是指向队列的第一个元素</span></span><br><span class="line">        <span class="comment">//1、先把front对应的值保留到一个临时变量中去</span></span><br><span class="line">        <span class="comment">//2、将front后移，考虑取模，不然会报数组越界</span></span><br><span class="line">        <span class="comment">//3、将临时保存的变量返回</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">count</span> <span class="operator">=</span> front;</span><br><span class="line">        front = (front + <span class="number">1</span>) % maxSize;</span><br><span class="line">        <span class="keyword">return</span> arr[count];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//显示数组所有元素</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">show</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="comment">//思路：从front开始遍历到rear结束</span></span><br><span class="line">        <span class="keyword">if</span> (isEmpty()) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;队列为空，没有元素&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//分类遍历</span></span><br><span class="line">        <span class="comment">//1、rear大于front</span></span><br><span class="line">        <span class="keyword">if</span> (rear &gt; front) &#123;</span><br><span class="line">            <span class="comment">//因为默认指针从0开始，所以rear指针上面是没有数的</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> front; i &lt; rear; i++) &#123;</span><br><span class="line">                System.out.println(arr[i]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//2、如果front大于rear</span></span><br><span class="line">        <span class="keyword">if</span> (front &gt; rear) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> front; i &lt; maxSize; i++) &#123;</span><br><span class="line">                System.out.println(arr[i]);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; rear; i++) &#123;</span><br><span class="line">                System.out.println(arr[i]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">show1</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="comment">//遍历</span></span><br><span class="line">        <span class="keyword">if</span> (isEmpty()) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;数组为空，没有元素&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//思路：从front开始，需要遍历多少个元素</span></span><br><span class="line">        <span class="comment">//前面分析过是(rear + maxSize -front) % maxSize; 解决两种情况</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> front; i &lt; front + size(); i++) &#123;</span><br><span class="line">            System.out.println(arr[i % maxSize]); <span class="comment">//取余解决数组越界问题。</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//有效队列个数</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">size</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> (rear + maxSize -front) % maxSize;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//显示队列头元素</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">headQueue</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="comment">// 判断是否为空</span></span><br><span class="line">        <span class="keyword">if</span> (isEmpty()) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;队列为空，没有head&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> arr[front];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意：这里默认front 和 rear是0. 与第一张图不符合，那张图就看一下就好了。</p>
+<h1 id="单链表"><a href="#单链表" class="headerlink" title="单链表"></a>单链表</h1><p><img src="/images/image-20220910231504905.png" alt="image-20220910231504905"></p>
+<p><img src="/images/image-20220910231626542.png" alt="image-20220910231626542"></p>
+<p><img src="/images/image-20220911110150869.png" alt="image-20220911110150869"></p>
+<p>代码实现思路：</p>
+<p><img src="/images/image-20220910232338044.png" alt="image-20220910232338044"></p>
+<p>注意：遍历时候是使用辅助指针。</p>
+<p>第二种添加方式：排序并添加</p>
+<p><img src="/images/image-20220911110303698.png" alt="image-20220911110303698"></p>
+<p>删除：</p>
+<p> <img src="/images/image-20220911130337642.png" alt="image-20220911130337642"></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.jth.LinkList;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SingleLinkedList</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">HeroNode</span> <span class="variable">hero1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">HeroNode</span>(<span class="number">1</span>, <span class="string">&quot;ni&quot;</span>, <span class="string">&quot;in&quot;</span>);</span><br><span class="line">        <span class="type">HeroNode</span> <span class="variable">hero2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">HeroNode</span>(<span class="number">2</span>, <span class="string">&quot;ni1&quot;</span>, <span class="string">&quot;in1&quot;</span>);</span><br><span class="line">        <span class="type">HeroNode</span> <span class="variable">hero3</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">HeroNode</span>(<span class="number">3</span>, <span class="string">&quot;ni2&quot;</span>, <span class="string">&quot;in2&quot;</span>);</span><br><span class="line">        <span class="type">HeroNode</span> <span class="variable">hero4</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">HeroNode</span>(<span class="number">4</span>, <span class="string">&quot;ni3&quot;</span>, <span class="string">&quot;in3&quot;</span>);</span><br><span class="line">        SingleLinkedListDemo list= <span class="keyword">new</span> <span class="title class_">SingleLinkedListDemo</span>();</span><br><span class="line"><span class="comment">//        list.add(hero1);</span></span><br><span class="line"><span class="comment">//        list.add(hero4);</span></span><br><span class="line"><span class="comment">//        list.add(hero3);</span></span><br><span class="line"><span class="comment">//        list.add(hero2);</span></span><br><span class="line">        list.addByOrder(hero1);</span><br><span class="line">        list.addByOrder(hero4);</span><br><span class="line">        list.addByOrder(hero3);</span><br><span class="line">        list.addByOrder(hero2);</span><br><span class="line">        list.show();</span><br><span class="line">        list.update(<span class="keyword">new</span> <span class="title class_">HeroNode</span>(<span class="number">3</span>, <span class="string">&quot;ni4&quot;</span>, <span class="string">&quot;in4&quot;</span>));</span><br><span class="line">        list.update(<span class="keyword">new</span> <span class="title class_">HeroNode</span>(<span class="number">4</span>, <span class="string">&quot;ni4&quot;</span>, <span class="string">&quot;in4&quot;</span>));</span><br><span class="line">        list.remove(<span class="keyword">new</span> <span class="title class_">HeroNode</span>(<span class="number">4</span>, <span class="string">&quot;ni4&quot;</span>, <span class="string">&quot;ni4&quot;</span>));</span><br><span class="line">        list.show();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//定义一个单链表类用于管理</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">SingleLinkedListDemo</span> &#123;</span><br><span class="line">    <span class="comment">//先初始化一个head节点这个节点不能动，</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">HeroNode</span> <span class="variable">headNode</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">HeroNode</span>(<span class="number">0</span>, <span class="string">&quot; &quot;</span>, <span class="string">&quot; &quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//编写链表add方法</span></span><br><span class="line">    <span class="comment">//当不考虑编号顺序的时候</span></span><br><span class="line">    <span class="comment">//1、找到当前链表的最后一个节点</span></span><br><span class="line">    <span class="comment">//2、在最后一个节点的next添加一个HeroNode对象即可；</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">add</span><span class="params">(HeroNode heroNode)</span> &#123;</span><br><span class="line">        <span class="comment">//因为head节点不能动，因此我们需要一个辅助遍历temp</span></span><br><span class="line">        <span class="type">HeroNode</span> <span class="variable">temp</span> <span class="operator">=</span> headNode; <span class="comment">//有一个HeroNode指向head节点</span></span><br><span class="line">        <span class="comment">//遍历链表，找到链表的最后</span></span><br><span class="line">        <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">            <span class="comment">//判断链表是否为空 ,只有链表最后一个next指向null，或者是链表本身为空</span></span><br><span class="line">            <span class="keyword">if</span> (temp.Next == <span class="literal">null</span>) &#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            temp = temp.Next; <span class="comment">//不是最后一个就往后移动</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//添加</span></span><br><span class="line">        temp.Next = heroNode;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">addByOrder</span><span class="params">(HeroNode heroNode)</span> &#123;</span><br><span class="line">        <span class="comment">//因为头节点不能动，还是需要一个辅助指针来帮助找到添加的位置</span></span><br><span class="line">        <span class="comment">//因为单链表，因为我们找到的temp是位于添加位置的前一个节点，否则插入不了</span></span><br><span class="line">        <span class="type">HeroNode</span> <span class="variable">temp</span> <span class="operator">=</span> headNode;</span><br><span class="line">        <span class="comment">//定义一个boolean类型用于判断这个数是否已经存在</span></span><br><span class="line">        <span class="type">boolean</span> <span class="variable">flag</span> <span class="operator">=</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (temp.Next == <span class="literal">null</span>) &#123;</span><br><span class="line">                <span class="comment">//说明是最后一个节点</span></span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (temp.Next.no &gt; heroNode.no) &#123;</span><br><span class="line">                <span class="comment">//找到合适的位置插入,因为这个添加本身已经是有序的了就不用管前面的。</span></span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (temp.Next.no == heroNode.no) &#123;</span><br><span class="line">                <span class="comment">//说明这节点已经有了</span></span><br><span class="line">                flag = <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            temp = temp.Next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//添加数据即可</span></span><br><span class="line">        <span class="keyword">if</span> (flag) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;数据已经存在&quot;</span> + heroNode);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">//插入数据的next指向temp的下一个</span></span><br><span class="line">            <span class="comment">//temp的下一个指向插入数据</span></span><br><span class="line">            heroNode.Next = temp.Next;</span><br><span class="line">            temp.Next = heroNode;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//修改节点的信息，根据no编号更改，即no编号不能改。</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">update</span><span class="params">(HeroNode heroNode)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (headNode.Next == <span class="literal">null</span>) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;链表为空&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//还是一样用一个变量遍历数组</span></span><br><span class="line">        <span class="type">HeroNode</span> <span class="variable">temp</span> <span class="operator">=</span> headNode;</span><br><span class="line">        <span class="type">boolean</span> <span class="variable">flag</span> <span class="operator">=</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (temp.Next == <span class="literal">null</span>) &#123;</span><br><span class="line">                <span class="comment">//遍历完整个链表了</span></span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (temp.Next.no == heroNode.no) &#123;</span><br><span class="line">                <span class="comment">//找到了</span></span><br><span class="line">                flag = <span class="literal">true</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            temp = temp.Next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//开始修改</span></span><br><span class="line">        <span class="keyword">if</span> (flag) &#123;</span><br><span class="line">           temp.Next.name = heroNode.name;</span><br><span class="line">           temp.Next.nickname = heroNode.nickname;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;没有找到对应的节点&quot;</span>+ heroNode);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//链表的删除</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">remove</span><span class="params">(HeroNode heroNode)</span> &#123;</span><br><span class="line">        <span class="comment">//判断链表是否为空</span></span><br><span class="line">        <span class="keyword">if</span> (headNode.Next == <span class="literal">null</span>) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;链表为空&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//还是一样先遍历</span></span><br><span class="line">        <span class="type">HeroNode</span> <span class="variable">temp</span> <span class="operator">=</span> headNode;</span><br><span class="line">        <span class="type">boolean</span> <span class="variable">flag</span> <span class="operator">=</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (temp.Next == <span class="literal">null</span>) &#123;</span><br><span class="line">                <span class="comment">//说明已经到了最后一个了</span></span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (temp.Next.no == heroNode.no) &#123;</span><br><span class="line">                <span class="comment">//找到符合条件的</span></span><br><span class="line">                flag = <span class="literal">true</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            temp = temp.Next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//删除</span></span><br><span class="line">        <span class="keyword">if</span> (flag)&#123;</span><br><span class="line">            temp.Next = temp.Next.Next; <span class="comment">//如果是要删除最后一个元素，那么他会指向null。正好符合</span></span><br><span class="line">            <span class="comment">//JVM 的垃圾回收机制会回收</span></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;没有找到符合删除条件的&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//显示链表【遍历】</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">show</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (headNode.Next == <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="comment">//判断链表是否为空</span></span><br><span class="line">            System.out.println(<span class="string">&quot;链表为空&quot;</span>);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//辅助变量temp，因为头节点不能动</span></span><br><span class="line">        <span class="type">HeroNode</span> <span class="variable">temp</span> <span class="operator">=</span> headNode;  <span class="comment">//这里最好指向headNode，不能指向headNode.Next</span></span><br><span class="line">        <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">            temp = temp.Next;</span><br><span class="line">            <span class="comment">//判断是否到了最后</span></span><br><span class="line">            <span class="keyword">if</span> (temp == <span class="literal">null</span>) &#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//输出节点信息</span></span><br><span class="line">            System.out.println(temp);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//定义一个HeroNode 对象，每个HeroNode对象就是一个节点</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">HeroNode</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> no;   <span class="comment">//</span></span><br><span class="line">    <span class="keyword">public</span> String name;</span><br><span class="line">    <span class="keyword">public</span> String nickname;</span><br><span class="line">    <span class="keyword">public</span> HeroNode Next; <span class="comment">//指向下一个节点</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">HeroNode</span> <span class="params">(<span class="type">int</span> no, String name, String nickname)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.no = no;</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">        <span class="built_in">this</span>.nickname = nickname;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">toString</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;HeroNode&#123;&quot;</span> +</span><br><span class="line">                <span class="string">&quot;no=&quot;</span> + no +</span><br><span class="line">                <span class="string">&quot;, name=&#x27;&quot;</span> + name + <span class="string">&#x27;\&#x27;&#x27;</span> +</span><br><span class="line">                <span class="string">&quot;, nickname=&#x27;&quot;</span> + nickname + <span class="string">&#x27;\&#x27;&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h2><p><img src="/images/image-20220911131409172.png" alt="image-20220911131409172"></p>
+<ol>
+<li><p>获取所有节点数（不包含head节点）</p>
+</li>
+<li><p>&#96;&#96;&#96;java<br>&#x2F;&#x2F;获取当前链表的有效节点个数<br>public int getNums(HeroNode headNode) {<br>if (headNode.Next &#x3D;&#x3D; null) {<br>    &#x2F;&#x2F;链表里面没有数据<br>    return 0;<br>}<br>&#x2F;&#x2F;感觉就是遍历吧<br>HeroNode temp &#x3D; headNode;<br>int count &#x3D; 0;<br>while (true) {<br>    if (temp.Next !&#x3D; null) {<br>        count++;<br>    }<br>    if (temp.Next &#x3D;&#x3D; null) {<br>        break;<br>    }<br>    temp &#x3D; temp.Next;<br>}<br>return count;<br>}</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">3. 获取倒数k的节点</span><br><span class="line"></span><br><span class="line">4. ```java</span><br><span class="line">   //查找单链表中的倒数第k个节点</span><br><span class="line">   public HeroNode ReturnByReciprocal (int k, HeroNode headNode) &#123;</span><br><span class="line">       int nums = getNums(headNode);</span><br><span class="line">       int goal = nums - k + 1;</span><br><span class="line">       return ReturnByK(goal, headNode);</span><br><span class="line">   &#125;</span><br><span class="line">   </span><br><span class="line">   //返回链表第k个节点</span><br><span class="line">   public HeroNode ReturnByK (int k, HeroNode headNode) &#123;</span><br><span class="line">       int nums = getNums(headNode);</span><br><span class="line">       //判断是否为空</span><br><span class="line">       if (headNode.Next == null) &#123;</span><br><span class="line">           System.out.println(&quot;链表为空&quot;);</span><br><span class="line">       &#125;</span><br><span class="line">       if (k &gt; nums || k &lt;=0) &#123;</span><br><span class="line">           System.out.println(&quot;输入的K不在该链表的范围内&quot;);</span><br><span class="line">       &#125;</span><br><span class="line">       //遍历</span><br><span class="line">       int count = 0;</span><br><span class="line">       HeroNode temp = headNode;  //不算头节点</span><br><span class="line">       HeroNode result = null;</span><br><span class="line">       while (temp.Next != null) &#123;</span><br><span class="line">           count++;</span><br><span class="line">           temp = temp.Next;</span><br><span class="line">           if (k == count) &#123;</span><br><span class="line">               result = temp;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       return result;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+]]></content>
+      <categories>
+        <category>数据结构与算法</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>数据结构与算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>日记--随想录</title>
     <url>/2022/05/27/%E6%97%A5%E8%AE%B0/</url>
     <content><![CDATA[<blockquote>
@@ -3673,108 +3747,6 @@
       </tags>
   </entry>
   <entry>
-    <title>数据结构与算法</title>
-    <url>/2022/08/31/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/</url>
-    <content><![CDATA[<h1 id="数据结构与算法的关系"><a href="#数据结构与算法的关系" class="headerlink" title="数据结构与算法的关系"></a>数据结构与算法的关系</h1><p><img src="/images/image-20220831200641252.png" alt="image-20220831200641252"></p>
-<h1 id="线性结构"><a href="#线性结构" class="headerlink" title="线性结构"></a>线性结构</h1><p><img src="/images/image-20220831202036316.png" alt="image-20220831202036316"></p>
-<blockquote>
-<p>这里连续指的是内存地址连续的。</p>
-</blockquote>
-<h1 id="非线性结构"><a href="#非线性结构" class="headerlink" title="非线性结构"></a>非线性结构</h1><p><img src="/images/image-20220831202048458.png" alt="image-20220831202048458"></p>
-<h1 id="稀疏数组"><a href="#稀疏数组" class="headerlink" title="稀疏数组"></a>稀疏数组</h1><p><img src="/images/image-20220831202747749.png" alt="image-20220831202747749"></p>
-<p><img src="/images/image-20220831202819503.png" alt="image-20220831202819503"></p>
-<p>代码：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SparseArray</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">//先创建一个原始数组</span></span><br><span class="line">        <span class="comment">//二维数组是有很多行组成的</span></span><br><span class="line">        <span class="comment">//0: 没有棋子 1:表示黑子 2：表示蓝子</span></span><br><span class="line">        <span class="type">int</span>[][] chessArr = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">11</span>][<span class="number">11</span>];</span><br><span class="line">        chessArr[<span class="number">1</span>][<span class="number">2</span>] = <span class="number">1</span>;</span><br><span class="line">        chessArr[<span class="number">2</span>][<span class="number">3</span>] = <span class="number">2</span>;</span><br><span class="line">        chessArr[<span class="number">3</span>][<span class="number">4</span>] = <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span>[] ints : chessArr) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> anInt : ints) &#123;</span><br><span class="line">                System.out.print(anInt + <span class="string">&quot;\t&quot;</span>);  <span class="comment">//System.out.printf(&quot;%d/t&quot;, data);</span></span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println();<span class="comment">//换行</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//转换成稀疏数组</span></span><br><span class="line">        <span class="comment">//1、先遍历二维数组，得到非 0 数据的个数</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">sum</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">cow</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">row</span> <span class="operator">=</span> chessArr.length;<span class="comment">//输出二维数组的行</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span>[] ints : chessArr) &#123;</span><br><span class="line">            cow = ints.length;<span class="comment">//二维数组每一行的长度，</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> anInt : ints) &#123;</span><br><span class="line">                <span class="keyword">if</span> (anInt != <span class="number">0</span>) &#123;</span><br><span class="line">                    sum++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//2、创建对应的稀疏数组</span></span><br><span class="line">        <span class="type">int</span> sparseArr [][] = <span class="keyword">new</span> <span class="title class_">int</span>[sum + <span class="number">1</span>][<span class="number">3</span>];</span><br><span class="line">        <span class="comment">//3、给稀疏数组赋值</span></span><br><span class="line">        sparseArr[<span class="number">0</span>][<span class="number">0</span>] = row;</span><br><span class="line">        sparseArr[<span class="number">0</span>][<span class="number">1</span>] = cow;</span><br><span class="line">        sparseArr[<span class="number">0</span>][<span class="number">2</span>] = sum;</span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> <span class="variable">count</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; sparseArr.length; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; cow; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (chessArr[i][j] != <span class="number">0</span>) &#123;</span><br><span class="line">                    count++;</span><br><span class="line">                    sparseArr[count][<span class="number">0</span>] = i;</span><br><span class="line">                    sparseArr[count][<span class="number">1</span>] = j;</span><br><span class="line">                    sparseArr[count][<span class="number">2</span>] = chessArr[i][j];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//输出稀疏数组</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span>[] ints : sparseArr) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> anInt : ints) &#123;</span><br><span class="line">                System.out.print(anInt + <span class="string">&quot;\t&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println();<span class="comment">//换行</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//将稀疏数组转换成二维数组</span></span><br><span class="line">        <span class="type">int</span> chessArr1[][] = <span class="keyword">new</span> <span class="title class_">int</span>[sparseArr[<span class="number">0</span>][<span class="number">0</span>]][sparseArr[<span class="number">0</span>][<span class="number">1</span>]];</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt; sparseArr.length; i++) &#123;</span><br><span class="line">            chessArr1[sparseArr[i][<span class="number">0</span>]][sparseArr[i][<span class="number">1</span>]] = sparseArr[i][<span class="number">2</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(Arrays.deepToString(chessArr1));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>拓展：使用io流</p>
-<p><img src="/images/image-20220831223711151.png" alt="image-20220831223711151"></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">FileWriter</span> <span class="variable">fileWriter</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileWriter</span>(<span class="string">&quot;D:/map.data&quot;</span>);</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span>[] ints : sparseArr) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> anInt : ints) &#123;</span><br><span class="line">        System.out.print(anInt + <span class="string">&quot;\t&quot;</span>);</span><br><span class="line">        fileWriter.write(anInt + <span class="string">&quot;\t&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    fileWriter.write(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">    System.out.println();<span class="comment">//换行</span></span><br><span class="line">&#125;</span><br><span class="line">fileWriter.close();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//从磁盘读取稀疏数组</span></span><br><span class="line"><span class="type">FileReader</span> <span class="variable">fileReader</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileReader</span>(<span class="string">&quot;D:/map.data&quot;</span>);</span><br><span class="line"><span class="type">BufferedReader</span> <span class="variable">bufferedReader</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BufferedReader</span>(fileReader);</span><br><span class="line"><span class="type">int</span> <span class="variable">lineNumber</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line"><span class="type">String</span> <span class="variable">context</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line"><span class="type">int</span> [][] sparseArr1 = <span class="literal">null</span>;</span><br><span class="line">String[] split = <span class="literal">null</span>;</span><br><span class="line"><span class="keyword">while</span>((context = bufferedReader.readLine()) != <span class="literal">null</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (lineNumber == <span class="number">0</span>) &#123;</span><br><span class="line">        split = context.split(<span class="string">&quot;\t&quot;</span>);</span><br><span class="line">        System.out.println(split[<span class="number">2</span>]);</span><br><span class="line">        sparseArr1 = <span class="keyword">new</span> <span class="title class_">int</span>[Integer.parseInt(split[<span class="number">2</span>]) + <span class="number">1</span>][<span class="number">3</span>];</span><br><span class="line">        sparseArr1[<span class="number">0</span>][<span class="number">0</span>] = Integer.parseInt(split[<span class="number">0</span>]);</span><br><span class="line">        sparseArr1[<span class="number">0</span>][<span class="number">1</span>] = Integer.parseInt(split[<span class="number">1</span>]);</span><br><span class="line">        sparseArr1[<span class="number">0</span>][<span class="number">2</span>] = Integer.parseInt(split[<span class="number">2</span>]);</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">            split = context.split(<span class="string">&quot;\t&quot;</span>);</span><br><span class="line">            sparseArr1[lineNumber][i] = Integer.parseInt(split[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    lineNumber++;</span><br><span class="line">&#125;</span><br><span class="line">System.out.println(<span class="string">&quot;======&quot;</span>);</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span>[] ints : sparseArr1) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> anInt : ints) &#123;</span><br><span class="line">        System.out.print(anInt + <span class="string">&quot;\t&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println();</span><br><span class="line">&#125;</span><br><span class="line">System.out.println(<span class="string">&quot;=====&quot;</span>);</span><br></pre></td></tr></table></figure>
-
-<p>数组不用字节流，直接用字符流即可。用上正则表达式，用”\t”、”\n”区分各个数，各个行。</p>
-<h1 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h1><p><img src="/images/image-20220905110534552.png" alt="image-20220905110534552"></p>
-<p>用数组存储是顺序存储。</p>
-<p>用链表存储是链式存储。</p>
-<h2 id="数组模拟队列"><a href="#数组模拟队列" class="headerlink" title="数组模拟队列"></a>数组模拟队列</h2><p><img src="/images/image-20220905110803288.png" alt="image-20220905110803288"></p>
-<p><img src="/images/image-20220905111031334.png" alt="image-20220905111031334"></p>
-<p>代码：一次性队列</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ArrayQueueDemo</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">ArrayQueue</span> <span class="variable">arrayQueue</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ArrayQueue</span>(<span class="number">3</span>);</span><br><span class="line">        <span class="type">char</span> <span class="variable">key</span> <span class="operator">=</span> <span class="string">&#x27; &#x27;</span>; <span class="comment">//接受用户输入</span></span><br><span class="line">        <span class="type">Scanner</span> <span class="variable">scanner</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);</span><br><span class="line">        <span class="type">boolean</span> <span class="variable">loop</span> <span class="operator">=</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="comment">//输出一个菜单</span></span><br><span class="line">        <span class="keyword">while</span> (loop) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;s(show) : 显示队列&quot;</span>);</span><br><span class="line">            System.out.println(<span class="string">&quot;e(exit) : 退出队列&quot;</span>);</span><br><span class="line">            System.out.println(<span class="string">&quot;a(add) : 添加数据到队列&quot;</span>);</span><br><span class="line">            System.out.println(<span class="string">&quot;g(get) : 从队列取出数据&quot;</span>);</span><br><span class="line">            System.out.println(<span class="string">&quot;h(head) : 查看队列头的数据&quot;</span>);</span><br><span class="line">            key = scanner.next().charAt(<span class="number">0</span>); <span class="comment">//接收一个字符</span></span><br><span class="line">            <span class="keyword">switch</span> (key) &#123;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">&#x27;s&#x27;</span> :</span><br><span class="line">                    arrayQueue.showQueue();</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">&#x27;e&#x27;</span> :</span><br><span class="line">                    <span class="comment">//退出程序</span></span><br><span class="line">                    scanner.close();</span><br><span class="line">                    loop = <span class="literal">false</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">&#x27;a&#x27;</span> :</span><br><span class="line">                    System.out.println(<span class="string">&quot;输出一个数&quot;</span>);</span><br><span class="line">                    <span class="type">int</span> <span class="variable">value</span> <span class="operator">=</span> scanner.nextInt();</span><br><span class="line">                    arrayQueue.add(value);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">&#x27;g&#x27;</span> :</span><br><span class="line">                    <span class="comment">//因为get这个方法会有异常这里用try-catch</span></span><br><span class="line">                    <span class="keyword">try</span> &#123;</span><br><span class="line">                        <span class="type">int</span> <span class="variable">res</span> <span class="operator">=</span> arrayQueue.getQueue();</span><br><span class="line">                        System.out.println(<span class="string">&quot;取出的数据是&quot;</span> + res);</span><br><span class="line">                    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">                        <span class="comment">//抛出异常</span></span><br><span class="line">                        System.out.println(e.getMessage());</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">&#x27;h&#x27;</span> :</span><br><span class="line">                    <span class="keyword">try</span> &#123;</span><br><span class="line">                        <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> arrayQueue.headQueue();</span><br><span class="line">                        System.out.println(<span class="string">&quot;头部数据是&quot;</span> + i);</span><br><span class="line">                    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">                        System.out.println(e.getMessage());</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//使用数组模拟队列</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">ArrayQueue</span> &#123;</span><br><span class="line">    <span class="comment">//表示数组最大容量</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> maxSize;</span><br><span class="line">    <span class="comment">//指向队列的头部</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> font;</span><br><span class="line">    <span class="comment">//指向队列的尾部</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> rear;</span><br><span class="line">    <span class="comment">//模拟队列的数组</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span>[] arr;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//构造器</span></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">ArrayQueue</span><span class="params">(<span class="type">int</span> maxSize)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.maxSize = maxSize;</span><br><span class="line">        <span class="built_in">this</span>.font = -<span class="number">1</span>;  <span class="comment">//指向队列头部，分析出font是指向队列头的前一个位置</span></span><br><span class="line">        <span class="built_in">this</span>.rear = -<span class="number">1</span>;  <span class="comment">//指向队列尾，指向队列尾的数据(即就是队列最后一个数据)</span></span><br><span class="line">        <span class="built_in">this</span>.arr = <span class="keyword">new</span> <span class="title class_">int</span>[maxSize];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//判断队列是否满的</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">isFull</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> rear == maxSize -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//判断队列是否为空</span></span><br><span class="line">    <span class="keyword">public</span> Boolean <span class="title function_">isEmpty</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> font == rear;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//添加数据到队列</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">add</span><span class="params">(<span class="type">int</span> value)</span> &#123;</span><br><span class="line"><span class="comment">//        if (!isFull()) &#123;</span></span><br><span class="line"><span class="comment">//            arr[rear + 1] = value;</span></span><br><span class="line"><span class="comment">//        &#125;</span></span><br><span class="line"><span class="comment">//        rear++;</span></span><br><span class="line">        <span class="comment">//判断队列是否满了</span></span><br><span class="line">        <span class="keyword">if</span> (isFull()) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;队列已经满了&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        rear++;</span><br><span class="line">        arr[rear] = value;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//出队列、或者叫获取队列的数据</span></span><br><span class="line">    <span class="comment">//伪取数据，没有删除队列里面的数据、只是font后移</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getQueue</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (isEmpty()) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">RuntimeException</span>(<span class="string">&quot;队列为空，不能取数据&quot;</span>); <span class="comment">//throw本身就有return的作用，下面就不用写东西了</span></span><br><span class="line">        &#125;</span><br><span class="line">        font++;</span><br><span class="line">        <span class="keyword">return</span> arr[font];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//显示队列的所有数据</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">showQueue</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="comment">//遍历</span></span><br><span class="line">        <span class="keyword">if</span> (isEmpty()) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;队列空的，无数据！&quot;</span>);</span><br><span class="line">            <span class="keyword">return</span>; <span class="comment">//结束方法</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; arr.length; i++ ) &#123;</span><br><span class="line">            System.out.print(arr[i] + <span class="string">&quot;\t&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//显示队列头的数据,不是取出数据</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">headQueue</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="comment">//判断是否为空</span></span><br><span class="line">        <span class="keyword">if</span> (isEmpty()) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">RuntimeException</span>(<span class="string">&quot;队列为空，没有数据&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> arr[font + <span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>问题：</p>
-<p>数据不能重复使用。没有达到复用的效果。</p>
-<p>将这个数组使用算法，改进成一个环形的队列：取模的方式 % 。</p>
-<h2 id="环形队列"><a href="#环形队列" class="headerlink" title="环形队列"></a>环形队列</h2><p>条件：</p>
-<p><img src="/images/image-20220905201935420.png" alt="image-20220905201935420"></p>
-<p>为什么队列满的时候用这个算法：</p>
-<p>首先这个原理，是需要预留一个空位的。再这个队列弄成一个环，就是中间空一格的环，那么就会出现两种情况，第一是rear大于front，当然也会出现front大于rear。但是实际上rear一直指向数组的最后一个，要求它必须大于front。</p>
-<p>所以在判断是否为满的时候，只要判断front和rear是否差一格就行，无需谁在上。</p>
-<p>在判断有效个数的时候，就需要两种情况分开来看，</p>
-<p>+maxSize是为了当rear在front上面时准备的。</p>
-<p>%maxSize是为了当rear在front上面时准备的。</p>
-<p>还是要注意最大值时maxSize-1需要预留一个位置。这样好判断为空的情况和满的情况。图上font和rear是从-1开始。其实不太对也对的。</p>
-<p>因为如果是-1的话计算就会出问题。</p>
-<p><img src="/images/image-20220905211624863.png" alt="image-20220905211624863"></p>
-<p>这里图就非常明显，这就是为什么要空一个的原因，因为初始值指针是0，添加一个元素后，指针会超过一个身为。其实默认值-1也行，这样就能和值一起移动，但是font是-1.还是默认为0的好理解一点。</p>
-<p>代码：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">CircleArrayQueue</span> &#123;</span><br><span class="line">    <span class="comment">//表示数组最大容量</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> maxSize;</span><br><span class="line">    <span class="comment">//指向队列的头部</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> front;</span><br><span class="line">    <span class="comment">//指向队列的尾部</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> rear;</span><br><span class="line">    <span class="comment">//模拟队列的数组</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span>[] arr;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//构造器</span></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">CircleArrayQueue</span><span class="params">(<span class="type">int</span> maxSize)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.maxSize = maxSize;</span><br><span class="line">        <span class="built_in">this</span>.arr = <span class="keyword">new</span> <span class="title class_">int</span>[maxSize];</span><br><span class="line">        <span class="comment">//front 和rear指针默认为0</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//判断是否为满</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">isFull</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> (rear + <span class="number">1</span>) % maxSize == front;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//判断队列是否为空</span></span><br><span class="line">    <span class="keyword">public</span> Boolean <span class="title function_">isEmpty</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> front == rear;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//添加数据方法</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">addQueue</span><span class="params">(<span class="type">int</span> value)</span> &#123;</span><br><span class="line">        <span class="comment">//判断是否为空</span></span><br><span class="line">        <span class="keyword">if</span> (isFull()) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;队列满了，不能添加数据&quot;</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            arr[rear] = value;</span><br><span class="line">            rear = (rear + <span class="number">1</span>) % maxSize;<span class="comment">//要考虑到如果指针在最后面的话，下一个就必须移动到数组的第一个位置</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//出队列、或者叫获取队列的数据</span></span><br><span class="line">    <span class="comment">//伪取数据，没有删除队列里面的数据、只是font后移</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getQueue</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (isEmpty()) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">RuntimeException</span>(<span class="string">&quot;队列为空，不能取数据&quot;</span>); <span class="comment">//throw本身就有return的作用，下面就不用写东西了</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//这里需要分析出front是指向队列的第一个元素</span></span><br><span class="line">        <span class="comment">//1、先把front对应的值保留到一个临时变量中去</span></span><br><span class="line">        <span class="comment">//2、将front后移，考虑取模，不然会报数组越界</span></span><br><span class="line">        <span class="comment">//3、将临时保存的变量返回</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">count</span> <span class="operator">=</span> front;</span><br><span class="line">        front = (front + <span class="number">1</span>) % maxSize;</span><br><span class="line">        <span class="keyword">return</span> arr[count];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//显示数组所有元素</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">show</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="comment">//思路：从front开始遍历到rear结束</span></span><br><span class="line">        <span class="keyword">if</span> (isEmpty()) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;队列为空，没有元素&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//分类遍历</span></span><br><span class="line">        <span class="comment">//1、rear大于front</span></span><br><span class="line">        <span class="keyword">if</span> (rear &gt; front) &#123;</span><br><span class="line">            <span class="comment">//因为默认指针从0开始，所以rear指针上面是没有数的</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> front; i &lt; rear; i++) &#123;</span><br><span class="line">                System.out.println(arr[i]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//2、如果front大于rear</span></span><br><span class="line">        <span class="keyword">if</span> (front &gt; rear) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> front; i &lt; maxSize; i++) &#123;</span><br><span class="line">                System.out.println(arr[i]);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; rear; i++) &#123;</span><br><span class="line">                System.out.println(arr[i]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">show1</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="comment">//遍历</span></span><br><span class="line">        <span class="keyword">if</span> (isEmpty()) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;数组为空，没有元素&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//思路：从front开始，需要遍历多少个元素</span></span><br><span class="line">        <span class="comment">//前面分析过是(rear + maxSize -front) % maxSize; 解决两种情况</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> front; i &lt; front + size(); i++) &#123;</span><br><span class="line">            System.out.println(arr[i % maxSize]); <span class="comment">//取余解决数组越界问题。</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//有效队列个数</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">size</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> (rear + maxSize -front) % maxSize;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//显示队列头元素</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">headQueue</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="comment">// 判断是否为空</span></span><br><span class="line">        <span class="keyword">if</span> (isEmpty()) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;队列为空，没有head&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> arr[front];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>注意：这里默认front 和 rear是0. 与第一张图不符合，那张图就看一下就好了。</p>
-<h1 id="单链表"><a href="#单链表" class="headerlink" title="单链表"></a>单链表</h1><p><img src="/images/image-20220910231504905.png" alt="image-20220910231504905"></p>
-<p><img src="/images/image-20220910231626542.png" alt="image-20220910231626542"></p>
-<p><img src="/images/image-20220911110150869.png" alt="image-20220911110150869"></p>
-<p>代码实现思路：</p>
-<p><img src="/images/image-20220910232338044.png" alt="image-20220910232338044"></p>
-<p>注意：遍历时候是使用辅助指针。</p>
-<p>第二种添加方式：排序并添加</p>
-<p><img src="/images/image-20220911110303698.png" alt="image-20220911110303698"></p>
-<p>删除：</p>
-<p> <img src="/images/image-20220911130337642.png" alt="image-20220911130337642"></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.jth.LinkList;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SingleLinkedList</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">HeroNode</span> <span class="variable">hero1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">HeroNode</span>(<span class="number">1</span>, <span class="string">&quot;ni&quot;</span>, <span class="string">&quot;in&quot;</span>);</span><br><span class="line">        <span class="type">HeroNode</span> <span class="variable">hero2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">HeroNode</span>(<span class="number">2</span>, <span class="string">&quot;ni1&quot;</span>, <span class="string">&quot;in1&quot;</span>);</span><br><span class="line">        <span class="type">HeroNode</span> <span class="variable">hero3</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">HeroNode</span>(<span class="number">3</span>, <span class="string">&quot;ni2&quot;</span>, <span class="string">&quot;in2&quot;</span>);</span><br><span class="line">        <span class="type">HeroNode</span> <span class="variable">hero4</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">HeroNode</span>(<span class="number">4</span>, <span class="string">&quot;ni3&quot;</span>, <span class="string">&quot;in3&quot;</span>);</span><br><span class="line">        SingleLinkedListDemo list= <span class="keyword">new</span> <span class="title class_">SingleLinkedListDemo</span>();</span><br><span class="line"><span class="comment">//        list.add(hero1);</span></span><br><span class="line"><span class="comment">//        list.add(hero4);</span></span><br><span class="line"><span class="comment">//        list.add(hero3);</span></span><br><span class="line"><span class="comment">//        list.add(hero2);</span></span><br><span class="line">        list.addByOrder(hero1);</span><br><span class="line">        list.addByOrder(hero4);</span><br><span class="line">        list.addByOrder(hero3);</span><br><span class="line">        list.addByOrder(hero2);</span><br><span class="line">        list.show();</span><br><span class="line">        list.update(<span class="keyword">new</span> <span class="title class_">HeroNode</span>(<span class="number">3</span>, <span class="string">&quot;ni4&quot;</span>, <span class="string">&quot;in4&quot;</span>));</span><br><span class="line">        list.update(<span class="keyword">new</span> <span class="title class_">HeroNode</span>(<span class="number">4</span>, <span class="string">&quot;ni4&quot;</span>, <span class="string">&quot;in4&quot;</span>));</span><br><span class="line">        list.remove(<span class="keyword">new</span> <span class="title class_">HeroNode</span>(<span class="number">4</span>, <span class="string">&quot;ni4&quot;</span>, <span class="string">&quot;ni4&quot;</span>));</span><br><span class="line">        list.show();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//定义一个单链表类用于管理</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">SingleLinkedListDemo</span> &#123;</span><br><span class="line">    <span class="comment">//先初始化一个head节点这个节点不能动，</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">HeroNode</span> <span class="variable">headNode</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">HeroNode</span>(<span class="number">0</span>, <span class="string">&quot; &quot;</span>, <span class="string">&quot; &quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//编写链表add方法</span></span><br><span class="line">    <span class="comment">//当不考虑编号顺序的时候</span></span><br><span class="line">    <span class="comment">//1、找到当前链表的最后一个节点</span></span><br><span class="line">    <span class="comment">//2、在最后一个节点的next添加一个HeroNode对象即可；</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">add</span><span class="params">(HeroNode heroNode)</span> &#123;</span><br><span class="line">        <span class="comment">//因为head节点不能动，因此我们需要一个辅助遍历temp</span></span><br><span class="line">        <span class="type">HeroNode</span> <span class="variable">temp</span> <span class="operator">=</span> headNode; <span class="comment">//有一个HeroNode指向head节点</span></span><br><span class="line">        <span class="comment">//遍历链表，找到链表的最后</span></span><br><span class="line">        <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">            <span class="comment">//判断链表是否为空 ,只有链表最后一个next指向null，或者是链表本身为空</span></span><br><span class="line">            <span class="keyword">if</span> (temp.Next == <span class="literal">null</span>) &#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            temp = temp.Next; <span class="comment">//不是最后一个就往后移动</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//添加</span></span><br><span class="line">        temp.Next = heroNode;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">addByOrder</span><span class="params">(HeroNode heroNode)</span> &#123;</span><br><span class="line">        <span class="comment">//因为头节点不能动，还是需要一个辅助指针来帮助找到添加的位置</span></span><br><span class="line">        <span class="comment">//因为单链表，因为我们找到的temp是位于添加位置的前一个节点，否则插入不了</span></span><br><span class="line">        <span class="type">HeroNode</span> <span class="variable">temp</span> <span class="operator">=</span> headNode;</span><br><span class="line">        <span class="comment">//定义一个boolean类型用于判断这个数是否已经存在</span></span><br><span class="line">        <span class="type">boolean</span> <span class="variable">flag</span> <span class="operator">=</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (temp.Next == <span class="literal">null</span>) &#123;</span><br><span class="line">                <span class="comment">//说明是最后一个节点</span></span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (temp.Next.no &gt; heroNode.no) &#123;</span><br><span class="line">                <span class="comment">//找到合适的位置插入,因为这个添加本身已经是有序的了就不用管前面的。</span></span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (temp.Next.no == heroNode.no) &#123;</span><br><span class="line">                <span class="comment">//说明这节点已经有了</span></span><br><span class="line">                flag = <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            temp = temp.Next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//添加数据即可</span></span><br><span class="line">        <span class="keyword">if</span> (flag) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;数据已经存在&quot;</span> + heroNode);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">//插入数据的next指向temp的下一个</span></span><br><span class="line">            <span class="comment">//temp的下一个指向插入数据</span></span><br><span class="line">            heroNode.Next = temp.Next;</span><br><span class="line">            temp.Next = heroNode;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//修改节点的信息，根据no编号更改，即no编号不能改。</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">update</span><span class="params">(HeroNode heroNode)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (headNode.Next == <span class="literal">null</span>) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;链表为空&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//还是一样用一个变量遍历数组</span></span><br><span class="line">        <span class="type">HeroNode</span> <span class="variable">temp</span> <span class="operator">=</span> headNode;</span><br><span class="line">        <span class="type">boolean</span> <span class="variable">flag</span> <span class="operator">=</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (temp.Next == <span class="literal">null</span>) &#123;</span><br><span class="line">                <span class="comment">//遍历完整个链表了</span></span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (temp.Next.no == heroNode.no) &#123;</span><br><span class="line">                <span class="comment">//找到了</span></span><br><span class="line">                flag = <span class="literal">true</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            temp = temp.Next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//开始修改</span></span><br><span class="line">        <span class="keyword">if</span> (flag) &#123;</span><br><span class="line">           temp.Next.name = heroNode.name;</span><br><span class="line">           temp.Next.nickname = heroNode.nickname;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;没有找到对应的节点&quot;</span>+ heroNode);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//链表的删除</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">remove</span><span class="params">(HeroNode heroNode)</span> &#123;</span><br><span class="line">        <span class="comment">//判断链表是否为空</span></span><br><span class="line">        <span class="keyword">if</span> (headNode.Next == <span class="literal">null</span>) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;链表为空&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//还是一样先遍历</span></span><br><span class="line">        <span class="type">HeroNode</span> <span class="variable">temp</span> <span class="operator">=</span> headNode;</span><br><span class="line">        <span class="type">boolean</span> <span class="variable">flag</span> <span class="operator">=</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (temp.Next == <span class="literal">null</span>) &#123;</span><br><span class="line">                <span class="comment">//说明已经到了最后一个了</span></span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (temp.Next.no == heroNode.no) &#123;</span><br><span class="line">                <span class="comment">//找到符合条件的</span></span><br><span class="line">                flag = <span class="literal">true</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            temp = temp.Next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//删除</span></span><br><span class="line">        <span class="keyword">if</span> (flag)&#123;</span><br><span class="line">            temp.Next = temp.Next.Next; <span class="comment">//如果是要删除最后一个元素，那么他会指向null。正好符合</span></span><br><span class="line">            <span class="comment">//JVM 的垃圾回收机制会回收</span></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;没有找到符合删除条件的&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//显示链表【遍历】</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">show</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (headNode.Next == <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="comment">//判断链表是否为空</span></span><br><span class="line">            System.out.println(<span class="string">&quot;链表为空&quot;</span>);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//辅助变量temp，因为头节点不能动</span></span><br><span class="line">        <span class="type">HeroNode</span> <span class="variable">temp</span> <span class="operator">=</span> headNode;  <span class="comment">//这里最好指向headNode，不能指向headNode.Next</span></span><br><span class="line">        <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">            temp = temp.Next;</span><br><span class="line">            <span class="comment">//判断是否到了最后</span></span><br><span class="line">            <span class="keyword">if</span> (temp == <span class="literal">null</span>) &#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//输出节点信息</span></span><br><span class="line">            System.out.println(temp);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//定义一个HeroNode 对象，每个HeroNode对象就是一个节点</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">HeroNode</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> no;   <span class="comment">//</span></span><br><span class="line">    <span class="keyword">public</span> String name;</span><br><span class="line">    <span class="keyword">public</span> String nickname;</span><br><span class="line">    <span class="keyword">public</span> HeroNode Next; <span class="comment">//指向下一个节点</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">HeroNode</span> <span class="params">(<span class="type">int</span> no, String name, String nickname)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.no = no;</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">        <span class="built_in">this</span>.nickname = nickname;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">toString</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;HeroNode&#123;&quot;</span> +</span><br><span class="line">                <span class="string">&quot;no=&quot;</span> + no +</span><br><span class="line">                <span class="string">&quot;, name=&#x27;&quot;</span> + name + <span class="string">&#x27;\&#x27;&#x27;</span> +</span><br><span class="line">                <span class="string">&quot;, nickname=&#x27;&quot;</span> + nickname + <span class="string">&#x27;\&#x27;&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h2><p><img src="/images/image-20220911131409172.png" alt="image-20220911131409172"></p>
-<ol>
-<li><p>获取所有节点数（不包含head节点）</p>
-</li>
-<li><p>&#96;&#96;&#96;java<br>&#x2F;&#x2F;获取当前链表的有效节点个数<br>public int getNums(HeroNode headNode) {<br>if (headNode.Next &#x3D;&#x3D; null) {<br>    &#x2F;&#x2F;链表里面没有数据<br>    return 0;<br>}<br>&#x2F;&#x2F;感觉就是遍历吧<br>HeroNode temp &#x3D; headNode;<br>int count &#x3D; 0;<br>while (true) {<br>    if (temp.Next !&#x3D; null) {<br>        count++;<br>    }<br>    if (temp.Next &#x3D;&#x3D; null) {<br>        break;<br>    }<br>    temp &#x3D; temp.Next;<br>}<br>return count;<br>}</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">3. 获取倒数k的节点</span><br><span class="line"></span><br><span class="line">4. ```java</span><br><span class="line">   //查找单链表中的倒数第k个节点</span><br><span class="line">   public HeroNode ReturnByReciprocal (int k, HeroNode headNode) &#123;</span><br><span class="line">       int nums = getNums(headNode);</span><br><span class="line">       int goal = nums - k + 1;</span><br><span class="line">       return ReturnByK(goal, headNode);</span><br><span class="line">   &#125;</span><br><span class="line">   </span><br><span class="line">   //返回链表第k个节点</span><br><span class="line">   public HeroNode ReturnByK (int k, HeroNode headNode) &#123;</span><br><span class="line">       int nums = getNums(headNode);</span><br><span class="line">       //判断是否为空</span><br><span class="line">       if (headNode.Next == null) &#123;</span><br><span class="line">           System.out.println(&quot;链表为空&quot;);</span><br><span class="line">       &#125;</span><br><span class="line">       if (k &gt; nums || k &lt;=0) &#123;</span><br><span class="line">           System.out.println(&quot;输入的K不在该链表的范围内&quot;);</span><br><span class="line">       &#125;</span><br><span class="line">       //遍历</span><br><span class="line">       int count = 0;</span><br><span class="line">       HeroNode temp = headNode;  //不算头节点</span><br><span class="line">       HeroNode result = null;</span><br><span class="line">       while (temp.Next != null) &#123;</span><br><span class="line">           count++;</span><br><span class="line">           temp = temp.Next;</span><br><span class="line">           if (k == count) &#123;</span><br><span class="line">               result = temp;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       return result;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></li>
-</ol>
-]]></content>
-      <categories>
-        <category>数据结构与算法</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>数据结构与算法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>面经</title>
-    <url>/2023/03/11/%E7%BA%BF%E7%A8%8B%E5%92%8C%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
-    <content><![CDATA[<h1 id="请你说说线程和进程的区别"><a href="#请你说说线程和进程的区别" class="headerlink" title="请你说说线程和进程的区别"></a>请你说说线程和进程的区别</h1><h2 id="我的理解"><a href="#我的理解" class="headerlink" title="我的理解"></a>我的理解</h2><p>首先:这两者的关系是一个进程可以使用多个线程来执行当前的进程任务。</p>
-<p>进程和进程之间是分开的，是通过进程之间的进程通信来完成交流。</p>
-<p>而线程与线程之间是有共享空间的。</p>
-<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><h3 id="地址空间、开销、并发性、内存"><a href="#地址空间、开销、并发性、内存" class="headerlink" title="地址空间、开销、并发性、内存"></a>地址空间、开销、并发性、内存</h3><p>进程和线程的主要差别在于它们是不同的操作系统资源管理方式</p>
-<p>1.进程有独立的地址空间,线程有自己的堆栈和局部变量,但线程之间没有单独的地址空间；</p>
-<p>2.进程和线程切换时,需要切换进程和线程的上下文,进程的上下文切换时间开销远远大于线程上下文切换时间,耗费资源较大,效率要差一些；</p>
-<p>3.进程的并发性较低,线程的并发性较高；</p>
-<p>4.每个独立的进程有一个程序运行的入口、顺序执行序列和程序的出口,但是线程不能够独立执行,必须依存在应用程序中,由应用程序提供多个线程执行控制；</p>
-<p>5.系统在运行的时候会为每个进程分配不同的内存空间；而对线程而言,除了 CPU 外,系统不会为线程分配内存（线程所使用的资源来自其所属进程的资源）,线程组之间只能共享资源；</p>
-<p>6.一个进程崩溃后,在保护模式下不会对其他进程产生影响,但是一个线程崩溃整个进程都死掉。所以多进程要比多线程健壮。</p>
-<h1 id="说说MySQL索引好处和坏处"><a href="#说说MySQL索引好处和坏处" class="headerlink" title="说说MySQL索引好处和坏处"></a>说说MySQL索引好处和坏处</h1><p>我的理解:在表的数据多的时候，使用索引可以加快查询速度。坏处是会占用一定的空间。提高维护的成本，在添加数据或者删除数据时候都需要更改索引。有些情况下，索引不会生效。比如建立一个以字段(age,name)的索引，如果之查询name，则索引不会生效。</p>
-<p>得分点 检索效率、存储资源、索引维护 标准回答 索引就像指向表行的指针,是一种允许查询操作快速确定哪些行符合WHERE子句中的条件,并检索到这些行的其他列值的数据结构； 索引主要有普通索引、唯一索引、主键索引、外键索引、全文索引、复合索引几种； 在大数据量的查询中,合理使用索引的优点非常明显,不仅能大幅提高匹配where条件的检索效率,还能用于排序和分组操作的加速。 当时索引如果使用不当也有比较大的坏处：比如索引必定会增加存储资源的消耗；同时也增大了插入、更新和删除操作的维护成本,因为每个增删改操作后相应列的索引都必须被更新。 加分回答 只要创建了索引,就一定会走索引吗？ 不一定。 比如,在使用组合索引的时候,如果没有遵从<font color="red">“最左前缀”</font>的原则进行搜索,则索引是不起作用的。 举例,假设在id、name、age字段上已经成功建立了一个名为MultiIdx的组合索引。索引行中按id、name、age的顺序存放,索引可以搜索id、（id,name）、（id, name, age）字段组合。如果列不构成索引最左面的前缀,那么MySQL不能使用局部索引,如（age）或者（name,age）组合则不能使用该索引查询。</p>
-<h1 id="说说多线程"><a href="#说说多线程" class="headerlink" title="说说多线程"></a>说说多线程</h1><p>我的理解:多线程就是一个进程中有多个任务的时候，多个线程会并发的执行这些任务。多线程之间是共享资源的，一般多线程不会额外分配资源，他们的资源都来自进程。各个线程之间是各自占有堆栈资源，程序计数器等。</p>
-<p>得分点 线程和进程的关系、为什么使用多线程 标准回答 线程是操作系统调度的最小单元,它可以让一个进程并发地处理多个任务,也叫轻量级进程。所以,在一个进程里可以创建多个线程,这些线程都拥有各自的计数器、堆栈、局部变量,并且能够共享进程内的资源。由于共享资源,处理器便可以在这些线程之间快速切换,从而让使用者感觉这些线程在同时执行。 总的来说,操作系统可以同时执行多个任务,每个任务就是一个进程。进程可以同时执行多个任务,每个任务就是一个线程。一个程序运行之后至少有一个进程,而一个进程可以包含多个线程,但至少要包含一个线程。 使用多线程会给开发人员带来显著的好处,而使用多线程的原因主要有以下几点：</p>
-<p>\1. 更多的CPU核心 现代计算机处理器性能的提升方式,已经从追求更高的主频向追求更多的核心发展,所以处理器的核心数量会越来越多,充分地利用处理器的核心则会显著地提高程序的性能。而程序使用多线程技术,就可以将计算逻辑分配到多个处理器核心上,显著减少程序的处理时间,从而随着更多处理器核心的加入而变得更有效率。</p>
-<p>\2. 更快的响应时间 我们经常要针对复杂的业务编写出复杂的代码,如果使用多线程技术,就可以将数据一致性不强的操作派发给其他线程处理（也可以是消息队列）,如上传图片、发送邮件、生成订单等。这样响应用户请求的线程就能够尽快地完成处理,大大地缩短了响应时间,从而提升了用户体验。 3. 更好的编程模型 Java为多线程编程提供了良好且一致的编程模型,使开发人员能够更加专注于问题的解决,开发者只需为此问题建立合适的业务模型,而无需绞尽脑汁地考虑如何实现多线程。一旦开发人员建立好了业务模型,稍作修改就可以将其方便地映射到Java提供的多线程编程模型上。</p>
-<h1 id="说说怎么保证线程安全"><a href="#说说怎么保证线程安全" class="headerlink" title="说说怎么保证线程安全"></a>说说怎么保证线程安全</h1><h1 id="请你说说死锁定义及发生的条件"><a href="#请你说说死锁定义及发生的条件" class="headerlink" title="请你说说死锁定义及发生的条件"></a>请你说说死锁定义及发生的条件</h1>]]></content>
-      <categories>
-        <category>面经</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>操作系统</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>算法题</title>
     <url>/2022/07/04/%E7%AE%97%E6%B3%95%E9%A2%98/</url>
     <content><![CDATA[<h1 id="双指针"><a href="#双指针" class="headerlink" title="双指针"></a><font color="#6dc1f7">双指针</font></h1><blockquote>
@@ -3832,6 +3804,34 @@
       </categories>
       <tags>
         <tag>-JVM -堆栈</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>面经</title>
+    <url>/2023/03/11/%E7%BA%BF%E7%A8%8B%E5%92%8C%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+    <content><![CDATA[<h1 id="请你说说线程和进程的区别"><a href="#请你说说线程和进程的区别" class="headerlink" title="请你说说线程和进程的区别"></a>请你说说线程和进程的区别</h1><h2 id="我的理解"><a href="#我的理解" class="headerlink" title="我的理解"></a>我的理解</h2><p>首先:这两者的关系是一个进程可以使用多个线程来执行当前的进程任务。</p>
+<p>进程和进程之间是分开的，是通过进程之间的进程通信来完成交流。</p>
+<p>而线程与线程之间是有共享空间的。</p>
+<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><h3 id="地址空间、开销、并发性、内存"><a href="#地址空间、开销、并发性、内存" class="headerlink" title="地址空间、开销、并发性、内存"></a>地址空间、开销、并发性、内存</h3><p>进程和线程的主要差别在于它们是不同的操作系统资源管理方式</p>
+<p>1.进程有独立的地址空间,线程有自己的堆栈和局部变量,但线程之间没有单独的地址空间；</p>
+<p>2.进程和线程切换时,需要切换进程和线程的上下文,进程的上下文切换时间开销远远大于线程上下文切换时间,耗费资源较大,效率要差一些；</p>
+<p>3.进程的并发性较低,线程的并发性较高；</p>
+<p>4.每个独立的进程有一个程序运行的入口、顺序执行序列和程序的出口,但是线程不能够独立执行,必须依存在应用程序中,由应用程序提供多个线程执行控制；</p>
+<p>5.系统在运行的时候会为每个进程分配不同的内存空间；而对线程而言,除了 CPU 外,系统不会为线程分配内存（线程所使用的资源来自其所属进程的资源）,线程组之间只能共享资源；</p>
+<p>6.一个进程崩溃后,在保护模式下不会对其他进程产生影响,但是一个线程崩溃整个进程都死掉。所以多进程要比多线程健壮。</p>
+<h1 id="说说MySQL索引好处和坏处"><a href="#说说MySQL索引好处和坏处" class="headerlink" title="说说MySQL索引好处和坏处"></a>说说MySQL索引好处和坏处</h1><p>我的理解:在表的数据多的时候，使用索引可以加快查询速度。坏处是会占用一定的空间。提高维护的成本，在添加数据或者删除数据时候都需要更改索引。有些情况下，索引不会生效。比如建立一个以字段(age,name)的索引，如果之查询name，则索引不会生效。</p>
+<p>得分点 检索效率、存储资源、索引维护 标准回答 索引就像指向表行的指针,是一种允许查询操作快速确定哪些行符合WHERE子句中的条件,并检索到这些行的其他列值的数据结构； 索引主要有普通索引、唯一索引、主键索引、外键索引、全文索引、复合索引几种； 在大数据量的查询中,合理使用索引的优点非常明显,不仅能大幅提高匹配where条件的检索效率,还能用于排序和分组操作的加速。 当时索引如果使用不当也有比较大的坏处：比如索引必定会增加存储资源的消耗；同时也增大了插入、更新和删除操作的维护成本,因为每个增删改操作后相应列的索引都必须被更新。 加分回答 只要创建了索引,就一定会走索引吗？ 不一定。 比如,在使用组合索引的时候,如果没有遵从<font color="red">“最左前缀”</font>的原则进行搜索,则索引是不起作用的。 举例,假设在id、name、age字段上已经成功建立了一个名为MultiIdx的组合索引。索引行中按id、name、age的顺序存放,索引可以搜索id、（id,name）、（id, name, age）字段组合。如果列不构成索引最左面的前缀,那么MySQL不能使用局部索引,如（age）或者（name,age）组合则不能使用该索引查询。</p>
+<h1 id="说说多线程"><a href="#说说多线程" class="headerlink" title="说说多线程"></a>说说多线程</h1><p>我的理解:多线程就是一个进程中有多个任务的时候，多个线程会并发的执行这些任务。多线程之间是共享资源的，一般多线程不会额外分配资源，他们的资源都来自进程。各个线程之间是各自占有堆栈资源，程序计数器等。</p>
+<p>得分点 线程和进程的关系、为什么使用多线程 标准回答 线程是操作系统调度的最小单元,它可以让一个进程并发地处理多个任务,也叫轻量级进程。所以,在一个进程里可以创建多个线程,这些线程都拥有各自的计数器、堆栈、局部变量,并且能够共享进程内的资源。由于共享资源,处理器便可以在这些线程之间快速切换,从而让使用者感觉这些线程在同时执行。 总的来说,操作系统可以同时执行多个任务,每个任务就是一个进程。进程可以同时执行多个任务,每个任务就是一个线程。一个程序运行之后至少有一个进程,而一个进程可以包含多个线程,但至少要包含一个线程。 使用多线程会给开发人员带来显著的好处,而使用多线程的原因主要有以下几点：</p>
+<p>\1. 更多的CPU核心 现代计算机处理器性能的提升方式,已经从追求更高的主频向追求更多的核心发展,所以处理器的核心数量会越来越多,充分地利用处理器的核心则会显著地提高程序的性能。而程序使用多线程技术,就可以将计算逻辑分配到多个处理器核心上,显著减少程序的处理时间,从而随着更多处理器核心的加入而变得更有效率。</p>
+<p>\2. 更快的响应时间 我们经常要针对复杂的业务编写出复杂的代码,如果使用多线程技术,就可以将数据一致性不强的操作派发给其他线程处理（也可以是消息队列）,如上传图片、发送邮件、生成订单等。这样响应用户请求的线程就能够尽快地完成处理,大大地缩短了响应时间,从而提升了用户体验。 3. 更好的编程模型 Java为多线程编程提供了良好且一致的编程模型,使开发人员能够更加专注于问题的解决,开发者只需为此问题建立合适的业务模型,而无需绞尽脑汁地考虑如何实现多线程。一旦开发人员建立好了业务模型,稍作修改就可以将其方便地映射到Java提供的多线程编程模型上。</p>
+<h1 id="说说怎么保证线程安全"><a href="#说说怎么保证线程安全" class="headerlink" title="说说怎么保证线程安全"></a>说说怎么保证线程安全</h1><h1 id="请你说说死锁定义及发生的条件"><a href="#请你说说死锁定义及发生的条件" class="headerlink" title="请你说说死锁定义及发生的条件"></a>请你说说死锁定义及发生的条件</h1>]]></content>
+      <categories>
+        <category>面经</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>操作系统</tag>
       </tags>
   </entry>
   <entry>
