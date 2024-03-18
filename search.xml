@@ -13,6 +13,38 @@
       </tags>
   </entry>
   <entry>
+    <title>Java为数不多的重载运算符</title>
+    <url>/2023/02/24/Java%E4%B8%BA%E6%95%B0%E4%B8%8D%E5%A4%9A%E7%9A%84%E9%87%8D%E8%BD%BD%E8%BF%90%E7%AE%97%E7%AC%A6/</url>
+    <content><![CDATA[<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>重载运算符就是改变原来运算符的意义。</p>
+<h3 id="Java为数不多的重载运算符"><a href="#Java为数不多的重载运算符" class="headerlink" title="Java为数不多的重载运算符"></a>Java为数不多的重载运算符</h3><p>“+”和”+&#x3D;”是Java专门为String类重载的运算符。可能是由于String字符串用的多，并且直接用字符串拼接的十分影响性能。Java就专门为这个String重载运算符。</p>
+<p>字符串通过+和+&#x3D;字符串拼接，其实内部是创建了一个StringBuilder类（线程不安全的），调用内部的<code>append()</code>方法。最后用<code>toString()</code></p>
+<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><p>想要多次拼接的时候，Java并不会智能的只创建一个StringBuilder类，而是每一次使用+号拼接。都会在内部创建一个StringBuiler对象。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String[] arr = &#123;<span class="string">&quot;he&quot;</span>, <span class="string">&quot;llo&quot;</span>, <span class="string">&quot;world&quot;</span>&#125;;</span><br><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">    s += arr[i];</span><br><span class="line">&#125;</span><br><span class="line">System.out.println(s);</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/image-20230301233809525.png" alt="image-20230301233809525"></p>
+<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>在多次使用字符串拼接的时候需要手动创建StringBuilder类。只需一次拼接的，不用手动创建StringBuilder类。在高并发下使用StringBuffer类。</p>
+]]></content>
+      <categories>
+        <category>复习</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>基础</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Javascript笔记随笔</title>
+    <url>/2022/04/20/Javascript%E7%AC%94%E8%AE%B01/</url>
+    <content><![CDATA[<hr>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>Javascript</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JavaWeb</title>
     <url>/2022/09/01/JavaWeb/</url>
     <content><![CDATA[<h2 id="CS和BS的异同点"><a href="#CS和BS的异同点" class="headerlink" title="CS和BS的异同点"></a>CS和BS的异同点</h2><p><img src="/images/image-20220901200621183.png" alt="image-20220901200621183"></p>
@@ -26,15 +58,27 @@
 <h2 id="Servlet"><a href="#Servlet" class="headerlink" title="Servlet"></a>Servlet</h2>]]></content>
   </entry>
   <entry>
-    <title>Javascript笔记随笔</title>
-    <url>/2022/04/20/Javascript%E7%AC%94%E8%AE%B01/</url>
-    <content><![CDATA[<hr>
+    <title>Java重载和重写的一些小细节</title>
+    <url>/2023/02/24/Java%E9%87%8D%E8%BD%BD%E5%92%8C%E9%87%8D%E5%86%99%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8F%E7%BB%86%E8%8A%82/</url>
+    <content><![CDATA[<h2 id="重写"><a href="#重写" class="headerlink" title="重写"></a>重写</h2><p>Java作为纯面向对象的语言，继承是再熟悉不过了。不过还是有一些细节在平时不回去注意，用到的场景也比较少。也是随着框架技术的成熟，解耦越来越强。许多底层代码都很少再去注意。</p>
+<h3 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h3><p>Java修饰符如下图所示:</p>
+<p><img src="/images/xiushifu.png" alt="在这里插入图片描述"></p>
+<p>Java子类重写父类的方法，修饰符范围扩大范围，即降低限制。可以这样理解，子类是对父类的拓展和增强。所以修饰扩大能更好使得父类的方法变强。</p>
+<h3 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h3><p>子类的重写只能抛出范围更小的异常，还是子类方法是对父类的增强， 应该异常要不父类小。</p>
+<h3 id="返回类型"><a href="#返回类型" class="headerlink" title="返回类型"></a>返回类型</h3><p>返回类型应该更强精确和范围小(返回的类型是原来的子类或者更小类型等)。</p>
+<h3 id="发生阶段"><a href="#发生阶段" class="headerlink" title="发生阶段"></a>发生阶段</h3><p>运行期，为什么是运行期。如果没有@Override注释。你即使在子类写了不符合规则的继承方法，也不会报错。而@Override这个注释就是帮你检查和提高可读性。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">protected</span> Object <span class="title function_">f1</span><span class="params">()</span> <span class="keyword">throws</span> Exception&#123;</span><br><span class="line">    </span><br><span class="line">        System.out.println(<span class="string">&quot;父类方法&quot;</span>);</span><br><span class="line">    </span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">public</span> String <span class="title function_">f1</span><span class="params">()</span> <span class="keyword">throws</span> IOException&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>可以通过举例来记忆。比如:Object的Clone方法，访问修饰符是Protected，需要子类重写，并将访问修饰符改成public，才能正常使用。</p>
+<h2 id="重载"><a href="#重载" class="headerlink" title="重载"></a>重载</h2><h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>重载必须是在同一个类中，方法名必须相同，参数列表必须更改，可以是可变数组类型。相较于重写，异常、访问修饰符、返回类型都没有做严格要求可修改和不修改都可。<font color="red">发生阶段</font>:编译期。</p>
+<h2 id="对比"><a href="#对比" class="headerlink" title="对比"></a>对比</h2><p><img src="/images/image-20230301002202227.png" alt="image-20230301002202227"></p>
 ]]></content>
       <categories>
-        <category>学习笔记</category>
+        <category>复习</category>
       </categories>
       <tags>
-        <tag>Javascript</tag>
+        <tag>Java复习</tag>
+        <tag>细节</tag>
       </tags>
   </entry>
   <entry>
@@ -62,47 +106,20 @@
       </tags>
   </entry>
   <entry>
-    <title>Java重载和重写的一些小细节</title>
-    <url>/2023/02/24/Java%E9%87%8D%E8%BD%BD%E5%92%8C%E9%87%8D%E5%86%99%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8F%E7%BB%86%E8%8A%82/</url>
-    <content><![CDATA[<h2 id="重写"><a href="#重写" class="headerlink" title="重写"></a>重写</h2><p>Java作为纯面向对象的语言，继承是再熟悉不过了。不过还是有一些细节在平时不回去注意，用到的场景也比较少。也是随着框架技术的成熟，解耦越来越强。许多底层代码都很少再去注意。</p>
-<h3 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h3><p>Java修饰符如下图所示:</p>
-<p><img src="/images/xiushifu.png" alt="在这里插入图片描述"></p>
-<p>Java子类重写父类的方法，修饰符范围扩大范围，即降低限制。可以这样理解，子类是对父类的拓展和增强。所以修饰扩大能更好使得父类的方法变强。</p>
-<h3 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h3><p>子类的重写只能抛出范围更小的异常，还是子类方法是对父类的增强， 应该异常要不父类小。</p>
-<h3 id="返回类型"><a href="#返回类型" class="headerlink" title="返回类型"></a>返回类型</h3><p>返回类型应该更强精确和范围小(返回的类型是原来的子类或者更小类型等)。</p>
-<h3 id="发生阶段"><a href="#发生阶段" class="headerlink" title="发生阶段"></a>发生阶段</h3><p>运行期，为什么是运行期。如果没有@Override注释。你即使在子类写了不符合规则的继承方法，也不会报错。而@Override这个注释就是帮你检查和提高可读性。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">protected</span> Object <span class="title function_">f1</span><span class="params">()</span> <span class="keyword">throws</span> Exception&#123;</span><br><span class="line">    </span><br><span class="line">        System.out.println(<span class="string">&quot;父类方法&quot;</span>);</span><br><span class="line">    </span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">public</span> String <span class="title function_">f1</span><span class="params">()</span> <span class="keyword">throws</span> IOException&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>可以通过举例来记忆。比如:Object的Clone方法，访问修饰符是Protected，需要子类重写，并将访问修饰符改成public，才能正常使用。</p>
-<h2 id="重载"><a href="#重载" class="headerlink" title="重载"></a>重载</h2><h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>重载必须是在同一个类中，方法名必须相同，参数列表必须更改，可以是可变数组类型。相较于重写，异常、访问修饰符、返回类型都没有做严格要求可修改和不修改都可。<font color="red">发生阶段</font>:编译期。</p>
-<h2 id="对比"><a href="#对比" class="headerlink" title="对比"></a>对比</h2><p><img src="/images/image-20230301002202227.png" alt="image-20230301002202227"></p>
+    <title>MyFirst-ChromeExtention</title>
+    <url>/2022/05/01/MyFirst-ChromeExtention/</url>
+    <content><![CDATA[<hr>
+<h1 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h1><p>该chrome主要有两方面功能和两种展现方式: <font color="#f89996"><strong>popup</strong> </font>和<font color="#f89996"><strong>option</strong></font>。<br>成功安装时，会跳转到B站<strong>A-SOUL_Official</strong>个人空间  </p>
+<h2 id="popop"><a href="#popop" class="headerlink" title="popop"></a>popop</h2><p>将插件置顶后<font color="#f89996"><strong>左键</strong></font>单击调用出popup窗口，可以看见有一个按钮和输入框: 点击按钮后会根据当前按钮<br>的颜色来改变当前浏览器的<font color="#f89996"><strong>背景颜色</strong></font>。 输入框是记录键盘输入的文字，并在上面<font color="#f89996"><strong>红色小条</strong></font>中显示。<br>注意: 关闭popup页面后输入的文字不会被保存。</p>
+<h2 id="option"><a href="#option" class="headerlink" title="option"></a>option</h2><p>右键置顶的插件，并选中<font color="#f89996"><strong>选项</strong></font>跳转到选项页面，其中有五个按钮供选择，来更改popup页面中的按钮颜色。  </p>
+<h2 id="图片更改"><a href="#图片更改" class="headerlink" title="图片更改"></a>图片更改</h2><p>在根目录中找到<code>popup.html</code>文件，找到<code>img</code>更改<font color="#f89996"><strong>popup</strong></font>窗口对应的图片<br>相应的找到<code>option.html</code>文件，更改<font color="#f89996"><strong>option</strong></font>窗口对应的图片</p>
+<hr>
 ]]></content>
       <categories>
-        <category>复习</category>
+        <category>学习笔记</category>
       </categories>
       <tags>
-        <tag>Java复习</tag>
-        <tag>细节</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Java为数不多的重载运算符</title>
-    <url>/2023/02/24/Java%E4%B8%BA%E6%95%B0%E4%B8%8D%E5%A4%9A%E7%9A%84%E9%87%8D%E8%BD%BD%E8%BF%90%E7%AE%97%E7%AC%A6/</url>
-    <content><![CDATA[<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>重载运算符就是改变原来运算符的意义。</p>
-<h3 id="Java为数不多的重载运算符"><a href="#Java为数不多的重载运算符" class="headerlink" title="Java为数不多的重载运算符"></a>Java为数不多的重载运算符</h3><p>“+”和”+&#x3D;”是Java专门为String类重载的运算符。可能是由于String字符串用的多，并且直接用字符串拼接的十分影响性能。Java就专门为这个String重载运算符。</p>
-<p>字符串通过+和+&#x3D;字符串拼接，其实内部是创建了一个StringBuilder类（线程不安全的），调用内部的<code>append()</code>方法。最后用<code>toString()</code></p>
-<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><p>想要多次拼接的时候，Java并不会智能的只创建一个StringBuilder类，而是每一次使用+号拼接。都会在内部创建一个StringBuiler对象。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String[] arr = &#123;<span class="string">&quot;he&quot;</span>, <span class="string">&quot;llo&quot;</span>, <span class="string">&quot;world&quot;</span>&#125;;</span><br><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">    s += arr[i];</span><br><span class="line">&#125;</span><br><span class="line">System.out.println(s);</span><br></pre></td></tr></table></figure>
-
-<p><img src="/images/image-20230301233809525.png" alt="image-20230301233809525"></p>
-<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>在多次使用字符串拼接的时候需要手动创建StringBuilder类。只需一次拼接的，不用手动创建StringBuilder类。在高并发下使用StringBuffer类。</p>
-]]></content>
-      <categories>
-        <category>复习</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>基础</tag>
+        <tag>Chrome Extention</tag>
       </tags>
   </entry>
   <entry>
@@ -161,23 +178,6 @@
     <title>Reids项目学习小结</title>
     <url>/2023/02/24/Reids%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0%E5%B0%8F%E7%BB%93/</url>
     <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>MyFirst-ChromeExtention</title>
-    <url>/2022/05/01/MyFirst-ChromeExtention/</url>
-    <content><![CDATA[<hr>
-<h1 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h1><p>该chrome主要有两方面功能和两种展现方式: <font color="#f89996"><strong>popup</strong> </font>和<font color="#f89996"><strong>option</strong></font>。<br>成功安装时，会跳转到B站<strong>A-SOUL_Official</strong>个人空间  </p>
-<h2 id="popop"><a href="#popop" class="headerlink" title="popop"></a>popop</h2><p>将插件置顶后<font color="#f89996"><strong>左键</strong></font>单击调用出popup窗口，可以看见有一个按钮和输入框: 点击按钮后会根据当前按钮<br>的颜色来改变当前浏览器的<font color="#f89996"><strong>背景颜色</strong></font>。 输入框是记录键盘输入的文字，并在上面<font color="#f89996"><strong>红色小条</strong></font>中显示。<br>注意: 关闭popup页面后输入的文字不会被保存。</p>
-<h2 id="option"><a href="#option" class="headerlink" title="option"></a>option</h2><p>右键置顶的插件，并选中<font color="#f89996"><strong>选项</strong></font>跳转到选项页面，其中有五个按钮供选择，来更改popup页面中的按钮颜色。  </p>
-<h2 id="图片更改"><a href="#图片更改" class="headerlink" title="图片更改"></a>图片更改</h2><p>在根目录中找到<code>popup.html</code>文件，找到<code>img</code>更改<font color="#f89996"><strong>popup</strong></font>窗口对应的图片<br>相应的找到<code>option.html</code>文件，更改<font color="#f89996"><strong>option</strong></font>窗口对应的图片</p>
-<hr>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-      <tags>
-        <tag>Chrome Extention</tag>
-      </tags>
   </entry>
   <entry>
     <title>SpringMVC向域对象共享数据的5种方法</title>
@@ -305,43 +305,6 @@
       </tags>
   </entry>
   <entry>
-    <title>String框架--AOP原理</title>
-    <url>/2022/10/30/String%E6%A1%86%E6%9E%B6-AOP%E5%8E%9F%E7%90%86/</url>
-    <content><![CDATA[<h1 id="AOP-简介"><a href="#AOP-简介" class="headerlink" title="AOP 简介"></a>AOP 简介</h1><p>AOP(Aspect Oriented Programming)意为面向切面变成，是OOP(Object Oriented Programming)面向对象编程的”进化版”。面向对象编程在拓展功能时，需要改变源码会影响到原有的功能。而AOP则是横向的在不改变原有功能(源码)的基础上增加新功能。能够对业务逻辑的各个部分进行隔离，从而使得业务逻辑各部分之间的耦合度降低，提高程序的可重用性，同时提高了开发的效率。</p>
-<h1 id="底层原理"><a href="#底层原理" class="headerlink" title="底层原理"></a>底层原理</h1><p>AOP底层使用的是动态代理机制。分两种情况1、是由接口。2、没有接口</p>
-<p>1、有接口，使用JDK动态代理</p>
-<p><img src="/images/image-20221030203439949.png" alt="image-20221030203439949"></p>
-<p>2、没有接口，使用CGLB动态代理</p>
-<p><img src="/images/image-20221030203901539.png" alt="image-20221030203901539"></p>
-<p>具体JDK动态代理实现看笔记，动态代理在reflect包下。当然也使用了反射机制。</p>
-<h2 id="那么使用动态代理的好处是什么？"><a href="#那么使用动态代理的好处是什么？" class="headerlink" title="那么使用动态代理的好处是什么？"></a>那么使用动态代理的好处是什么？</h2><p>代理故名思意，让代理对象完成对业务逻辑完成。我们在要增强业务逻辑的时候只需要改变增强代理对象的业务逻辑。实现了开闭原则(OCP) Open Close Principle，对扩展是开放的，对修改是关闭的。降低耦合度。</p>
-<h2 id="动态代理和静态代理"><a href="#动态代理和静态代理" class="headerlink" title="动态代理和静态代理"></a>动态代理和静态代理</h2><p>所谓静态也就是在程序运行前就已经存在代理类的字节码文件，代理类和委托类的关系在运行前就确定了。 字节码不就是.class文件。在Java里面一提到动态，就是反射机制了。动态代理类的源码是在程序运行期间由JVM根据反射等机制动态的生成，所以不存在代理类的字节码文件。代理类和委托类的关系是在程序运行时确定。 好处也显然易见，相较静态代理动态代理降低代码之间耦合度的能力更强。</p>
-<h1 id="AOP术语"><a href="#AOP术语" class="headerlink" title="AOP术语"></a>AOP术语</h1><p>1、连接点</p>
-<p>类里面哪些方法可以被增强，这些方法被称为连接点。</p>
-<p>2、切入点</p>
-<p>实际被真正增强的方法，称为切入点。有切入点表达式指定</p>
-<p>3、通知</p>
-<p>1）实际增强的逻辑部分称为通知(增强);</p>
-<p>2）通知的多种类型</p>
-<p>​	前置通知</p>
-<p>​	后置通知</p>
-<p>​	环绕通知</p>
-<p>​	异常通知</p>
-<p>​	最终通知</p>
-<p>4、切面</p>
-<p>把通知应用到切入点过程</p>
-<p>其余XML配置文件，注解开发具体看笔记。</p>
-]]></content>
-      <categories>
-        <category>课程小结</category>
-        <category>面向切面编程</category>
-      </categories>
-      <tags>
-        <tag>Spring</tag>
-        <tag>AOP</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Spring事务整理</title>
     <url>/2022/11/08/Spring%E4%BA%8B%E5%8A%A1%E6%95%B4%E7%90%86/</url>
     <content><![CDATA[<p>参考文章  <a href="https://blog.csdn.net/donggua3694857/article/details/69858827">https://blog.csdn.net/donggua3694857/article/details/69858827</a></p>
@@ -453,21 +416,40 @@
       </tags>
   </entry>
   <entry>
-    <title>Vue学习之MVVM思想</title>
-    <url>/2023/03/03/Vue%E5%AD%A6%E4%B9%A0%E4%B9%8BMVVM%E6%80%9D%E6%83%B3/</url>
-    <content><![CDATA[<h1 id="MVVM思想"><a href="#MVVM思想" class="headerlink" title="MVVM思想"></a>MVVM思想</h1><ul>
-<li>M: 即Model，模型，包括数据和一些基本操作。</li>
-<li>V: 即View，视图，页面渲染结果。<ul>
-<li>VM：即View-Model，模型与视图间的双向操作(无需开发人员干涉)</li>
-</ul>
-</li>
-</ul>
+    <title>String框架--AOP原理</title>
+    <url>/2022/10/30/String%E6%A1%86%E6%9E%B6-AOP%E5%8E%9F%E7%90%86/</url>
+    <content><![CDATA[<h1 id="AOP-简介"><a href="#AOP-简介" class="headerlink" title="AOP 简介"></a>AOP 简介</h1><p>AOP(Aspect Oriented Programming)意为面向切面变成，是OOP(Object Oriented Programming)面向对象编程的”进化版”。面向对象编程在拓展功能时，需要改变源码会影响到原有的功能。而AOP则是横向的在不改变原有功能(源码)的基础上增加新功能。能够对业务逻辑的各个部分进行隔离，从而使得业务逻辑各部分之间的耦合度降低，提高程序的可重用性，同时提高了开发的效率。</p>
+<h1 id="底层原理"><a href="#底层原理" class="headerlink" title="底层原理"></a>底层原理</h1><p>AOP底层使用的是动态代理机制。分两种情况1、是由接口。2、没有接口</p>
+<p>1、有接口，使用JDK动态代理</p>
+<p><img src="/images/image-20221030203439949.png" alt="image-20221030203439949"></p>
+<p>2、没有接口，使用CGLB动态代理</p>
+<p><img src="/images/image-20221030203901539.png" alt="image-20221030203901539"></p>
+<p>具体JDK动态代理实现看笔记，动态代理在reflect包下。当然也使用了反射机制。</p>
+<h2 id="那么使用动态代理的好处是什么？"><a href="#那么使用动态代理的好处是什么？" class="headerlink" title="那么使用动态代理的好处是什么？"></a>那么使用动态代理的好处是什么？</h2><p>代理故名思意，让代理对象完成对业务逻辑完成。我们在要增强业务逻辑的时候只需要改变增强代理对象的业务逻辑。实现了开闭原则(OCP) Open Close Principle，对扩展是开放的，对修改是关闭的。降低耦合度。</p>
+<h2 id="动态代理和静态代理"><a href="#动态代理和静态代理" class="headerlink" title="动态代理和静态代理"></a>动态代理和静态代理</h2><p>所谓静态也就是在程序运行前就已经存在代理类的字节码文件，代理类和委托类的关系在运行前就确定了。 字节码不就是.class文件。在Java里面一提到动态，就是反射机制了。动态代理类的源码是在程序运行期间由JVM根据反射等机制动态的生成，所以不存在代理类的字节码文件。代理类和委托类的关系是在程序运行时确定。 好处也显然易见，相较静态代理动态代理降低代码之间耦合度的能力更强。</p>
+<h1 id="AOP术语"><a href="#AOP术语" class="headerlink" title="AOP术语"></a>AOP术语</h1><p>1、连接点</p>
+<p>类里面哪些方法可以被增强，这些方法被称为连接点。</p>
+<p>2、切入点</p>
+<p>实际被真正增强的方法，称为切入点。有切入点表达式指定</p>
+<p>3、通知</p>
+<p>1）实际增强的逻辑部分称为通知(增强);</p>
+<p>2）通知的多种类型</p>
+<p>​	前置通知</p>
+<p>​	后置通知</p>
+<p>​	环绕通知</p>
+<p>​	异常通知</p>
+<p>​	最终通知</p>
+<p>4、切面</p>
+<p>把通知应用到切入点过程</p>
+<p>其余XML配置文件，注解开发具体看笔记。</p>
 ]]></content>
       <categories>
-        <category>前端</category>
+        <category>课程小结</category>
+        <category>面向切面编程</category>
       </categories>
       <tags>
-        <tag>Vue</tag>
+        <tag>Spring</tag>
+        <tag>AOP</tag>
       </tags>
   </entry>
   <entry>
@@ -511,6 +493,69 @@
       <tags>
         <tag>equals</tag>
         <tag>hashcode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vue学习之MVVM思想</title>
+    <url>/2023/03/03/Vue%E5%AD%A6%E4%B9%A0%E4%B9%8BMVVM%E6%80%9D%E6%83%B3/</url>
+    <content><![CDATA[<h1 id="MVVM思想"><a href="#MVVM思想" class="headerlink" title="MVVM思想"></a>MVVM思想</h1><ul>
+<li>M: 即Model，模型，包括数据和一些基本操作。</li>
+<li>V: 即View，视图，页面渲染结果。<ul>
+<li>VM：即View-Model，模型与视图间的双向操作(无需开发人员干涉)</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>Vue</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo使用方法包括themes</title>
+    <url>/2022/04/20/hexo%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E5%8C%85%E6%8B%ACthemes/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span>     //创建新的文章</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server          //本地服务器</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate          //搭建</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy            //部署生成 发布到GitHub</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h3 id="hexo-文章可配置属性"><a href="#hexo-文章可配置属性" class="headerlink" title="hexo 文章可配置属性"></a>hexo 文章可配置属性</h3><p><img src="/images/hexo%E6%96%87%E7%AB%A0%E5%8F%AF%E9%85%8D%E7%BD%AE%E5%B1%9E%E6%80%A7.png" alt="hexo文章可配置属性"></p>
+<h2 id="butterfly-主题配置"><a href="#butterfly-主题配置" class="headerlink" title="butterfly 主题配置"></a>butterfly 主题配置</h2><h3 id="Page页面可配置属性"><a href="#Page页面可配置属性" class="headerlink" title="Page页面可配置属性"></a>Page页面可配置属性</h3><p><img src="/images/%E6%96%87%E7%AB%A0%E5%8F%AF%E9%85%8D%E7%BD%AE%E5%B1%9E%E6%80%A7.png" alt="文章可配置属性"></p>
+<h3 id="Post文章可配置属性"><a href="#Post文章可配置属性" class="headerlink" title="Post文章可配置属性"></a>Post文章可配置属性</h3><p><img src="/images/post%E9%85%8D%E7%BD%AE1.png" alt="Post1"> <img src="/images/post%E9%85%8D%E7%BD%AE2.png" alt="Post2"></p>
+]]></content>
+      <tags>
+        <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>json、xml、Ajax简单理解</title>
+    <url>/2022/11/30/json%E3%80%81xml%E3%80%81Ajax%E7%AE%80%E5%8D%95%E7%90%86%E8%A7%A3/</url>
+    <content><![CDATA[<h1 id="JSON和XML"><a href="#JSON和XML" class="headerlink" title="JSON和XML"></a>JSON和XML</h1><p>JSON是Javascript的一种数据格式，全称JSON（ JavaScript Object Notation, JS对象简谱）是一种轻量级的数据交换格式。XML也是一种数据交互格式。XML (<strong>Extensible Markup Language</strong>) 是一种类似于 HTML 的标记语言，但是 XML 没有使用预定义的标记。XML较多用于配置文件，JSON较多用户数据交互格式。</p>
+<p>因为JSON数据量少，简单。</p>
+<p><img src="/images/image-20221130105628681.png" alt="image-20221130105628681"></p>
+<h1 id="两者解析能力"><a href="#两者解析能力" class="headerlink" title="两者解析能力"></a>两者解析能力</h1><p>XML解析使用dom4j、xpath。dom就是一个文档，和html很像，使用文档解析。解析的时候将整个XML文件当作document，先读根标签。根标签就是类似于HTML中的HTML标签，是最外层的标签。然后获取子标签，一层一层的解析。</p>
+<p>JSON两种格式：1、一种对象。2、一种数组。获取方式：对象： 使用对象.键获取值。数组for循环获取。</p>
+<p>对象是放在{}中以键值对的形式存储，而数组是[]存储的是一个一个数据。</p>
+<p>Java实体类和map转换成json对象就是JSON对象，list之类的就是JSON数组</p>
+<h1 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h1><p>Ajax 的全称是asynchronous javascript and xml</p>
+<p>Ajax是一种用于创建快速动态网页的技术，使用JavaScript操作异步对象XMLHttpRequest，和服务器交换使用json数据格式。通过在后台与服务器进行少量数据交换，前后端数据交互。</p>
+<p>简单来说：可以在页面不刷新就实现和服务器数据交互。</p>
+]]></content>
+      <categories>
+        <category>数据交互格式</category>
+      </categories>
+      <tags>
+        <tag>JavaWeb</tag>
       </tags>
   </entry>
   <entry>
@@ -574,69 +619,6 @@
       </tags>
   </entry>
   <entry>
-    <title>json、xml、Ajax简单理解</title>
-    <url>/2022/11/30/json%E3%80%81xml%E3%80%81Ajax%E7%AE%80%E5%8D%95%E7%90%86%E8%A7%A3/</url>
-    <content><![CDATA[<h1 id="JSON和XML"><a href="#JSON和XML" class="headerlink" title="JSON和XML"></a>JSON和XML</h1><p>JSON是Javascript的一种数据格式，全称JSON（ JavaScript Object Notation, JS对象简谱）是一种轻量级的数据交换格式。XML也是一种数据交互格式。XML (<strong>Extensible Markup Language</strong>) 是一种类似于 HTML 的标记语言，但是 XML 没有使用预定义的标记。XML较多用于配置文件，JSON较多用户数据交互格式。</p>
-<p>因为JSON数据量少，简单。</p>
-<p><img src="/images/image-20221130105628681.png" alt="image-20221130105628681"></p>
-<h1 id="两者解析能力"><a href="#两者解析能力" class="headerlink" title="两者解析能力"></a>两者解析能力</h1><p>XML解析使用dom4j、xpath。dom就是一个文档，和html很像，使用文档解析。解析的时候将整个XML文件当作document，先读根标签。根标签就是类似于HTML中的HTML标签，是最外层的标签。然后获取子标签，一层一层的解析。</p>
-<p>JSON两种格式：1、一种对象。2、一种数组。获取方式：对象： 使用对象.键获取值。数组for循环获取。</p>
-<p>对象是放在{}中以键值对的形式存储，而数组是[]存储的是一个一个数据。</p>
-<p>Java实体类和map转换成json对象就是JSON对象，list之类的就是JSON数组</p>
-<h1 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h1><p>Ajax 的全称是asynchronous javascript and xml</p>
-<p>Ajax是一种用于创建快速动态网页的技术，使用JavaScript操作异步对象XMLHttpRequest，和服务器交换使用json数据格式。通过在后台与服务器进行少量数据交换，前后端数据交互。</p>
-<p>简单来说：可以在页面不刷新就实现和服务器数据交互。</p>
-]]></content>
-      <categories>
-        <category>数据交互格式</category>
-      </categories>
-      <tags>
-        <tag>JavaWeb</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>代码执行顺序--静态代码块、构造方法等及子父类相关问题</title>
-    <url>/2022/07/30/%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F-%E9%9D%99%E6%80%81%E4%BB%A3%E7%A0%81%E5%9D%97%E3%80%81%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95%E7%AD%89%E5%8F%8A%E5%AD%90%E7%88%B6%E7%B1%BB%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<h1 id="问题引出"><a href="#问题引出" class="headerlink" title="问题引出"></a><font color="2474B5">问题引出</font></h1><p>在做题时遇到静态代码块和其他数据加载先后顺序问题，平时写程序没有遇到。所以在这总结一下。</p>
-<h1 id="结论"><a href="#结论" class="headerlink" title="结论"></a><font color="2474B5">结论</font></h1><blockquote>
-<p>执行顺序为</p>
-<p>​	父类静态代码块、父类静态变量 ps：按照声明顺序执行（即先后顺序）</p>
-<p>​	子类静态代码块、静态变量 ps：按声明顺序执行</p>
-<p>​	父类局部代码块、成员变量ps：按声明顺序执行</p>
-<p>​	父类构造器函数</p>
-<p>​	子类局部代码块、成员变量ps：按声明顺序执行</p>
-<p>​	子类构造函数</p>
-</blockquote>
-<h1 id="代码测试"><a href="#代码测试" class="headerlink" title="代码测试"></a><font color="2474B5">代码测试</font></h1><ol>
-<li>静态代码块和静态变量</li>
-</ol>
-<p><img src="/images/image-20220730144317566.png" alt="image-20220730144317566"></p>
-<p><img src="/images/image-20220730144333226.png" alt="image-20220730144333226"></p>
-<p>可以看出来，当静态变量在静态代码块上面的时候编译不会报错，反之会报错。说明两者并没有先后关系。而是并列关系。</p>
-<ol start="2">
-<li>成员变量和局部代码块 与 静态代码块</li>
-</ol>
-<p><img src="/images/image-20220730145114251.png" alt="image-20220730145114251"></p>
-<p>可以看出即使普通成员变量声明顺序在静态代码块的前面还是无法引用，说明静态代码块的优先级高于普通成员变量。</p>
-<ol start="3">
-<li>整体来看</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">StaticTest</span> <span class="keyword">extends</span> <span class="title class_">A</span>&#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="type">String</span> <span class="variable">ss</span> <span class="operator">=</span> <span class="string">&quot;子类静态变量&quot;</span>;</span><br><span class="line">    <span class="type">String</span> <span class="variable">sss</span> <span class="operator">=</span> <span class="string">&quot;子类正常变量&quot;</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">StaticTest</span> <span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;子类构造函数&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;子类局部代码块&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;子类静态代码块&quot;</span>);</span><br><span class="line">        System.out.println(ss);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;子类main方法&quot;</span>);</span><br><span class="line">        <span class="keyword">new</span> <span class="title class_">StaticTest</span>();<span class="comment">//生成new子类对象</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">A</span> &#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">&quot;父类静态变量&quot;</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">A</span> <span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;父类构造器&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;父类局部代码块&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">String</span> <span class="variable">ss</span> <span class="operator">=</span> <span class="string">&quot;父类成员变量&quot;</span>;</span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        System.out.println(s);</span><br><span class="line">        System.out.println(<span class="string">&quot;父类静态代码块&quot;</span>);</span><br><span class="line">        <span class="type">String</span> <span class="variable">s1</span> <span class="operator">=</span> <span class="string">&quot;父类静态代码块中的成员变量&quot;</span>;</span><br><span class="line">        <span class="comment">//System.out.println(ss);无法调用普通成员变量，因为静态代码块优先级高于它</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>输出结果：</p>
-<p><img src="/images/image-20220730145837459.png" alt="image-20220730145837459"></p>
-<mark class="hl-label purple">总结</mark> ：
-
-<p>与先前的结论一直。还需注意的是new一个子类对象的时候，会先调用父类的构造器然后再调用子类构造器。</p>
-]]></content>
-      <categories>
-        <category>刷题笔记</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>关于子父类初始化问题</title>
     <url>/2022/08/11/%E5%85%B3%E4%BA%8E%E5%AD%90%E5%A4%AB%E7%B1%BB%E5%88%9D%E5%A7%8B%E5%8C%96%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<p>虚拟机规范严格规定了有且只有五种情况必须立即对类进行“初始化”</p>
@@ -676,30 +658,6 @@
       </categories>
       <tags>
         <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hexo使用方法包括themes</title>
-    <url>/2022/04/20/hexo%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E5%8C%85%E6%8B%ACthemes/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span>     //创建新的文章</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server          //本地服务器</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate          //搭建</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy            //部署生成 发布到GitHub</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-<h3 id="hexo-文章可配置属性"><a href="#hexo-文章可配置属性" class="headerlink" title="hexo 文章可配置属性"></a>hexo 文章可配置属性</h3><p><img src="/images/hexo%E6%96%87%E7%AB%A0%E5%8F%AF%E9%85%8D%E7%BD%AE%E5%B1%9E%E6%80%A7.png" alt="hexo文章可配置属性"></p>
-<h2 id="butterfly-主题配置"><a href="#butterfly-主题配置" class="headerlink" title="butterfly 主题配置"></a>butterfly 主题配置</h2><h3 id="Page页面可配置属性"><a href="#Page页面可配置属性" class="headerlink" title="Page页面可配置属性"></a>Page页面可配置属性</h3><p><img src="/images/%E6%96%87%E7%AB%A0%E5%8F%AF%E9%85%8D%E7%BD%AE%E5%B1%9E%E6%80%A7.png" alt="文章可配置属性"></p>
-<h3 id="Post文章可配置属性"><a href="#Post文章可配置属性" class="headerlink" title="Post文章可配置属性"></a>Post文章可配置属性</h3><p><img src="/images/post%E9%85%8D%E7%BD%AE1.png" alt="Post1"> <img src="/images/post%E9%85%8D%E7%BD%AE2.png" alt="Post2"></p>
-]]></content>
-      <tags>
-        <tag>教程</tag>
       </tags>
   </entry>
   <entry>
@@ -3084,6 +3042,68 @@
       </tags>
   </entry>
   <entry>
+    <title>代码执行顺序--静态代码块、构造方法等及子父类相关问题</title>
+    <url>/2022/07/30/%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F-%E9%9D%99%E6%80%81%E4%BB%A3%E7%A0%81%E5%9D%97%E3%80%81%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95%E7%AD%89%E5%8F%8A%E5%AD%90%E7%88%B6%E7%B1%BB%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<h1 id="问题引出"><a href="#问题引出" class="headerlink" title="问题引出"></a><font color="2474B5">问题引出</font></h1><p>在做题时遇到静态代码块和其他数据加载先后顺序问题，平时写程序没有遇到。所以在这总结一下。</p>
+<h1 id="结论"><a href="#结论" class="headerlink" title="结论"></a><font color="2474B5">结论</font></h1><blockquote>
+<p>执行顺序为</p>
+<p>​	父类静态代码块、父类静态变量 ps：按照声明顺序执行（即先后顺序）</p>
+<p>​	子类静态代码块、静态变量 ps：按声明顺序执行</p>
+<p>​	父类局部代码块、成员变量ps：按声明顺序执行</p>
+<p>​	父类构造器函数</p>
+<p>​	子类局部代码块、成员变量ps：按声明顺序执行</p>
+<p>​	子类构造函数</p>
+</blockquote>
+<h1 id="代码测试"><a href="#代码测试" class="headerlink" title="代码测试"></a><font color="2474B5">代码测试</font></h1><ol>
+<li>静态代码块和静态变量</li>
+</ol>
+<p><img src="/images/image-20220730144317566.png" alt="image-20220730144317566"></p>
+<p><img src="/images/image-20220730144333226.png" alt="image-20220730144333226"></p>
+<p>可以看出来，当静态变量在静态代码块上面的时候编译不会报错，反之会报错。说明两者并没有先后关系。而是并列关系。</p>
+<ol start="2">
+<li>成员变量和局部代码块 与 静态代码块</li>
+</ol>
+<p><img src="/images/image-20220730145114251.png" alt="image-20220730145114251"></p>
+<p>可以看出即使普通成员变量声明顺序在静态代码块的前面还是无法引用，说明静态代码块的优先级高于普通成员变量。</p>
+<ol start="3">
+<li>整体来看</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">StaticTest</span> <span class="keyword">extends</span> <span class="title class_">A</span>&#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="type">String</span> <span class="variable">ss</span> <span class="operator">=</span> <span class="string">&quot;子类静态变量&quot;</span>;</span><br><span class="line">    <span class="type">String</span> <span class="variable">sss</span> <span class="operator">=</span> <span class="string">&quot;子类正常变量&quot;</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">StaticTest</span> <span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;子类构造函数&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;子类局部代码块&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;子类静态代码块&quot;</span>);</span><br><span class="line">        System.out.println(ss);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;子类main方法&quot;</span>);</span><br><span class="line">        <span class="keyword">new</span> <span class="title class_">StaticTest</span>();<span class="comment">//生成new子类对象</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">A</span> &#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">&quot;父类静态变量&quot;</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">A</span> <span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;父类构造器&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;父类局部代码块&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">String</span> <span class="variable">ss</span> <span class="operator">=</span> <span class="string">&quot;父类成员变量&quot;</span>;</span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        System.out.println(s);</span><br><span class="line">        System.out.println(<span class="string">&quot;父类静态代码块&quot;</span>);</span><br><span class="line">        <span class="type">String</span> <span class="variable">s1</span> <span class="operator">=</span> <span class="string">&quot;父类静态代码块中的成员变量&quot;</span>;</span><br><span class="line">        <span class="comment">//System.out.println(ss);无法调用普通成员变量，因为静态代码块优先级高于它</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>输出结果：</p>
+<p><img src="/images/image-20220730145837459.png" alt="image-20220730145837459"></p>
+<mark class="hl-label purple">总结</mark> ：
+
+<p>与先前的结论一直。还需注意的是new一个子类对象的时候，会先调用父类的构造器然后再调用子类构造器。</p>
+]]></content>
+      <categories>
+        <category>刷题笔记</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>增强for出现ConcurrentModificationException</title>
+    <url>/2022/08/04/%E5%A2%9E%E5%BC%BAfor%E5%87%BA%E7%8E%B0ConcurrentModificationException/</url>
+    <content><![CDATA[<ul>
+<li>问题复现</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        Vector&lt;String&gt; vector = <span class="keyword">new</span> <span class="title class_">Vector</span>&lt;&gt;();</span><br><span class="line">        vector.add(<span class="string">&quot;ss&quot;</span>);</span><br><span class="line">        vector.add(<span class="string">&quot;ss1&quot;</span>);</span><br><span class="line">        vector.add(<span class="string">&quot;22222&quot;</span>);</span><br><span class="line">        <span class="comment">//增强for遍历</span></span><br><span class="line">        <span class="keyword">for</span> (String s : vector) &#123;</span><br><span class="line">            System.out.println(s);</span><br><span class="line">            vector.remove(<span class="string">&quot;ss&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/image-20220804172251868.png" alt="image-20220804172251868"></p>
+<p>这是由于增强for循环底层调用的是迭代器的next和hasnext方法来遍历的，移除元素后，无法预知到元素的位置。这也是增强for的缺点，不能获取下标，不能动态删除集合中的内容。</p>
+<p>解决办法：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">List&lt;String&gt; list = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;String&gt;();</span><br><span class="line">     list.add(<span class="string">&quot;h&quot;</span>);</span><br><span class="line">     list.add(<span class="string">&quot;y&quot;</span>);</span><br><span class="line">     list.add(<span class="string">&quot;q&quot;</span>);</span><br><span class="line">List&lt;String&gt; list_remove = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;String&gt;();</span><br><span class="line"> <span class="keyword">for</span>(String s : list)&#123;</span><br><span class="line">     <span class="keyword">if</span>(<span class="string">&quot;q&quot;</span>.equals(s))&#123;</span><br><span class="line">     list_remove.add(s); <span class="comment">//把要移除的统一放在一个集合</span></span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="comment">//统一移除</span></span><br><span class="line"> list.removeAll(list_remove);</span><br><span class="line"> System.out.println(list);<span class="comment">//[h, y]</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>多用户通信系统</title>
     <url>/2022/08/10/%E5%A4%9A%E7%94%A8%E6%88%B7%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><ul>
@@ -3159,6 +3179,22 @@
       </tags>
   </entry>
   <entry>
+    <title>常用类String</title>
+    <url>/2023/02/24/%E5%B8%B8%E7%94%A8%E7%B1%BBString/</url>
+    <content><![CDATA[<h2 id="String为什么是不可变的"><a href="#String为什么是不可变的" class="headerlink" title="String为什么是不可变的"></a>String为什么是不可变的</h2><p>1、首先String中的保存字符的数组是由Final关键字修饰的，并且是<code>private</code>私有的且没有提供外部的访问的方法。这就说明这个数组的变量是不可修改的。虽然并没有保证这个字符数组是不可变的。(final关键字修饰引用类型的时候，只保证这个变量指向的地址是不变的。但是地址中的内容可以改变)。</p>
+<p>2、其次String类是由Final修饰的，不能由其他类继承和修改字符数组。这两个加起来才说明String是不可变的。</p>
+<h2 id="Java9"><a href="#Java9" class="headerlink" title="Java9"></a>Java9</h2><p>Java9将String底层<code>char[]</code>字符数组改成<code>byte[]</code>。显然byte数组的空间更少，表示的数量也越小。</p>
+<p>因为字符串包含的汉字没有超过标准<code>Latin-1</code>可表示的范围。</p>
+<h2 id="字符串常量池"><a href="#字符串常量池" class="headerlink" title="字符串常量池"></a>字符串常量池</h2>]]></content>
+      <categories>
+        <category>常用类</category>
+      </categories>
+      <tags>
+        <tag>String</tag>
+        <tag>常用类</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>子类父类构造器问题</title>
     <url>/2022/07/30/%E5%AD%90%E7%B1%BB%E7%88%B6%E7%B1%BB%E6%9E%84%E9%80%A0%E5%99%A8%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<h1 id="问题引出"><a href="#问题引出" class="headerlink" title="问题引出"></a><font color="428675">问题引出</font></h1><p>牛客网题库中遇到这个问题：<font color="ED5A65">子类不但可以继承父类的无参构造函数也可以继承父类的有参构造函数?</font></p>
@@ -3194,42 +3230,6 @@
       </categories>
       <tags>
         <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>增强for出现ConcurrentModificationException</title>
-    <url>/2022/08/04/%E5%A2%9E%E5%BC%BAfor%E5%87%BA%E7%8E%B0ConcurrentModificationException/</url>
-    <content><![CDATA[<ul>
-<li>问题复现</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        Vector&lt;String&gt; vector = <span class="keyword">new</span> <span class="title class_">Vector</span>&lt;&gt;();</span><br><span class="line">        vector.add(<span class="string">&quot;ss&quot;</span>);</span><br><span class="line">        vector.add(<span class="string">&quot;ss1&quot;</span>);</span><br><span class="line">        vector.add(<span class="string">&quot;22222&quot;</span>);</span><br><span class="line">        <span class="comment">//增强for遍历</span></span><br><span class="line">        <span class="keyword">for</span> (String s : vector) &#123;</span><br><span class="line">            System.out.println(s);</span><br><span class="line">            vector.remove(<span class="string">&quot;ss&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src="/images/image-20220804172251868.png" alt="image-20220804172251868"></p>
-<p>这是由于增强for循环底层调用的是迭代器的next和hasnext方法来遍历的，移除元素后，无法预知到元素的位置。这也是增强for的缺点，不能获取下标，不能动态删除集合中的内容。</p>
-<p>解决办法：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">List&lt;String&gt; list = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;String&gt;();</span><br><span class="line">     list.add(<span class="string">&quot;h&quot;</span>);</span><br><span class="line">     list.add(<span class="string">&quot;y&quot;</span>);</span><br><span class="line">     list.add(<span class="string">&quot;q&quot;</span>);</span><br><span class="line">List&lt;String&gt; list_remove = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;String&gt;();</span><br><span class="line"> <span class="keyword">for</span>(String s : list)&#123;</span><br><span class="line">     <span class="keyword">if</span>(<span class="string">&quot;q&quot;</span>.equals(s))&#123;</span><br><span class="line">     list_remove.add(s); <span class="comment">//把要移除的统一放在一个集合</span></span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="comment">//统一移除</span></span><br><span class="line"> list.removeAll(list_remove);</span><br><span class="line"> System.out.println(list);<span class="comment">//[h, y]</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>常用类String</title>
-    <url>/2023/02/24/%E5%B8%B8%E7%94%A8%E7%B1%BBString/</url>
-    <content><![CDATA[<h2 id="String为什么是不可变的"><a href="#String为什么是不可变的" class="headerlink" title="String为什么是不可变的"></a>String为什么是不可变的</h2><p>1、首先String中的保存字符的数组是由Final关键字修饰的，并且是<code>private</code>私有的且没有提供外部的访问的方法。这就说明这个数组的变量是不可修改的。虽然并没有保证这个字符数组是不可变的。(final关键字修饰引用类型的时候，只保证这个变量指向的地址是不变的。但是地址中的内容可以改变)。</p>
-<p>2、其次String类是由Final修饰的，不能由其他类继承和修改字符数组。这两个加起来才说明String是不可变的。</p>
-<h2 id="Java9"><a href="#Java9" class="headerlink" title="Java9"></a>Java9</h2><p>Java9将String底层<code>char[]</code>字符数组改成<code>byte[]</code>。显然byte数组的空间更少，表示的数量也越小。</p>
-<p>因为字符串包含的汉字没有超过标准<code>Latin-1</code>可表示的范围。</p>
-<h2 id="字符串常量池"><a href="#字符串常量池" class="headerlink" title="字符串常量池"></a>字符串常量池</h2>]]></content>
-      <categories>
-        <category>常用类</category>
-      </categories>
-      <tags>
-        <tag>String</tag>
-        <tag>常用类</tag>
       </tags>
   </entry>
   <entry>
@@ -3554,6 +3554,125 @@
       </tags>
   </entry>
   <entry>
+    <title>日记--随想录</title>
+    <url>/2022/05/27/%E6%97%A5%E8%AE%B0/</url>
+    <content><![CDATA[<blockquote>
+<h2 id="基于chrome浏览器开发插件的比赛小总结。"><a href="#基于chrome浏览器开发插件的比赛小总结。" class="headerlink" title="基于chrome浏览器开发插件的比赛小总结。"></a>基于chrome浏览器开发插件的比赛小总结。</h2></blockquote>
+<mark class="hl-label green">2022-06-01</mark>  <mark class="hl-label orange">星期三</mark>  <mark class="hl-label default">小雨</mark>  
+
+<hr>
+<p>先说说心路历程吧，这次比赛可以说是我人生中第一次的<strong>失败</strong>，在我整个学习生涯中，全部时间都花在“课堂学习”中。每天都是完成学科作业，没有精力去向外拓展学一些自己感兴趣的东西，还有是家庭环境、学校环境给我传输的就是学好课程努力应试，考上好学校就有前途。再者说，自己能力不够成绩也是很好。还有就是初高中一直浑浑噩噩，没有给自己定目标，基本是脚踩西瓜皮一样，能考出什么样的成绩就怎么样吧<img class="inline-img" src="http://tva3.sinaimg.cn/large/006GJQvhgy1g0971ke4n7j30jg0jgdip.jpg" style="height:50px">。而这次不同，踏入大学，生活变得自由，在大一享受过后，就在这次寒假我感受到了就业的压力。对以后生活充满迷茫，也想着去学点东西参加点竞赛。可能是我交际能力差，大学很多资源没有把握住，也可能是我学校资源差（浙江省末流二本），根本找不到ACM社团之类的。最后，看到这次稀土掘金的比赛，几乎是零基础开始学的，前端js、css、html语法都没学，只会java一点点语法。只能硬着头皮上，就当学习的一个输出结果不重要。忘记说的是，先前学了差不多一学期Java，刚开始学是真头疼我自己内心很讨厌线下课（自己专业开设的课程，先前也有开设过C语言课程），我真是有点<em>社恐</em><img class="inline-img" src="http://tva3.sinaimg.cn/large/006ARE9vgy1fzbon0fpv5g305k05ke3e.gif" style="height:50px">。注意力很难集中，Jaa的一些面向对象知识很是头疼。然后，自己又在寒假学了会（自己也是对这个感兴趣，学起来比c语言有意思，Java给人一种很严谨的感觉）。怀着试试看的心态报名了<img class="inline-img" src="http://tva3.sinaimg.cn/large/78b88159gy1g6bo7nbmg8g204g04gaa3.gif" style="height:50px">，途中也想过放弃，自己什么都不会。插件方面得从零基础开始学，并且Java刚学到一半。但是想了想这是给自己找借口，高插件并不影响自己学习Java。只是自己喜欢活在舒适圈吧。提交自己作品的时候是最平静的，看到别人作品的时候是慌张的，有点自卑。别人都是vue框架，自己就一点点css js、jquery。啥也不是。很难受啊那时候。毫无疑问的是，第一轮就被刷掉了<img class="inline-img" src="http://tva3.sinaimg.cn/large/006APoFYly1g29glxyyj6j3052055jrl.jpg" style="height:50px">, 这次和以往所有考试都不同，让我感受到了极大的失落感，一方面是急着想要有比赛经历，失败了就相当于白干。另一方面是这是出于对这一段时间以来的检测。失败带来极大的失落感。甚至是高考都没这样无助的感觉（除非高考什么学校都没考上哈哈哈）<img class="inline-img" src="http://tva3.sinaimg.cn/large/006m97Kgly1fke2mg92ypj30j60j6ju2.jpg" style="height:50px">。付出之后一点回报没有是最让我无助和自我怀疑的，但这次除去表面上的排名我收获很大<img class="inline-img" src="http://tva3.sinaimg.cn/large/0068Lfdegy1fzxo1w0mxyj30j10hd0td.jpg" style="height:50px">（巨他妈大）。就光光了解网页的表现形式，和chrome浏览器的一堆监听器就够让我吃一壶。更重要的是自学能力，能够静下心来看一些自己没有接触过的领域。能力的提升最为重要，计算机软件发展这么快，新的东西不断的涌出。谁也无法预测未来。 </p>
+<blockquote>
+<p>你不知道什么东西对你以后工作有用，你要广泛涉猎，都去学一些，什么都看（有些增删，大概是这意思）          —平安银行首席架构师一次访谈中的话</p>
+</blockquote>
+<blockquote>
+<p>失败总是贯穿这个人生，这就是人生                   ——showmaker</p>
+</blockquote>
+<mark class="hl-label red">儿童节快乐六级加油不摆烂</mark> 
+
+<hr>
+<blockquote>
+<h1 id="2022-6-02-日记"><a href="#2022-6-02-日记" class="headerlink" title="2022-6-02 日记"></a>2022-6-02 日记</h1></blockquote>
+<mark class="hl-label green">2022-06-02</mark>  <mark class="hl-label orange">星期四</mark>  <mark class="hl-label default">阴</mark> 
+
+<p>  今天过得还算自律，早上6点30睡醒，在强烈的精神斗争下。还是觉得体育学分重要，睡梦中爬起来。<img class="inline-img" src="http://tva3.sinaimg.cn/large/ceeb653ejw1faqa8uruamj20c80c8gm3.jpg" style="height:50px">在床下缓了好久，发现时间已经来不及了，脸都不洗就出门了。跑步过程中，整个人都是梦游状态，呼吸都是睡觉那种大喘气。出都出来了，肯定要买领先全校99%人的早餐了，眼镜没带，眼睛里面还很多眼屎，边搓着迷糊的眼睛<img class="inline-img" src="http://tva3.sinaimg.cn/large/ceeb653ely8gzvf2c0eg8j20dw0dlt9c.jpg" style="height:50px">对卖包子阿姨要一个烧卖和茶叶蛋~。由于是超越全校99%的早餐，店铺基本没啥人，阿姨也在和同事闲聊。没听清又向我确认了一遍。昨晚12点睡，早上6点半起导致我一直半梦半醒。强顶着写了一篇六级的仔细阅读，不得不说一看英语就犯困。巨他妈难啊！<img class="inline-img" src="http://tva3.sinaimg.cn/large/0068Lfdely1gka6io7q4ij30j60j6q47.jpg" style="height:50px">。本来六级就没几天了，但还是学不进去(根本不会)。就写了点控制理论的大作业。一早上也就这么混过去了~~！。<img class="inline-img" src="http://tva3.sinaimg.cn/large/006m97Kgly1fu87w4uaspj305i05imxq.jpg" style="height:50px"> 中午吃了😋的台湾美食。食堂的pro max ulta版本。便宜好吃，还就在我们寝室楼下。简直宝藏店铺，鞋子都不用穿直接跑下去买都行。<img class="inline-img" src="http://tva3.sinaimg.cn/large/005TGG6vly1fgw1vm794hj302f02sjr6.jpg" style="height:50px"> 下午本来打算学会Java，然后再写一篇英语阅读的。但是终究是抵挡不过诱惑啊，开黑去了。<img class="inline-img" src="http://tva3.sinaimg.cn/large/005XSXmNgy1fdxqyn1bzcj30fk0g8dhb.jpg" style="height:50px"> 。还是得吐槽一下这个吊毛寝室，你妈的现在这个天气，贼闷，可能是宿舍太小了，而且完全不通风，不如大一寝室宽敞而且通风。夏天简直要热死人。外面是热血短袖，里面就是铁壁汗蒸。<img class="inline-img" src="http://tva3.sinaimg.cn/large/9e31678cly1g3co7pvw3aj21400u0acc.jpg" style="height:50px"> 。最离谱的是，太阳是找不到我们阳台的，离谱了就照不到还那么热，我想晒个被子都没得地方(太阳）。wdnmd<img class="inline-img" src="http://tva3.sinaimg.cn/large/006APoFYly8gx94nuk7rjj30g40hsq39.jpg" style="height:50px"> 。然后就导致我下午更困了，打的时候额头冒汗，打完头晕脑涨。晚上去拿快递买水果的时候直接放飞自我了。都不社恐了，已经累到不在乎自己了。核酸啥的就不说了，已经成为习惯了，最后就是总结，今天总体还行。明天继续努力吧。<img class="inline-img" src="http://tva3.sinaimg.cn/large/006r3PQBjw1fazsjczrfnj30b40b4dgb.jpg" style="height:50px"> </p>
+<mark class="hl-label red">端午节快乐六级加油不摆烂</mark> 
+
+<blockquote>
+<h1 id="2022-6-03-日记"><a href="#2022-6-03-日记" class="headerlink" title="2022-6-03 日记"></a>2022-6-03 日记</h1></blockquote>
+<mark class="hl-label green">2022-06-03</mark>  <mark class="hl-label orange">星期五</mark>  <mark class="hl-label default">阴</mark> 
+
+<p>  今天过的巨难受，太纠结了。简直是选择困难症<img class="inline-img" src="http://tva3.sinaimg.cn/large/006Mi9iRgy1gpzv642b38j30k00kjjso.jpg" style="height:50px"> 。早上睡梦中关闭了闹钟，但是记忆中根本没有睁开过眼睛的感觉。今天正常假期作息，八点四十起床刷牙洗脸。还是改不了一贯的拖延症，明天试着把手机放下，高效一点。导致早上接近11点才开始写作业，一天过程半天。先写六级英语，本以为翻译会好下手一些，但是对我来说还是好困难，”改革开放”、”到2014年”、”实施”。卧槽我一个都不会，好多生词<img class="inline-img" src="http://tva3.sinaimg.cn/large/0068Lfdely1gka6io7q4ij30j60j6q47.jpg" style="height:50px">。英语最重要的还是单词啊！写翻译就和写天书一样，让老师给你”填空”，直接反客为主。忘记说了（拖延症太严重，都是凌晨写日记迷迷糊糊的），昨天吃了蓝莓——人生第一次啊。蓝色的食物确实难见到，准确来说蓝莓应该偏向黑紫色，和葡萄颜色差不多。口感嘛，不好说没啥味（多少带点臭——无端联想）。就一两颗可能有点酸味。我妈真是关心人，当我妈发了一个蓝莓视频之后，我就随口说了一句没吃过，她就立马快递送过来两盒。本来是拒绝的，只要一盒就够了。吃不完而且学校有卖（太贵了一次没买过蓝莓）。在一顿拉扯过后，肯定是拉扯不过我妈的，我妈还有点强迫症，说服她需要高超的技术。下午嘛就把形势政策的考试考了，第一次是81分，感觉不够多。努努力重新考了个85.5。考完当时就头疼（天气太热了），直接就不管了，也没精力再考一次了。晚上硬着头皮刷了几篇毛概<img class="inline-img" src="http://tva3.sinaimg.cn/large/9150e4e5gw1f8yv983c8yg208w06oe6t.gif" style="height:50px">，下礼拜就考试了！。还有就是不要没有需求创造需求，这学期的书费退了有370块钱，在加上618心里一直想买东西，本来都没有啥需求，结果今天花410多。还是好心疼！尤其是在选鞋子的时候最头疼，便宜的感觉不符合心理预期，贵的又买不去，看的鞋子越多越难抉择真的是选择困难症<img class="inline-img" src="http://tva3.sinaimg.cn/large/006APoFYjw1fb3gtt5qfkj30b40b4weu.jpg" style="height:50px">。也没啥了，今天就是没有学Java了，好吧明天一定不拖延了。！<img class="inline-img" src="http://tva3.sinaimg.cn/large/006APoFYjw1fcg5hcgv0fg308c08c0sr.gif" style="height:50px"></p>
+<mark class="hl-label red">端午节快乐六级加油不摆烂</mark> 
+
+<blockquote>
+<h1 id="2022-6-24-大二下期末段小总结"><a href="#2022-6-24-大二下期末段小总结" class="headerlink" title="2022-6-24 大二下期末段小总结"></a>2022-6-24 大二下期末段小总结</h1></blockquote>
+<mark class="hl-label green">2022-06-24</mark> <mark class="hl-label orange">星期五</mark>  <mark class="hl-label red">晴</mark> 
+
+<p>  今天终于完成了期末考试了，将近有半个月没更新了，主要是用于完成课程设计。事情是真的繁杂，加上疫情的原因，本身有两个礼拜的课程设计时间，现在压缩成一个礼拜。就是上个礼拜，整个人一直泡在实验室，完全没有休息时间<img class="inline-img" src="http://tva3.sinaimg.cn/large/006r3PQBjw1fbr0edsy0hj30c80950t4.jpg" style="height:50px">。哼哼，首先讲一下收获最大的模电研讨，要求是各小组完成四个主题任务，每次派一个人上去汇报，并且不能重复。也就是说每个人都必须汇报一次。可以说是从他开学提到这个问题的时候我就很担心，我从来没有完成过一次好的上台讲话，就是那种上台站都站不稳的情况<img class="inline-img" src="http://tva3.sinaimg.cn/large/6af89bc8gw1f8u10bg2dhg201d01dq2p.gif" style="height:50px">。由于期间我们学校出现了一例阳性，直接将三次的研讨压缩到最后一礼拜。最难熬的是，汇报前一晚，睡都睡不好，还有汇报前几分钟。在这之前我看了“如何上台演讲不紧张”、“如何改善发音”、、、最担心的时候说话不清楚一卡壳，并且是用的话筒，当音响传出陌生的并且卡壳的声音，就会巨紧张<img class="inline-img" src="http://tva3.sinaimg.cn/large/ceeb653ely1g1tagxgunyg20aw0awe81.gif" style="height:50px">。也反复听了自己在录音的声音，为了就是保证熟悉感。还有就是上台前几分钟，心理一直暗示自己能行，没有人听的。但是还是按捺不住紧张。那时候心理闪过很多想法，第一个就是演讲不好丢脸，还有就是想起高中上台唱歌却一言不发。但当我开始将的时候，借助着PPT就像讲题目一样，一直往外倒出来就好。总结一下就是，第一次完整讲完了，并且途中，并没有大问题。我也不知道别人是什么感觉，反正也没几个人听，都在忙着做课程设计。也许以后我也能成为，健谈并且幽默风趣，说话能和别人对视（这个我觉得好难啊，我就没对视过几次）。可能我内心是不想和别人聊天，表现出来的就是板着脸，可能没有人愿意和严肃脸交谈。另外说一句，下午地铁站的一个女生好好看，眼睛好好看。最后在总结一下，各个课程设计，模电的电路设计。一句话，全都在焊电路板，最大收货：学会了怎么使用焊接。电路图由于时间关系都是老师给排版好的，我们只管焊接。唯一困难的就是，测试。如果第一次没有完成实验目标的话，我对着个电路板调试只有头疼两个字。宁愿重新焊接一个也不愿意调试。<img class="inline-img" src="http://tva3.sinaimg.cn/large/006Cmetyly1fmecp47b1mj30d30d3dio.jpg" style="height:50px">。还有一个就是，单片机的课程设计，最最让我无语的是单片机的开发板有些是坏的，完全看运气（这一点是真的不爽）。我都无法象形要是最后一次抽到的板子是坏的我该怎么办<img class="inline-img" src="http://tva3.sinaimg.cn/large/003MWcpMly8gudbj7gnraj60g30gagm802.jpg" style="height:50px">。还有这门课程还有一个小小的答辩，就是把你课程设计给老师看，回答问题。我居然把&amp;&amp; 和||搞反了。我一个打算学软件的居然这个搞反，认识到自己的基础太薄弱了。还有就是他的问，主要是试探你，他看我一个代码多写了就问我是不是抄别人的，这句话是最让我难受的，又这么看不起人的吗。<img class="inline-img" src="http://tva3.sinaimg.cn/large/415f82b9ly1glozkiyu0tj20c80a3wes.jpg" style="height:50px"> </p>
+<p>  人总是要成长的，一些外在言论不需要过多在意，有些事情的结果也不用在意。重在过程。自己脚踏实地走过来，学会总结和分析。别人抄过来的答案就算比我成绩高又如何，没有任何意义。我坚定这条道路，并且现在的反馈就是，做事情越来越有条不稳。就今天的乘坐地铁，提前1小时到站，自己一个人坐地铁、坐公交。很稳的完成任务。还得吐槽一句今天是真你妈热，还晒<img class="inline-img" src="http://tva3.sinaimg.cn/large/006APoFYjw1fakybyuv9cj30b4022mx7.jpg" style="height:50px"> 。</p>
+<mark class="hl-label red">暑假在家也要好好学习</mark>  <mark class="hl-label red">加油</mark> 
+
+<blockquote>
+<h1 id="2022-7-16-暑假在家学习情况小总结"><a href="#2022-7-16-暑假在家学习情况小总结" class="headerlink" title="2022-7-16 暑假在家学习情况小总结"></a>2022-7-16 暑假在家学习情况小总结</h1></blockquote>
+<mark class="hl-label green">2022-07-16</mark> <mark class="hl-label orange">星期六</mark>  <mark class="hl-label red">晴</mark> 
+
+<p>  先说下规划吧25号前学完JavaEE吧，Java基础基本过了两边，虽然有点满了，两个月的课程，并且大二上有学校有开设课程，但是一遍一遍重新看，能学到很多东西，温故而知新吧。大二上可以说才理解函数的传参，刚开始学Java是真的抽象，现在回头看发现挺简单自己进度也太慢了。现在才刚刚理解什么是面向对象，学校教的课程也太水了，还有一个就是上课效率问题，大一C语言老师推荐的一个网站，我当时根本就没听，大二自学的时候，发现这个网站挺好。然后室友提起来这个网站大一老师有推荐过，自己是真不认真。<img class="inline-img" src="http://tva3.sinaimg.cn/large/6a2a7a61ly1h39wdti9l4g206o06oqge.gif" style="height:50px"></p>
+<p>  接着就是学习效率问题吧，在家里很吵，主要是家里人打扰，另外就是自己自觉性问题，前段时间一天学习时间可能2小时都没。开直播学习是真不错，至少能注意力集中，虽然没人看哈，就当有人监控下，这几天学习效率就相当可以。<img class="inline-img" src="http://tva3.sinaimg.cn/large/005J4OU5ly1h3r8jpm3wyg30b40b475d.gif" style="height:50px"></p>
+<p>  最后就是规划和计划很重要，就现在选了一个好老师自学Java，讲的是真的细节。太棒了。马上大三，考研也必须提上日程，真开学了自己连考什么学校，考什么科目都不知道就尴尬了。暑假英语单词也要背起来了。算法也可刷起来，就明后两天吧，学完集合里面的链表。<img class="inline-img" src="http://tva3.sinaimg.cn/large/003MWcpMly8gu85769054j60u010c76a02.jpg" style="height:50px"></p>
+<p>  碎谈一下，生活方面的吧，父母对我很好，一日三餐都准备的很好。也很关心我，最重要的是不会因为我打游戏而和以前一样，你怎么又在打游戏啊，或者在打游戏中打断你说帮我干个事情，而是会说打完了吗。有点事情要做。真的是梦中情母。再说一说作息，我愿称之为纺锤形，刚来家还挺自律，然后就慢慢的1点钟睡觉，整个人都没精神，现在就发现不行，对身体不好，而且一直长痘痘，就渐渐恢复作息。每天也都健身，还有最近的鬼天气，一动就汗如雨下，真的受不了。<img class="inline-img" src="http://tva3.sinaimg.cn/large/6a2a7a61ly1h39wdt0d84g206o06o4b0.gif" style="height:50px"></p>
+<mark class="hl-label red">暑假在家也要好好学习</mark>  <mark class="hl-label red">加油</mark> 
+]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>日记</tag>
+        <tag>随想录</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>浅拷贝与深拷贝</title>
+    <url>/2023/02/24/%E6%B5%85%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B7%B1%E6%8B%B7%E8%B4%9D/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>点评项目简略</title>
+    <url>/2024/03/17/%E7%82%B9%E8%AF%84%E9%A1%B9%E7%9B%AE%E7%AE%80%E7%95%A5/</url>
+    <content><![CDATA[<h2 id="1-拦截器（双拦截器）"><a href="#1-拦截器（双拦截器）" class="headerlink" title="1 拦截器（双拦截器）"></a>1 拦截器（<em><strong>双拦截器</strong></em>）</h2><p>​	拦截器在controller<em><strong>（指定的，排除的）</strong></em>执行前都会执行，进行用户校验，存储用户信息到threadLocal。</p>
+<p>​	&#x2F;&#x2F;登录拦截器 &#x2F;&#x2F;token拦截器</p>
+<p><img src="/xiaojingangxiaoxiang/xiaojingangxiaoxiang.github/mybloghexo\source\images\image-20240317170532676.png" alt="image-20240317170532676"></p>
+<h2 id="2-session共享问题-（使用redis替代）"><a href="#2-session共享问题-（使用redis替代）" class="headerlink" title="2 session共享问题 （使用redis替代）"></a>2 session共享问题 <em><strong>（使用redis替代）</strong></em></h2><p>​	在Tomcat集群的时候session无法共享，使用redis处理：速度快、共享存储，键值对结构。</p>
+<p>​	redis验证码： 使用string类型作为 value验证码，使用手机号(<em><strong>改为token保证数据安全</strong></em>)码做key。</p>
+<p>​	redis保存用户对象（保持用户登录状态等）：hash map数据结构</p>
+<p>​	拦截器刷新token有效期。</p>
+<p>​	threadLocal保存用户信息。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">在多线程编程中，ThreadLocal 是一个非常有用的工具，它可以让每个线程都拥有自己独立的变量副本，从而避免了线程间共享变量时可能出现的竞争和同步问题。将用户信息保存在 ThreadLocal 中有以下好处：</span><br><span class="line"></span><br><span class="line">线程隔离：每个线程可以独立地存储和修改自己的用户信息，不会相互影响，这在多线程并发处理的场景下非常有用。</span><br><span class="line"></span><br><span class="line">上下文信息传递：在一些框架中，比如Web开发中，可以将用户信息存储在 ThreadLocal 中，这样在整个请求处理过程中都可以方便地获取到用户信息，而无需显式传递。</span><br><span class="line"></span><br><span class="line">减少参数传递：通过将用户信息存储在 ThreadLocal 中，可以减少方法之间需要传递的参数，简化代码逻辑。</span><br><span class="line"></span><br><span class="line">避免单例陷阱：一些开发人员可能会倾向于使用单例来存储全局的用户信息，但这样做可能会引入线程安全问题。使用 ThreadLocal 可以避免这种问题，因为每个线程有自己的用户信息副本。</span><br><span class="line"></span><br><span class="line">然而，需要注意的是，滥用 ThreadLocal 也可能导致内存泄漏和上下文混乱的问题，因此在使用过程中需要谨慎考虑清除操作，并且仔细评估是否真的需要在每个线程中存储独立的用户信息。</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-缓存"><a href="#3-缓存" class="headerlink" title="3 缓存"></a>3 缓存</h2><p>​	在商品页面添加缓存，需要解决数据命中不命中问题，数据不一致的问题。</p>
+<p>​	缓存更新策略：</p>
+<p><img src="/xiaojingangxiaoxiang/xiaojingangxiaoxiang.github/mybloghexo\source\images\image-20240317174318570.png" alt="image-20240317174318570"></p>
+<p><img src="/xiaojingangxiaoxiang/xiaojingangxiaoxiang.github/mybloghexo\source\images\image-20240317174945142.png" alt="image-20240317174945142"></p>
+<p><img src="/xiaojingangxiaoxiang/xiaojingangxiaoxiang.github/mybloghexo\source\images\image-20240317175219304.png" alt="image-20240317175219304"></p>
+<p>TCC是Try Confirm Cancel的三个缩写。</p>
+<ol>
+<li>Try阶段是做业务检查（一致性）及资源预留（隔离），此阶段仅是一个初步操作，它和后续的Confirm一起才能真正构成一个完整的业务逻辑。</li>
+<li>Confirm阶段是做确认提交，Try阶段所有分支事务执行成功后开始执行Confirm。通常情况下，采用TCC则认为Confirm阶段是不会出错的。即 ：只要Try成功，Confirm一定成功。若Confirm阶段真的出错了，需引入重试机制或人工处理。</li>
+<li>Cancel阶段是在业务执行错误需要回滚的状态下执行分支事务的业务取消，预留资源释放。通常情况下，采用TCC则认为Cancel阶段也是一定成功的。若Cancel阶段真的出错了，需引入重试机制或人工处理。</li>
+</ol>
+<p>分析删除缓存和操作数据库谁先。（<em><strong>线程安全问题</strong></em>）</p>
+<p><img src="/xiaojingangxiaoxiang/xiaojingangxiaoxiang.github/mybloghexo\source\images\image-20240317180510611.png" alt="image-20240317180510611"></p>
+<p>第一种情况是在更新数据库时候，另外一个线程乘虚而入。第二种情况是写缓存的时候另外一个线程乘虚而入。由于<em><strong>写缓存的数据远远大于数据库更新操作的速度</strong></em>。所以情况二将对来说出现频率较小。选用<em><strong>先操作数据库，再删除缓存比较合理</strong></em>\</p>
+<h3 id="缓存更新策略小结"><a href="#缓存更新策略小结" class="headerlink" title="缓存更新策略小结"></a>缓存更新策略小结</h3><ol>
+<li>低一致性需求：使用Redis自带的内存淘汰机制</li>
+<li>高一致性需求：主动更新，并以超时剔除作为保底方案。</li>
+</ol>
+<ul>
+<li>读操作：缓存命中直接返回  缓存未命中则查询数据库，并写入缓存，设定超时时间。</li>
+<li>写操作：先写入数据库，然后再删除缓存。 要保证数据库与缓存操作的原子性。</li>
+</ul>
+<h3 id="缓存穿透问题"><a href="#缓存穿透问题" class="headerlink" title="缓存穿透问题"></a>缓存穿透问题</h3><p><strong>缓存穿透</strong>是指客户端请求的数据在缓存和数据库中都不存在，这样缓存永远都不会生效，请求一直打到数据库中。</p>
+<ul>
+<li>缓存空对象（<strong>使用TTL时间</strong>）</li>
+</ul>
+<p>​		优点：实现简单，维护方便。</p>
+<p>​		缺点：额外的内存消耗，且可能造成短期的不一致。</p>
+<ul>
+<li>布隆过滤</li>
+</ul>
+<p>​		一种算法基于hash算法。在Redis缓存前面在加一层布隆过滤器。</p>
+<p>​		优点：内存占用小，没有多余key</p>
+<p>​		缺点：实现复杂，还可能存在误判。</p>
+]]></content>
+      <categories>
+        <category>复习</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>redis</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>数据结构与算法</title>
     <url>/2022/08/31/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/</url>
     <content><![CDATA[<h1 id="数据结构与算法的关系"><a href="#数据结构与算法的关系" class="headerlink" title="数据结构与算法的关系"></a>数据结构与算法的关系</h1><p><img src="/images/image-20220831200641252.png" alt="image-20220831200641252"></p>
@@ -3628,66 +3747,68 @@
       </tags>
   </entry>
   <entry>
-    <title>浅拷贝与深拷贝</title>
-    <url>/2023/02/24/%E6%B5%85%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B7%B1%E6%8B%B7%E8%B4%9D/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>日记--随想录</title>
-    <url>/2022/05/27/%E6%97%A5%E8%AE%B0/</url>
-    <content><![CDATA[<blockquote>
-<h2 id="基于chrome浏览器开发插件的比赛小总结。"><a href="#基于chrome浏览器开发插件的比赛小总结。" class="headerlink" title="基于chrome浏览器开发插件的比赛小总结。"></a>基于chrome浏览器开发插件的比赛小总结。</h2></blockquote>
-<mark class="hl-label green">2022-06-01</mark>  <mark class="hl-label orange">星期三</mark>  <mark class="hl-label default">小雨</mark>  
-
-<hr>
-<p>先说说心路历程吧，这次比赛可以说是我人生中第一次的<strong>失败</strong>，在我整个学习生涯中，全部时间都花在“课堂学习”中。每天都是完成学科作业，没有精力去向外拓展学一些自己感兴趣的东西，还有是家庭环境、学校环境给我传输的就是学好课程努力应试，考上好学校就有前途。再者说，自己能力不够成绩也是很好。还有就是初高中一直浑浑噩噩，没有给自己定目标，基本是脚踩西瓜皮一样，能考出什么样的成绩就怎么样吧<img class="inline-img" src="http://tva3.sinaimg.cn/large/006GJQvhgy1g0971ke4n7j30jg0jgdip.jpg" style="height:50px">。而这次不同，踏入大学，生活变得自由，在大一享受过后，就在这次寒假我感受到了就业的压力。对以后生活充满迷茫，也想着去学点东西参加点竞赛。可能是我交际能力差，大学很多资源没有把握住，也可能是我学校资源差（浙江省末流二本），根本找不到ACM社团之类的。最后，看到这次稀土掘金的比赛，几乎是零基础开始学的，前端js、css、html语法都没学，只会java一点点语法。只能硬着头皮上，就当学习的一个输出结果不重要。忘记说的是，先前学了差不多一学期Java，刚开始学是真头疼我自己内心很讨厌线下课（自己专业开设的课程，先前也有开设过C语言课程），我真是有点<em>社恐</em><img class="inline-img" src="http://tva3.sinaimg.cn/large/006ARE9vgy1fzbon0fpv5g305k05ke3e.gif" style="height:50px">。注意力很难集中，Jaa的一些面向对象知识很是头疼。然后，自己又在寒假学了会（自己也是对这个感兴趣，学起来比c语言有意思，Java给人一种很严谨的感觉）。怀着试试看的心态报名了<img class="inline-img" src="http://tva3.sinaimg.cn/large/78b88159gy1g6bo7nbmg8g204g04gaa3.gif" style="height:50px">，途中也想过放弃，自己什么都不会。插件方面得从零基础开始学，并且Java刚学到一半。但是想了想这是给自己找借口，高插件并不影响自己学习Java。只是自己喜欢活在舒适圈吧。提交自己作品的时候是最平静的，看到别人作品的时候是慌张的，有点自卑。别人都是vue框架，自己就一点点css js、jquery。啥也不是。很难受啊那时候。毫无疑问的是，第一轮就被刷掉了<img class="inline-img" src="http://tva3.sinaimg.cn/large/006APoFYly1g29glxyyj6j3052055jrl.jpg" style="height:50px">, 这次和以往所有考试都不同，让我感受到了极大的失落感，一方面是急着想要有比赛经历，失败了就相当于白干。另一方面是这是出于对这一段时间以来的检测。失败带来极大的失落感。甚至是高考都没这样无助的感觉（除非高考什么学校都没考上哈哈哈）<img class="inline-img" src="http://tva3.sinaimg.cn/large/006m97Kgly1fke2mg92ypj30j60j6ju2.jpg" style="height:50px">。付出之后一点回报没有是最让我无助和自我怀疑的，但这次除去表面上的排名我收获很大<img class="inline-img" src="http://tva3.sinaimg.cn/large/0068Lfdegy1fzxo1w0mxyj30j10hd0td.jpg" style="height:50px">（巨他妈大）。就光光了解网页的表现形式，和chrome浏览器的一堆监听器就够让我吃一壶。更重要的是自学能力，能够静下心来看一些自己没有接触过的领域。能力的提升最为重要，计算机软件发展这么快，新的东西不断的涌出。谁也无法预测未来。 </p>
-<blockquote>
-<p>你不知道什么东西对你以后工作有用，你要广泛涉猎，都去学一些，什么都看（有些增删，大概是这意思）          —平安银行首席架构师一次访谈中的话</p>
-</blockquote>
-<blockquote>
-<p>失败总是贯穿这个人生，这就是人生                   ——showmaker</p>
-</blockquote>
-<mark class="hl-label red">儿童节快乐六级加油不摆烂</mark> 
-
-<hr>
-<blockquote>
-<h1 id="2022-6-02-日记"><a href="#2022-6-02-日记" class="headerlink" title="2022-6-02 日记"></a>2022-6-02 日记</h1></blockquote>
-<mark class="hl-label green">2022-06-02</mark>  <mark class="hl-label orange">星期四</mark>  <mark class="hl-label default">阴</mark> 
-
-<p>  今天过得还算自律，早上6点30睡醒，在强烈的精神斗争下。还是觉得体育学分重要，睡梦中爬起来。<img class="inline-img" src="http://tva3.sinaimg.cn/large/ceeb653ejw1faqa8uruamj20c80c8gm3.jpg" style="height:50px">在床下缓了好久，发现时间已经来不及了，脸都不洗就出门了。跑步过程中，整个人都是梦游状态，呼吸都是睡觉那种大喘气。出都出来了，肯定要买领先全校99%人的早餐了，眼镜没带，眼睛里面还很多眼屎，边搓着迷糊的眼睛<img class="inline-img" src="http://tva3.sinaimg.cn/large/ceeb653ely8gzvf2c0eg8j20dw0dlt9c.jpg" style="height:50px">对卖包子阿姨要一个烧卖和茶叶蛋~。由于是超越全校99%的早餐，店铺基本没啥人，阿姨也在和同事闲聊。没听清又向我确认了一遍。昨晚12点睡，早上6点半起导致我一直半梦半醒。强顶着写了一篇六级的仔细阅读，不得不说一看英语就犯困。巨他妈难啊！<img class="inline-img" src="http://tva3.sinaimg.cn/large/0068Lfdely1gka6io7q4ij30j60j6q47.jpg" style="height:50px">。本来六级就没几天了，但还是学不进去(根本不会)。就写了点控制理论的大作业。一早上也就这么混过去了~~！。<img class="inline-img" src="http://tva3.sinaimg.cn/large/006m97Kgly1fu87w4uaspj305i05imxq.jpg" style="height:50px"> 中午吃了😋的台湾美食。食堂的pro max ulta版本。便宜好吃，还就在我们寝室楼下。简直宝藏店铺，鞋子都不用穿直接跑下去买都行。<img class="inline-img" src="http://tva3.sinaimg.cn/large/005TGG6vly1fgw1vm794hj302f02sjr6.jpg" style="height:50px"> 下午本来打算学会Java，然后再写一篇英语阅读的。但是终究是抵挡不过诱惑啊，开黑去了。<img class="inline-img" src="http://tva3.sinaimg.cn/large/005XSXmNgy1fdxqyn1bzcj30fk0g8dhb.jpg" style="height:50px"> 。还是得吐槽一下这个吊毛寝室，你妈的现在这个天气，贼闷，可能是宿舍太小了，而且完全不通风，不如大一寝室宽敞而且通风。夏天简直要热死人。外面是热血短袖，里面就是铁壁汗蒸。<img class="inline-img" src="http://tva3.sinaimg.cn/large/9e31678cly1g3co7pvw3aj21400u0acc.jpg" style="height:50px"> 。最离谱的是，太阳是找不到我们阳台的，离谱了就照不到还那么热，我想晒个被子都没得地方(太阳）。wdnmd<img class="inline-img" src="http://tva3.sinaimg.cn/large/006APoFYly8gx94nuk7rjj30g40hsq39.jpg" style="height:50px"> 。然后就导致我下午更困了，打的时候额头冒汗，打完头晕脑涨。晚上去拿快递买水果的时候直接放飞自我了。都不社恐了，已经累到不在乎自己了。核酸啥的就不说了，已经成为习惯了，最后就是总结，今天总体还行。明天继续努力吧。<img class="inline-img" src="http://tva3.sinaimg.cn/large/006r3PQBjw1fazsjczrfnj30b40b4dgb.jpg" style="height:50px"> </p>
-<mark class="hl-label red">端午节快乐六级加油不摆烂</mark> 
-
-<blockquote>
-<h1 id="2022-6-03-日记"><a href="#2022-6-03-日记" class="headerlink" title="2022-6-03 日记"></a>2022-6-03 日记</h1></blockquote>
-<mark class="hl-label green">2022-06-03</mark>  <mark class="hl-label orange">星期五</mark>  <mark class="hl-label default">阴</mark> 
-
-<p>  今天过的巨难受，太纠结了。简直是选择困难症<img class="inline-img" src="http://tva3.sinaimg.cn/large/006Mi9iRgy1gpzv642b38j30k00kjjso.jpg" style="height:50px"> 。早上睡梦中关闭了闹钟，但是记忆中根本没有睁开过眼睛的感觉。今天正常假期作息，八点四十起床刷牙洗脸。还是改不了一贯的拖延症，明天试着把手机放下，高效一点。导致早上接近11点才开始写作业，一天过程半天。先写六级英语，本以为翻译会好下手一些，但是对我来说还是好困难，”改革开放”、”到2014年”、”实施”。卧槽我一个都不会，好多生词<img class="inline-img" src="http://tva3.sinaimg.cn/large/0068Lfdely1gka6io7q4ij30j60j6q47.jpg" style="height:50px">。英语最重要的还是单词啊！写翻译就和写天书一样，让老师给你”填空”，直接反客为主。忘记说了（拖延症太严重，都是凌晨写日记迷迷糊糊的），昨天吃了蓝莓——人生第一次啊。蓝色的食物确实难见到，准确来说蓝莓应该偏向黑紫色，和葡萄颜色差不多。口感嘛，不好说没啥味（多少带点臭——无端联想）。就一两颗可能有点酸味。我妈真是关心人，当我妈发了一个蓝莓视频之后，我就随口说了一句没吃过，她就立马快递送过来两盒。本来是拒绝的，只要一盒就够了。吃不完而且学校有卖（太贵了一次没买过蓝莓）。在一顿拉扯过后，肯定是拉扯不过我妈的，我妈还有点强迫症，说服她需要高超的技术。下午嘛就把形势政策的考试考了，第一次是81分，感觉不够多。努努力重新考了个85.5。考完当时就头疼（天气太热了），直接就不管了，也没精力再考一次了。晚上硬着头皮刷了几篇毛概<img class="inline-img" src="http://tva3.sinaimg.cn/large/9150e4e5gw1f8yv983c8yg208w06oe6t.gif" style="height:50px">，下礼拜就考试了！。还有就是不要没有需求创造需求，这学期的书费退了有370块钱，在加上618心里一直想买东西，本来都没有啥需求，结果今天花410多。还是好心疼！尤其是在选鞋子的时候最头疼，便宜的感觉不符合心理预期，贵的又买不去，看的鞋子越多越难抉择真的是选择困难症<img class="inline-img" src="http://tva3.sinaimg.cn/large/006APoFYjw1fb3gtt5qfkj30b40b4weu.jpg" style="height:50px">。也没啥了，今天就是没有学Java了，好吧明天一定不拖延了。！<img class="inline-img" src="http://tva3.sinaimg.cn/large/006APoFYjw1fcg5hcgv0fg308c08c0sr.gif" style="height:50px"></p>
-<mark class="hl-label red">端午节快乐六级加油不摆烂</mark> 
-
-<blockquote>
-<h1 id="2022-6-24-大二下期末段小总结"><a href="#2022-6-24-大二下期末段小总结" class="headerlink" title="2022-6-24 大二下期末段小总结"></a>2022-6-24 大二下期末段小总结</h1></blockquote>
-<mark class="hl-label green">2022-06-24</mark> <mark class="hl-label orange">星期五</mark>  <mark class="hl-label red">晴</mark> 
-
-<p>  今天终于完成了期末考试了，将近有半个月没更新了，主要是用于完成课程设计。事情是真的繁杂，加上疫情的原因，本身有两个礼拜的课程设计时间，现在压缩成一个礼拜。就是上个礼拜，整个人一直泡在实验室，完全没有休息时间<img class="inline-img" src="http://tva3.sinaimg.cn/large/006r3PQBjw1fbr0edsy0hj30c80950t4.jpg" style="height:50px">。哼哼，首先讲一下收获最大的模电研讨，要求是各小组完成四个主题任务，每次派一个人上去汇报，并且不能重复。也就是说每个人都必须汇报一次。可以说是从他开学提到这个问题的时候我就很担心，我从来没有完成过一次好的上台讲话，就是那种上台站都站不稳的情况<img class="inline-img" src="http://tva3.sinaimg.cn/large/6af89bc8gw1f8u10bg2dhg201d01dq2p.gif" style="height:50px">。由于期间我们学校出现了一例阳性，直接将三次的研讨压缩到最后一礼拜。最难熬的是，汇报前一晚，睡都睡不好，还有汇报前几分钟。在这之前我看了“如何上台演讲不紧张”、“如何改善发音”、、、最担心的时候说话不清楚一卡壳，并且是用的话筒，当音响传出陌生的并且卡壳的声音，就会巨紧张<img class="inline-img" src="http://tva3.sinaimg.cn/large/ceeb653ely1g1tagxgunyg20aw0awe81.gif" style="height:50px">。也反复听了自己在录音的声音，为了就是保证熟悉感。还有就是上台前几分钟，心理一直暗示自己能行，没有人听的。但是还是按捺不住紧张。那时候心理闪过很多想法，第一个就是演讲不好丢脸，还有就是想起高中上台唱歌却一言不发。但当我开始将的时候，借助着PPT就像讲题目一样，一直往外倒出来就好。总结一下就是，第一次完整讲完了，并且途中，并没有大问题。我也不知道别人是什么感觉，反正也没几个人听，都在忙着做课程设计。也许以后我也能成为，健谈并且幽默风趣，说话能和别人对视（这个我觉得好难啊，我就没对视过几次）。可能我内心是不想和别人聊天，表现出来的就是板着脸，可能没有人愿意和严肃脸交谈。另外说一句，下午地铁站的一个女生好好看，眼睛好好看。最后在总结一下，各个课程设计，模电的电路设计。一句话，全都在焊电路板，最大收货：学会了怎么使用焊接。电路图由于时间关系都是老师给排版好的，我们只管焊接。唯一困难的就是，测试。如果第一次没有完成实验目标的话，我对着个电路板调试只有头疼两个字。宁愿重新焊接一个也不愿意调试。<img class="inline-img" src="http://tva3.sinaimg.cn/large/006Cmetyly1fmecp47b1mj30d30d3dio.jpg" style="height:50px">。还有一个就是，单片机的课程设计，最最让我无语的是单片机的开发板有些是坏的，完全看运气（这一点是真的不爽）。我都无法象形要是最后一次抽到的板子是坏的我该怎么办<img class="inline-img" src="http://tva3.sinaimg.cn/large/003MWcpMly8gudbj7gnraj60g30gagm802.jpg" style="height:50px">。还有这门课程还有一个小小的答辩，就是把你课程设计给老师看，回答问题。我居然把&amp;&amp; 和||搞反了。我一个打算学软件的居然这个搞反，认识到自己的基础太薄弱了。还有就是他的问，主要是试探你，他看我一个代码多写了就问我是不是抄别人的，这句话是最让我难受的，又这么看不起人的吗。<img class="inline-img" src="http://tva3.sinaimg.cn/large/415f82b9ly1glozkiyu0tj20c80a3wes.jpg" style="height:50px"> </p>
-<p>  人总是要成长的，一些外在言论不需要过多在意，有些事情的结果也不用在意。重在过程。自己脚踏实地走过来，学会总结和分析。别人抄过来的答案就算比我成绩高又如何，没有任何意义。我坚定这条道路，并且现在的反馈就是，做事情越来越有条不稳。就今天的乘坐地铁，提前1小时到站，自己一个人坐地铁、坐公交。很稳的完成任务。还得吐槽一句今天是真你妈热，还晒<img class="inline-img" src="http://tva3.sinaimg.cn/large/006APoFYjw1fakybyuv9cj30b4022mx7.jpg" style="height:50px"> 。</p>
-<mark class="hl-label red">暑假在家也要好好学习</mark>  <mark class="hl-label red">加油</mark> 
-
-<blockquote>
-<h1 id="2022-7-16-暑假在家学习情况小总结"><a href="#2022-7-16-暑假在家学习情况小总结" class="headerlink" title="2022-7-16 暑假在家学习情况小总结"></a>2022-7-16 暑假在家学习情况小总结</h1></blockquote>
-<mark class="hl-label green">2022-07-16</mark> <mark class="hl-label orange">星期六</mark>  <mark class="hl-label red">晴</mark> 
-
-<p>  先说下规划吧25号前学完JavaEE吧，Java基础基本过了两边，虽然有点满了，两个月的课程，并且大二上有学校有开设课程，但是一遍一遍重新看，能学到很多东西，温故而知新吧。大二上可以说才理解函数的传参，刚开始学Java是真的抽象，现在回头看发现挺简单自己进度也太慢了。现在才刚刚理解什么是面向对象，学校教的课程也太水了，还有一个就是上课效率问题，大一C语言老师推荐的一个网站，我当时根本就没听，大二自学的时候，发现这个网站挺好。然后室友提起来这个网站大一老师有推荐过，自己是真不认真。<img class="inline-img" src="http://tva3.sinaimg.cn/large/6a2a7a61ly1h39wdti9l4g206o06oqge.gif" style="height:50px"></p>
-<p>  接着就是学习效率问题吧，在家里很吵，主要是家里人打扰，另外就是自己自觉性问题，前段时间一天学习时间可能2小时都没。开直播学习是真不错，至少能注意力集中，虽然没人看哈，就当有人监控下，这几天学习效率就相当可以。<img class="inline-img" src="http://tva3.sinaimg.cn/large/005J4OU5ly1h3r8jpm3wyg30b40b475d.gif" style="height:50px"></p>
-<p>  最后就是规划和计划很重要，就现在选了一个好老师自学Java，讲的是真的细节。太棒了。马上大三，考研也必须提上日程，真开学了自己连考什么学校，考什么科目都不知道就尴尬了。暑假英语单词也要背起来了。算法也可刷起来，就明后两天吧，学完集合里面的链表。<img class="inline-img" src="http://tva3.sinaimg.cn/large/003MWcpMly8gu85769054j60u010c76a02.jpg" style="height:50px"></p>
-<p>  碎谈一下，生活方面的吧，父母对我很好，一日三餐都准备的很好。也很关心我，最重要的是不会因为我打游戏而和以前一样，你怎么又在打游戏啊，或者在打游戏中打断你说帮我干个事情，而是会说打完了吗。有点事情要做。真的是梦中情母。再说一说作息，我愿称之为纺锤形，刚来家还挺自律，然后就慢慢的1点钟睡觉，整个人都没精神，现在就发现不行，对身体不好，而且一直长痘痘，就渐渐恢复作息。每天也都健身，还有最近的鬼天气，一动就汗如雨下，真的受不了。<img class="inline-img" src="http://tva3.sinaimg.cn/large/6a2a7a61ly1h39wdt0d84g206o06o4b0.gif" style="height:50px"></p>
-<mark class="hl-label red">暑假在家也要好好学习</mark>  <mark class="hl-label red">加油</mark> 
-]]></content>
+    <title>面经</title>
+    <url>/2023/03/11/%E7%BA%BF%E7%A8%8B%E5%92%8C%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+    <content><![CDATA[<h1 id="请你说说线程和进程的区别"><a href="#请你说说线程和进程的区别" class="headerlink" title="请你说说线程和进程的区别"></a>请你说说线程和进程的区别</h1><h2 id="我的理解"><a href="#我的理解" class="headerlink" title="我的理解"></a>我的理解</h2><p>首先:这两者的关系是一个进程可以使用多个线程来执行当前的进程任务。</p>
+<p>进程和进程之间是分开的，是通过进程之间的进程通信来完成交流。</p>
+<p>而线程与线程之间是有共享空间的。</p>
+<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><h3 id="地址空间、开销、并发性、内存"><a href="#地址空间、开销、并发性、内存" class="headerlink" title="地址空间、开销、并发性、内存"></a>地址空间、开销、并发性、内存</h3><p>进程和线程的主要差别在于它们是不同的操作系统资源管理方式</p>
+<p>1.进程有独立的地址空间,线程有自己的堆栈和局部变量,但线程之间没有单独的地址空间；</p>
+<p>2.进程和线程切换时,需要切换进程和线程的上下文,进程的上下文切换时间开销远远大于线程上下文切换时间,耗费资源较大,效率要差一些；</p>
+<p>3.进程的并发性较低,线程的并发性较高；</p>
+<p>4.每个独立的进程有一个程序运行的入口、顺序执行序列和程序的出口,但是线程不能够独立执行,必须依存在应用程序中,由应用程序提供多个线程执行控制；</p>
+<p>5.系统在运行的时候会为每个进程分配不同的内存空间；而对线程而言,除了 CPU 外,系统不会为线程分配内存（线程所使用的资源来自其所属进程的资源）,线程组之间只能共享资源；</p>
+<p>6.一个进程崩溃后,在保护模式下不会对其他进程产生影响,但是一个线程崩溃整个进程都死掉。所以多进程要比多线程健壮。</p>
+<h1 id="说说MySQL索引好处和坏处"><a href="#说说MySQL索引好处和坏处" class="headerlink" title="说说MySQL索引好处和坏处"></a>说说MySQL索引好处和坏处</h1><p>我的理解:在表的数据多的时候，使用索引可以加快查询速度。坏处是会占用一定的空间。提高维护的成本，在添加数据或者删除数据时候都需要更改索引。有些情况下，索引不会生效。比如建立一个以字段(age,name)的索引，如果之查询name，则索引不会生效。</p>
+<p>得分点 检索效率、存储资源、索引维护 标准回答 索引就像指向表行的指针,是一种允许查询操作快速确定哪些行符合WHERE子句中的条件,并检索到这些行的其他列值的数据结构； 索引主要有普通索引、唯一索引、主键索引、外键索引、全文索引、复合索引几种； 在大数据量的查询中,合理使用索引的优点非常明显,不仅能大幅提高匹配where条件的检索效率,还能用于排序和分组操作的加速。 当时索引如果使用不当也有比较大的坏处：比如索引必定会增加存储资源的消耗；同时也增大了插入、更新和删除操作的维护成本,因为每个增删改操作后相应列的索引都必须被更新。 加分回答 只要创建了索引,就一定会走索引吗？ 不一定。 比如,在使用组合索引的时候,如果没有遵从<font color="red">“最左前缀”</font>的原则进行搜索,则索引是不起作用的。 举例,假设在id、name、age字段上已经成功建立了一个名为MultiIdx的组合索引。索引行中按id、name、age的顺序存放,索引可以搜索id、（id,name）、（id, name, age）字段组合。如果列不构成索引最左面的前缀,那么MySQL不能使用局部索引,如（age）或者（name,age）组合则不能使用该索引查询。</p>
+<h1 id="说说多线程"><a href="#说说多线程" class="headerlink" title="说说多线程"></a>说说多线程</h1><p>我的理解:多线程就是一个进程中有多个任务的时候，多个线程会并发的执行这些任务。多线程之间是共享资源的，一般多线程不会额外分配资源，他们的资源都来自进程。各个线程之间是各自占有堆栈资源，程序计数器等。</p>
+<p>得分点 线程和进程的关系、为什么使用多线程 标准回答 线程是操作系统调度的最小单元,它可以让一个进程并发地处理多个任务,也叫轻量级进程。所以,在一个进程里可以创建多个线程,这些线程都拥有各自的计数器、堆栈、局部变量,并且能够共享进程内的资源。由于共享资源,处理器便可以在这些线程之间快速切换,从而让使用者感觉这些线程在同时执行。 总的来说,操作系统可以同时执行多个任务,每个任务就是一个进程。进程可以同时执行多个任务,每个任务就是一个线程。一个程序运行之后至少有一个进程,而一个进程可以包含多个线程,但至少要包含一个线程。 使用多线程会给开发人员带来显著的好处,而使用多线程的原因主要有以下几点：</p>
+<p>\1. 更多的CPU核心 现代计算机处理器性能的提升方式,已经从追求更高的主频向追求更多的核心发展,所以处理器的核心数量会越来越多,充分地利用处理器的核心则会显著地提高程序的性能。而程序使用多线程技术,就可以将计算逻辑分配到多个处理器核心上,显著减少程序的处理时间,从而随着更多处理器核心的加入而变得更有效率。</p>
+<p>\2. 更快的响应时间 我们经常要针对复杂的业务编写出复杂的代码,如果使用多线程技术,就可以将数据一致性不强的操作派发给其他线程处理（也可以是消息队列）,如上传图片、发送邮件、生成订单等。这样响应用户请求的线程就能够尽快地完成处理,大大地缩短了响应时间,从而提升了用户体验。 3. 更好的编程模型 Java为多线程编程提供了良好且一致的编程模型,使开发人员能够更加专注于问题的解决,开发者只需为此问题建立合适的业务模型,而无需绞尽脑汁地考虑如何实现多线程。一旦开发人员建立好了业务模型,稍作修改就可以将其方便地映射到Java提供的多线程编程模型上。</p>
+<h1 id="说说怎么保证线程安全"><a href="#说说怎么保证线程安全" class="headerlink" title="说说怎么保证线程安全"></a>说说怎么保证线程安全</h1><h1 id="请你说说死锁定义及发生的条件"><a href="#请你说说死锁定义及发生的条件" class="headerlink" title="请你说说死锁定义及发生的条件"></a>请你说说死锁定义及发生的条件</h1>]]></content>
       <categories>
-        <category>日常</category>
+        <category>面经</category>
       </categories>
       <tags>
-        <tag>日记</tag>
-        <tag>随想录</tag>
+        <tag>Java</tag>
+        <tag>操作系统</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>算法题</title>
+    <url>/2022/07/04/%E7%AE%97%E6%B3%95%E9%A2%98/</url>
+    <content><![CDATA[<h1 id="双指针"><a href="#双指针" class="headerlink" title="双指针"></a><font color="#6dc1f7">双指针</font></h1><blockquote>
+<p>双指针，就是<strong>定义两个指针在指定的数组&#x2F;链表上游走，在做一些自定义的操作</strong>。 如果要细分的话，双指针有 左右指针 ， 快慢指针 ， 滑动窗口 三种类型，一般时间复杂度为O (n)，空间复杂度为O (1),这就是双指针的精妙之处。</p>
+<p>不用再去创建一个数组。</p>
+</blockquote>
+<mark class="hl-label orange">案例1</mark> ：在数组中移除对应对应的数(val)——快慢指针判断有条件判断指针2是否前进
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">removeElementcorrection</span><span class="params">(<span class="type">int</span> [] nums , <span class="type">int</span> val)</span> &#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">      双指针思想</span></span><br><span class="line"><span class="comment">      个人理解： 两个指针都会遍历数组 一个用来比较是否是要移除的元素 第二个指针相当于新建一个数组：大小和原来一样</span></span><br><span class="line"><span class="comment">      并且如果是符合这个数组（即不等于要被移除的数）那么第二个指针就会自增1 那么有多少个数符合那么第二个指针就会有多长</span></span><br><span class="line"><span class="comment">      最坏的情况就是这个数组没有要移除的数那么两个指针都会遍历数组一遍</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">len</span> <span class="operator">=</span> nums.length;</span><br><span class="line">    <span class="type">int</span> <span class="variable">left</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">left1</span> <span class="operator">=</span> <span class="number">0</span> ; left1 &lt; len ; left1++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (nums[left1] != val) &#123;</span><br><span class="line">            nums[left] = nums[left1];</span><br><span class="line">            left++;    <span class="comment">//即完成移除元素 也记录了符合的数的个数</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> left;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/%E5%8F%8C%E6%8C%87%E9%92%88.png" alt="双指针经典案例"></p>
+<mark class="hl-label orange">案例2</mark> ：类似双指针——两个数组双指针(快慢指针)
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> *一个升序数组要求加入一个元素后还是升序</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"> <span class="keyword">private</span> <span class="keyword">static</span> <span class="type">int</span>[] paixu(<span class="type">int</span>[] arr, Scanner sc) &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">sum</span> <span class="operator">=</span> sc.nextInt();</span><br><span class="line">        <span class="type">int</span> <span class="variable">len</span> <span class="operator">=</span> arr.length;</span><br><span class="line">        <span class="type">int</span> <span class="variable">index</span> <span class="operator">=</span> -<span class="number">1</span>;</span><br><span class="line">        <span class="comment">//  1、第一步找位置</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (sum &lt;= arr[i]) &#123;</span><br><span class="line">                index = i;</span><br><span class="line">                <span class="keyword">break</span>;    <span class="comment">//关键不然一直要么是最后一个要么是倒数第二个</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (index==-<span class="number">1</span>) &#123;</span><br><span class="line">            index = len;   <span class="comment">//没有找到位置那就是最后一个啦</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//  2、数组扩容</span></span><br><span class="line">        <span class="type">int</span> [] Newarr = <span class="keyword">new</span> <span class="title class_">int</span>[len+<span class="number">1</span>];</span><br><span class="line">        <span class="comment">// 3、 类似双指针  最外层指针在扩容数组上 里面一层在旧数组上</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>,j = <span class="number">0</span>; i&lt; Newarr.length; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (index != i) &#123;</span><br><span class="line">                Newarr [i] = arr [j];</span><br><span class="line">                j++;  <span class="comment">//非常的关键一步很牛叉的思想</span></span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;   <span class="comment">// else 就说明是要插入的位置</span></span><br><span class="line">                 Newarr [i] = sum;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> Newarr;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<mark class="hl-label purple">总结</mark> 
+
+<blockquote>
+<p>这是两个指针在不同数组上的应用，最明显的作用是减少代码量。<code>j++</code>这个很关键。</p>
+</blockquote>
+<mark class="hl-label orange">案例3</mark> ：对给定的<font color="F07C82">有序数组</font> \textit{nums}nums 删除重复元素，在删除重复元素之后，每个元素只出现一次，并返回新的长度，上述操作必须通过<font color="F07C82">原地修改</font>数组的方法，使用 O(1)O(1) 的空间复杂度完成。
+
+<mark class="hl-label red">关键词</mark> ：原地修改、有序数组、<font color="F07C82">快慢指针</font>。
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">removeDuplicates</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> nums.length;</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> <span class="variable">fast</span> <span class="operator">=</span> <span class="number">1</span>; <span class="type">int</span> <span class="variable">slow</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (fast &lt; n) &#123;</span><br><span class="line">        <span class="keyword">if</span> (nums[fast] != nums[fast-<span class="number">1</span>]) &#123;</span><br><span class="line">            nums[slow] = nums[fast];</span><br><span class="line">            ++slow;</span><br><span class="line">        &#125;</span><br><span class="line">        ++fast;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> slow;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<mark class="hl-label red">小结</mark> ：双指针，一个指针用于指定新数组的位置(替换符合的数据)，另一个指针用于遍历原来数组(判断是否符合条件)。巧妙的无需创建新的数组，用两个快慢指针遍历一个数组完成。
+
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -3711,62 +3832,6 @@
       </categories>
       <tags>
         <tag>-JVM -堆栈</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>点评项目简略</title>
-    <url>/2024/03/17/%E7%82%B9%E8%AF%84%E9%A1%B9%E7%9B%AE%E7%AE%80%E7%95%A5/</url>
-    <content><![CDATA[<h2 id="1-拦截器（双拦截器）"><a href="#1-拦截器（双拦截器）" class="headerlink" title="1 拦截器（双拦截器）"></a>1 拦截器（<em><strong>双拦截器</strong></em>）</h2><p>​	拦截器在controller<em><strong>（指定的，排除的）</strong></em>执行前都会执行，进行用户校验，存储用户信息到threadLocal。</p>
-<p>​	&#x2F;&#x2F;登录拦截器 &#x2F;&#x2F;token拦截器</p>
-<p><img src="/xiaojingangxiaoxiang/xiaojingangxiaoxiang.github/mybloghexo\source\images\image-20240317170532676.png" alt="image-20240317170532676"></p>
-<h2 id="2-session共享问题-（使用redis替代）"><a href="#2-session共享问题-（使用redis替代）" class="headerlink" title="2 session共享问题 （使用redis替代）"></a>2 session共享问题 <em><strong>（使用redis替代）</strong></em></h2><p>​	在Tomcat集群的时候session无法共享，使用redis处理：速度快、共享存储，键值对结构。</p>
-<p>​	redis验证码： 使用string类型作为 value验证码，使用手机号(<em><strong>改为token保证数据安全</strong></em>)码做key。</p>
-<p>​	redis保存用户对象（保持用户登录状态等）：hash map数据结构</p>
-<p>​	拦截器刷新token有效期。</p>
-<p>​	threadLocal保存用户信息。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">在多线程编程中，ThreadLocal 是一个非常有用的工具，它可以让每个线程都拥有自己独立的变量副本，从而避免了线程间共享变量时可能出现的竞争和同步问题。将用户信息保存在 ThreadLocal 中有以下好处：</span><br><span class="line"></span><br><span class="line">线程隔离：每个线程可以独立地存储和修改自己的用户信息，不会相互影响，这在多线程并发处理的场景下非常有用。</span><br><span class="line"></span><br><span class="line">上下文信息传递：在一些框架中，比如Web开发中，可以将用户信息存储在 ThreadLocal 中，这样在整个请求处理过程中都可以方便地获取到用户信息，而无需显式传递。</span><br><span class="line"></span><br><span class="line">减少参数传递：通过将用户信息存储在 ThreadLocal 中，可以减少方法之间需要传递的参数，简化代码逻辑。</span><br><span class="line"></span><br><span class="line">避免单例陷阱：一些开发人员可能会倾向于使用单例来存储全局的用户信息，但这样做可能会引入线程安全问题。使用 ThreadLocal 可以避免这种问题，因为每个线程有自己的用户信息副本。</span><br><span class="line"></span><br><span class="line">然而，需要注意的是，滥用 ThreadLocal 也可能导致内存泄漏和上下文混乱的问题，因此在使用过程中需要谨慎考虑清除操作，并且仔细评估是否真的需要在每个线程中存储独立的用户信息。</span><br></pre></td></tr></table></figure>
-
-<h2 id="3-缓存"><a href="#3-缓存" class="headerlink" title="3 缓存"></a>3 缓存</h2><p>​	在商品页面添加缓存，需要解决数据命中不命中问题，数据不一致的问题。</p>
-<p>​	缓存更新策略：</p>
-<p><img src="/xiaojingangxiaoxiang/xiaojingangxiaoxiang.github/mybloghexo\source\images\image-20240317174318570.png" alt="image-20240317174318570"></p>
-<p><img src="/xiaojingangxiaoxiang/xiaojingangxiaoxiang.github/mybloghexo\source\images\image-20240317174945142.png" alt="image-20240317174945142"></p>
-<p><img src="/xiaojingangxiaoxiang/xiaojingangxiaoxiang.github/mybloghexo\source\images\image-20240317175219304.png" alt="image-20240317175219304"></p>
-<p>TCC是Try Confirm Cancel的三个缩写。</p>
-<ol>
-<li>Try阶段是做业务检查（一致性）及资源预留（隔离），此阶段仅是一个初步操作，它和后续的Confirm一起才能真正构成一个完整的业务逻辑。</li>
-<li>Confirm阶段是做确认提交，Try阶段所有分支事务执行成功后开始执行Confirm。通常情况下，采用TCC则认为Confirm阶段是不会出错的。即 ：只要Try成功，Confirm一定成功。若Confirm阶段真的出错了，需引入重试机制或人工处理。</li>
-<li>Cancel阶段是在业务执行错误需要回滚的状态下执行分支事务的业务取消，预留资源释放。通常情况下，采用TCC则认为Cancel阶段也是一定成功的。若Cancel阶段真的出错了，需引入重试机制或人工处理。</li>
-</ol>
-<p>分析删除缓存和操作数据库谁先。（<em><strong>线程安全问题</strong></em>）</p>
-<p><img src="/xiaojingangxiaoxiang/xiaojingangxiaoxiang.github/mybloghexo\source\images\image-20240317180510611.png" alt="image-20240317180510611"></p>
-<p>第一种情况是在更新数据库时候，另外一个线程乘虚而入。第二种情况是写缓存的时候另外一个线程乘虚而入。由于<em><strong>写缓存的数据远远大于数据库更新操作的速度</strong></em>。所以情况二将对来说出现频率较小。选用<em><strong>先操作数据库，再删除缓存比较合理</strong></em>\</p>
-<h3 id="缓存更新策略小结"><a href="#缓存更新策略小结" class="headerlink" title="缓存更新策略小结"></a>缓存更新策略小结</h3><ol>
-<li>低一致性需求：使用Redis自带的内存淘汰机制</li>
-<li>高一致性需求：主动更新，并以超时剔除作为保底方案。</li>
-</ol>
-<ul>
-<li>读操作：缓存命中直接返回  缓存未命中则查询数据库，并写入缓存，设定超时时间。</li>
-<li>写操作：先写入数据库，然后再删除缓存。 要保证数据库与缓存操作的原子性。</li>
-</ul>
-<h3 id="缓存穿透问题"><a href="#缓存穿透问题" class="headerlink" title="缓存穿透问题"></a>缓存穿透问题</h3><p><strong>缓存穿透</strong>是指客户端请求的数据在缓存和数据库中都不存在，这样缓存永远都不会生效，请求一直打到数据库中。</p>
-<ul>
-<li>缓存空对象（<strong>使用TTL时间</strong>）</li>
-</ul>
-<p>​		优点：实现简单，维护方便。</p>
-<p>​		缺点：额外的内存消耗，且可能造成短期的不一致。</p>
-<ul>
-<li>布隆过滤</li>
-</ul>
-<p>​		一种算法基于hash算法。在Redis缓存前面在加一层布隆过滤器。</p>
-<p>​		优点：内存占用小，没有多余key</p>
-<p>​		缺点：实现复杂，还可能存在误判。</p>
-]]></content>
-      <categories>
-        <category>复习</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>redis</tag>
       </tags>
   </entry>
   <entry>
@@ -3811,71 +3876,6 @@
       </categories>
       <tags>
         <tag>Java核心技术卷1</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>算法题</title>
-    <url>/2022/07/04/%E7%AE%97%E6%B3%95%E9%A2%98/</url>
-    <content><![CDATA[<h1 id="双指针"><a href="#双指针" class="headerlink" title="双指针"></a><font color="#6dc1f7">双指针</font></h1><blockquote>
-<p>双指针，就是<strong>定义两个指针在指定的数组&#x2F;链表上游走，在做一些自定义的操作</strong>。 如果要细分的话，双指针有 左右指针 ， 快慢指针 ， 滑动窗口 三种类型，一般时间复杂度为O (n)，空间复杂度为O (1),这就是双指针的精妙之处。</p>
-<p>不用再去创建一个数组。</p>
-</blockquote>
-<mark class="hl-label orange">案例1</mark> ：在数组中移除对应对应的数(val)——快慢指针判断有条件判断指针2是否前进
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">removeElementcorrection</span><span class="params">(<span class="type">int</span> [] nums , <span class="type">int</span> val)</span> &#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">      双指针思想</span></span><br><span class="line"><span class="comment">      个人理解： 两个指针都会遍历数组 一个用来比较是否是要移除的元素 第二个指针相当于新建一个数组：大小和原来一样</span></span><br><span class="line"><span class="comment">      并且如果是符合这个数组（即不等于要被移除的数）那么第二个指针就会自增1 那么有多少个数符合那么第二个指针就会有多长</span></span><br><span class="line"><span class="comment">      最坏的情况就是这个数组没有要移除的数那么两个指针都会遍历数组一遍</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">len</span> <span class="operator">=</span> nums.length;</span><br><span class="line">    <span class="type">int</span> <span class="variable">left</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">left1</span> <span class="operator">=</span> <span class="number">0</span> ; left1 &lt; len ; left1++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (nums[left1] != val) &#123;</span><br><span class="line">            nums[left] = nums[left1];</span><br><span class="line">            left++;    <span class="comment">//即完成移除元素 也记录了符合的数的个数</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> left;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src="/images/%E5%8F%8C%E6%8C%87%E9%92%88.png" alt="双指针经典案例"></p>
-<mark class="hl-label orange">案例2</mark> ：类似双指针——两个数组双指针(快慢指针)
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> *一个升序数组要求加入一个元素后还是升序</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"> <span class="keyword">private</span> <span class="keyword">static</span> <span class="type">int</span>[] paixu(<span class="type">int</span>[] arr, Scanner sc) &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">sum</span> <span class="operator">=</span> sc.nextInt();</span><br><span class="line">        <span class="type">int</span> <span class="variable">len</span> <span class="operator">=</span> arr.length;</span><br><span class="line">        <span class="type">int</span> <span class="variable">index</span> <span class="operator">=</span> -<span class="number">1</span>;</span><br><span class="line">        <span class="comment">//  1、第一步找位置</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (sum &lt;= arr[i]) &#123;</span><br><span class="line">                index = i;</span><br><span class="line">                <span class="keyword">break</span>;    <span class="comment">//关键不然一直要么是最后一个要么是倒数第二个</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (index==-<span class="number">1</span>) &#123;</span><br><span class="line">            index = len;   <span class="comment">//没有找到位置那就是最后一个啦</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//  2、数组扩容</span></span><br><span class="line">        <span class="type">int</span> [] Newarr = <span class="keyword">new</span> <span class="title class_">int</span>[len+<span class="number">1</span>];</span><br><span class="line">        <span class="comment">// 3、 类似双指针  最外层指针在扩容数组上 里面一层在旧数组上</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>,j = <span class="number">0</span>; i&lt; Newarr.length; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (index != i) &#123;</span><br><span class="line">                Newarr [i] = arr [j];</span><br><span class="line">                j++;  <span class="comment">//非常的关键一步很牛叉的思想</span></span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;   <span class="comment">// else 就说明是要插入的位置</span></span><br><span class="line">                 Newarr [i] = sum;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> Newarr;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<mark class="hl-label purple">总结</mark> 
-
-<blockquote>
-<p>这是两个指针在不同数组上的应用，最明显的作用是减少代码量。<code>j++</code>这个很关键。</p>
-</blockquote>
-<mark class="hl-label orange">案例3</mark> ：对给定的<font color="F07C82">有序数组</font> \textit{nums}nums 删除重复元素，在删除重复元素之后，每个元素只出现一次，并返回新的长度，上述操作必须通过<font color="F07C82">原地修改</font>数组的方法，使用 O(1)O(1) 的空间复杂度完成。
-
-<mark class="hl-label red">关键词</mark> ：原地修改、有序数组、<font color="F07C82">快慢指针</font>。
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">removeDuplicates</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> nums.length;</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> <span class="variable">fast</span> <span class="operator">=</span> <span class="number">1</span>; <span class="type">int</span> <span class="variable">slow</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (fast &lt; n) &#123;</span><br><span class="line">        <span class="keyword">if</span> (nums[fast] != nums[fast-<span class="number">1</span>]) &#123;</span><br><span class="line">            nums[slow] = nums[fast];</span><br><span class="line">            ++slow;</span><br><span class="line">        &#125;</span><br><span class="line">        ++fast;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> slow;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<mark class="hl-label red">小结</mark> ：双指针，一个指针用于指定新数组的位置(替换符合的数据)，另一个指针用于遍历原来数组(判断是否符合条件)。巧妙的无需创建新的数组，用两个快慢指针遍历一个数组完成。
-
-]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>面经</title>
-    <url>/2023/03/11/%E7%BA%BF%E7%A8%8B%E5%92%8C%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
-    <content><![CDATA[<h1 id="请你说说线程和进程的区别"><a href="#请你说说线程和进程的区别" class="headerlink" title="请你说说线程和进程的区别"></a>请你说说线程和进程的区别</h1><h2 id="我的理解"><a href="#我的理解" class="headerlink" title="我的理解"></a>我的理解</h2><p>首先:这两者的关系是一个进程可以使用多个线程来执行当前的进程任务。</p>
-<p>进程和进程之间是分开的，是通过进程之间的进程通信来完成交流。</p>
-<p>而线程与线程之间是有共享空间的。</p>
-<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><h3 id="地址空间、开销、并发性、内存"><a href="#地址空间、开销、并发性、内存" class="headerlink" title="地址空间、开销、并发性、内存"></a>地址空间、开销、并发性、内存</h3><p>进程和线程的主要差别在于它们是不同的操作系统资源管理方式</p>
-<p>1.进程有独立的地址空间,线程有自己的堆栈和局部变量,但线程之间没有单独的地址空间；</p>
-<p>2.进程和线程切换时,需要切换进程和线程的上下文,进程的上下文切换时间开销远远大于线程上下文切换时间,耗费资源较大,效率要差一些；</p>
-<p>3.进程的并发性较低,线程的并发性较高；</p>
-<p>4.每个独立的进程有一个程序运行的入口、顺序执行序列和程序的出口,但是线程不能够独立执行,必须依存在应用程序中,由应用程序提供多个线程执行控制；</p>
-<p>5.系统在运行的时候会为每个进程分配不同的内存空间；而对线程而言,除了 CPU 外,系统不会为线程分配内存（线程所使用的资源来自其所属进程的资源）,线程组之间只能共享资源；</p>
-<p>6.一个进程崩溃后,在保护模式下不会对其他进程产生影响,但是一个线程崩溃整个进程都死掉。所以多进程要比多线程健壮。</p>
-<h1 id="说说MySQL索引好处和坏处"><a href="#说说MySQL索引好处和坏处" class="headerlink" title="说说MySQL索引好处和坏处"></a>说说MySQL索引好处和坏处</h1><p>我的理解:在表的数据多的时候，使用索引可以加快查询速度。坏处是会占用一定的空间。提高维护的成本，在添加数据或者删除数据时候都需要更改索引。有些情况下，索引不会生效。比如建立一个以字段(age,name)的索引，如果之查询name，则索引不会生效。</p>
-<p>得分点 检索效率、存储资源、索引维护 标准回答 索引就像指向表行的指针,是一种允许查询操作快速确定哪些行符合WHERE子句中的条件,并检索到这些行的其他列值的数据结构； 索引主要有普通索引、唯一索引、主键索引、外键索引、全文索引、复合索引几种； 在大数据量的查询中,合理使用索引的优点非常明显,不仅能大幅提高匹配where条件的检索效率,还能用于排序和分组操作的加速。 当时索引如果使用不当也有比较大的坏处：比如索引必定会增加存储资源的消耗；同时也增大了插入、更新和删除操作的维护成本,因为每个增删改操作后相应列的索引都必须被更新。 加分回答 只要创建了索引,就一定会走索引吗？ 不一定。 比如,在使用组合索引的时候,如果没有遵从<font color="red">“最左前缀”</font>的原则进行搜索,则索引是不起作用的。 举例,假设在id、name、age字段上已经成功建立了一个名为MultiIdx的组合索引。索引行中按id、name、age的顺序存放,索引可以搜索id、（id,name）、（id, name, age）字段组合。如果列不构成索引最左面的前缀,那么MySQL不能使用局部索引,如（age）或者（name,age）组合则不能使用该索引查询。</p>
-<h1 id="说说多线程"><a href="#说说多线程" class="headerlink" title="说说多线程"></a>说说多线程</h1><p>我的理解:多线程就是一个进程中有多个任务的时候，多个线程会并发的执行这些任务。多线程之间是共享资源的，一般多线程不会额外分配资源，他们的资源都来自进程。各个线程之间是各自占有堆栈资源，程序计数器等。</p>
-<p>得分点 线程和进程的关系、为什么使用多线程 标准回答 线程是操作系统调度的最小单元,它可以让一个进程并发地处理多个任务,也叫轻量级进程。所以,在一个进程里可以创建多个线程,这些线程都拥有各自的计数器、堆栈、局部变量,并且能够共享进程内的资源。由于共享资源,处理器便可以在这些线程之间快速切换,从而让使用者感觉这些线程在同时执行。 总的来说,操作系统可以同时执行多个任务,每个任务就是一个进程。进程可以同时执行多个任务,每个任务就是一个线程。一个程序运行之后至少有一个进程,而一个进程可以包含多个线程,但至少要包含一个线程。 使用多线程会给开发人员带来显著的好处,而使用多线程的原因主要有以下几点：</p>
-<p>\1. 更多的CPU核心 现代计算机处理器性能的提升方式,已经从追求更高的主频向追求更多的核心发展,所以处理器的核心数量会越来越多,充分地利用处理器的核心则会显著地提高程序的性能。而程序使用多线程技术,就可以将计算逻辑分配到多个处理器核心上,显著减少程序的处理时间,从而随着更多处理器核心的加入而变得更有效率。</p>
-<p>\2. 更快的响应时间 我们经常要针对复杂的业务编写出复杂的代码,如果使用多线程技术,就可以将数据一致性不强的操作派发给其他线程处理（也可以是消息队列）,如上传图片、发送邮件、生成订单等。这样响应用户请求的线程就能够尽快地完成处理,大大地缩短了响应时间,从而提升了用户体验。 3. 更好的编程模型 Java为多线程编程提供了良好且一致的编程模型,使开发人员能够更加专注于问题的解决,开发者只需为此问题建立合适的业务模型,而无需绞尽脑汁地考虑如何实现多线程。一旦开发人员建立好了业务模型,稍作修改就可以将其方便地映射到Java提供的多线程编程模型上。</p>
-<h1 id="说说怎么保证线程安全"><a href="#说说怎么保证线程安全" class="headerlink" title="说说怎么保证线程安全"></a>说说怎么保证线程安全</h1><h1 id="请你说说死锁定义及发生的条件"><a href="#请你说说死锁定义及发生的条件" class="headerlink" title="请你说说死锁定义及发生的条件"></a>请你说说死锁定义及发生的条件</h1>]]></content>
-      <categories>
-        <category>面经</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>操作系统</tag>
       </tags>
   </entry>
   <entry>
